@@ -1,0 +1,262 @@
+SOURCE: SEM3/DLD/MCQ_Unit 5.pdf
+
+===== PAGE 1 =====
+Unit-5  Registers, Counters 
+MCQs 
+1. Which counter counts in ascending binary sequence? 
+A) Down Counter 
+B) Up Counter 
+C) Ring Counter 
+D) Johnson Counter 
+     Ans: B) Up Counter 
+2. A MOD-16 counter requires how many flip-flops? 
+A) 2 
+B) 3 
+C) 4 
+D) 5 
+     Ans: C) 4 
+3. Which register shifts data by one bit position on every clock pulse? 
+A) Buffer Register 
+B)  Shift Register 
+C)  Counter Register 
+D)  Storage Register 
+                 Ans: B) Shift Register 
+4.  SISO stands for: 
+A) Serial In Serial Out 
+B)  Serial In Select Out 
+C)  Single In Single Out 
+D)  Serial Input Stored Output 
+Ans: A) Serial In Serial Out 
+5.  Which counter has all flip-flops triggered by the same clock signal? 
+A) Asynchronous Counter 
+B) B) Ripple Counter 
+C) Synchronous Counter 
+D)  Decade Counter 
+      Ans: C) Synchronous Counter 
+6.  A ring counter with 4 flip-flops has how many valid states? 
+A) 2 
+B) 4 
+C)  8 
+D) 16 
+      Ans: B) 4 
+7.  Which register can perform serial input, serial output, parallel input, and 
+parallel output operations? 
+A) SIPO Register 
+B) B) PISO Register 
+C) PIPO Register 
+
+===== PAGE 2 =====
+D) Universal Shift Register 
+Ans: D) Universal Shift Register 
+8.  The maximum count of a 5-bit binary counter is: 
+A) 15 
+B)  31 
+C) 32 
+D)  63 
+     Ans: B) 31 
+9. A ripple counter is also known as: 
+A) Synchronous Counter 
+B) Asynchronous Counter 
+C) Ring Counter 
+D) Decade Counter 
+Ans: B) Asynchronous Counter 
+10.  PIPO stands for: 
+A) Parallel In Parallel Out 
+B)  Pulse In Pulse Out 
+C) Parallel Input Process Output 
+D) Parallel In Pulse Out 
+                 Ans: A) Parallel In Parallel Out 
+11. A decade counter counts from: 
+A) 0 to 7 
+B) 0 to 9 
+C) 0 to 15 
+D) 1 to 10 
+    Ans: B) 0 to 9 
+12. The modulus of a counter is: 
+A) Number of flip-flops used 
+B)  Number of input lines 
+C) Number of states in a counting sequence 
+D) Clock frequency 
+     Ans: C) Number of states in a counting sequence 
+13.  Which counter circulates a single logic '1' through its stages? 
+A) Johnson Counter 
+B) Binary Counter 
+C) Ring Counter 
+D) Decade Counter 
+     Ans: C) Ring Counter 
+14. The number of states in a 3-bit binary counter is: 
+A) 4 
+B)  6 
+C)  8 
+D) 16 
+                 Ans: C) 8 
+
+===== PAGE 3 =====
+15.  Which register is mainly used for temporary data storage? 
+A) Buffer Register 
+B)  Ring Counter 
+C) Decoder 
+D) Multiplexer 
+     Ans: A) Buffer Register 
+16.  A Johnson counter with 4 flip-flops has: 
+A) 4 states 
+B) 6 states 
+C) 8 states 
+D) 16 states 
+      Ans: C) 8 states 
+17. How many flip-flops are required for a MOD-32 counter? 
+A) 4 
+B) 5 
+C) 6 
+D) 7 
+     Ans: B) 5 
+18. Which of the following is faster? 
+A) Ripple Counter 
+B) Asynchronous Counter 
+C) C) Synchronous Counter 
+D) D) Ring Counter 
+     Ans: C) Synchronous Counter 
+19.  PISO stands for: 
+A) Parallel In Serial Out 
+B)  Pulse In Serial Out 
+C)  Parallel Input Stored Output 
+D)  Parallel In Shift Out 
+     Ans: A) Parallel In Serial Out 
+20.  The digital circuit used for counting pulses is known as ______.  
+(a) Counter (b) FF (c) Register (d) Buffer 
+           Ans. (a) Counter 
+21.  In ______ counters all the flip-flops receive the external clock pulse simultaneously.  
+(a) Synchronous (b) Asynchronous  
+          Ans.(a) Synchronous 
+22.   In general the number of states = ______ where n is equal to the number of flip-
+flops.  
+(a) 1/2ⁿ (b) 2ⁿ (c) log 2ⁿ  (d) n 
+             Ans.(b) 2ⁿ 
+23.  In general the maximum count = ______. 
+         Ans.(2ⁿ – 1) 
+
+===== PAGE 4 =====
+24. This ______ is the main problem with the ripple counters.  
+         Ans. accumulated time delay 
+25.  An n-bit ripple counter is called as modulo-______ counter.  
+          Ans. N 
+26.  Modulus of a counter represents the ______ through which the counter progresses 
+during its operation. 
+        Ans. number of states 
+27.  In any counter, the signal at the output of last FF (MSB) will have a frequency equal 
+to the input clock frequency divided by the ______ number of the counter.  
+         Ans. MOD 
+28.  Due to reduced propagation delay, the synchronous counters can operate at a much 
+______ clock frequency than the asynchronous counters.  
+(a) Higher (b) Lower  
+Ans. (a) Higher 
+29. The number of output states for a ring counter will always be equal to the number of 
+______. (a) Flip-flops (b) Counters (c) Gates  
+Ans. (a) Flip-flops 
+ 
+30. A synchronous counter is also called as ______ counter.  
+         (a) Ripple (b) Binary (c) BCD   (d) Johnson 
+         Ans. (a) Ripple 
+31.  Ring counter is ______ type counter. 
+(a) Synchronous (b) Asynchronous (c) Ripple   (d) Johnson 
+       Ans.(a) Synchronous 
+32. The number of states in a 4-bit ripple counter is ______.  
+(a) 16 (b) 4 (c) 8 (d) 7 
+         Ans. (b) 16 
+33. The maximum count in a 4-bit ripple counter is ______.  
+(a) 15 (b) 3 (c) 7  (d) 4 
+Ans. (a) 15 
+34. Counters are ______ triggered sequential circuits.  
+    (a)Level (b) Edge (c) Pulse  
+Ans. (b) Edge 
+35. A 3-bit ripple counter is called as MOD ______ counter. 
+(a) 4 (b) 16 (c) 10   (d) 8 
+
+===== PAGE 5 =====
+Ans. 8 
+36. A decade counter has ______ number of states.  
+    (a) 4 (b) 16 (c) 10   (d) 8 
+Ans.(c) 10 
+37. A 4-bit binary counter is MOD ______ counter. 
+(a) 4 (b) 16 (c) 15  (d) 17 
+Ans. (b) 16 
+38. The propagation delay problem is ______ in synchronous counters.  
+Ans. reduced 
+39. Johnson’s counter is also called as ______ ring counter.  
+Ans. twisted 
+40.  Data in the serial form is also called as a ______ code, whereas that in the parallel 
+form is called as ______ code. 
+  (a)Temporal, special 
+  (b)Binary, decimal 
+         (c)Serial, parallel  
+          Ans.(a) Temporal, special 
+41.  ______ registers are used for temporary storage of digital words. 
+   (a)Buffer 
+   (b)Shift 
+          (c)Bidirectional  
+   (d)Universal 
+Ans. (b) Shift 
+42. The transmission of data from one place to the other takes place in  
+______manner. 
+ (a) Serial 
+ (b)Parallel  
+        Ans. (a) Serial 
+43.  Register is basically a ______. 
+  (a)Counter 
+         (b)Group of flip-flops 
+  (c)Decoder  
+
+===== PAGE 6 =====
+  (d)Encoder 
+         Ans. (b) Group of flip-flops 
+44. If the data enters in a one-bit-at-a-time manner then it is called as 
+______ form. 
+  (a)Serial (b) Parallel (c) Bidirectional (d) Vertical 
+   Ans.(a) Serial 
+45. SIPO stands for ______ operation. 
+(a)Serial in parallel out 
+      (b)Serial in serial out 
+(c)Parallel in serial out  
+(d) Parallel in Parallel out 
+Ans. (a) Serial in parallel out 
+46.  The register that allows movement of data in the right or left     
+   direction is called a ______ register. 
+  (a)Shift 
+  (b)Buffer 
+  (c)Bidirectional  
+        (d)Universal 
+         Ans.(c) Bidirectional 
+47. The PIPO mode needs _____ clock pulses to load a 4-bit number 
+into a register. 
+(a) 2 (b) 1  (c) 4  (d) 3 
+   Ans.(b) 1 
+48.  The SISO mode requires _____ clock pulses to load a 4-bit number 
+into a register. 
+(a) 4   (b) 1 (c) 2   (d) 3 
+   Ans.(a) 4 
+49. In the SIPO mode, the data is entered _____ and taken out _____. 
+(a) Serially, parallel (b) Parallel, serial  (c)Bidirectional   (d)Universal 
+   Ans. (a) Serially, parallel 
+50. In the _____ shift register the data moves in both directions. 
+
+===== PAGE 7 =====
+(a) Universal   (b) Bidirectional  (c) Ring    (d) Johnson  
+         Ans. (b) Bidirectional 
+51. A _____ shift register is the one which can operate in all possible modes. 
+   (a)Universal (b)Bidirectional  (c)Shift  (d)Buffer 
+    Ans. (a) Universal 
+52.  A shift register can be used for _____ to _____ conversion. 
+   (a)Serial to parallel  (b)Parallel to serial  (c)Both  
+          Ans.(b) Parallel to serial 
+53. _____ are used for temporary information storage, data  
+   manipulation and data transfer. 
+(a) Counters  (b) Registers (c)Flip-flops  (d) Gates 
+Ans. (b) Registers 
+54.  A ring counter uses _____ flip-flop. 
+(a) JK     (b) SR (c) D    (d)T  
+  Ans.(c) D 
+55. For shifting a 16-bit binary number into a 16 flip-flop shift register 
+_____ clock pulses will be required. 
+(a) 4  (b) 16    (c) 1   (d) 3 
+  Ans.(b) 16 
+ 

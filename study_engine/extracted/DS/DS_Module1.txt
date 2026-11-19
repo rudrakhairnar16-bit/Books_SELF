@@ -1,0 +1,407 @@
+SOURCE: SEM3/DS/DS_Module1.pdf
+
+===== PAGE 1 =====
+CHAPTER-1
+Introduction to Data Structures
+
+===== PAGE 2 =====
+Data Structure Basic Concepts
+•
+Data Structure is a systematic way to organize data in order to use it efficiently.
+• Data structure is an arrangement of data in computer's memory in such a way that it 
+could make the data quickly available to the processor for required calculations.
+Data Structure mainly specifies the following four things :
+• Organization of Data
+• Accessing of Methods
+• Degree of Associativity
+• Processing alternatives for information
+
+===== PAGE 3 =====
+Classification of Data structure
+
+===== PAGE 4 =====
+Primitive data structures
+Primitive data structures are basic structure and directly operated by machine instruction.  
+Example : integer, float, character, pointer, etc.
+•Integer : it is a data type which allows values without fraction part. Ex. 10.
+•Float : it is a data type which storing values with fraction part. Ex. 10.25.
+•Character : it is a data type which is used for storing character value. Ex. A.
+•Pointer : It is a variable that holds memory address of another variable. Ex. *p.
+
+===== PAGE 5 =====
+Primitive data structures
+•Non – primitive data structure are more complicated data structure and they are derived from 
+primitive data  structures.
+•They emphasis on grouping of same or different data items with relationship between each 
+item.
+•Example : Array, List and File.
+– Array : An array is a fixed-size sequential collection of elements which have same data 
+type.
+– List : An ordered set containing variable number of elements is called as lists.
+– File : A file is a collection of logically related information.
+•Non – primitive Data Structures are further divided into Linear and Non – Linear Data 
+Structures.
+
+===== PAGE 6 =====
+Linear data structures
+•A data structure is said to be linear, if its elements are connected in linear fashion by 
+means of logically or in  sequence memory locations.
+•Example : Stack and Queue
+– Stack : Stack is also called as LIFO(Last In First Out) data structure. Insertion operation 
+is known as “PUSH” Operation and Deletion
+Operation is known as “POP” Operation.
+– Queue : Queue is also called as FIFO(First In First Out) data structure. End at which 
+insertion occurs is known as “REAR” and end at  which deletion occurs is known as 
+“FRONT”.
+Linear data structures
+
+===== PAGE 7 =====
+Non - Linear data structures
+•In a Non – Linear Data Structures , the data items are not in sequence.
+•Example : Tree and Graph
+– Tree : Trees represent the hierarchical relationship between various elements. Tree 
+consist of nodes connected by edge, the node represented by circle and edge lives 
+connecting to circle.
+– Graph : Graph is a collection of nodes and connecting edges between nodes. A tree can 
+be viewed as restricted graph.
+
+===== PAGE 8 =====
+Introduction to Algorithms
+•Algorithm is a Step – by – Step Procedure.
+•It defines a set of instructions to be executed in a certain order to get the desired output.
+•Data structures are implemented using algorithms.
+•An algorithm explicitly states how the data will be manipulated.
+
+===== PAGE 9 =====
+Key Features of Algorithms
+Unambiguous : Algorithm should be clear and unambiguous. Each of its phases, input and 
+output should be  clear and must lead to only one meaning.
+Input : An algorithm should have 0 or more well – defined inputs.
+Output : An algorithm should have 1 or more well-defined outputs, and should match the 
+desired output.
+Finiteness – Algorithms must terminate after a number of steps.
+Feasibility – Should be feasible with the available resources.
+Independent – An algorithm should have step-by-step directions, which should be of any 
+programming code.
+
+===== PAGE 10 =====
+Time and space analysis of algorithms
+– Sometimes, there are more than one way to solve a problem. 
+– We need to learn how to compare the performance of different algorithms and 
+choose the best one to solve a particular problem. 
+– While analyzing an algorithm, we mostly consider time complexity and space 
+complexity.
+– Time complexity of an algorithm quantifies the amount of time taken by an 
+algorithm to run as a function of the length of the input.
+– Space complexity of an algorithm quantifies the amount of space or memory taken 
+by an algorithm to run as a function of the length of the input.
+– Time & space complexity depends on lots of things like hardware, operating 
+system, processors, etc. 
+– However, we don't consider any of these factors while analyzing the algorithm. We 
+will only consider the execution time of an algorithm.
+
+===== PAGE 11 =====
+Analysis Terms of Algorithm
+•Time Complexity
+Time Complexity of an algorithm represents the amount of time required by the 
+algorithm to run to  completion. Time requirements can be defined as a numerical 
+function T(n), where T(n) can be measured as  number of steps, provided each step 
+consumes constant time.
+•Space Complexity
+Space complexity of an algorithm represents the amount of space or memory an 
+algorithm takes in  terms of the amount of input to the algorithm.
+
+===== PAGE 12 =====
+Time Complexity 
+Time complexity measures 
+Number of operations performed
+instead of actual execution time.
+for(i=1;i<=n;i++)
+    print(i);
+Operations = n
+Time Complexity = O(n)
+for(i=1;i<=n;i++)
+{
+   for(j=1;j<=n;j++)
+      print(i,j);
+}
+Outer Loop = n , Inner Loop = n
+Total Operations :  n × n
+Time Complexity : O(n²) 
+
+===== PAGE 13 =====
+
+===== PAGE 14 =====
+Analysis Terms of Algorithm
+•Worst Case Analysis O(n) 
+– Maximum time required for program execution.
+•Average Case Analysis Θ(n) 
+– Average time required for program execution.
+•Best Case Analysis Ω(1) 
+– Minimum time required for program execution.
+
+===== PAGE 15 =====
+Array
+•Array is a container to hold fix number of items which have 
+same data type. Most of the data structures uses  array to 
+implement their algorithms.
+•Concept of array is illustrated in following terms :
+– Elements: each item stored in array is called elements.
+– Index: each location of an elements in array has numerical index, which is used 
+to identify the elements.
+•For ex., int array[10] = {35,33,42,10,14,19,27,44,26,31}
+
+===== PAGE 16 =====
+Array
+• Row major arrays
+In row major order method, elements of an array are arranged sequentially row by 
+row. Consider a two  dimensional array consist of N rows and M columns. It can be stored 
+sequentially in memory row by row as  shown below :
+
+===== PAGE 17 =====
+Array
+• Column major arrays
+In these method, elements of an array are arranged sequentially column by 
+column. Consider a two  dimensional array consist of N rows and M columns. It can be 
+stored sequentially in memory row by row as  shown below :
+
+===== PAGE 18 =====
+Overview of Various Array Operations
+•Traverse Operation
+– Print all the array elements one by one.
+•Insertion Operation
+– Adds an element at the given index.
+•Deletion Operation
+– Deletes an element at the given index.
+•Search Operation
+– Searches an element using the given index or 
+by the value.
+•Updation Operation
+– Updates an element at the given index.
+
+===== PAGE 19 =====
+Traverse Operation
+•This operation is traverse through the elements of an 
+array.
+•Ex.
+#include <stdio.h>  main() {
+int A[] = {1,3,5,7,9};
+int n = 5;  int i = 0;
+printf("The original array elements are :\n");  
+for(i = 0; i<n; i++) {
+printf("A[%d] = %d \n", i, A[i]);
+}
+}
+Output :
+The original array elements are
+:
+A[0] = 1
+A[1] = 3
+A[2] = 5
+A[3] = 7
+A[4] = 9
+
+===== PAGE 20 =====
+Insertion Operation
+• Insert operation is to insert one or more data elements into an array. Based on the requirements, a new element can be added at the 
+beginning, end, or any given index of array.
+#include <stdio.h>
+void main(){
+int arr[100] = { 0 };
+int i, x, pos, n = 8;
+// initial array of size 10
+for (i = 0; i < 8; i++)
+arr[i] = i + 1;
+// print the original array
+for (i = 0; i < n; i++)
+printf("%d ", arr[i]);
+printf("\n");
+// element to be inserted
+x = 50;
+// position at which element is to be inserted
+pos = 5;
+// increase the size by 1
+n=n+1;
+Output :
+The original array elemen
+A[0] = 1
+A[1] = 3
+A[2] = 5
+A[3] = 7
+A[4] = 9
+The array elements after 
+A[0] = 1
+A[1] = 3
+A[2] = 5
+A[3] = 10
+A[4] = 7
+A[5] = 9
+// shift elements forward
+for (i = n - 1; i >= pos; i--)
+arr[i] = arr[i - 1];
+// insert x at pos
+arr[pos - 1] = x;
+// print the updated array
+for (i = 0; i < n; i++)
+printf("%d ", arr[i]);printf("\n");
+getch();
+}
+
+===== PAGE 21 =====
+Deletion Operation
+Deletion refers to removing an existing element from the array and re-organizing all elements of an array.
+int main ()  
+{  
+    // declaration of the int type variable  
+    int arr[50];  
+    int pos, i, num; // declare int type variable  
+    printf (" \n Enter the number of elements in an array: \n ");  
+    scanf (" %d", &num);  
+      
+    printf (" \n Enter %d elements in array: \n ", num);        
+    // use for loop to insert elements one by one in array  
+    for (i = 0; i < num; i++ )  
+    {   printf (" arr[%d] = ", i);  
+        scanf (" %d", &arr[i]);  
+    }        
+    // enter the position of the element to be deleted  
+    printf( " Define the position of the array element where you want to delete: \n ");  
+    scanf (" %d", &pos);  
+      
+    
+
+===== PAGE 22 =====
+// check whether the deletion is possible or not  
+    if (pos >= num+1)  
+    {  
+        printf (" \n Deletion is not possible in the array.");  
+    }  
+    else  
+    {  
+        // use for loop to delete the element and update the index  
+        for (i = pos - 1; i < num -1; i++)  
+        {  
+            arr[i] = arr[i+1]; // assign arr[i+1] to arr[i]  
+        }            
+        printf (" \n The resultant array is: \n");            
+        // display the final array  
+        for (i = 0; i< num - 1; i++)  
+        {  
+            printf (" arr[%d] = ", i);  
+            printf (" %d \n", arr[i]);  
+        }  
+    }  
+    return 0;  
+} 
+}
+
+===== PAGE 23 =====
+Update Operation
+•Update operation refers to updating an existing element from the array at a given index.
+Output :
+Enter the Limit:5
+Enter the Values:3 4 
+n values are:
+  A[0] = 3
+A[1] = 4
+A[2] = 6
+A[3] = 5
+A[4] = 7
+The array elements a
+updation :  A[0] = 1
+A[1] = 3
+A[2] = 10
+A[3] = 7
+#include<stdio.h>
+int main()
+{
+  int i,t,a[10],n,m,s,j=0,b[10];
+  printf("\nEnter the Limit:");
+  scanf("%d",&n);
+  printf("\nEnter the Values:");
+  for(i=0;i<n;i++)
+  {
+    scanf("%d",&a[i]);
+  }
+  printf("\nGiven values are:");
+  for(i=0;i<n;i++)
+  {
+    printf("a[%d]=%d",i,a[i]);
+  }
+  printf("\nEnter the position to be update:");
+  scanf("%d",&t);
+  printf("\nEnter the value to be update:");
+  scanf("%d",&s);
+  for(i=0;i<n;i++)
+  {
+    if(i==t)
+    {
+       a[i-1]=s;
+    }
+  }
+  printf("\nUpdated value is:");
+  for(i=0;i<n;i++)
+  {
+    printf("\na[%d]=%d",i,a[i]);
+  }
+  return 0;
+}
+
+===== PAGE 24 =====
+Searching an elements into an Array
+• Linear Search
+– Linear Search algorithm is very simple. In type of method, a sequential search is made 
+over all items one by one. Every element is  checked and if a match is found then that 
+particular element is returned, otherwise search will continues till the end of data  
+collection.
+image source : Google
+
+===== PAGE 25 =====
+Linear Search 
+Array
+• Algorithm
+Linear Search ( Array A, Value x)  
+Step 1: Set i to 1
+Step 2: if i > n then go to step 7
+Step 3: if A[i] = x then go to step 6  
+Step 4: Set i to i + 1
+Step 5: Go to Step 2
+Step 6: Print Element x Found at index i and go to step 8
+Step 7: Print element not found  Step 
+8: Exit
+
+===== PAGE 26 =====
+Binary Search in 
+Array
+•Binary search is fast search algorithm with run-time complexity of O(log n).
+•This search algorithm works on the principle of divide and conquer.
+•For this algorithm, the data collection should be in the sorted form.
+•Binary search looks for a particular item by comparing the middle most item of the 
+collection.  If a match occurs, then the index is returned. If the middle item is greater than 
+the item, then  the item is searched in the sub-array to the left of the middle item. 
+Otherwise, the item is  searched for in the sub-array to the right of the middle item. This 
+process continues on the  sub-array as well until the size of the subarray reduces to zero.
+
+===== PAGE 27 =====
+Binary Search in 
+Array
+
+===== PAGE 28 =====
+Binary Search Algorithm
+Procedure binary_search  A ← sorted array
+n ← size of array
+x ← value to be searched
+Set lowerBound = 1  
+Set upperBound = n  
+while x not found
+if upperBound < lowerBound
+EXIT: x does not exists.
+set midPoint = lowerBound + ( upperBound - lowerBound ) / 2
+if A[midPoint] < x
+set lowerBound = midPoint + 1  
+if A[midPoint] > x
+set upperBound = midPoint - 1  
+if A[midPoint] = x
+EXIT: x found at location midPoint
+end while
+end procedure

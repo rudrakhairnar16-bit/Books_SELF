@@ -1,0 +1,1683 @@
+SOURCE: SEM3/DBMS/Unit 6 Transaction Management.pdf
+
+===== PAGE 1 =====
+Module -5
+Transaction Management
+
+===== PAGE 2 =====
+2
+Topics to be covered
+•Transaction concepts
+•Properties of transactions
+•Serializability of transactions
+•Testing for serializability
+•System recovery
+•Two-phase commit protocol
+•Recovery and atomicity
+•Log-based recovery
+•Concurrent executions of transactions and related problems
+•Locking mechanism
+•Solution to concurrency related problems
+•Deadlock
+•Two-phase locking protocol
+•Isolation
+•Intent locking
+
+===== PAGE 3 =====
+3
+What is transaction?
+•A transaction is a sequence of operations performed as a single 
+logical unit of work.
+•A transaction is a logical unit of work that contains one or more SQL
+statements.
+•
+Example of 
+transaction read (A)
+A = A – 50
+write (A) 
+readTr(Ba)nsact
+ion B = B + 50
+write (B)
+Operations
+Works as a single 
+logical unit
+
+===== PAGE 4 =====
+4
+ACID properties of transaction
+•Atomicity (Either transaction execute 0% or 100%)
+•Consistency (database must remain in a consistent state after any 
+transaction)
+•Isolation (Intermediate transaction results must be hidden from 
+other concurrently executed transactions)
+•Durability (Once a transaction completed successfully, the changes 
+it has made into the database should be permanent)
+
+===== PAGE 5 =====
+5
+ACID properties of transaction
+•Atomicity
+▪This property states that a transaction must be treated 
+as an atomic unit, that is, either all of its operations 
+are executed or none.
+▪Either transaction execute 0% or 100%.
+▪For example, consider a transaction to transfer Rs. 50 
+from account A to account B.
+▪In this transaction, if Rs. 50 is deducted from account A 
+then it must be added to account B.
+rea 
+d(
+A
+)
+A 
+=A
+–
+5
+0
+wr
+i 
+t 
+e
+( 
+A
+)
+rea 
+d
+0%
+100%
+FAIL
+
+===== PAGE 6 =====
+6
+ACID properties of transaction
+•Consistency
+▪The database must remain in a consistent state after 
+any transaction.
+▪If the database was in a consistent state before the 
+execution of a transaction, it must remain consistent 
+after the execution of the transaction as well.
+▪In our example, total of A and B must remain same 
+before and after the execution of transaction.
+A=500, B=500 
+A+B=1000
+read (A) 
+A = A – 50
+write (A) 
+read (B) 
+B = B + 50
+write (B) 
+A=450, B=550 
+A+B=1000
+
+===== PAGE 7 =====
+7
+ACID properties of transaction
+•Isolation
+▪Changes occurring in a particular transaction will not be 
+visible  to  any  other  transaction  until  it  has  been 
+committed.
+▪Intermediate transaction results must be hidden from 
+other concurrently executed transactions.
+▪In our example once our transaction starts from first 
+step (step 1) its result should not be access by any other 
+transaction until last step (step 6) is completed.
+read (A) 
+A = A – 50
+write (A) 
+read (B) 
+B = B + 50
+write (B)
+
+===== PAGE 8 =====
+8
+ACID properties of transaction
+•Durability
+▪After a transaction completes successfully, the changes 
+it has made to the database persist (permanent), 
+even 
+if there are system failures.
+▪Once our transaction completed up to last step (step 6) 
+its result must be stored permanently. It should not 
+be removed if system fails.
+A=500, B=500
+read (A) 
+A = A – 50
+write (A) 
+read (B) 
+B = B + 50
+write (B) 
+A=450, B=550
+
+===== PAGE 9 =====
+Transaction State Diagram \ State Transition Diagram
+read (A) 
+A = A – 50
+write (A) 
+read (B) 
+B = B + 50
+write (B)
+Commit
+Active
+Partial 
+Committed
+Failed
+Committed
+Aborted
+• This is the initial state.
+• The transaction stays in this
+state while it is executing.
+End
+• When a transaction executes its final 
+operation, it is said to be in a 
+partially committed state.
+• Discover that normal execution can no longer proceed.
+• Once a transaction cannot be completed, any changes 
+that it made must be undone rolling it back.
+9
+• The state after the transaction has 
+been 
+rolled back 
+and 
+the 
+database 
+has been restored to 
+its state prior 
+to the start of the 
+transaction.
+• The transaction enters in this state after 
+successful completion of the transaction.
+• We cannot abort or rollback a committed 
+transaction.
+
+===== PAGE 10 =====
+10
+Transaction State Diagram \ State Transition 
+Diagram
+•Active
+•This is the initial state.
+•The transaction stays in this state while it is executing.
+•Partial Committed
+•When a transaction executes its final operation/ instruction, it is said to be 
+in a partially committed state.
+•Failed
+•Discover that normal execution can no longer proceed.
+•Once a transaction cannot be completed, any changes that it made must be 
+undone rolling it back.
+
+===== PAGE 11 =====
+11
+Transaction State Diagram \ State Transition 
+Diagram
+•Committed
+•The transaction enters in this state after successful completion of the 
+transaction (after committing transaction).
+•We cannot abort or rollback a committed transaction.
+•Aborted
+•The state after the transaction has been rolled back and the database has 
+been restored to its state prior to the start of the transaction.
+
+===== PAGE 12 =====
+12
+What is schedule?
+•A schedule is a process of grouping the transactions into one and 
+executing them in a predefined order.
+•A  schedule  is  the  chronological  (sequential)  order  in  which 
+instructions are executed in a system.
+•A  schedule  is  required  in  a  database  because  when  some 
+transactions execute in parallel, they may affect the result of the 
+transaction.
+•Means if one transaction is updating the values which the other 
+transaction is accessing, then the order of these two transactions will 
+change the result of another transaction.
+•Hence a schedule is created to execute the transactions.
+
+===== PAGE 13 =====
+13
+Example of schedule
+T1
+T2
+Read (A)
+A = A - 50
+Write (A) 
+Read (B) 
+B = B + 50
+Write (B) 
+Commit
+Read (A) 
+temp = A * 0.1 
+A = A - temp
+Write (A) 
+Read (B)
+B = B + temp 
+Write (B) 
+Commit
+A=B=1000
+Read (1000)
+A = 1000 - 50
+Write (950)
+Read (1000)
+B = 1000 + 50
+Write (1050) 
+Commit
+Read (950)
+temp = 950 * 0.1
+A = 950 - 95
+Write (855)
+Read (1050)
+B = 1050 + 95
+Write (1145) 
+Commit
+
+===== PAGE 14 =====
+14
+Example of schedule
+T1
+T2
+Read (A)
+Temp = A * 0.1
+A = A - temp
+Write (A)
+Read (B)
+B = B + temp
+Write (B)
+Commit
+Read (A)
+A = A - 50
+Write (A)
+Read (B)
+B = B + 50
+Write (B)
+Commit
+A=B=1000
+Read (1000)
+Temp = 1000 * 0.1
+A = 1000 - 100
+Write (900)
+Read (1000)
+B = 1000 + 100
+Write (1100) 
+Commit
+Read (900)
+A = 900 - 50
+Write (850)
+Read (1100)
+B = 1100 + 50
+Write (1150) 
+Commit
+
+===== PAGE 15 =====
+15
+Serial schedule
+•A serial schedule is one in which no transaction starts until a running 
+transaction has ended.
+•Transactions are executed one after the other.
+•This type of schedule is called a serial schedule, as transactions are 
+executed in a serial manner.
+
+===== PAGE 16 =====
+16
+Example of serial schedule
+T1
+T2
+Read (A)
+Temp = A * 0.1
+A = A - temp
+Write (A)
+Read (B)
+B = B + temp
+Write (B)
+Commit
+Read (A)
+A = A - 50
+Write (A)
+Read (B)
+B = B + 50
+Write (B)
+Commit
+
+===== PAGE 17 =====
+17
+Example of serial schedule
+T1
+T2
+Read (A)
+A = A - 50
+Write (A)
+Read (B)
+B = B + 50
+Write (B)
+Commit
+Read (A)
+Temp = A * 0.1
+A = A - temp
+Write (A)
+Read (B)
+B = B + temp
+Write (B)
+Commit
+
+===== PAGE 18 =====
+18
+Interleaved schedule
+•Schedule that interleave the execution of different transactions.
+•Means second transaction is started before the first one could end 
+and execution can switch between the transactions back and forth.
+
+===== PAGE 19 =====
+19
+Example of interleaved schedule
+T1
+T2
+Read (A)
+Temp = A * 0.1 
+A = A - temp 
+Write (A)
+Read (B)
+B = B + temp 
+Write (B)
+Read (A)
+A = A - 50
+Write (A) 
+Commit
+Read (B)
+B = B + 50
+Write (B) 
+Commit
+
+===== PAGE 20 =====
+20
+Example of interleaved schedule
+T1
+T2
+Read (A)
+A = A - 50
+Write (A)
+Read (B)
+B = B + 50
+Write (B)
+Read (A) 
+Temp = A * 0.1 
+A = A - temp
+Write (A) 
+Commit
+Read (B)
+B = B + temp 
+Write (B) 
+Commit
+
+===== PAGE 21 =====
+21
+Equivalent schedule
+•If two schedules produce the same result after execution, they are 
+said to be equivalent schedule.
+•They may yield the same result for some value and different results 
+for another set of values.
+•That's why this equivalence is not generally considered significant.
+
+===== PAGE 22 =====
+22
+Equivalent schedule
+T1
+T2
+Read (A)
+A = A - 50
+Write (A)
+Commit
+Read (A)
+Temp = A * 0.1
+A = A - temp
+Write (A)
+Commit
+Read (B)
+B = B + 50
+Write (B)
+Commit
+Read (B)
+B = B + temp
+Write (B)
+Commit
+T1
+T2
+Read (A)
+A = A - 50
+Write (A)
+Read (B)
+B = B + 50
+Write (B)
+Commit
+Read (A)
+Temp = A * 0.1
+A = A - temp
+Write (A)
+Read (B)
+B = B + temp
+Write (B)
+Commit
+Both schedules are equivalent
+In both schedules the sum “A + B” is preserved.
+
+===== PAGE 23 =====
+23
+Serializability
+•A schedule is serializable if it is equivalent to a serial schedule.
+•In serial schedules, only one transaction is allowed to execute at a 
+time i.e. no concurrency is allowed.
+•Whereas in serializable schedules, multiple transactions can execute 
+simultaneously i.e. concurrency is allowed.
+•Types (forms) of serializability
+1.
+Conflict serializability
+2.
+View serializability
+
+===== PAGE 24 =====
+24
+Conflicting instructions
+i
+i
+j
+•Let l and l be two instructions of transactions T and T respectively.
+j
+1.
+li = read(Q), lj = read(Q)
+li and lj don’t conflict
+•
+li = read(Q), lj = write(Q)
+li and lj conflict
+•
+li = write(Q), lj = read(Q)
+li and lj conflict
+•
+li = write(Q), lj = write(Q)
+li and lj conflict
+T1
+T2
+read (Q)
+read (Q)
+T1
+T2
+read (Q)
+write(Q)
+T1
+T2
+write(Q)
+read (Q)
+T1
+T2
+write(Q)
+write(Q)
+T1
+T2
+read (Q)
+read (Q)
+T1
+T2
+write(Q)
+read (Q)
+T1
+T2
+read (Q)
+write(Q)
+T1
+T2
+write(Q)
+write(Q)
+
+===== PAGE 25 =====
+25
+Conflicting instructions
+i
+j
+•Instructions l and l  conflict if and only if there exists some item Q
+accessed by both li and lj, and at least one of these instructions 
+wrote Q.
+•If both the transactions access different data item then they are not 
+conflict.
+
+===== PAGE 26 =====
+26
+Conflict serializability
+•If  a  given  schedule  can  be  converted  into  a  serial  schedule  by 
+swapping its non-conflicting operations, then it is called as a conflict 
+serializable schedule.
+
+===== PAGE 27 =====
+27
+Conflict serializability (example)
+T1
+T2
+Read (A) 
+A = A - 50
+Write (A)
+Read (A) 
+Temp = A * 0.1 
+A = A - temp
+Write (A)
+Read (B) 
+B = B + 50
+Write (B) 
+Commit
+Read (B)
+B = B + temp 
+Write (B) 
+Commit
+T1
+T2
+Read (A)
+A = A - 50
+Write (A)
+Read (B)
+B = B + 50
+Write (B)
+Commit
+Read (A)
+Temp = A * 0.1
+A = A - temp
+Write (A)
+Read (B)
+B = B + temp
+Write (B)
+Commit
+
+===== PAGE 28 =====
+28
+Conflict serializability
+•Example of a schedule that is not conflict serializable:
+•We are unable to swap instructions in the above schedule to obtain 
+either the serial schedule < T1, T2 >, or the serial schedule < T2, T1 >.
+T1
+T2
+Read (A)
+Read (A)
+Write (A)
+
+===== PAGE 29 =====
+29
+View serializability
+•Let S1 and S2  be two schedules with the same set of transactions. S1 
+and S2 are view equivalent if the following three conditions are 
+satisfied, for each data item Q
+1.
+Initial Read
+2.
+Updated Read
+3.
+Final Write
+
+===== PAGE 30 =====
+30
+Initial Read
+i
+•If in schedule S1, transaction T reads the initial value of Q, then in
+schedule S2 also transaction Ti must read the initial value of Q.
+•Above two schedules S1 and S3 are not view equivalent because 
+initial read operation in S1 is done by T1 and in S3 it is done by T2.
+•Above two schedules S1 and S2 are view equivalent because initial 
+read operation in S1 is done by T1 and in S2 it is also done by T1.
+S1
+T1
+T2
+Read (A)
+Write (A)
+S3
+T1
+T2
+Write (A)
+Read (A)
+S2
+T1
+T2
+Read (A)
+Write (A)
+
+===== PAGE 31 =====
+31
+Updated Read
+i
+•If in schedule S1 transaction T executes read(Q), and that value was
+produced  by  transaction  Tj (if  any),  then  in  schedule  S2  also
+transaction Ti must read the value of Q that was produced by 
+transaction Tj.
+•Above two schedules are not view equal because, in S1, T3 is reading 
+A that is updated by T2 and in S3, T3 is reading A which is updated by 
+T1.
+S1
+T1
+T2
+T3
+Write (A)
+Write (A)
+Read (A)
+S3
+T1
+T2
+T3
+Write (A)
+Write (A)
+Read (A)
+
+===== PAGE 32 =====
+32
+Updated Read
+i
+•If in schedule S1 transaction T executes read(Q), and that value was
+produced  by  transaction  Tj (if  any),  then  in  schedule  S2  also
+transaction Ti must read the value of Q that was produced by the 
+same write(Q) operation of transaction Tj.
+•Above two schedules are view equal because, in S1, T3 is reading A 
+that is updated by T2 and in S3 also, T3 is reading A which is updated 
+by T2.
+S1
+T1
+T2
+T3
+Write (A)
+Read (A)
+Write (A)
+Read (A)
+S2
+T1
+T2
+T3
+Write (A)
+Read (A)
+Write (A)
+Read (A)
+
+===== PAGE 33 =====
+33
+Final Write
+i
+•If T  performs the final write on the data value in S1, then it also
+performs the final write on the data value in S2.
+•Above two schedules is view equal because final write operation in 
+S1 is done by T3 and in S2 also the final write operation is also done 
+by T3.
+S1
+T1
+T2
+T3
+Write (A)
+Read (A)
+Write (A)
+S2
+T1
+T2
+T3
+Write (A)
+Read (A)
+Write (A)
+
+===== PAGE 34 =====
+34
+Two phase commit protocol
+•Two phase commit protocol ensures that all participants perform 
+the same action (either to commit or to rollback a transaction).
+•It is designed to ensure that either all the databases are updated or 
+none of them, so that the databases remain synchronized.
+•In two phase commit protocol there is one node which is act as a 
+coordinator or controlling site and all other participating node are 
+known as cohorts or participant or slave.
+•Coordinator (controlling site) – the component that coordinates with 
+all the participants.
+•Cohorts  (Participants/Slaves)  –  each  individual  node  except 
+coordinator are participant.
+
+===== PAGE 35 =====
+35
+Two phase commit protocol
+•As the name suggests, the two phase commit protocol involves two 
+phases.
+1.
+Commit request phase OR Prepare phase
+2.
+Commit/Abort phase
+
+===== PAGE 36 =====
+36
+Two phase commit protocol
+Request to prepare
+Commit/Abort
+Prepared
+Done
+Prepare 
+Phase
+Commit 
+Phase
+Coordinator send 
+request asking for 
+ready to commit
+Participant send reply 
+whether ready to
+commit or not
+Coordinator inform to 
+do commit
+Send “ack” 
+to inform 
+whether 
+commit 
+done or not
+
+===== PAGE 37 =====
+37
+Two phase commit protocol
+1.
+Commit Request Phase (Obtaining Decision)
+•After each slave has locally completed its transaction, it sends a “DONE” 
+message to the controlling site.
+•When the controlling site has received “DONE” message from all slaves, it 
+sends a “Prepare” (prepare to commit) message to the slaves.
+•The slaves vote on whether they still want to commit or not.
+•If a slave wants to commit, it sends a “Ready” message.
+•A slave that does not want to commit sends a “Not Ready” message.
+•This may happen when the slave has conflicting concurrent transactions or 
+there is a timeout.
+
+===== PAGE 38 =====
+38
+Two phase commit protocol
+2.
+Commit Phase (Performing Decision)
+1)
+After the controlling site has received “Ready” message from 
+all the slaves:
+•
+The controlling site sends a “Global Commit” message to the slaves.
+•
+The slaves commit the transaction and send a “Commit ACK” message to 
+the controlling site.
+•
+When the controlling site receives “Commit ACK” message from all the 
+slaves, it considers the transaction as committed.
+
+===== PAGE 39 =====
+39
+Two phase commit protocol
+2.
+Commit Phase (Performing Decision)
+2)
+After the controlling site has received the first “Not Ready” 
+message from any slave:
+•
+The controlling site sends a “Global Abort” message to the slaves.
+•
+The slaves abort the transaction and send a “Abort ACK” message to the 
+controlling site.
+•
+When the controlling site receives “Abort ACK” message from all the 
+slaves, it considers the transaction as aborted.
+
+===== PAGE 40 =====
+40
+Database recovery
+•There are many situations in which a transaction may not reach a 
+commit or abort point.
+•Operating system crash
+•DBMS crash
+•System might lose power (power failure)
+•Disk may fail or other hardware may fail (disk/hardware failure)
+•Human error
+•In any of
+above
+situations,
+data
+in
+the database
+may
+become inconsistent or lost.
+
+===== PAGE 41 =====
+41
+Database recovery
+•For  example,  if  a  transaction  has  completed  30  out  of  40  write 
+instructions  to  the  database  when  the  DBMS  crashes,  then  the 
+database  may  be  in  an  inconsistent  state  as  only  part  of  the 
+transaction’s work was completed.
+•Database recovery is the process of restoring the database and the 
+data to a consistent state.
+•This may include restoring lost data up to the point of the event 
+(e.g. system crash).
+
+===== PAGE 42 =====
+42
+Log based recovery method
+▪The log is a sequence of log records, which maintains 
+information about update activities on the database.
+•A log is kept on stable storage (i.e HDD).
+•Log contains
+•
+Start of transaction
+•
+Transaction-id
+•
+Record-id
+•
+Type of operation (insert, update, delete)
+•
+Old value, new value
+•
+End of transaction that is committed or aborted.
+
+===== PAGE 43 =====
+43
+Log based recovery method
+•When transaction T starts, it registers itself by writing a record
+i
+<Ti  start> to the log
+i
+i
+•Before T executes write(X), a log record <T , X,
+V1, V2> is written,
+where V1 is the value of X before the write (the old value), and V2 is 
+the value to be written to X (the new value).
+i
+i
+•When T  finishes it last statement, the log record <T commit> is
+written.
+•Undo of a log record <Ti, X, V1, V2> writes the old value V1 to X
+•Redo of a log record <Ti, X, V1, V2> writes the new value V2 to X
+•Types of log based recovery method
+1.
+Immediate database modification
+2.
+Deferred database modification
+
+===== PAGE 44 =====
+44
+Immediate v/s Deferred database
+Immm
+edo
+iad
+teif
+di
+ac
+taa
+bt
+ai
+s
+o
+en
+modification
+Deferred database modification
+Updates  (changes)  to  the  database  are 
+applied immediately as they occur without 
+waiting to reach to the commit point.
+Updates (changes)to
+the database are 
+deferred (postponed) until the transaction
+commits.
+T1
+T2
+Read (A)
+A = A - 100
+Write (A)
+Read (B)
+B = B + 100
+Write (B)
+Commit
+Read (C)
+C = C - 200
+Write (C)
+Commit
+A=500, B=600, C=700
+<T1 start>
+A=500, B=600, C=700
+<T1 start>
+<T1, A, 400>
+<T1, B, 700>
+A=500,B=600,C=70
+0
+<T1 start>
+<T1, A, 400>
+<T1, B, 700>
+<T1, Commit>
+<T2 start>
+<T2, C, 500>
+A=400,B=700,C=700
+<T1 start>
+<T1, A, 400>
+<T1, B, 700>
+<T1, Commit>
+<T2 start>
+<T2, C, 500>
+<T2, Commit>
+<T1, A, 500, 400>
+<T1, B, 600, 700>
+A=400,B=700,C=700
+<T1 start>
+<T1, A, 500, 400>
+<T1, B, 600, 700>
+<T1, Commit>
+<T2 start>
+<T2, C, 700, 500>
+A=400,B=700,C=500
+<T1 start>
+<T1, A, 500, 400>
+<T1, B, 600, 700>
+<T1, Commit>
+<T2 start>
+<T2, C, 700, 500>
+<T2, Commit>
+A=400,B=700,C=50
+0
+
+===== PAGE 45 =====
+45
+Immediate v/s Deferred database 
+modification
+Immediate database modification
+Deferred database modification
+Updates  (changes)  to  the  database  are 
+applied immediately as they occur without 
+waiting to reach to the commit point.
+Updates  (changes)  to  the  database  are 
+deferred (postponed) until the transaction 
+commits.
+If transaction is not committed, then we 
+need to do undo operation and restart the 
+transaction again.
+If  transaction  is  not  committed,  then  no 
+need to do any undo operations. Just restart 
+the transaction.
+If transaction is committed, then no need to 
+do redo the updates of the transaction.
+If transaction is committed, then we need to 
+do redo the updates of the transaction.
+Undo
+and Redo
+bothoperations
+are performed.
+Only Redo operation is performed.
+
+===== PAGE 46 =====
+46
+Problems with Deferred & Immediate 
+Updates
+•Searching the entire log is time consuming.
+1.
+Immediate database modification
+When transaction fail log file is used to undo the updates of transaction.
+•
+Deferred database modification
+When transaction commits log file is used to redo the updates of transaction.
+▪
+To reduce the searching time of entire log we can 
+use check point.
+
+===== PAGE 47 =====
+47
+Checkpoint
+•It is a point which specifies that any operations executed before it 
+are done correctly and stored safely (updated safely in database).
+•At this point, all the buffers are force-fully written to the secondary 
+storage (database).
+•Checkpoints are scheduled at predetermined time intervals.
+•It is used to limit:
+•Size of transaction log file
+•Amount of searching
+
+===== PAGE 48 =====
+48
+Checkpoint works when failure occurs
+Time
+T
+C
+T
+f
+•At failure time:
+•Ignore the transaction T1 as it has already been committed before 
+checkpoint.
+•Redo transaction T2 and T3 as they are active after checkpoint and are 
+committed before failure.
+•Undo transaction T4 as it is active after checkpoint and has not committed.
+T1
+T2
+T3
+T4
+Checkpoint time
+Failure
+
+===== PAGE 49 =====
+49
+Page table structure
+2
+1
+Page Table
+1
+2
+1
+2
+3
+4
+3
+4
+101
+4
+5
+.
+202
+:
+:
+n
+n
+101
+:
+:
+201
+202
+n
+Pages on disk
+• The database is partitioned into 
+fixed-length blocks referred to 
+as 
+PAGES.
+• Page table has n entries – one for 
+each database page.
+• Each entry contain pointer to a 
+page on disk.
+Pages
+
+===== PAGE 50 =====
+50
+Shadow paging technique
+•Shadow paging is an alternative to log-based recovery.
+•This scheme is useful if transactions execute serially.
+•It maintain two page tables during the lifetime of a transaction
+•current page table
+•shadow page table
+•Shadow page table is stored on non-volatile storage.
+•When a transaction starts, both the page tables are identical. Only 
+current page table is updated  for data item accesses (changed) 
+during execution of the transaction.
+•Shadow  page  table  is  never  modified  during  execution  of 
+transaction.
+
+===== PAGE 51 =====
+51
+Shadow paging technique
+•Two pages - page 2 & 5 - are affected by a transaction and copied to 
+new physical pages. The current page table points to these pages.
+Page 1
+Page 2
+Page 3
+Page 4
+Page 5
+Page 1
+Page 2
+Page 3
+Page 4
+Page 5
+Page 1
+Page 2
+Page 3
+Page 4
+Page 5
+Pages
+Current page table
+Shadow page table
+
+===== PAGE 52 =====
+52
+Shadow paging technique
+•Whenever any page is updated first time
+•A copy of this page is made onto an unused page
+•The current page table is then made to point to the copy
+•The update is performed on the copy
+
+===== PAGE 53 =====
+53
+Shadow paging technique
+•Two pages - page 2 & 5 - are affected by a transaction and copied to 
+new physical pages. The current page table points to these pages.
+Page 1
+Page 2 (old)
+Page 3
+Page 4
+Page 5 (old)
+Page 2 (new)
+Page 5 (new)
+Page 1
+Page 2
+Page 3
+Page 4
+Page 5
+Page 1
+Page 2
+Page 3
+Page 4
+Page 5
+Pages
+Current page table
+Shadow page table
+
+===== PAGE 54 =====
+54
+Shadow paging technique
+•The shadow page table continues to point to old pages which are 
+not changed by the transaction. So, this table and pages are used for 
+undoing the transaction.
+Page 1
+Page 2 (old)
+Page 3
+Page 4
+Page 5 (old)
+Page 2 (new)
+Page 5 (new)
+Page 1
+Page 2
+Page 3
+Page 4
+Page 5
+Page 1
+Page 2
+Page 3
+Page 4
+Page 5
+Pages
+Current page table
+Shadow page table
+
+===== PAGE 55 =====
+55
+Shadow paging technique
+•When transaction start, both the page tables are identical.
+•The shadow page table is never changed over the duration of the 
+transaction.
+•The current page table will be changed when a transaction performs 
+a write operation.
+•All input and output operations use the current page table.
+•Whenever any page is about to be written for the first time
+•A copy of this page is made onto an unused page
+•The current page table is then made to point to the copy
+•The update is performed on the copy
+▪When the transaction completes, the current page table 
+becomes shadow page table. At this time, it is considered 
+that the transaction has committed.
+
+===== PAGE 56 =====
+56
+What is concurrency?
+•Concurrency is the ability of a database to allow multiple (more 
+than one) users to access data at the same time.
+•Three problems due to concurrency
+1.
+Lost update problem
+2.
+Dirty read problem
+3.
+Incorrect retrieval problem
+
+===== PAGE 57 =====
+57
+X=100
+T1
+Time
+T2
+---
+T0
+---
+Read X
+T1
+---
+---
+T2
+Read X
+Update X 
+X=75
+T3
+---
+---
+T4
+Update X 
+X=50
+---
+---
+T5
+Lost update problem
+•This   problem   indicate   that   if   two 
+transactions T1 and T2 both read the same 
+data  and  update  it  then  effect  of  first 
+update will be overwritten by the second 
+update.
+•How to avoid: A transaction T2 must not
+update the data
+item
+(X) until
+the
+transaction T1 can commit data item (X).
+
+===== PAGE 58 =====
+58
+X=100
+T1
+Time
+T2
+---
+T0
+---
+---
+T1
+Update X 
+X=50
+Read X
+T2
+---
+---
+T3
+Rollback
+---
+T4
+---
+Dirty read problem
+•The dirty read arises when one transaction 
+update some item and then fails due to 
+some  reason.  This  updated  item  is 
+retrieved by another transaction before it 
+is changed back to the original value.
+•How to avoid: a transaction T1 must not 
+read   the   data   item   (X)   until   the 
+transaction T2 can commit data item (X).
+
+===== PAGE 59 =====
+59
+Incorrect retrieval problem
+T1
+Read (A) 
+Sum ← 200 
+Read (B)
+Sum ← Sum + 250 = 450
+---
+Time
+T2
+T1
+---
+T2
+---
+T3
+Read (C) 
+Update (C)
+150 → 150 – 50 = 100
+Read (A) 
+Update (A)
+200 → 200 + 50 = 250
+COMMIT
+---
+T4
+---
+T5
+---
+T6
+---
+Read (C)
+Sum ←Sum + 100 = 550
+T7
+T8
+---
+Balance (A=200, B=250, C=150)
+
+===== PAGE 60 =====
+60
+The incorrect retrieval problem
+•The  inconsistent  retrieval  problem  arises  when  one  transaction 
+retrieves data to use in some operation but before it can use this 
+data another transaction updates that data and commits.
+•Through this change will be hidden from first transaction and it will 
+continue to use previous retrieved data. This problem is also known 
+as inconsistent analysis problem.
+•How to avoid: A transaction T2 must not read or update data item
+(X) until the transaction T1 can commit data item (X).
+
+===== PAGE 61 =====
+61
+What is lock?
+Database
+0
+•A lock is a variable associated with data item to control concurrent 
+access to that data item.
+Locking is a strategy that is used to 
+prevent such concurrent access of data.
+Lock variable 
+1
+
+===== PAGE 62 =====
+62
+Lock based protocol
+Shared lock 
+Yes
+Compatible
+No
+Not Compatible
+Exclusive lock 
+No
+Not Compatible
+No
+Not Compatible
+Shared lock
+Exclusive lock
+•Data items can be locked in two modes :
+1.
+Shared (S) mode: When we take this lock we can just read the item but 
+cannot write.
+2.
+Exclusive (X) mode: When we take this lock we can read as well as write 
+the item.
+▪
+Lock-compatibility matrix
+T1
+T2
+
+===== PAGE 63 =====
+63
+Lock based protocol
+•A transaction may be granted a lock on an item if the requested lock 
+is  compatible  with  locks  already  held  on  the  item  by  other 
+transactions.
+•If a lock cannot be granted, the requesting transaction is made to 
+wait till all incompatible locks held by other transactions have been 
+released. The lock is then granted.
+•Any number of transactions can hold shared locks on an item, but if 
+any transaction holds an exclusive on the item no other transaction 
+can hold any lock on the item.
+
+===== PAGE 64 =====
+64
+Lock based protocol
+•This locking protocol divides transaction execution phase into three 
+parts:
+1.
+When transaction starts executing, create a list of data items on which 
+they need locks and requests the system for all the locks it needs.
+2.
+Where the transaction acquires all locks and no other lock is required.
+Transaction keeps executing its operation.
+3.
+As soon as the transaction releases its first lock, the third phase starts. In 
+this phase a transaction cannot demand for any lock but only releases 
+the acquired locks.
+Transaction
+T begin T end
+Time
+Lock acquisition 
+phase
+Lock releasing 
+phase
+Transaction 
+execution
+
+===== PAGE 65 =====
+65
+Two phase locking protocol
+•
+This protocol works in two phases,
+1.
+Growing Phase
+•
+In this phase a transaction obtains locks, but can not release any lock.
+•
+When a transaction takes the final lock is called lock point.
+§
+Shrinking Phase
+•
+In this phase a transaction can release locks, but can not obtain any lock.
+•
+The transaction enters the shrinking phase as soon as it releases the first 
+lock after crossing the Lock Point.
+Transaction
+T begin T end
+Time
+Growing phase
+Shrinking phase
+
+===== PAGE 66 =====
+66
+Strict two phase locking protocol
+•In this protocol, a transaction may release all the shared locks after 
+the Lock Point has been reached, but it cannot release any of the 
+exclusive locks until the transaction commits or aborts.
+•It ensures that if data is being modified by one transaction, then 
+other transaction cannot read it until first transaction commits.
+•This protocol solves dirty read problem.
+
+===== PAGE 67 =====
+67
+Rigorous two phase locking protocol
+•In this protocol, a transaction is not allowed to release any lock 
+(either shared or exclusive) until it commits.
+•This means that until the transaction commits, other transaction 
+can not acquire even a shared lock on a data item on which the 
+uncommitted transaction has a shared lock.
+
+===== PAGE 68 =====
+68
+Time stamp based protocol
+•This protocol uses either system time or logical counter to be used 
+as a time-stamp.
+•Every  transaction  has  a  time-stamp  associated  with  it  and  the 
+ordering is determined by the age of the transaction.
+•A transaction ‘T1’ created at 0002 clock time would be older than all 
+other transaction, which come after it.
+•For example, any transaction ‘T2' entering the system at 0004 is two 
+seconds younger than transaction ‘T1’ and priority is given to the 
+older one.
+•In addition,  every  data  item  is  given  the latest  read  and  write 
+time-stamp. This lets the system know, when last read and write 
+operations was made on the data item.
+
+===== PAGE 69 =====
+69
+Time stamp ordering protocol
+•This is the responsibility of the protocol system that the conflicting 
+pair of tasks should be executed according to the timestamp values 
+of the transactions.
+•Time-stamp of Transaction Ti is denoted as TS(Ti).
+•Read time-stamp of data-item X is denoted by R-timestamp(X).
+•Write time-stamp of data-item X is denoted by W-timestamp(X).
+
+===== PAGE 70 =====
+70
+Time stamp ordering protocol
+•Timestamp ordering protocol works as follows:
+•If a transaction Ti issues read(X) operation:
+• If TS(Ti) < W-timestamp(X)
+• Operation rejected.
+• If TS(Ti) >= W-timestamp(X)
+• Operation executed.
+•If a transaction Ti issues write(X) operation:
+• If TS(Ti) < R-timestamp(X)
+• Operation rejected.
+• If TS(Ti) < W-timestamp(X)
+• Operation rejected and Ti rolled back.
+• Otherwise, operation executed.
+
+===== PAGE 71 =====
+71
+What is deadlock?
+•Consider the following two transactions:
+Granted for (A)
+Waiting for (B)
+•A deadlock is a situation in which two or more transactions are 
+waiting for one another to give up locks.
+T1
+T2
+Lock-X (A)
+Write (A)
+Lock-X (B)
+Write (B)
+Lock-X (A)
+Write (A)
+Lock-X (B)
+Write (B)
+Granted for (B)
+Waiting for (A)
+
+===== PAGE 72 =====
+72
+Deadlock detection
+•A simple way to detect deadlock is with the help of wait-for graph.
+•One node is created in the wait-for graph for each transaction that is 
+currently executing.
+•Whenever a  transaction Ti is waiting to lock an item X that is 
+currently locked by a transaction Tj, a directed edge from Ti to Tj 
+(Ti→Tj) is created in the wait-for graph.
+•When Tj releases the lock(s) on the items that Ti was waiting for, 
+the directed edge is dropped from the wait-for graph.
+•We have a state of deadlock if and only if the wait-for graph has a 
+cycle.
+•Then each transaction involved in the cycle is said to be deadlocked.
+
+===== PAGE 73 =====
+73
+Deadlock detection
+•Transaction A is waiting for transactions B
+and C.
+•Transactions C is waiting for transaction B.
+•Transaction B is waiting for transaction D.
+•This wait-for graph has no cycle, so there is 
+no deadlock state.
+•Suppose   now   that   transaction   D   is 
+requesting an item held by C. Then the edge 
+D C is added to the wait-for graph.
+A
+B
+D
+C
+
+===== PAGE 74 =====
+74
+Deadlock detection
+•Now this graph contains the cycle.
+•B D
+C
+B
+•It means that transactions B, D and C are all 
+deadlocked.
+A
+B
+D
+C
+DEADLOCK
+
+===== PAGE 75 =====
+75
+Deadlock recovery
+•When a deadlock is detected, the system must recover from the 
+deadlock.
+•The most common solution is to roll back one or more transactions 
+to break the deadlock.
+•Choosing which transaction to abort is known as Victim Selection.
+
+===== PAGE 76 =====
+76
+Choice of deadlock victim
+•In this wait-for graph transactions B, D 
+and C are deadlocked.
+•In order to remove deadlock one of the 
+transaction out of these three (B, D, C) 
+transactions must be roll backed.
+•We should rollback those transactions 
+that will incur the minimum cost.
+•When a deadlock is detected, the choice 
+of  which  transaction  to  abort  can  be 
+made using following criteria:
+□ The transaction which have the fewest 
+locks
+□ The transaction that has done the least 
+work
+□ The
+transaction that
+is
+farthest
+from completion
+B
+A
+D
+C
+DEADLOCK
+
+===== PAGE 77 =====
+77
+Deadlock prevention
+•A protocols ensure that the system will never enter into a deadlock 
+state.
+•Some prevention strategies :
+•Require that each transaction locks all its data items before it 
+begins execution (predeclaration).
+•Impose partial ordering of all data items and require that a transaction can 
+lock data items only in the order specified by the partial.
+
+===== PAGE 78 =====
+78
+Deadlock prevention
+•Following schemes
+use transaction timestamps for the sake
+of deadlock prevention alone.
+1. Wait-die scheme — non-preemptive
+•If an older transaction is requesting a resource which is held by younger 
+transaction, then older transaction is allowed to wait for it till it is available.
+•If an younger transaction is requesting a resource which is held by older 
+transaction, then younger transaction is killed.
+Wait-Die 
+O waits 
+Y dies
+O needs a resource held by Y 
+Y needs a resource held by O
+
+===== PAGE 79 =====
+79
+Deadlock prevention
+•Following  schemes  use  transaction  timestamps  for  the  sake  of 
+deadlock prevention alone.
+2. Wound-wait scheme — preemptive
+•If an older transaction is requesting a resource which is held by younger 
+transaction, then older transaction forces younger transaction to kill the 
+transaction and release the resource.
+•If an younger transaction is requesting a resource which is held by older 
+transaction, then younger transaction is allowed to wait till older 
+transaction will releases it.
+Wound-Wait
+O needs a resource held by Y 
+Y needs a resource held by O
+Y dies 
+Y waits
+
+===== PAGE 80 =====
+80
+Deadlock prevention
+•Following  schemes  use  transaction  timestamps  for  the  sake  of 
+deadlock prevention alone.
+3. Timeout-Based Schemes :
+•A transaction waits for a lock only for a specified amount of time. After 
+that, the wait times out and the transaction is rolled back. So deadlocks 
+never occur.
+•Simple to implement; but difficult to determine good value of the timeout 
+interval.
+
+===== PAGE 81 =====
+81
+Important Questions
+1.
+Write a note on two phase locking protocol.
+2.
+Explain ACID properties of transaction with suitable example.
+3.
+What is log based recovery? Explain immediate database modification 
+technique for database recovery. OR Define Failure. Write a note on log 
+based recovery.
+4.
+State differences between conflict serializability and view serializability.
+5.
+Explain two-phase commit protocol.
+6.
+Define transaction. Explain various states of transaction with suitable 
+diagram.
+7.
+Write differences between shared lock and exclusive lock.
+8.
+Explain deadlock with suitable example.
+9.
+What is locking? Define each types of locking.
+10.
+Define wait-Die & wound-wait.
+
+===== PAGE 82 =====
+Thank You

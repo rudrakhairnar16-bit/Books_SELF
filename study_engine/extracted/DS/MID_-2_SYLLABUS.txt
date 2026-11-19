@@ -1,0 +1,52 @@
+SOURCE: SEM3/DS/MID -2 SYLLABUS.pdf
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+Department of Computer Science and Engineering 
+Mid Semester Exam - 2 Winter - 2026 
+ 
+Subject: Data Structure 
+Subject Code: 25B1PC303   
+Semester: III 
+ 
+Sr. No 
+Topics 
+1 
+Module -3 Linked List: 
+Introduction to Structure and Pointer, Dynamic Memory Allocations, Representation of 
+Linked Lists, Operations on linked list (Insertion – At begin, at end, at middle, Deletion – At 
+begin, at end, at middle), Singly Linked List, Doubly Linked List, Circular Linked List, 
+Applications of Linked List, Linked implementation of Stack and Queue. 
+2 
+Module -4 Tree: 
+Tree: Definitions and concepts, Terminology, Binary trees, Binary Tree Representations, 
+Binary Tree Traversals, Binary Search Tree, Insertion and Deletion in BST, Threaded binary 
+Trees, AVL Tree, B-Tree, Introduction to B+ Tree, Applications of Tree. 
+ 
+ 
+ 
+Subject Faculty: 
+ 
+ 
+ 
+ 
+ 
+HOD 
+ 
+Ms. Bhavini Patel  
+ 
+ 
+ 
+ 
+Dr. Rocky Upadhyay 
+ 
+ 
+ 
+ 
+ 
+ 
+                         CSE 
+ 

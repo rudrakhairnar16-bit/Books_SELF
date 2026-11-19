@@ -1,0 +1,1647 @@
+SOURCE: SEM3/DS/UNIT-4.pdf
+
+===== PAGE 1 =====
+Tree– Concepts & Definitions
+🞂The node that is reachable from a node is called descendant of a node.
+🞂The nodes which are reachable from a node through a single edge are called the children of
+node.
+🞂M-ary Tree
+⮩If in a directed tree the out degree of every node is less than or equal to m then tree is called an m-ary tree.
+🞂Full or Complete M-ary Tree
+⮩If the out degree of each and every node is exactly equal to m or 0 and their number of nodes at level i is
+m(i-1) then the tree is called a full or complete m-ary tree.
+🞂Positional M-ary Tree
+⮩If we consider m-ary trees in which the m children of any node are assumed to have m distinct positions, if
+such positions are taken into account, then tree is called positional m-ary tree.
+
+===== PAGE 2 =====
+Tree– Concepts & Definitions
+🞂Height of the tree
+⮩The height of a tree is the length of the path from the root to the deepest node in the tree.
+🞂Binary Tree
+⮩If in a directed tree the out degree of every node is less than or equal to 2 then tree is called binary tree.
+🞂Strictly Binary Tree
+⮩A strictly binary tree (sometimes proper binary tree or 2-tree or full binary tree) is a tree in which every node
+other than the leaves has two children.
+🞂Complete Binary Tree
+⮩If the out degree of each and every node is exactly equal to 2 or 0 and their number of nodes at level i is
+2(i-1) then the tree is called a full or complete binary tree.
+
+===== PAGE 3 =====
+Tree– Concepts & Definitions
+🞂Sibling
+⮩Siblings are nodes that share the same parent node
+🞂Positional m-ary Tree
+⮩If we consider m-ary trees in which the m children of any node are assumed to have m distinct positions, if
+such positions are taken into account, then tree is called positional m-ary tree
+0
+1
+00
+01
+11
+(b) Complete binary tree
+11
+0
+1
+00
+01
+11
+(a) Binary tree
+0
+1
+00
+01
+(c)
+10
+
+===== PAGE 4 =====
+Convert any tree to Binary Tree
+🞂Every Tree can be Uniquely represented by binary tree
+🞂Let’s have an example to convert given tree into binary tree
+a
+b
+f
+c
+d
+g
+j
+h
+e
+k
+i
+a
+b
+f
+c
+d
+g
+j
+h
+e
+k
+i
+a
+b
+f
+c
+d
+g
+j
+h
+e
+k
+i
+
+===== PAGE 5 =====
+Convert Forest to Binary Tree
+g
+i
+h
+l
+j
+k
+a
+b
+c
+d
+e
+f
+g
+i
+h
+l
+j
+k
+a
+b
+c
+d
+e
+f
+g
+i
+h
+l
+j
+k
+a
+b
+c
+d
+e
+f
+
+===== PAGE 6 =====
+Tree Traversal
+🞂The most common operations performed on tree structure is that of traversal.
+🞂This is a procedure by which each node in the tree is processed exactly once in a systematic
+manner.
+🞂There are three ways of traversing a binary tree.
+1.
+Preorder Traversal
+2.
+Inorder Traversal
+3.
+Postorder Traversal
+A
+B
+C
+E
+D
+G
+F
+
+===== PAGE 7 =====
+Preorder Traversal
+🞂Preorder traversal of a binary tree is defined as follow
+1.
+Process the root node
+2.
+Traverse the left subtree in preorder
+3.
+Traverse the right subtree in preorder
+🞂If particular subtree is empty (i.e., node has no left or
+right descendant) the traversal is performed by doing
+nothing.
+🞂In other words, a null subtree is considered to be fully
+traversed when it is encountered.
+A
+B
+C
+E
+D
+G
+F
+A B C D E F G
+Preorder traversal of a given tree as
+✓
+✓
+✓
+✓
+✓
+✓
+✓
+
+===== PAGE 8 =====
+Inorder Traversal
+🞂Inorder traversal of a binary tree is defined as follow
+1.
+Traverse the left subtree in Inorder
+2.
+Process the root node
+3.
+Traverse the right subtree in Inorder
+A
+B
+C
+E
+D
+G
+F
+A
+B
+C
+D
+E F
+G
+Inorder traversal of a given tree as
+✓
+✓
+✓
+✓
+✓
+✓
+✓
+
+===== PAGE 9 =====
+Postorder Traversal
+🞂Postorder traversal of a binary tree is defined as follow
+1.
+Traverse the left subtree in Postorder
+2.
+Traverse the right subtree in Postorder
+3.
+Process the root node
+A
+B
+C
+E
+D
+G
+F
+A
+B
+C
+D
+E
+F
+G
+Postorder traversal of a given tree as
+✓
+✓
+✓
+✓
+✓
+✓
+✓
+
+===== PAGE 10 =====
+Converse Traversal
+🞂If we interchange left and right words in the preceding definitions, we obtain three new
+traversal orders which are called
+⮩Converse Preorder Traversal: A D G E F B C
+⮩Converse Inorder Traversal: G D F E A B C
+⮩Converse Postorder Traversal: G F E D C B A
+
+===== PAGE 11 =====
+Write Pre/In/Post Order Traversal
+1
+2
+3
+4
+5
+50
+25
+75
+22
+40
+15
+30
+60
+80
+90
+15
+3
+1
+6
+22
+45
+5
+23
+65
+78
+34
+
+===== PAGE 12 =====
+Linked Representation of Binary Tree
+A
+B
+C
+E
+D
+G
+F
+DATA
+LPTR
+RPTR
+Typical node of Binary Tree
+A
+B
+D
+C
+E
+G
+F
+T
+
+===== PAGE 13 =====
+Construct Binary Tree from Traversal
+Construct a Binary tree from the given Inorder and Postorder traversals
+Inorder     : D G B A H E I C F 
+Postorder : G D B H I E F C A
+•
+Step 1: Find the root node 
+•
+Preoder Traversal – first node is root node 
+•
+Postoder Traversal last node is root node
+•
+Step 2: Find Left & Right Sub Tree
+•
+Inorder traversal gives Left and right sub tree
+A
+H,E,I,C,F
+D,G,B
+Inorder     : D G B A H E I C F 
+Postorder : G D B H I E F C A
+A
+A
+B
+D,G
+C
+H,E,I
+F
+A
+B
+C
+F
+D
+G
+E
+H
+I
+
+===== PAGE 14 =====
+Construct Binary Tree from Traversal
+Inorder   : Q B K C F A G P E D  H R
+Preorder : G B Q A C K F P D  E R H
+G
+G
+G
+Q B K C F A
+P E D  H R
+G
+K C F A
+B
+Q
+E D  H R
+P
+G
+B
+Q
+P
+K C F
+A
+H R
+D
+G
+B
+Q
+P
+A
+D
+C
+K
+F
+E
+E
+R
+H
+
+===== PAGE 15 =====
+Linked Representation of Binary Tree
+A
+B
+C
+E
+D
+G
+F
+DATA
+LPTR
+RPTR
+Typical node of Binary Tree
+A
+B
+D
+C
+E
+G
+F
+T
+
+===== PAGE 16 =====
+Threaded Binary Tree
+🞂The wasted NULL links in the binary tree storage representation can be replaced by threads
+🞂A binary tree is threaded according to particular traversal order. e.g.: Threads for the inorder
+traversals of tree are pointers to its higher nodes, for this traversal order
+🞂In-Threaded Binary Tree
+⮩If left link of node P is null, then this link is replaced by the address of its predecessor
+⮩If right link of node P is null, then this link is replaced by the address of its successor
+🞂Because the left or right link of a node can denote either structural link or a thread, we must
+somehow be able to distinguish them
+
+===== PAGE 17 =====
+Threaded Binary Tree
+🞂Method 1:- Represent thread a Negative address
+🞂Method 2:- To have a separate Boolean flag for each of left and right pointers, node structure
+for this is given below
+DATA
+LTHREAD
+RPTR
+Typical node of Threaded Binary Tree
+LPTR
+RTHREAD
+•
+LTHREAD = true = Denotes leaf thread link
+•
+LTHREAD = false = Denotes leaf structural link
+•
+RTHREAD = true = Denotes right threaded link
+•
+RTHREAD = false = Denotes right structural link
+Head node is simply another node which serves as the predecessor 
+and successor of first and last tree nodes. 
+Tree is attached to the left branch of the head node.
+HEAD
+
+===== PAGE 18 =====
+Threaded Binary Tree
+A
+B
+C
+E
+D
+G
+F
+A
+B
+D
+C
+E
+G
+F
+C  B  A  E  F  D  G
+Inorder Traversal
+HEAD
+Fully In-Threaded Binary Tree
+
+===== PAGE 19 =====
+Threaded Binary Tree
+A
+B
+C
+F
+E
+H
+G
+C B D A F G E H
+Inorder Traversal
+D
+A
+B
+E
+C
+F
+H
+G
+HEAD
+D
+Construct Right In-Threaded Binary Tree of given Tree
+
+===== PAGE 20 =====
+Advantages of Threaded Binary Tree
+🞂Inorder traversal is faster than unthreaded version as stack is not required.
+🞂Effectively determines the predecessor and successor for inorder traversal, for unthreaded
+tree this task is more difficult.
+🞂A stack is required to provide upward pointing information in binary tree which threading
+provides without stack.
+🞂It is possible to generate successor or predecessor of any node without having over head of
+stack with the help of threading.
+
+===== PAGE 21 =====
+Disadvantages of Threaded Binary Tree
+🞂Threaded trees are unable to share common sub trees.
+🞂If Negative addressing is not permitted in programming language, two additional fields are
+required.
+🞂Insertion into and deletion from threaded binary tree are more time consuming because both
+thread and structural link must be maintained.
+
+===== PAGE 22 =====
+Binary Search Tree (BST)
+🞂A binary search tree is a binary tree in which each node possessed a key that satisfy the
+following conditions
+1.
+All key (if any) in the left sub tree of the root precedes the key in the root
+2.
+The key in the root precedes all key (if any) in the right sub tree
+3.
+The left and right sub trees of the root are again search trees
+
+===== PAGE 23 =====
+Construct Binary Search Tree (BST)
+Construct binary search tree for the following data
+50 , 25 , 75 , 22 , 40 , 60 , 80 , 90 , 15 , 30 
+50
+25
+75
+22
+40
+60
+80
+90
+15
+30
+Construct binary search tree for the following data
+10, 3, 15, 22, 6, 45, 65, 23, 78, 34, 5
+
+===== PAGE 24 =====
+Search a node in Binary Search Tree
+🞂To search for target value.
+🞂We first compare it with the key at root of the tree.
+🞂If it is not same, we go to either Left sub tree or Right sub tree as appropriate and repeat the
+search in sub tree.
+🞂If we have In-Order List & we want to search for specific node it requires O(n) time.
+🞂In case of Binary tree it requires O(Log2n) time to search a node.
+
+===== PAGE 25 =====
+Delete node from Binary Search Tree
+a
+Delete node a
+Delete from Leaf Node
+b
+a
+Delete node a
+b
+Delete from Non Terminal (Empty Left Sub Tree)
+
+===== PAGE 26 =====
+Delete node from BST
+C
+a
+b
+Delete node a
+C
+b
+Delete from Non Terminal (Neither Sub Tree is Empty)
+
+===== PAGE 27 =====
+Balanced Tree
+🞂Binary Search Tree gives advantage of Fast Search, but sometimes in few cases we are not able
+to get this advantage. E.g. look into worst case BST
+🞂Balanced binary trees are classified into two categories
+⮩Height Balanced Tree (AVL Tree)
+⮩Weight Balanced Tree
+50
+40
+30
+20
+50
+40
+30
+20
+Worst search time cases for Binary Search Tree
+
+===== PAGE 28 =====
+Height Balanced Tree (AVL Tree)
+🞂A tree is called AVL tree (Height Balanced Tree), if each node possessed one of the following
+properties
+⮩A node is called left heavy, if the longest path in its left sub tree is one longer than the longest path of its
+right sub tree
+⮩A node is called right heavy, if the longest path in its right subtree is one longer than the longest path of its
+left sub tree
+⮩A node is called balanced, if the longest path in both the right and left sub-trees are equal
+🞂In height balanced tree, each node must be in one of these states
+🞂If there exists a node in a tree where this is not true, then such a tree is called Unbalanced
+
+===== PAGE 29 =====
+AVL Tree
+B
+B
+B
+L
+B
+B
+R
+R
+R
+R
+B
+B
+B
+B
+B
+B
+L
+L
+L
+Balanced Trees
+Critical Node 
+Unbalanced Node
+R
+B
+B
+B
+L
+B
+R
+Critical Node 
+Unbalanced Node
+🞂Sometimes tree becomes unbalanced by inserting or deleting
+any node
+🞂Then based on position of insertion, we need to rotate the
+unbalanced node
+🞂Rotation is the process to make tree balanced
+
+===== PAGE 30 =====
+Right Rotation
+a.
+Detach left child’s right sub-tree
+b.
+Consider left child to be the new parent
+c.
+Attach old parent onto right of new parent
+d.
+Attach old left child’s old right sub-tree as left sub-tree of new right child
+J
+K
+Z
+X
+Y
+N
+Critical Node
+Right 
+Rotation
+B
+B
+B
+B
+L
+B’
+L’
+B’
+L’
+B’
+K
+X
+N
+Y
+J
+Z
+Y
+B
+B
+B
+L
+B
+B
+
+===== PAGE 31 =====
+Right Rotation
+a. Detach left child’s right sub-tree
+b.
+Consider left child to be the new parent
+c.
+Attach old parent onto right of new parent
+d.
+Attach old left child’s old right sub-tree as left sub-tree of new right child
+13
+7
+15
+5
+10
+B
+B
+B
+B
+L
+Insert node 3
+3
+B’
+L’
+B’
+L’
+B’
+Critical Node
+Right 
+Rotation
+10
+7
+5
+3
+13
+15
+10
+B
+B
+B
+L
+B
+B
+
+===== PAGE 32 =====
+Left Rotation
+a. Detach right child’s leaf sub-tree
+b. Consider right child to be new parent
+c. Attach old parent onto left of new parent
+d. Attach old right child’s old left sub-tree as right sub-tree of new left child
+X
+T1
+Y
+T2
+T3
+n
+B
+B
+B
+B
+R
+B’
+R’
+B’
+R’
+B’
+Critical Node
+Left 
+Rotation
+T2
+Y
+T3
+n
+X
+T1
+T2
+B
+B
+B
+B
+R
+B
+
+===== PAGE 33 =====
+Select Rotation based on Insertion Position
+Case 1: Insertion into Left sub-tree of nodes Left child
+⮩Single Right Rotation
+Case 2: Insertion into Right sub-tree of node’s Left child
+⮩Left Right Rotation
+Case 3: Insertion into Left sub-tree of node’s Right child
+⮩Right Left Rotation
+Case 4: Insertion into Right sub-tree of node’s Right child
+⮩Single Left Rotation
+Case - 1
+Case - 2
+Case - 3
+Case - 4
+
+===== PAGE 34 =====
+Insertion into Left sub-tree of nodes Left child 
+🞂Case 1: If node becomes unbalanced after insertion of new node at Left sub-tree of nodes Left
+child, then we need to perform Single Right Rotation of unbalanced node to balance the node
+🞂Right Rotation
+a.
+Detach leaf child’s right sub-tree
+b.
+Consider leaf child to be the new parent
+c.
+Attach old parent onto right of new parent
+d.
+Attach old leaf child’s old right sub-tree as leaf sub-tree of new right child
+Case - 1
+Single Right Rotation 
+of 
+unbalanced node
+
+===== PAGE 35 =====
+Insertion into Left sub-tree of nodes Left child 
+J
+K
+Z
+X
+Y
+N
+Critical Node
+Right 
+Rotation
+B
+B
+B
+B
+L
+B’
+L’
+B’
+L’
+B’
+K
+X
+N
+Y
+J
+Z
+Y
+B
+B
+B
+L
+B
+B
+13
+7
+15
+5
+10
+B
+B
+B
+B
+L
+Insert node 3
+3
+B’
+L’
+B’
+L’
+B’
+Critical Node
+Right 
+Rotation
+10
+7
+5
+3
+13
+15
+10
+B
+B
+B
+L
+B
+B
+Case - 1
+
+===== PAGE 36 =====
+Insertion into Right sub-tree of node’s Right child
+🞂Case 4: If node becomes unbalanced after insertion of new node at Right sub-tree of nodes
+Right child, then we need to perform Single Left Rotation of unbalance node to balance the
+node
+🞂Left Rotation
+A.
+Detach right child’s leaf sub-tree
+B.
+Consider right child to be new parent
+C.
+Attach old parent onto left of new parent
+D.
+Attach old right child’s old left sub-tree as right sub-tree of new left child
+Case - 4
+Single Left Rotation
+of 
+unbalanced node
+
+===== PAGE 37 =====
+Insertion into Right sub-tree of node’s Right child
+X
+T1
+Y
+T2
+T3
+n
+B
+B
+B
+B
+R
+B’
+R’
+B’
+R’
+B’
+Critical Node
+Left 
+Rotation
+T2
+Y
+T3
+n
+X
+T1
+T2
+B
+B
+B
+B
+R
+B
+50
+40
+70
+60
+80
+90
+B
+B
+B
+B
+R
+Insert 90
+B’
+R’
+B’
+R’
+B’
+Critical Node
+Left 
+Rotation of 
+Node 50
+60
+70
+80
+90
+50
+40
+60
+B
+B
+B
+B
+R
+B
+Case - 4
+
+===== PAGE 38 =====
+Insertion into Right sub-tree of node’s Left child
+🞂Case 2: If node becomes unbalanced after insertion of new node at Right
+sub-tree of node’s Left child, then we need to perform Left Right Rotation
+for unbalanced node.
+🞂Left Right Rotation
+⮩Left Rotation of Left Child followed by
+⮩Right Rotation of Parent
+Left Right Rotation
+Left Rotation of Left Child
+followed by
+Right Rotation of Parent
+Case - 2
+J
+K
+Z
+X
+Y
+n
+B
+R
+B
+B
+B
+Critical Node
+Left Rotation 
+of 
+Left Child (K)
+Y
+n
+K
+X
+J
+Z
+Right Rotation 
+of 
+Parent (J)
+n
+Y
+K
+X
+J
+Z
+n
+B
+B
+B
+L
+B
+B
+Case - 2
+
+===== PAGE 39 =====
+Insertion into Right sub-tree of node’s Left child
+Case - 2
+12
+8
+4
+2
+6
+10
+16
+14
+5
+B
+L
+B
+R
+B
+Critical Node
+Left Right Rotation
+Left Rotation of Left Child (4)
+followed by
+Right Rotation of Parent (8)
+Left Rotation 
+of Node 4
+5
+6
+4
+2
+5
+12
+8
+10
+16
+14
+Right Rotation 
+of Node 8
+6
+4
+2
+5
+8
+10
+12
+16
+14
+B
+B
+B
+B
+R
+B
+B
+L
+L
+
+===== PAGE 40 =====
+Insertion into Left sub-tree of node’s Right child
+Case - 3
+5
+3
+13
+10
+15
+7
+B
+L
+B
+L
+B
+Critical Node
+Right Left Rotation
+Right Rotation of Right Child (13)
+followed by
+Left Rotation of Parent (5)
+Right Rotation
+of Node 13
+10
+7
+13
+15
+5
+3
+Left Rotation
+of Node 5
+7
+10
+13
+15
+5
+3
+7
+B
+B
+B
+B
+R
+B
+
+===== PAGE 41 =====
+Construct AVL Search Tree
+Construct AVL Search tree by inserting following elements in order of 
+their occurrence 6, 5, 4, 3, 2, 1
+Insert 6
+Insert 5
+B
+B
+L
+Critical Node
+L
+6
+6
+5
+Insert 4
+6
+5
+4
+B
+Case 1
+Right Rotation 
+of Node 6
+5
+4
+6
+B
+B
+B
+Insert 3
+5
+4
+6
+B
+3
+L
+B
+L
+Insert 2
+5
+6
+3
+2
+4
+B
+L
+Critical Node
+Case 1
+Right Rotation 
+of Node 4
+3
+2
+4
+5
+6
+B
+B
+B
+B
+L
+Insert 1
+2
+3
+2
+4
+5
+6
+L
+B
+L
+B
+Critical Node
+1
+B
+Case 1
+Right Rotation 
+of Node 5
+4
+3
+2
+1
+5
+6
+4
+B
+B
+B
+L
+B
+B
+
+===== PAGE 42 =====
+Construct AVL Search Tree
+Construct AVL Search tree by inserting following elements in order of 
+their occurrence 64, 1, 44, 26, 13, 110, 98, 85
+Insert 64
+Insert 1
+B
+B
+L
+64
+64
+1
+Insert 44
+Critical Node 64
+1
+44
+B
+R
+Case 2: Left Right Rotation
+Left Rotation of Left Child 1
+Followed By
+Right Rotation of Parent 64
+Left Rotation of Left Child 1
+44
+1
+64
+Right Rotation 
+of Parent 64
+44
+1
+64
+B
+B
+B
+Insert 26
+44
+1
+64
+, 13
+26
+13
+B
+R
+B
+L
+B’
+L’
+Critical 
+Node
+Case 3: Right Left Rotation
+Right Rotation of Right Child 26
+Followed By
+Left Rotation of Parent 1
+Right Rotation 
+of Right Child 26
+13
+26
+1
+44
+64
+Left Rotation 
+of Parent 1
+13
+26
+1
+44
+64
+B
+B
+B
+L
+
+===== PAGE 43 =====
+Construct AVL Search Tree
+Construct AVL Search tree by inserting following elements in order of 
+their occurrence 64, 1, 44, 26, 13, 110, 98, 85
+Insert 110
+13
+26
+1
+44
+64
+B
+110
+, 98
+98
+B
+B
+R
+B
+B
+B’
+L’
+Critical Node
+Case 3: Right Left Rotation
+Right Rotation of Right Child 110
+Followed By
+Left Rotation of Parent 64
+Right Rotation 
+of Right Child 110
+13
+26
+1
+44
+64
+98
+110
+Left Rotation 
+of Parent 64
+13
+26
+1
+44
+98
+64
+110
+B
+B
+B
+B
+B
+B
+B
+Insert 85
+13
+26
+1
+44
+98
+64
+85
+110
+B
+B
+R
+B
+B
+B
+L
+R
+
+===== PAGE 44 =====
+Construct AVL Search Tree
+Construct AVL Search tree by inserting following elements in order of 
+their occurrence 60,73,75,76,79,81,82,300,0,5,73
+Insert 60
+B 60
+Insert 73
+60
+73
+B
+R
+Insert 75
+60
+73
+75
+B
+R
+Critical Node
+Case 4
+Left Rotation 
+of Node 60
+73
+75
+60
+B
+B
+B
+73
+75
+60
+Insert 76
+76
+B
+R
+B
+R
+,79
+79 B’
+R’
+Critical
+Case 4
+Left Rotation 
+of Node 75
+73
+60
+76
+79
+75
+B
+B
+B
+B
+R
+Insert 81
+73
+60
+76
+79
+75
+81
+B
+R
+B
+R
+B
+Critical Node
+Case 4
+Left Rotation 
+of Node 73
+75
+76
+79
+81
+73
+60
+75
+B
+B
+B
+B
+R
+B
+Insert 82
+76
+79
+81
+73
+60
+75
+82
+B
+R
+Critical 
+Case 4
+Left Rotation 
+of Node 79
+76
+81
+82
+73
+60
+75
+79
+B
+B
+B
+B
+B
+B
+B
+
+===== PAGE 45 =====
+Construct AVL Search Tree
+Construct AVL Search tree by inserting following elements in order of 
+their occurrence 60,73,75,76,79,81,82,300,0,5,73
+Insert 300
+76
+81
+82
+73
+60
+75
+79
+300
+0
+, 0
+B
+B
+L
+B
+B
+R
+L
+R
+B
+Insert 5
+76
+81
+82
+73
+60
+75
+79
+300
+0
+5
+B
+R
+Critical
+Case 2: Left Right Rotation,
+Left Rotation of Left Child 0, 
+Followed By
+Right Rotation of Parent 60
+76
+81
+82
+73
+5
+75
+79
+300
+0
+60
+Insert 73
+Can not Insert 73 as duplicate key found
+
+===== PAGE 46 =====
+Deleting node from AVL Tree
+🞂If element to be deleted does not have empty right sub-tree, then element is replaced with its
+In-Order successor and its In-Order successor is deleted instead
+🞂During winding up phase, we need to revisit every node on the path from the point of deletion
+up to the root, rebalance the tree if require
+28
+23
+22
+26
+27
+32
+30
+34
+31
+36
+B
+B
+B
+B
+R
+R
+R
+R
+B
+B
+
+===== PAGE 47 =====
+Deleting node from AVL Tree
+28
+23
+22
+26
+27
+32
+30
+34
+31
+36
+In-Order Traversal
+22, 23, 26, 27, 28, 30, 31, 32, 34, 36 
+Delete 28
+28
+23
+22
+26
+27
+32
+30
+34
+31
+36
+30
+31
+B
+B
+B
+R
+R
+R
+R
+R
+B
+Delete 30
+30
+23
+22
+26
+27
+32
+31
+34
+36
+31
+B
+R
+Critical Node
+Case 4: 
+Left Rotation of
+Node 32
+31
+23
+22
+26
+27
+34
+32
+36
+B
+B
+R
+B
+B
+R
+B
+L
+B
+
+===== PAGE 48 =====
+Deleting node from AVL Tree
+73
+13
+10
+28
+75
+74
+89
+5
+Delete 73, 74
+In-Order Traversal
+5, 10, 13, 28, 73, 74, 75, 89
+73
+13
+10
+28
+75
+74
+89
+5
+Delete 73
+74
+B
+L
+B
+B
+L
+R
+L
+Delete 74
+74
+13
+10
+28
+75
+89
+5
+75
+89
+B
+L
+B
+L
+B
+Critical
+Case 1: Right Rotation 
+of Node 75 
+13
+10
+75
+5
+89
+28
+28
+B
+B
+B
+L
+B
+B

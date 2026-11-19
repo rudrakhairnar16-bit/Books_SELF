@@ -1,0 +1,97 @@
+SOURCE: SEM3/Python_Programing/pp_module 6 assignment.pdf
+
+===== PAGE 1 =====
+ 
+ 
+Assignment No – 6 
+Module No : 6 - Python Libraries and Object-Oriented Programming 
+Date – 15/10/2026  
+Submission Date -26/10/2026  
+Q. No. 
+Assignment Question 
+BT Level 
+1 
+Define Python libraries and explain the advantages of using libraries in 
+Python programming. 
+BT1 – Remember 
+2 
+Explain the differences between Python lists and NumPy arrays with 
+suitable examples. 
+BT2 – Understand 
+3 
+Demonstrate how to create NumPy arrays and perform indexing, slicing, 
+and reshaping operations. 
+BT3 – Apply 
+4 
+Apply NumPy functions to calculate the sum, mean, median, maximum, 
+and minimum of a given array. 
+BT3 – Apply 
+5 
+Explain the concepts of Series and DataFrame in Pandas with suitable 
+examples. 
+BT2 – Understand 
+6 
+Write a Python program using Pandas to create a student DataFrame 
+and perform data selection, filtering, and sorting. 
+BT3 – Apply 
+7 
+Analyze a given dataset using Pandas to identify missing values and 
+generate descriptive statistics. 
+BT4 – Analyze 
+8 
+Develop a Python program to read a CSV file and display selected 
+columns and records using Pandas. 
+BT3 – Apply 
+9 
+Explain the different types of plots available in Matplotlib and describe 
+their applications. 
+BT2 – Understand 
+10 
+Develop a Python program to visualize monthly sales data using a line 
+chart and a bar chart. 
+BT3 – Apply 
+
+===== PAGE 2 =====
+ 
+11 
+Analyze a dataset and select an appropriate visualization to compare 
+product sales across different categories. Justify your choice. 
+BT4 – Analyze 
+12 
+Design a Matplotlib visualization that represents the percentage 
+distribution of expenses using a pie chart. 
+BT6 – Create 
+13 
+Explain the concepts of class, object, attributes, methods, and 
+constructors in Python with examples. 
+BT2 – Understand 
+14 
+Develop a Python program to implement a Student class with a 
+constructor and methods to calculate and display student grades. 
+BT3 – Apply 
+15 
+Demonstrate inheritance in Python by implementing a base class Person 
+and a derived class Employee. 
+BT3 – Apply 
+16 
+Analyze the role of method overriding in achieving polymorphism using 
+suitable Python classes. 
+BT4 – Analyze 
+17 
+Differentiate between inheritance and polymorphism, illustrating each 
+concept with an appropriate program. 
+BT4 – Analyze 
+18 
+Explain the purpose of Tkinter widgets such as Label, Button, Entry, and 
+Text, with suitable examples. 
+BT2 – Understand 
+19 
+Develop a Tkinter-based calculator that performs addition, subtraction, 
+multiplication, and division. 
+BT6 – Create 
+20 
+Design a GUI-based student management application using Tkinter and 
+OOP concepts to accept student details, calculate grades, and display the 
+results. 
+BT6 – Create 
+ 

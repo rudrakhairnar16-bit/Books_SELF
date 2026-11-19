@@ -1,0 +1,1020 @@
+SOURCE: SEM3/DBMS/DBMS!/Unit 7 Query Processing & Query Optimization.pdf
+
+===== PAGE 1 =====
+Module -7
+Query Processing & Query 
+Optimization
+
+===== PAGE 2 =====
+1
+Topics to be covered
+•Overview (Query Processing)
+•Measures of query cost
+•Selection operation
+•Evaluation of expressions
+•Query optimization
+•Transformation of relational expressions
+•Sorting and join
+
+===== PAGE 3 =====
+2
+What is query processing?
+•Query processing is the process of translating a high-level query, 
+such as SQL, into a low-level query that can be executed by the 
+database system.
+•This involves parsing, validating, and optimizing the query, as well as 
+generating a query execution plan.
+•A query execution plan is a sequence of operations that the database 
+system performs to retrieve the data requested by the query.
+•Query optimization is the process of finding the best query execution 
+plan for a given query, based on various factors such as the schema, 
+the data, the indexes, the statistics, and the system resources.
+•Query optimization aims to minimize the cost of executing the 
+query, which can be measured by the time, the disk I/O, the memory 
+usage, or the network traffic.
+Q
+i i
+i
+b d
+i
+ll
+b f
+i
+h
+query, or dynamically, during the execution.
+
+===== PAGE 4 =====
+3
+Steps in Query Processing
+Parser and 
+translator
+Query
+Relational algebra 
+expression
+Optimizer
+Execution plan
+Evaluation 
+engine
+Query output
+Data
+Database Catalog
+Statistics about Data
+Parser checks the syntax of
+query and verifies attribute 
+name and relation name
+Translator translates the 
+query into its internal 
+form (relational algebra)
+Choose best execution plan
+Execute the query-evaluation 
+plan and returns output
+
+===== PAGE 5 =====
+4
+Measures of Query Cost
+•Cost is generally measured as the total time required to execute a 
+statement/query.
+•Factors contribute to time cost
+1.
+Disk accesses (time to process a data request and retrieve the required 
+data from the storage device)
+2.
+CPU time to execute a query
+3.
+Network communication cost
+•Disk access is the predominant (major) cost, since disk access is slow 
+as compared to in-memory operation.
+•Cost to write a block is greater than cost to read a block because data 
+is  read  back  after  being  written  to  ensure  that  the  write  was 
+successful.
+
+===== PAGE 6 =====
+RollNo
+Name
+Branch
+SPI
+101
+Raj
+CE
+8
+104
+Punit
+CE
+9
+5
+Selection operation
+•Symbol: σ (Sigma)
+condition
+•Notation: σ
+(Relation)
+•Operation:Selects 
+condition.RollNo
+101
+102
+103
+104
+tuples
+from
+a
+relation thatsatisfy
+a
+given
+σ 
+Branch=‘CE’ (Student)
+Name 
+Raj 
+Meet 
+Harsh 
+Punit
+Branch 
+CE
+ME 
+EE 
+CE
+SPI 
+8
+9
+8
+9
+
+===== PAGE 7 =====
+6
+Sorting
+•Several
+of
+the relational
+operations, such
+as
+joins,
+can
+be implemented efficiently if the input relations are first 
+sorted.
+•We can sort a relation by building an index on the relation and then 
+using that index to read the relation in sorted order.
+•Such
+a
+process orders the relation only
+logically rather
+than physically.
+•Hence reading of tuples in the sorted order may lead to disk access 
+for each record, which can be very expensive.
+•So it is desirable to order the records physically.
+
+===== PAGE 8 =====
+7
+Sorting
+•Sorting  of  relation  that  fit  into  main  memory,  standard  sorting 
+techniques such as quick-sort can be used.
+•Sorting of relations that do not fit in main memory is called external 
+sorting.
+•Most commonly used algorithm for this type of sorting is external 
+sort merge algorithm.
+
+===== PAGE 9 =====
+8
+External Sort-Merge (Example)
+cks=3
+• 
+Blo
+24
+19
+31
+33
+14
+16
+16
+21
+3
+2
+7
+14
+initial relation
+19
+24
+31
+14
+16
+33
+3
+16
+21
+2
+7
+14
+14
+16
+19
+24
+31
+33
+2
+3
+7
+14
+16
+21
+2
+3
+7
+14
+14
+16
+16
+19
+21
+24
+31
+33
+sorted output
+runs
+runs
+merge 
+pass-1
+merge 
+pass-2
+create 
+runs
+24
+19
+31
+33
+14
+16
+16
+21
+3
+2
+7
+14
+
+===== PAGE 10 =====
+9
+External Sort-Merge Algorithm
+•
+Let M denote memory size (in pages).
+1.
+Create sorted runs. Let i be 0 initially.
+Repeatedly do the following till the end of the relation:
+1) Read M blocks of relation into memory
+2) Sort the in-memory blocks
+3) Write sorted data to run Ri; then increment i.
+Let the final value of i be N
+§
+Merge the runs (next slide)…..
+
+===== PAGE 11 =====
+10
+External Sort-Merge
+2.
+Merge the runs (N-way merge). We assume (for now) that N < M.
+1)
+Use N blocks of memory to buffer input runs, and 1 block to buffer 
+output. Read the first block of each run into its buffer page
+2)
+repeat
+Select the first record (in sort order) among all buffer pages
+Write the record to the output buffer. If the output buffer is full write it to disk. 
+Delete the record from its input buffer page.
+If the buffer page becomes empty then
+read the next block (if any) of the run into the buffer.
+•
+until all input buffer pages are empty:
+
+===== PAGE 12 =====
+11
+External Sort-Merge
+•If N ≥ M, several merge passes are required.
+•In each pass, contiguous groups of M - 1 runs are merged.
+•A pass reduces the number of runs by a factor of M -1, and creates 
+runs 
+longer by the same factor.
+□ E.g. If M=11, and there are 90 runs, one pass reduces the number 
+of runs to 9, each 10 times the size of the initial runs
+•Repeated passes are performed till all runs have been merged into one.
+
+===== PAGE 13 =====
+12
+Join Operations
+•There are several different algorithms that can be used to implement 
+joins
+1.
+Nested-Loop Join
+2.
+Block Nested-Loop Join
+3.
+Index Nested-Loop Join
+4.
+Sort-Merge Join
+5.
+Hash-Join
+
+===== PAGE 14 =====
+13
+•R isC
+co
+als
+let
+d o
+thf
+e oc
+uo
+tem
+r 
+ap
+ndu
+St
+ti
+hn
+eg
+inf
+no
+err
+rea
+lal
+tl
+ioj
+no
+oi
+fn
+ths
+e 
+join.
+•Number of records of R: (N )R
+•Number of records of S: (NS)
+•Number of blocks of R: (BR)
+•Number of blocks of S: (BS)
+Join
+Nested-Loop Join
+Block Nested-Loop Join
+Worst Case
+BR + NR ∗ 
+BS BR + BR ∗ 
+BS
+Best Case
+BR + BS 
+BR + BS
+R
+R
+In•dceixs Ntheestceods-tLofoap sJoiningle sBele+cNtion∗ ocn S 
+using the join condition.
+Merge Join 
+Hash-Join
+BR + BS
+3 ∗ (BR + 
+BS)
+
+===== PAGE 15 =====
+14
+Sum (Nested loop join)
+•Assuming worst case memory availability and the following given 
+statistics for the relations customer and depositor
+•
+Number of records of customer: 10,000 (ncustomer)
+•
+Number of records of depositor: 5,000 (ndepositor)
+•
+Number of blocks of customer: 400 (bcustomer)
+•
+Number of blocks of depositor: 100 (bdepositor)
+•Estimate the cost
+1.
+with depositor as outer relation
+2.
+with customer as outer relation
+
+===== PAGE 16 =====
+15
+Sum (Nested loop join)
+•Assuming worst  case  memory  availability  and  the  following  given 
+statistics for the relations customer and depositor
+•
+Number of records of customer: 10,000 (ncustomer)
+•
+Number of records of depositor: 5,000 (ndepositor)
+•
+Number of blocks of customer: 400 (bcustomer)
+•
+Number of blocks of depositor: 100 (bdepositor)
+•Estimate the cost
+1.
+with depositor as outer relation
+No. of blocks access = n
+depositor * b
+customer + b
+depositor
+= 5000 *400 + 100
+= 2000100
+
+===== PAGE 17 =====
+16
+Sum (Nested loop join)
+•Assuming worst  case  memory  availability  and  the  following  given 
+statistics for the relations customer and depositor
+•
+Number of records of customer: 10,000 (ncustomer)
+•
+Number of records of depositor: 5,000 (ndepositor)
+•
+Number of blocks of customer: 400 (bcustomer)
+•
+Number of blocks of depositor: 100 (bdepositor)
+•Estimate the cost
+1.
+with customer as outer relation
+No. of blocks access = n
+customer * b
+depositor + b
+customer
+= 10000 *100 + 400
+= 1000400
+
+===== PAGE 18 =====
+17
+Sum (Nested loop join)
+•Assuming best
+case
+memoryavailability and the following
+given statistics for the relations customer and depositor
+•Number of records of customer: 10,000 (ncustomer)
+•Number of records of depositor: 5,000 (ndepositor)
+•Number of blocks of customer: 400 (bcustomer)
+•Number of blocks of depositor: 100 (bdepositor)
+•Estimate the cost
+No. of blocks access = bdepositor + bcustomer
+= 100 + 400
+= 500
+
+===== PAGE 19 =====
+18
+Evaluation of expressions
+•Expression may
+contain more
+than
+one operations, solving 
+expression will be difficult if it contains more than one expression.
+•To evaluate such expression we need to evaluate each operation one
+by one in appropriate order.
+∏ 
+Cust_Name (σ 
+Balance<2500 (account)
+customer )
+∏
+Cust_Name
+σ 
+Balance<2500
+customer
+account
+1
+2
+3
+Execution
+Bottom to top
+
+===== PAGE 20 =====
+19
+Evaluation of expressions
+•Methods for evaluating an entire expression tree are:
+1.
+Materialization
+2.
+Pipelining
+
+===== PAGE 21 =====
+20
+Materialization
+•Materialization  evaluates  the  expression  tree  of  the  relational 
+algebra operation from the bottom and performs the innermost or 
+leaf-level operations first.
+•The intermediate result of each operation is materialized (store in 
+temporary  relation)  and  becomes  input  for  subsequent  (next) 
+operations.
+•The cost of materialization is the sum of the individual operations 
+plus the cost of writing the intermediate results to disk.
+•The problem with materialization is that
+•it creates lots of temporary relations
+•it performs lots of I/O operations
+
+===== PAGE 22 =====
+21
+Pipelining
+•In pipelining, operations form a queue, and results are passed from 
+one operation to another as they are calculated.
+•To reduce number of intermediate temporary relations, we pass 
+results of one operation to the next operation in the pipelines.
+•Combining operations into a pipeline eliminates the cost of reading 
+and writing temporary relations.
+•Pipelines can be executed in two ways:
+1.
+Demand driven (System makes repeated requests for tuples from 
+the operation at the top of pipeline)
+2.
+Producer driven (Operations do not wait for request to produce 
+tuples, but generate the tuples eagerly.)
+
+===== PAGE 23 =====
+22
+Transformation of relational expressions
+•Two relational algebra expressions are said to be equivalent if the 
+two expressions generate the same set of tuples.
+•Example:
+∏ 
+Cust_Name (σ 
+Balance<2500 (Account
+∏ 
+Cust_Name (σ 
+Balance<2500 (Account)
+Customer ))
+Customer )
+Customer
+Account
+Cid Ano
+Cust_name
+AnoBalance
+Cust_name
+C01 A01
+Raj
+A013000
+Meet
+C02 A02
+Meet
+A021000
+Harsh
+C03 A03
+Harsh
+A032000
+C04 A04
+Punit
+A044000
+
+===== PAGE 24 =====
+23
+Transformation of relational expressions
+1.
+Combined selection operation can be divided into sequence of 
+individual selections. This transformation is called cascade of σ.
+Customer
+Output
+Cid Ano
+Cust_name
+Balance
+Cid Ano
+Cust_name
+Balance
+C011
+Raj
+3000
+C022
+Meet
+1000
+C022
+Meet
+1000
+C033
+Harsh
+2000
+C044
+Punit
+4000
+σ
+Ano<3 Λ Balance<2000 (Customer)
+σ
+Ano<3 (σ
+Balance<2000 (Customer))
+=
+σ
+θ1Λθ2 (E)
+= σθ1(σθ2 (E))
+
+===== PAGE 25 =====
+24
+Transformation of relational expressions
+2.
+Selection operations are commutative.
+Customer
+Output
+Cid Ano
+Cust_name
+Balance
+Cid Ano
+Cust_name
+Balance
+C011
+Raj
+3000
+C022
+Meet
+1000
+C022
+Meet
+1000
+C033
+Harsh
+2000
+C044
+Punit
+4000
+σ
+Ano<3 (σ
+Balance<2000 (Customer)) =
+σθ1(σθ2 (E) = σθ2(σθ1 (E))
+σ
+Balance<2000 (σ
+Ano<3 (Customer))
+
+===== PAGE 26 =====
+25
+Transformation of relational expressions
+3.   If more than one projection operation is used in expression then 
+only the outer projection operation is required. So skip all the 
+other inner projection operation.
+Customer
+Output
+Cid Ano
+Cust_name
+Balance
+Cust_name
+C011
+Raj
+3000
+Raj
+C022
+Meet
+1000
+Meet
+C033
+Harsh
+2000
+Harsh
+C044
+Punit
+4000
+Punit
+∏
+Cust_name (∏
+Ano, Cust_name (Customer))
+=
+∏L1 (∏L2 (… (∏Ln (E))…)) = ∏L1 (E)
+∏
+Cust_name
+(Customer)
+
+===== PAGE 27 =====
+26
+Transformation of relational expressions
+4.
+Selection operation can be joined with cartesian product and 
+theta join.
+Cid
+Ano
+Cust_name
+Ano
+Balance
+Cid
+Ano
+Cust_name
+Balance
+C01
+1
+Raj
+1
+3000
+C01
+1
+Raj
+3000
+C02
+2
+Meet
+2
+1000
+C02
+2
+Meet
+1000
+C03
+3
+Harsh
+3
+2000
+C04
+4
+Punit
+4
+4000
+Customer
+σAno<3 (Customer Balance)
+=
+σθ (E1
+E2)=
+E1 θ E2
+Output
+Balance
+(Customer) σAno<3 (Balance)
+σθ1 (E1
+θ2 E2) =
+E1
+θ1Λθ2 E2
+
+===== PAGE 28 =====
+27
+Transformation of relational expressions
+5.
+Theta operations are commutative.
+Cid
+Ano
+Cust_name
+Ano
+Balance
+Cid
+Ano
+Cust_name
+Balance
+C01
+1
+Raj
+1
+3000
+C01
+1
+Raj
+3000
+C02
+2
+Meet
+2
+1000
+C02
+2
+Meet
+1000
+C03
+3
+Harsh
+3
+2000
+C04
+4
+Punit
+4
+4000
+Customer
+=
+E1 θ E2
+=
+E2 θ E1
+Output
+Balance
+(Customer) σAno<3 (Balance)
+(Balance)σAno<3 (Customer)
+
+===== PAGE 29 =====
+28
+Transformation of relational expressions
+6.
+Natural join operations are associative. 
+(E1
+E2) E3 =
+E1 (E2 E3)
+§
+Selection operation distribute over theta join operation under 
+the following condition
+•When all the attributes in the selection condition θ0 involves only the 
+attributes of the one of the expression (says E1) being joined.
+σθ0 (E1
+=
+(σθ0 (E1))
+θ E2)
+θ E2
+•When the selection condition θ1 involves only the attributes of E1 and θ2 
+involves only the attributes of E2.
+σ
+θ1Λθ2 (E1
+θ E2)
+=
+(σθ1(E1)
+θ (σθ2 (E2)))
+
+===== PAGE 30 =====
+29
+Transformation of relational expressions
+8.
+Set operations union and intersection are commutative.
+Cust_name 
+Raj
+Meet
+Customer
+=
+E1 U E2 = E2 U E1
+E1 ∩ E2 = E2 ∩ E1
+Name 
+Raj 
+Meet 
+Suresh
+Output
+Emp_name 
+Meet 
+Suresh
+Employee
+Employee U
+Customer
+Customer U
+Employee
+Name 
+Meet
+Output
+Union
+Intersect
+=
+Employee ∩Customer
+Customer ∩Employee
+set difference is not commutative
+
+===== PAGE 31 =====
+30
+Transformation of relational expressions
+9.
+Set operations union and intersection are associative.
+Cust_name 
+Raj
+Meet
+Customer
+=
+(E1 U E2) U E3 =
+E1 U (E2 U 
+E3) (E1 ∩ E2) ∩ E2 =
+ E1 ∩ (E2 
+∩ E3)
+Name 
+Raj 
+Meet 
+Suresh
+Output
+Emp_name 
+Meet 
+Suresh
+Employee
+Customer U (Employee U Student)
+(Customer U Employee) U Student
+Name 
+Meet
+Output
+Union
+Intersect
+=
+Customer ∩ (Employee ∩ Student)
+(Customer ∩ Employee) ∩ Student
+Emp_name 
+Raj
+Meet
+Student
+
+===== PAGE 32 =====
+31
+Transformation of relational expressions
+10. Selection operation distributes over U, ∩ and –.
+σ (E1 – E2) = σ (E1) – σ (E2)
+θ
+θ
+θ
+similarly selection operation is distributed for U and ∩ also.
+
+===== PAGE 33 =====
+32
+Query optimization
+•It is a process of selecting the most efficient query evaluation plan 
+from the available possible plans.
+∏ 
+Cust_Name (σ 
+Balance<2500 (Account)
+Customer )
+∏ 
+Cust_Name (σ 
+Balance<2500 (Account
+Customer ))
+Cid Ano Cust_name 
+C01 A01 Raj
+C02   A02   Meet 
+C03   A03   Harsh 
+C04   A04   Punit
+Ano Balance 
+A01 3000
+A02 1000
+A03 2000
+A04 4000
+Efficient plan
+Customer
+Account
+2 records 4 records
+4 records
+4 records
+
+===== PAGE 34 =====
+33
+Approaches to Query Optimization
+1.
+Exhaustive Search Optimization
+•Generates all possible query plans and then the best plan is selected.
+•It provides best solution.
+§
+Heuristic Based Optimization
+•
+Heuristic
+based
+optimizationuses
+rule-based
+optimization 
+approaches for query optimization.
+•Performs select and project operations before join operations. This is done 
+by moving the select and project operations down the query tree. This 
+reduces the number of tuples available for join.
+•Avoid cross-product operation because they result in very large-sized 
+intermediate tables.
+•This algorithms do not necessarily produce the best query plan.
+
+===== PAGE 35 =====
+34
+Search algorithm for selection operation
+1.
+Linear search (A1)
+2.
+Binary search (A2)
+
+===== PAGE 36 =====
+35
+Linear search (A1)
+•It scans each blocks and tests all records to see whether they satisfy 
+the selection condition.
+•Cost of linear search (worst case) = br
+br denotes number of blocks containing records from relation r
+•If the selection condition is there on a (primary) key attribute, then 
+system can stop searching if the required record is found.
+•cost of linear search (best case) = (b /2)
+r
+•Linear search can be applied regardless of
+•selection condition or
+•ordering of records in the file (relation)
+•This algorithm is slower than binary search algorithm.
+
+===== PAGE 37 =====
+36
+Binary search (A2)
+•Generally,  this  algorithm  is  used  if  selection  is  an  equality 
+comparison on the (primary) key attribute  and file (relation) is 
+ordered (sorted) on (primary) key attribute.
+2
+r
+•cost of binary search = [log (b )]
+r
+•b
+denotes number of blocks containing records from relation 
+r
+▪If the selection is on non (primary) key attribute then 
+multiple block may contains required records, then the 
+cost of scanning such blocks need to be added to the 
+cost estimate.
+▪This algorithm is faster than linear search algorithm.
+
+===== PAGE 38 =====
+37
+Materialized views
+•A materialized view takes the regular view described above and 
+materializes it by proactively computing the results and storing 
+them in a “virtual” table.
+•Materialized View definition:
+•A view can be “materialized” by storing the tuples of the view in the 
+database. Index structures can be built on the materialized view. 
+Consequently, database accesses to the materialized view can be 
+much faster than recomputing the view. A materialized view is like 
+a cache --- a copy of the data that can be accessed quickly.
+•If a regular view is a saved query, a materialized view is a saved 
+query plus its results stored as a table.
+
+===== PAGE 39 =====
+38
+•There are a few important implications of a view being 
+“materialized:”
+•When referenced in a query, a materialized view doesn’t need to be 
+recomputed. — The results are stored, so querying materialized 
+views tends to be faster.
+•Because it’s stored as if it were a table, indexes can be built on the 
+columns of a materialized view.
+•A new problem of “view maintenance” arises. — Once a view is 
+materialized, it is only accurate until the underlying base relations 
+are modified. The process of updating a materialized view in 
+response to these changes is called view maintenance.
+
+===== PAGE 40 =====
+39
+Questions asked
+1.
+Explain Query Processing steps. OR Discuss various steps of query processing with a proper 
+diagram  OR  Explain the query evaluation process.
+2.
+Explain Heuristics in Optimization.
+3.
+Explain the purpose of sorting with an example with reference to query optimization.
+4.
+Explain the measures of finding out the cost of a query in query processing.
+
+===== PAGE 41 =====
+Thank You

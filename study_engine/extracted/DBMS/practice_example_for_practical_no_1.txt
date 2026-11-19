@@ -1,0 +1,118 @@
+SOURCE: SEM3/DBMS/practice example for practical no 1.pdf
+
+===== PAGE 1 =====
+If the practical topic is "To Study SQL and Features of SQL", you can write it in the 
+following format for your practical file.
+Practical No. 1
+Title
+To Study SQL and Features of SQL
+Aim
+To study the basics of SQL (Structured Query Language) and understand its features and 
+different types of SQL commands.
+Theory
+What is SQL?
+SQL (Structured Query Language) is the standard language used to create, access, manage, 
+and manipulate data stored in a Relational Database Management System (RDBMS) such 
+as MySQL, Oracle, SQL Server, PostgreSQL, and SQLite.
+IBM developed SQL in the 1970s and later became an ANSI and ISO standard.
+Features of SQL
+1. Easy to Learn 
+o
+SQL uses simple English-like commands. 
+2. Standard Language 
+o
+ANSI and ISO standardized language used by almost all RDBMS. 
+3. Data Definition 
+o
+Create, modify, and delete database objects. 
+4. Data Manipulation 
+o
+Insert, update, delete, and retrieve data. 
+5. Data Security 
+o
+Provides user authentication and access control. 
+6. Transaction Control 
+o
+Supports COMMIT, ROLLBACK, and SAVEPOINT. 
+7. Data Integrity 
+o
+Supports PRIMARY KEY, FOREIGN KEY, UNIQUE, CHECK, and NOT 
+NULL constraints. 
+8. Supports Multiple Users 
+o
+Many users can access the database simultaneously. 
+9. Portability 
+o
+SQL programs work on different database systems with minor changes. 
+10. High Performance 
+o
+Efficiently processes large amounts of data. 
+
+===== PAGE 2 =====
+Types of SQL Commands
+Command Type
+Purpose
+Examples
+DDL (Data Definition 
+Language)
+Defines database 
+objects
+CREATE, ALTER, DROP, 
+TRUNCATE
+DML (Data Manipulation 
+Language)
+Manipulates data
+INSERT, UPDATE, DELETE
+DQL (Data Query Language)
+Retrieves data
+SELECT
+DCL (Data Control Language)
+Controls permissions GRANT, REVOKE
+TCL (Transaction Control 
+Language)
+Manages transactions COMMIT, ROLLBACK, 
+SAVEPOINT
+Example SQL Commands
+1. Create Database
+CREATE DATABASE College;
+2. Use Database
+USE College;
+3. Create Table
+CREATE TABLE Student
+(
+    RollNo INT PRIMARY KEY,
+    Name VARCHAR(50),
+    Department VARCHAR(30),
+    Marks INT
+);
+4. Insert Records
+INSERT INTO Student
+VALUES
+(101,'Priya','CSE',85),
+(102,'Rahul','IT',78),
+(103,'Neha','CSE',92);
+5. Display Records
+SELECT * FROM Student;
+6. Update Record
+UPDATE Student
+
+===== PAGE 3 =====
+SET Marks = 90
+WHERE RollNo = 102;
+7. Delete Record
+DELETE FROM Student
+WHERE RollNo = 103;
+8. Drop Table
+DROP TABLE Student;
+Expected Output
+After executing the SELECT statement:
+RollNo Name Department Marks
+101
+Priya CSE
+85
+102
+Rahul IT
+78
+103
+Neha CSE
+92

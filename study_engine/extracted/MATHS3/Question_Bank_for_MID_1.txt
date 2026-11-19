@@ -1,0 +1,176 @@
+SOURCE: SEM3/MATHS3/Question Bank for MID 1.pdf
+
+===== PAGE 1 =====
+ 
+Krishna School of Emerging Technology And Applied Research  
+Subject Name & Subject Code : Maths - III (25B1BS301) 
+B. Tech: 3rd Semester(2026-2027) 
+1 
+A microchip company has two machines that produce the chips. Machine I produce 
+65% of the chips, but 5% of its chips are defective. Machine II produces 35% of the 
+chips and 15% of its chips are defective. A chip is selected at random and found to be 
+defective. What is the probability that it came from Machine I? 
+2 
+In a bolt factory, three machines A, B and C manufacture 25%, 35% and 40% of the 
+total product respectively. Of these outputs 5%, 4% and 2% respectively, are defective 
+bolts. A bolt is picked up at random and found to be defective. What are the 
+probabilities that it was manufactured by machines A, B and C? 
+3 
+In a box, 100 bulbs are supplied out of which 10 bulbs have defects of type A, 5 bulbs 
+have defects of type B and 2 have defects of both types. Find the probabilities that a 
+bulb to be drawn at random has a B type defect under the condition that it has an A 
+type defect. 
+4 
+The probability density function of a variate X is  
+X 
+0 
+1 
+2 
+3 
+4 
+5 
+6 
+p(x) 
+a 
+3a 
+5a 
+7a 
+9a 
+11a 
+13a 
+Find a, 𝑃(𝑋≥5), 𝑃(3 < 𝑋≤6) 
+5 
+A random variable X has the following probability distribution: 
+X 
+0 
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+P(X=x) 
+a 
+4a 
+3a 
+7a 
+8a 
+10a 
+6a 
+9a 
+(i) 
+Find ‘a’      (ii) Find P(x < 3) 
+6 
+Let X denotes the number of heads in a single toss of three fair coins. Determine 
+𝑃(𝑥≤2)& 𝑃(𝑥> 2) 
+7 
+ 
+Find Constant k such that 𝑓(𝑥) = {𝑘𝑥2; 𝑖𝑓  0 < 𝑥< 3
+0,       𝑜𝑡ℎ𝑒𝑟𝑤𝑖𝑠𝑒   is a probability function. 
+ Find 𝑃(1 < 𝑥< 2) 
+8 
+ 
+Find the probability of drawing 2 red balls in succession from a bag containing 4 Red 
+& 5 Black balls when the ball that is first drawn is  
+(i) 
+Not Replaced                 (ii)   Replaced 
+9 
+Two marbles are drawn in succession from a box containing 10 red, 30 white, 20 blue 
+and 15 orange marbles, with replacement being made after each draw. Find the 
+probability that (i) both are white (ii) first is red and second is white. 
+10 
+ 
+ 
+The probability density function is 
+𝑓(𝑥) = {𝑘(3𝑥2 −1), −1 ≤𝑥≤2
+0, 𝑒𝑙𝑠𝑒 𝑤ℎ𝑒𝑟𝑒
+  
+Find the value of k and find 𝑃(−1 ≤𝑥≤0). 
+
+===== PAGE 2 =====
+ 
+ 
+11 
+A random variable X has the following distribution: 
+X 
+1 
+2 
+3 
+4 
+5 
+6 
+P(X=x) 
+1
+36 
+3
+36 
+5
+36 
+7
+36 
+9
+36 
+11
+36 
+(i) 
+Find Mean       (ii)   Find Variance    (iii)  Find 𝑃(1 < 𝑋< 6) 
+12 
+A is known to hit the target in 2 out of 5 shots. whereas B is known to hit the target in 
+3 out of 4 shots. Find the probability of the target being hit when both try.  
+13 
+Four cards are drawn from a pack of cards. Find the probability that (i) all are 
+diamonds (ii) there is one card of each suit (iii) there are two spades and two hearts. 
+14 
+A room has three lamp sockets. From a collection of 10 light bulbs of which only 6 
+are good. A person selects 3 at random and puts them in the socket. What is the 
+probability that the room will have light? 
+15 
+A random variable X has the following probability function: 
+X 
+0 
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+p(x) 
+0 
+K 
+2K 
+2K 
+3K 
+K2 
+2K2 
+7K2+K 
+Determine K. Evaluate 𝑃(𝑋< 6), 𝑃(𝑋≥6), 𝑃(0 < 𝑋< 5), 𝑃(0 ≤𝑋≤4).  
+Determine the distribution function of X, Mean and Variance. 
+16 
+Two dice are thrown. Let X assign to each point (𝑎,𝑏) in S the maximum of its numbers 
+𝑖.𝑒.,𝑋(𝑎,𝑏)=𝑚𝑎𝑥𝑖𝑚𝑢𝑚(𝑎,𝑏). Find the probability distribution. X is a random variable with 
+(𝑠)={1,2,3,4,5,6}. Also find the mean and variance of the distribution. 
+17 
+In a certain assembly plant, three machines, B1, B2, and B3 make 30%, 45%, and 25%, 
+respectively, of the products. It is known from past experience that 2%, 3%, and 2% of the 
+products made by each machine, respectively, are defective. Now, suppose that a finished 
+product is randomly selected. What is the probability that it is defective? 
+18 
+Two students x and y work independently on a problem. The probability that x will solve it 
+is 3/4 and the probability that y will solve it is 2/3. What is the probability that problem 
+will be solved? 
+19 
+Let X denote the number of heads in a single toss of 4 fair coins. Determine  
+𝑖) P(𝑋<2)     𝑖𝑖) P(1<𝑋≤3). 
+20 
+Consider Tossing of an unbiased coin Thrice. Let X denote the number of heads in the 
+outcome; Y denote the number of consecutive heads in outcome then Find  
+(i) 
+Probability distribution Table for X & Y 
+(ii) 
+Probability distribution Function F(x) for X & Y 
+(iii) 
+Probability distribution Table for  Z = X+Y & W = XY 
+(iv) 
+Cumulative distribution function F(X) for  Z = X+Y & W = XY 

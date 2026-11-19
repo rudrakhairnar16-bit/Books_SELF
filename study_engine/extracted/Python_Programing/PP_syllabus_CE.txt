@@ -1,0 +1,696 @@
+SOURCE: SEM3/Python_Programing/PP_syllabus_CE.pdf
+
+===== PAGE 1 =====
+DRS. KIRAN & PALLAVI PATEL GLOBAL UNIVERSITY, VADODARA (KPGU) 
+ 
+ 
+ 
+ 
+ 
+ 
+Course Title 
+Python Programming 
+Course No 
+(Will be 
+assigned) 
+Specialization 
+Computer 
+Engineering 
+Structure 
+Course/ Branch 
+CSE/CE/IT 
+L 
+T 
+P 
+C 
+Offered for 
+3rd Semester 
+3 
+0 
+0 
+3 
+Faculty 
+Faculty of 
+Engineering and 
+Technology 
+Status 
+HSS 
+AEC 
+VAC 
+SEC 
+BSC 
+ESC 
+PCC 
+PEC 
+ 
+Pre-requisite 
+Y 
+N 
+- 
+- 
+- 
+- 
+- 
+- 
+Yes 
+- 
+- 
+- 
+OE 
+EL 
+CC 
+MC 
+Honors/Minor 
+- 
+- 
+- 
+- 
+For Office Use Only 
+Date of 
+Submission 
+Type 
+New 
+Modification 
+Merging 
+To take effect 
+from 
+2025-26 
+Yes 
+- 
+- 
+Date of approval 
+by Board of 
+Study 
+Date of 
+approval by 
+Academic 
+Council 
+ 
+Year: 2 
+Semester: 3 
+Sr 
+No 
+Name of 
+Subject 
+Teaching Scheme 
+Evaluation Scheme 
+Credits 
+Theory Hours/week 
+Tutorial Hours/week 
+Practical Hours/week 
+Total 
+Theory 
+Practical 
+Total Marks 
+Theory 
+Practical 
+Ex 
+Internal 
+Internal 
+External 
+Continuous 
+Evaluation 
+Term Work 
+Viva/ Practical Exam 
+SEE 
+Attendance 
+Assignment 
+Mid Sem 
+Attendance 
+Participation/ 
+Teamwork 
+Report Writing 
+Quiz/Lab 
+Exam 
+1 
+Python 
+Programming 
+3 
+0 
+0 
+3 
+70 
+5 
+5 
+20 
+- 
+- 
+- 
+- 
+- 
+100 
+3 
+- 
+
+===== PAGE 2 =====
+DRS. KIRAN & PALLAVI PATEL GLOBAL UNIVERSITY, VADODARA (KPGU) 
+ 
+ 
+ 
+ 
+Course Outcomes (COs): 
+L1 – Remember, L2 – Understand, L3 – Apply, L4 – Analyze, L5 – Evaluate, L6 – Create 
+ 
+CO No 
+Course Outcome 
+Blooms 
+Taxonomy 
+Level * 
+CO1 
+Explain the basic concepts of Python programming including 
+syntax, variables, data types and operators. 
+L1 – Remember, 
+L2 – Understand 
+CO2 
+Apply control structures, functions and modules to develop 
+Python programs for solving computational problems. 
+L3 – Apply 
+CO3 
+Analyze and implement Python data structures such as lists, 
+tuples, sets and dictionaries. 
+L4 – Analyze 
+CO4 
+Evaluate program correctness using file handling, exception 
+handling, debugging and basic software testing techniques. 
+L5 – Evaluate 
+CO5 
+Design Python applications using object-oriented programming 
+concepts and libraries such as NumPy, Pandas and Matplotlib. 
+L6 – Create 
+
+===== PAGE 3 =====
+DRS. KIRAN & PALLAVI PATEL GLOBAL UNIVERSITY, VADODARA (KPGU) 
+ 
+ 
+ 
+ 
+ 
+Content of the Course 
+Module No 
+Topics to be Covered 
+Hours Weightage 
+Module 1 
+Introduction to Python: History and features of Python, 
+installation, Python environment, basic syntax, variables, 
+identifiers, data types, input/output functions, operators and 
+expressions. 
+7 hrs 
+15% 
+Module 2 
+Control Structures: Conditional statements (if, if-else, nested if), 
+looping constructs (for, while), break, continue, pass statements, 
+pattern programs and problem solving. 
+7 hrs 
+15% 
+Module 3 
+Functions and Modules: Functions, types of arguments, recursive 
+functions, lambda functions, modules and packages, importing 
+modules. 
+7 hrs 
+15% 
+Module 4 
+Python Data Structures: Lists, tuples, sets, dictionaries, 
+operations on data structures, list comprehension and applications 
+of data structures. 
+8 hrs 
+20% 
+Module 5 
+File Handling, Exception Handling and Testing: File operations 
+(open, read, write, append), working with text and binary files, 
+exception handling (try, except, finally), user-defined exceptions, 
+introduction to software testing, debugging techniques and basic 
+testing approaches in Python. 
+7 hrs 
+15% 
+Module 6 
+Python 
+Libraries 
+and 
+Object-Oriented 
+Programming: 
+Introduction to Python libraries, NumPy arrays, basic Pandas 
+operations, data visualization using Matplotlib, Object Oriented 
+Programming concepts (class, object, constructors, inheritance, 
+polymorphism), basic GUI using Tkinter and simple applications. 
+9 hrs 
+20% 
+Total 
+45 hrs 
+100% 
+
+===== PAGE 4 =====
+DRS. KIRAN & PALLAVI PATEL GLOBAL UNIVERSITY, VADODARA (KPGU) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Textbooks 
+1 
+Wesley J. Chun, Core Python Programming, Prentice Hall 
+2 
+David Beazley and Brian Jones, Python CookBook: Recipes for Mastering Python 3, 
+O’Reilly 
+3 
+Mohit Raj, Python for Developers, BPB publications 
+References 
+1 
+R. Nageswara Rao, “Core Python Programming”, dreamtech 
+2 
+Kenneth A. Lambert, “Fundamentals of Python – First Programs”, CENGAGE Publication 
+3 
+John V Guttag. “Introduction to Computation and Programming Using Python”, Prentice 
+Hall of India 
+Web content Link / E- material links 
+1 
+https://nptel.ac.in/courses - NPTEL Course 
+2 
+www.coursera.org 
+3 
+Vlabs.iitb.ac.in 
+4 
+www.udacity.com 
+
+===== PAGE 5 =====
+DRS. KIRAN & PALLAVI PATEL GLOBAL UNIVERSITY, VADODARA (KPGU) 
+ 
+ 
+ 
+ 
+Suggested Distribution of Marks as per Bloom’s Taxonomy: 
+ 
+Suggested Distribution of Marks as per Bloom’s Taxonomy (%) 
+Remember 
+Level 
+Understanding 
+Level 
+Applying 
+Level 
+Analyzing 
+Level 
+Evaluation 
+Level 
+Create 
+Level 
+10 
+20 
+30 
+20 
+10 
+10 
+ 
+CO Mapping with POs: 
+3 – Strong Correlation, 2 – Moderate Correlation, 1 – Slight Correlation, ‘–’ No Correlation 
+Course Articulation Matrix, Mapping of COs with POs 
+CO / 
+PO 
+PO1 
+PO2 
+PO3 
+PO4 
+PO5 PO6 
+PO7 PO8 
+PO9 
+PO10 
+PO11 
+PO12 
+CO1 
+3 
+2 
+– 
+– 
+1 
+– 
+– 
+– 
+– 
+– 
+– 
+1 
+CO2 
+3 
+3 
+2 
+– 
+2 
+– 
+– 
+– 
+– 
+– 
+– 
+1 
+CO3 
+3 
+3 
+2 
+1 
+2 
+– 
+– 
+– 
+– 
+– 
+– 
+1 
+CO4 
+2 
+3 
+2 
+2 
+2 
+– 
+– 
+– 
+– 
+– 
+– 
+1 
+CO5 
+2 
+2 
+3 
+2 
+3 
+– 
+– 
+– 
+1 
+1 
+– 
+2 
+ 
+ 
+ 
+Average CO–PO Correlation Table 
+ 
+ 
+Mapping of Course Component with POs 
+PO1 
+PO2 
+PO3 
+PO4 
+PO5 
+PO6 
+PO7 
+PO8 
+PO9 
+PO10 
+PO11 
+PO12 
+Average 
+Value 
+2.6 
+2.6 
+1.8 
+1.0 
+2.0 
+- 
+- 
+- 
+0.2 
+0.2 
+- 
+1.2 
+
+===== PAGE 6 =====
+DRS. KIRAN & PALLAVI PATEL GLOBAL UNIVERSITY, VADODARA (KPGU) 
+ 
+ 
+ 
+ 
+ 
+ 
+Course Title 
+Python 
+Programming 
+Laboratory 
+Course No 
+(Will be 
+assigned) 
+Specialization 
+Computer 
+Engineering 
+Structure 
+Course/ Branch 
+CSE/CE/IT 
+L 
+T 
+P 
+C 
+Offered for 
+3rd Semester 
+0 
+0 
+2 
+1 
+Faculty 
+Faculty of 
+Engineering and 
+Technology 
+Status 
+HSS 
+AEC 
+VAC 
+SEC 
+BSC 
+ESC 
+PCC 
+PEC 
+ 
+Pre-requisite 
+Y 
+N 
+- 
+- 
+- 
+- 
+- 
+- 
+Yes 
+- 
+- 
+- 
+OE 
+EL 
+CC 
+MC 
+Honors/Minor 
+- 
+- 
+- 
+- 
+For Office Use Only 
+Date of 
+Submission 
+Type 
+New 
+Modification 
+Merging 
+To take effect 
+from 
+2025-26 
+Yes 
+- 
+- 
+Date of approval 
+by Board of 
+Study 
+Date of 
+approval by 
+Academic 
+Council 
+ 
+ 
+Year: 2 
+Semester: 3 
+Sr 
+No 
+Name of 
+Subject 
+Teaching Scheme 
+Evaluation Scheme 
+Credits 
+Theory Hours/week 
+Tutorial Hours/week 
+Practical Hours/week 
+Total 
+Theory 
+Practical 
+Total Marks 
+Theory 
+Practical 
+Ex 
+Internal 
+Internal 
+External 
+Continuous 
+Evaluation 
+Term Work 
+Viva/ Practical Exam 
+SEE 
+Attendance 
+Assignment 
+Mid Sem 
+Attendance 
+Participation/ 
+Teamwork 
+Report Writing 
+Quiz/Lab 
+Exam 
+1 
+Python 
+Programming 
+Laboratory 
+0 
+0 
+2 
+2 
+- 
+- 
+- 
+- 
+5 
+5 
+5 
+5 
+30 
+50 
+- 
+1 
+
+===== PAGE 7 =====
+ 
+Python Programming Laboratory  
+Semester – 3 ( CSE / CE / IT ) 
+List of Experiments 
+ 
+Practical 
+No. 
+Program Definition 
+1 
+Install the Python programming environment (IDLE/VS Code/PyCharm), 
+configure the interpreter, and execute a simple Python program to verify successful 
+installation. 
+2 
+Write a Python program to demonstrate the use of variables, identifiers, keywords, 
+and different built-in data types such as integer, float, string, Boolean, list, tuple, 
+and dictionary. 
+3 
+Write a Python program to perform arithmetic operations including addition, 
+subtraction, multiplication, division, modulus, exponentiation, and floor division 
+on user-provided inputs. 
+4 
+Develop a Python program to demonstrate the use of relational, logical, 
+assignment, and membership operators by evaluating different expressions. 
+5 
+Write a Python program to evaluate mathematical expressions using operator 
+precedence and associativity, and display the intermediate and final results. 
+6 
+Develop a menu-driven calculator using conditional statements (if, if-elif-else) to 
+perform basic arithmetic operations based on user choice. 
+7 
+Write a Python program to determine whether a given number is positive, negative, 
+or zero and check whether it is even or odd using nested conditional statements. 
+8 
+Write a Python program to determine the largest and smallest among three numbers 
+entered by the user using decision-making statements. 
+9 
+Write a Python program using a for loop to generate multiplication tables for a 
+given number up to a specified range. 
+10 
+Develop a Python program using a while loop to calculate the factorial of a given 
+number and validate the user input. 
+
+===== PAGE 8 =====
+ 
+Practical 
+No. 
+Program Definition 
+11 
+Write a Python program to generate the Fibonacci series up to a specified number 
+of terms using iterative looping constructs. 
+12 
+Develop a Python program to display all prime numbers within a given range and 
+count the total number of prime numbers found. 
+13 
+Write a Python program using user-defined functions to perform arithmetic 
+operations such as addition, subtraction, multiplication, and division. 
+14 
+Develop a Python program demonstrating different types of function arguments 
+including positional, keyword, default, and variable-length arguments. 
+15 
+Write Python functions to calculate the Greatest Common Divisor (GCD) and 
+Least Common Multiple (LCM) of two numbers. 
+16 
+Develop a recursive Python program to calculate the factorial of a number and 
+compare its output with the iterative approach. 
+17 
+Write a recursive Python program to generate the Fibonacci sequence and analyze 
+the recursive function calls. 
+18 
+Develop a Python program demonstrating the concepts of local variables, global 
+variables, and variable scope within functions. 
+19 
+Write a Python program to perform various list operations including insertion, 
+deletion, updating, sorting, reversing, searching, and slicing. 
+20 
+Develop a Python program demonstrating tuple creation, indexing, slicing, 
+concatenation, and the concept of tuple immutability. 
+21 
+Write a Python program to perform dictionary operations including insertion, 
+updating, deletion, searching, and traversal of key-value pairs. 
+22 
+Develop a Python program to count the frequency of words in a given paragraph 
+using dictionary data structures. 
+23 
+Write a Python program to create a text file and perform write, append, and 
+overwrite operations using file handling functions. 
+
+===== PAGE 9 =====
+ 
+Practical 
+No. 
+Program Definition 
+24 
+Develop a Python program to read a text file and calculate the total number of 
+characters, words, and lines present in the file. 
+25 
+Write a Python program to copy the contents of one text file into another and verify 
+the copied data. 
+26 
+Develop a Python program demonstrating exception handling using try, except, 
+else, and finally blocks by handling multiple runtime exceptions. 
+27 
+Write a Python program to create a Student class with appropriate data members 
+and member functions to display student information. 
+28 
+Develop a Python program demonstrating single and multilevel inheritance using 
+suitable real-world examples such as Employee and Manager classes. 
+29 
+Write a Python program to demonstrate method overriding and runtime 
+polymorphism using inheritance. 
+30 
+Develop a Python program using the NumPy library to create one-dimensional and 
+two-dimensional arrays and perform indexing, slicing, reshaping, and aggregation 
+operations. 
+31 
+Write a Python program using NumPy to perform matrix addition, subtraction, 
+multiplication, transpose, determinant, and inverse operations. 
+32 
+Develop a Python program using the Pandas library to create DataFrames, perform 
+sorting, filtering, grouping, and descriptive statistical analysis. 
+33 
+Write a Python program using Pandas to read data from a CSV file, handle missing 
+values, perform data cleaning, and generate summary statistics. 
+34 
+Develop Python programs using the Turtle graphics module to draw geometric 
+shapes, polygons, spirals, and user-defined graphical patterns with different 
+colours. 
+35 
+Develop a GUI-based application using the Tkinter library (such as a Student 
+Information System, Calculator, Login Form, or Unit Converter) with appropriate 
+widgets and event handling. 
+ 

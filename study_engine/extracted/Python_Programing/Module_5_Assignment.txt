@@ -1,0 +1,100 @@
+SOURCE: SEM3/Python_Programing/Module_5_Assignment.pdf
+
+===== PAGE 1 =====
+DRS. KIRAN & PALLAVI PATEL GLOBAL UNIVERSITY, VADODARA (KPGU) 
+Faculty of Engineering and Technology 
+Department of Computer Science & Engineering  
+ 
+Module 5 Assignment: File Handling, Exception Handling & Testing 
+Course: Python Programming  
+ 
+ 
+Given Date: 13/10/2026 
+ 
+ 
+ 
+ 
+Submission Date: 21/10/2026 
+Q.No. 
+Assignment Question 
+CO 
+BT Level 
+1 
+Explain the basic concepts of Python programming including syntax, 
+variables, data types, and operators. 
+CO1 
+L1 / L2 
+2 
+Write a Python program to open a file and perform mathematical 
+operations on numbers read from the file using basic control structures and 
+functions. 
+CO2 
+L3 
+3 
+Develop a Python program to read lines from a text file, parse words into 
+lists/dictionaries, and perform data structure operations. 
+CO3 
+L3 / L4 
+4 
+Explain the purpose of file handling in Python and state two advantages and 
+two disadvantages of using it. 
+CO4 
+L2 
+5 
+Differentiate between text files and binary files in Python, providing two 
+examples of file extensions for each. 
+CO4 
+L2 
+6 
+Explain the following file opening modes in Python: 'r', 'w', 'a', and 'x'. 
+CO4 
+L2 
+7 
+Write a Python program to read a text file and display its contents line by 
+line using a loop. 
+CO4 
+L3 
+8 
+Write a Python program to count the total number of characters, words, 
+and lines in a given text file. 
+CO4 
+L3 
+9 
+Write a Python program to copy the contents of a binary file (e.g., an image) 
+into a new file. 
+CO4 
+L3 
+10 
+Distinguish between syntax errors and exceptions in Python with suitable 
+code examples. 
+CO4 
+L4 
+
+===== PAGE 2 =====
+11 
+Explain the role of try, except, else, and finally blocks in Python exception 
+handling. 
+CO4 
+L2 
+12 
+Write a Python program to perform division of two numbers that handles 
+both ZeroDivisionError and ValueError using exception handling. 
+CO4 
+L3 
+13 
+Explain assertions in Python, their syntax, and how they differ from 
+standard exception handling. 
+CO4 
+L2 
+14 
+What are user-defined exceptions? Write a Python program to define and 
+raise a custom exception EmptyError. 
+CO4 
+L3 
+15 
+Create an Object-Oriented File Handler class that demonstrates reading, 
+writing, and custom exception handling for structured file data 
+management. 
+CO5 
+L6 
+ 

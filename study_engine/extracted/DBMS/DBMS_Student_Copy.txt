@@ -1,0 +1,573 @@
+SOURCE: SEM3/DBMS/DBMS_Student Copy.pdf
+
+===== PAGE 1 =====
+DRS. KIRAN & PALLAVI PATEL GLOBAL UNIVERSITY, VADODARA (KPGU) 
+                 
+ 
+ 
+ 
+ 
+ 
+Course Title 
+Database 
+Management 
+Systems 
+Course No 
+(Will be 
+assigned) 
+Specialization 
+Computer Science 
+Structure 
+Course/ Branch 
+CSE/CE/IT 
+L 
+T 
+P 
+C 
+Offered for 
+3rd Semester 
+3 
+0 
+0 
+3 
+Faculty 
+Faculty of 
+Engineering and 
+Technology 
+Status 
+HSS 
+AEC 
+VAC 
+SEC 
+BSC 
+ESC 
+PCC 
+PEC 
+ 
+Pre-requisite 
+Y 
+N 
+- 
+- 
+- 
+- 
+- 
+- 
+Yes 
+- 
+- 
+- 
+OE 
+EL 
+CC 
+MC 
+Honors/Minor 
+- 
+- 
+- 
+- 
+For Office Use Only 
+Date of 
+Submission 
+Type 
+New 
+Modification 
+Merging 
+To take effect 
+from 
+2025-26 
+Yes 
+- 
+- 
+Date of approval 
+by Board of 
+Study 
+Date of 
+approval by 
+Academic 
+Council 
+ 
+Year: 1 
+Semester: 1 
+Sr 
+No 
+Name of 
+Subject 
+Teaching Scheme 
+Evaluation Scheme 
+Credits 
+Theory Hours/week 
+Tutorial Hours/week 
+Practical Hours/week 
+Total 
+Theory 
+Practical 
+Total Marks 
+Theory 
+Practical 
+Ex 
+Internal 
+Internal 
+External 
+Continuous 
+Evaluation 
+Term Work 
+Viva/ Practical Exam 
+SEE 
+Attendance 
+Assignment 
+Mid Sem 
+Attendance 
+Participation/ 
+Teamwork 
+Report Writing 
+Quiz/Lab 
+Exam 
+1 
+Database 
+Management 
+Systems 
+3 
+0 0 
+3 
+70 5 
+5 
+20 
+- 
+- 
+- 
+- 
+- 
+100 
+3 
+- 
+
+===== PAGE 2 =====
+DRS. KIRAN & PALLAVI PATEL GLOBAL UNIVERSITY, VADODARA (KPGU) 
+                 
+ 
+ 
+ 
+Course Outcomes (COs): 
+L1 – Remember, L2 – Understand, L3 – Apply, L4 – Analyze, L5 – Evaluate, L6 – Create 
+ 
+ 
+Sr. 
+No. 
+Course Outcome 
+Blooms 
+Taxonomy 
+Level * 
+CO1 
+Understand the concepts of Database Management systems, need for 
+normalization and Design database by applying normalization. 
+L1, L2, L3 
+CO2 
+Given a problem statement, identify the entities and their relations 
+and draw an E R diagram. 
+L3, L4 
+CO3 
+Develop Relational Algebra, Relational Calculus, SQL and PL/SQL 
+solutions for the given problem. 
+L3, L6 
+CO4 Understand and apply the concepts of transaction, concurrency 
+control, recovery and security in database 
+L2, L3, L4 
+CO5 
+Understand query processing, optimization and demonstrate the SQL 
+query evaluation 
+L2, L4, L5 
+
+===== PAGE 3 =====
+DRS. KIRAN & PALLAVI PATEL GLOBAL UNIVERSITY, VADODARA (KPGU) 
+                 
+ 
+ 
+ 
+ 
+Content of the Course 
+Module 
+Contents/ Topics to be covered 
+Hours 
+Weight 
+age % 
+Module -1 Overview and Architecture of Database Systems:  
+Introduction and applications of DBMS, Purpose of database,
+Advantages of DBMS over file Processing Systems, Levels of
+Abstraction in a DBMS, View of Data, Data Independence,
+Mappings, Database Languages DDL, DML, DCL, Database 
+architecture- Storage Manager – the Query Processor, Database 
+users and DBA.  
+ 
+Data Models: Entity-relationship model, network model, 
+relational and object-oriented data models 
+04 
+8% 
+Module -2 Relational Algebra and Relational Model:  
+Structure relational Database, Database Schema, Relational 
+algebra – fundamental operators and syntax, relational algebra 
+queries, Relational Calculus: Tuple and Domain-Oriented 
+relational calculus. Structure of relational databases, Database 
+Schema, Schema Diagrams, Relational Data Integrity: Keys- 
+Candidate Keys and Constraints: Candidate Keys, Primary 
+Keys and Alternate Keys, Foreign Keys and rules, Null value 
+concept and other integrity constraints. Domains, Relations 
+ 
+07 
+16% 
+ 
+ 
+ 
+Module -3 Entity Relationship Model: 
+Basic Concepts and definitions, Constraints, Mapping, Entity 
+Relationship Diagram, Weak Entity Sets, Extended E-R
+Features, and Conversion of ER diagram into relations. 
+03 
+7% 
+Module -4 SQL Concepts: 
+Basics of SQL, DDL,DML,DCL, structure – creation, 
+alteration, defining constraints – Primary key, foreign key, 
+unique, not null, check, IN operator, Functions - aggregate 
+functions, Built-in functions – numeric, date, string functions, 
+set operations, sub queries, correlated sub-queries, Use of 
+group by, having, order by, join and its types, Exist, Any, All , 
+view and its types. Transaction control commands – Commit, 
+Rollback, Savepoint. 
+04 
+8% 
+Module -5 Relational database design: Domain and data dependency, 
+Armstrong's axioms, Normal forms, Dependency preservation, 
+Lossless design.  
+Functional Dependencies: Introduction, Basic definitions, 
+Trivial and nontrivial dependencies, Closure of a set of 
+dependencies, Closure of a set of attributes, Irreducible sets of 
+dependencies.  
+Normalization: Introduction to normalization, Non loss 
+decomposition and functional dependencies, Dependency 
+preservation, first, second and third forms, Boyce / Codd 
+normal form, higher level normal forms. 
+06 
+13% 
+
+===== PAGE 4 =====
+DRS. KIRAN & PALLAVI PATEL GLOBAL UNIVERSITY, VADODARA (KPGU) 
+                 
+ 
+Module -6 Transaction Management:  
+Transaction concepts, properties of transactions, serializability 
+of transactions, testing for serializability, System recovery, 
+Two- Phase Commit protocol, Recovery and Atomicity, Log-
+based recovery, concurrent executions of transactions and 
+related problems, Locking mechanism, solution to concurrency 
+related problems, deadlock, Two-phase locking protocol, 
+Isolation, Intent locking. 
+ 
+07 
+16% 
+ 
+Module -7 Query Processing & Query Optimization: 
+Overview, measures of query cost, selection operation, sorting, 
+join, evaluation of expressions, transformation of relational 
+expressions, estimating statistics of expression results, 
+evaluation plans, materialized views. 
+ 
+05 
+11% 
+Module -8 Overview of Storage and Indexing:  
+Data on External Storage – File Organization and Indexing – 
+Cluster Indexes, Primary and Secondary Indexes – Index data 
+Structures – Hash Based Indexing – Tree base Indexing, 
+Parallel Disk access with RAID 
+03 
+7% 
+Module -9 Database Security:  
+Authentication, Authorization and access control, DAC, MAC 
+and RBAC models, Intrusion detection, SQL injection. 
+03 
+7% 
+Module -10 PL/SQL Concepts: 
+Introduction, Cursors, Stored Procedures, Stored Function, 
+Database Triggers 
+03 
+7% 
+Total 
+45 
+100% 
+
+===== PAGE 5 =====
+DRS. KIRAN & PALLAVI PATEL GLOBAL UNIVERSITY, VADODARA (KPGU) 
+                 
+ 
+ 
+Textbooks 
+1 
+“Database System Concepts”, 6th Edition by Abraham Silberschatz, Henry F. Korth, 
+S.Sudarshan, McGraw-Hill. 
+2 
+“Fundamentals of Database Systems”,7th Edition by R.Elmasriand S.Navathe, Pearson 
+3 
+“An introduction to Database Systems”, C J Date, Pearson. 
+4 
+“SQL-PL/SQL”, Ivan bayross 
+5 
+“Modern Database Management”, Hoffer, Ramesh, Topi, Pearson. 
+References 
+1 
+“Principles of Database and Knowledge–Base Systems”, Vol1 by J.D.Ullman, 
+Computer Science Press. 
+2 
+“Understanding SQL”, Martin Gruber, BPB 
+Web content Link / E- material links 
+1 
+NPTEL tutorials 
+2 
+www.coursera.org 
+3 
+https://www.codecademy.com/learn/learn-sql 
+
+===== PAGE 6 =====
+DRS. KIRAN & PALLAVI PATEL GLOBAL UNIVERSITY, VADODARA (KPGU) 
+                 
+ 
+ 
+ 
+ 
+ 
+Course Title 
+Database 
+Management 
+Systems Laboratory 
+Course No 
+(Will be 
+assigned) 
+Specialization 
+Computer 
+Science 
+Structure 
+Course/ Branch 
+CSE/CE/IT 
+L 
+T 
+P 
+C 
+Offered for 
+3rd Semester 
+0 
+0 
+2 
+1 
+Faculty 
+Faculty of 
+Engineering and 
+Technology 
+Status 
+HSS 
+AEC 
+VAC 
+SEC 
+BSC 
+ESC 
+PCC 
+PEC 
+ 
+Pre-requisite 
+Y 
+N 
+- 
+- 
+- 
+- 
+- 
+- 
+Yes 
+- 
+- 
+- 
+OE 
+EL 
+CC 
+MC 
+Honors/Minor 
+- 
+- 
+- 
+- 
+For Office Use Only 
+Date of 
+Submission 
+Type 
+New 
+Modification 
+Merging 
+To take effect 
+from 
+2025-26 
+Yes 
+- 
+- 
+Date of approval 
+by Board of 
+Study 
+Date of 
+approval by 
+Academic 
+Council 
+ 
+Year: 1 
+Semester: 1 
+Sr 
+No 
+Name of 
+Subject 
+Teaching Scheme 
+Evaluation Scheme 
+Credits 
+Theory Hours/week 
+Tutorial Hours/week 
+Practical Hours/week 
+Total 
+Theory 
+Practical 
+Total Marks 
+Theory 
+Practical 
+Ex 
+Internal 
+Internal 
+External 
+Continuous 
+Evaluation 
+Term Work 
+Viva/ Practical Exam 
+SEE 
+Attendance 
+Assignment 
+Mid Sem 
+Attendance 
+Participation/ 
+Teamwork 
+Report Writing 
+Quiz/Lab 
+Exam 
+1 
+Database 
+Management 
+Systems 
+Laboratory 
+0 
+0 2 
+2 
+- 
+- 
+- 
+- 
+5 
+5 
+5 
+5 
+30 
+50 
+- 
+1 
+
+===== PAGE 7 =====
+DRS. KIRAN & PALLAVI PATEL GLOBAL UNIVERSITY, VADODARA (KPGU) 
+                    
+ 
+ 
+ 
+List of Practical 
+ 
+Name of Laboratory: Database Management Systems Laboratory 
+List of Practical/Experiment 
+Sr. 
+No. 
+Objectives 
+Performance 
+Study 
+Self-Study 
+1 
+To study SQL and Features of SQL. 
+- 
+Yes 
+- 
+2 
+Study of DDL, DML, DQL, DCL and TCL commands. 
+- 
+Yes 
+- 
+3 
+Perform different DDL commands (Create table, DROP, Alter, 
+Truncate, Rename).  
+Yes 
+Yes 
+- 
+4 
+Perform different data manipulation commands (Insert, update, 
+Delete). 
+Yes 
+Yes 
+- 
+5 
+Perform queries to retrieve data from tables with different 
+predicates (LIKE, BETWEEN, IN) etc. 
+ 
+Yes 
+Yes 
+- 
+6 
+To study aggregate functions with query. 
+Yes 
+Yes 
+- 
+7 
+To study Single-row functions. 
+Yes 
+Yes 
+- 
+8 
+Displaying data from Multiple Tables using join operations. 
+Yes 
+Yes 
+- 
+9 
+To apply the concept of Aggregating Data using Group functions. Yes 
+Yes 
+- 
+10 
+To study and Solve queries using the concept of sub query. 
+Yes 
+Yes 
+- 
+11 
+To study and apply the concept of security and privileges. 
+Yes 
+Yes 
+- 
+12 
+Study and Implementation of Rollback, Commit, Savepoint. 
+Yes 
+Yes 
+- 
+13 
+Study and apply PL/SQL. 
+Yes 
+Yes 
+- 
+14 
+To study stored procedure and stored function. 
+Yes 
+Yes 
+- 
+15 
+Study and Implementation of PL/SQL using Cursor and Trigeers. Yes 
+Yes 
+- 
+16 
+Design and implement sample schema and insert data in tables. 
+- 
+- 
+Yes 
+ 
+ 
+ 

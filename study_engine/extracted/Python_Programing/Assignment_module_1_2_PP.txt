@@ -1,0 +1,70 @@
+SOURCE: SEM3/Python_Programing/Assignment_module 1_2_PP.pdf
+
+===== PAGE 1 =====
+3rd Sem 
+Python Programming 
+ 
+Assignment 
+ 
+Unit: 1 
+1 
+What are the differences between C and Python? 
+2 
+Explain built-in datatypes of python. Explain raw_input() and input() in Python. 
+3 
+Explain Application of Python. 
+4 
+Write a Python program to check whether the given no is Armstrong or not. 
+5 
+What is the difference between compiler and Interpreter? Explain How python interpreter 
+works. 
+6 
+Which are the different types of operators in python language? Explain membership and 
+identity operators with examples. 
+7 
+Write a Python program to perform arithmetic operations including addition, subtraction, 
+multiplication, division, modulus, exponentiation, and floor division on user-provided 
+inputs. 
+8 
+Explain String with Functions and Methods. 
+9 
+What are the key features of Python? 
+10 
+Explain the rules for naming Python identifiers with examples. 
+11 
+Explain Python indentation with a suitable example. 
+12 
+Explain type conversion in Python. Give examples of implicit and explicit conversion. 
+Unit: 2 
+13 
+Explain while loop & for loop with syntax and example in detail. 
+14 
+Explain elif and nested if with syntax and example in detail. 
+15 
+Explain usage of continue, break, and pass keyword in python. 
+16 
+Explain the use of the range() function with examples. 
+17 
+Write a Python program to determine whether a given number is positive, negative, or 
+zero and check whether it is even or odd using nested conditional statements. 
+18 
+Write a Python program to determine the largest and smallest among three numbers 
+entered by the user using decision-making statements. 
+19 
+Develop a Python program to display all prime numbers within a given range and count 
+the total number of prime numbers found. 
+20 
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+Write a Python program for above code. 
+21 
+1 
+1 2 
+1 2 3 
+1 2 3 4 
+1 2 3 4 5 
+Write a Python program for above half Pyramid with Numbers. 
+ 

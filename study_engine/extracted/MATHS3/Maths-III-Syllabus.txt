@@ -1,0 +1,88 @@
+SOURCE: SEM3/MATHS3/Maths-III-Syllabus.pdf
+
+===== PAGE 1 =====
+ 
+ 
+Maths-III SYLLABUS 
+ 
+Course Title 
+Maths-III 
+Course Code. 
+25B1BS301 
+Course/ 
+Branch 
+CSE/CE/IT 
+ 
+L 
+T 
+P 
+C 
+Offered for 
+3rd 
+Semester 
+3 
+0 
+0 
+3 
+ 
+Module 
+Contents/Topics to be covered 
+Hours 
+Module-1 
+Basic Probability: 
+Probability spaces, conditional probability, independence; Discrete random 
+variables, Independent random variables, the multinomial distribution, 
+Poisson approximation to the binomial distribution, infinite sequences of 
+Bernoulli trials, sums of independent random variables; Expectation of 
+Discrete Random Variables, Moments, Variance of a sum, Correlation 
+coefficient, Chebyshev’s Inequality. 
+12 
+Module-2 
+Continuous Probability Distributions: 
+Continuous random variables and their properties, distribution functions 
+and densities, normal, exponential and gamma densities. 
+06 
+Module-3 
+Bivariate Distributions: 
+Bivariate  distributions  and  their  properties, 
+quotients, conditional densities, Bayes’ rule. 
+distribution of  sums and 
+06 
+Basic Statistics: 
+Module-4 
+Measures of Central tendency: Moments, skewness and Kurtosis - 
+Probability distributions: Binomial, Poisson and Normal - evaluation of 
+statistical  parameters for these three distributions, Correlation and 
+08 
+regression – Rank correlation 
+Module-5 
+Applied Statistics: 
+Curve fitting by the method of least squares- fitting of straight lines, second 
+degree parabolas and more general curves. Test of significance: Large sample 
+test for single proportion, difference of proportions, single mean, difference 
+of means, and difference of standard deviations. 
+08 
+Small samples: 
+Module-6 
+Test for single mean, difference of means and correlation coefficients, 
+test for ratio of variances - Chi-square test for goodness of fit and 
+independence of attributes. 
+05 
+ 
+Textbooks 
+ 
+1 
+P. G. Hoel, S. C. Port and C. J. Stone, Introduction to Probability Theory, Universal Book Stall. 
+     2 
+S. Ross, A First Course in Probability, 6th Ed., Pearson Education India. 
+   3 
+W. Feller, An Introduction to Probability Theory and its Applications, Vol.1, Wiley. 
+   References 
+1 
+D. C. Montgomery and G. C. Runger, Applied Statistics and Probability for Engineers, Wiley. 
+2 
+J.L. Devore, Probability and Statistics for Engineering and the Sciences, Cengage Learning. 
+Web content Link/E-material links 
+1 
+MIT Open courseware. NPTEL. 
+ 

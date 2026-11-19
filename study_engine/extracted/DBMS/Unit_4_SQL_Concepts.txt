@@ -1,0 +1,602 @@
+SOURCE: SEM3/DBMS/Unit 4 SQL Concepts.pdf
+
+===== PAGE 1 =====
+CHAPTER-9
+SQL CONCEPTS
+
+===== PAGE 2 =====
+BASICS OF SQL
+• SQL is a computer language that is used for storing, manipulating, and retrieving data in a 
+structured format. This language was invented by IBM. Here SQL stands for Structured 
+Query Language
+• Interacting databases with SQL queries, we can handle a large amount of data. There are 
+several SQL-supported database servers such as MySQL, PostgreSQL, sqlite3 and so on.
+• Data can be stored in a secured and structured format through these database servers. SQL 
+queries are often used for data manipulation and business insights better.
+
+===== PAGE 3 =====
+Here, we will discuss the queries and will understand with the help of examples.
+QUERY-1:
+Let’s consider the existing database like information schema, MySQL, performance 
+schema, Shakila, student, sys, and world. And if you want to show the exiting database 
+then we will use the show database query as follows.
+SHOW DATABASES; 
+QUERY-2:
+Suppose we want to drop the database namely student.
+DROP DATABASE student; 
+SHOW DATABASES;
+QUERY-3;
+Using a database –
+USE DATABASE_NAME;
+
+===== PAGE 4 =====
+Continue..
+Query-4 :
+Create a database –
+Suppose we want to create a database.
+CREATE DATABASE bank; 
+SHOW DATABASES;
+
+===== PAGE 5 =====
+DDL IN SQL
+DDL
+commands:
+CREATE
+ALTER
+DROP
+TRUNCATE
+RENAME
+COMMIT
+DDL, or Data Definition Language, is a subset of SQL (Structured Query Language) used for 
+defining and managing database structures. DDL commands allow you to create, modify, and 
+delete database objects such as tables, indexes, and schemas. Here are some common DDL 
+commands:
+
+===== PAGE 6 =====
+DDL COMMANDS AND IT’S SYNTAX
+• CREATE: Used to create new database objects.
+□CREATE TABLE employees (id INT PRIMARY KEY, name VARCHAR(100), hiredate 
+DATE);
+• ALTER: Used to modify existing database objects.
+□ALTER TABLE employees ADD COLUMN salary DECIMAL(10, 2);
+• DROP: Used to delete database objects.
+□DROP TABLE TABLE_NAME;
+• TRUNCATE:  Used  to  remove  all  rows  from  a  table  without  logging  individual  row 
+deletions.
+□TRUNCATE TABLE TABLE_NAME;
+
+===== PAGE 7 =====
+Continue..
+• RENAME: Used to rename an existing database object.
+□RENAME Old_table TO New_table;
+• COMMENT: Used to add comments to database objects (not supported by all databases).
+□COMMENT ON COLUMN employees.name IS 'Employee name’;
+□NOTE:DDL operations are typically auto-committed, meaning changes are saved immediately 
+after execution. They are crucial for setting up and maintaining the database schema.
+
+===== PAGE 8 =====
+DML(Data Manipulation Language)
+• DML, or Data Manipulation Language, is a subset of SQL used for managing data within existing 
+database objects. DML commands allow you to perform operations like inserting, updating, and deleting 
+data in tables. Here are some common DML commands:
+• Below shown DML commands:
+INSERT
+UPDATE
+DELETE
+SELECT
+MERGE
+
+===== PAGE 9 =====
+DML COMMANDS AND IT’S SYNTAX
+• INSERT: Adds new rows to a table.
+□INSERT INTO employees (id, name, hire_date) VALUES (1, 'Alice', '2024-01-15’);
+• UPDATE: Modifies existing data in a table.
+□UPDATE employees SET salary = 75000 WHERE id = 1;
+• DELETE: Removes rows from a table.
+□DELETE FROM employees WHERE id = 1;
+• SELECT: Retrieves data from one or more tables.
+□SELECT name, hire_date FROM employees WHERE salary > 60000;
+
+===== PAGE 10 =====
+Continue..
+• MERGE: Combines insert and update operations based on a condition (also known as "upsert").
+□MERGE INTO employees AS target USING (SELECT 1 AS id, 'Alice' AS name, '2024-01-15' AS 
+hire_date) AS source ON target.id = source.id
+WHEN MATCHED THEN
+UPDATE SET target.hire_date = source.hire_date 
+WHEN NOT MATCHED THEN
+INSERT (id, name, hire_date)
+VALUES (source.id, source.name, source.hire_date);
+
+===== PAGE 11 =====
+DCL(Data Control Language)
+• DCL, or Data Control Language, is a subset of SQL used to control access to data in a database. 
+DCL commands are primarily concerned with permissions and access rights. The two main DCL 
+commands are:
+• GRANT: Used to give users access privileges to database objects.
+□GRANT SELECT, INSERT ON employees TO user1;
+• REVOKE: Used to remove access privileges from users.
+□REVOKE INSERT ON employees FROM user1;
+
+===== PAGE 12 =====
+Structure ( Creation and Alteration )
+• Creating and altering database structures in SQL typically involves using DDL (Data 
+Definition Language) commands. Here’s a detailed overview of how to create and alter 
+database structures: Below shown the Creation of a structure).
+• Creating a database.
+• Creating a table.
+• Creating an index.
+• Creating a view.
+• Creatin a schema.(Schema is a logical/visual representation of a relation.)
+
+===== PAGE 13 =====
+Continue..
+• Creating an index:
+□CREATE INDEX idx_employee_name ON employees (name);
+• Creating a view:
+□CREATE VIEW employee_salaries AS SELECT name, salary FROM employees 
+WHERE salary > 50000;
+• Creating a schema:
+□CREATE SCHEMA sales_schema;
+
+===== PAGE 14 =====
+Structure Alteration
+Altering in a table consists of below mentioned commands with alter.
+• Adding a column.
+□ALTER TABLE employees ADD COLUMN departmentVARCHAR(50);
+• Modifying a column
+□ALTER TABLE employees MODIFY COLUMN salary DECIMAL(12, 2);
+• Dropping a column
+□ALTER TABLE employees DROP COLUMN department;
+
+===== PAGE 15 =====
+• Renaming a column
+□ALTER TABLE employees RENAME COLUMN name TO full_name;
+• Renaming a table
+□ALTER TABLE employees RENAME TO staff;
+• Changing the table structure
+1.
+Adding constraints.
+2.
+Dropping constraints.
+
+===== PAGE 16 =====
+Continue..
+• Adding constraints
+□ALTER TABLE employees ADD CONSTRAINT chk_salary CHECK (salary >= 0);
+• Dropping constraints
+□ALTER TABLE employees DROP CONSTRAINT chk_salary;
+
+===== PAGE 17 =====
+Example Workflow:
+1. Create a new database and table.
+CREATE DATABASE database_name; 
+USE Databse;
+CREATE TABLE employees ( 
+id INT PRIMARY KEY, 
+name VARCHAR(100),
+hire_date DATE
+);
+
+===== PAGE 18 =====
+Continue..
+• Alter the table and add column name salary into an existing table.
+□ALTER TABLE employees ADD COLUMN salary DECIMAL(10, 2);
+• Modify the Salary Column to Increase Precision
+□ALTER TABLE employees MODIFY COLUMN salary DECIMAL(12, 2);
+• Rename the table from employee to staff.
+□ALTER TABLE employees RENAME TO staff;
+
+===== PAGE 19 =====
+DEFINING CONSTRAINTS
+Types of constraints:
+1.
+Primary key
+2.
+Foreign key
+3.
+Unique
+4.
+Check
+5.
+Default
+6.
+Not null
+Note: these are the constraints that are used to retrieve the relevant data as per 
+predicates.
+
+===== PAGE 20 =====
+Explanation of each constraint:
+□PRIMARY KEY: Uniquely identifies each record in a table. A primary key must 
+contain unique values and cannot contain NULL.
+Syntax:
+CREATE TABLE employees ( 
+id INT PRIMARY KEY, 
+name VARCHAR(100)
+);
+□FOREIGN KEY: Ensures referential integrity between two tables. A foreign key in 
+one table points to a primary key in another table.
+
+===== PAGE 21 =====
+Continue..
+Syntax:
+CREATE TABLE departments ( 
+id INT PRIMARY KEY,
+department_name VARCHAR(100)
+);
+CREATE TABLE employees ( 
+id INT PRIMARY KEY, 
+name VARCHAR(100),
+department_id INT,
+FOREIGN KEY (department_id) REFERENCES departments(id)
+);
+
+===== PAGE 22 =====
+Continue..
+• UNIQUE: Ensures all values in a column are different. Unlike primary keys, a table can 
+have multiple unique constraints, and unique constraints can accept NULL values 
+(though only one NULL per column).
+• Example:
+CREATE TABLE employees ( 
+id INT PRIMARY KEY,
+email VARCHAR(100) UNIQUE
+);
+
+===== PAGE 23 =====
+Continue..
+• CHECK: Ensures that all values in a column satisfy a specific condition.
+• Example:
+CREATE TABLE Table_name ( 
+id INT PRIMARY KEY,
+name VARCHAR(100), 
+salary DECIMAL(10, 2),
+CHECK (salary >= 0)  -- Salary must be non-negative
+);
+
+===== PAGE 24 =====
+Continue..
+• DEFAULT: Sets a default value for a column when no value is specified during an 
+insert operation.
+• Example:
+CREATE TABLE Table_name ( 
+id INT PRIMARY KEY,
+name VARCHAR(100),
+date DATE DEFAULT CURRENT_DATE
+);
+
+===== PAGE 25 =====
+Continue..
+• NOT NULL: Ensures that a column cannot have NULL values.
+• Example:
+CREATE TABLE Table_name ( 
+id INT PRIMARY KEY,
+name VARCHAR(100) NOT NULL -- Name cannot be NULL
+);
+NOTE: These are the basic constraints which uses specific keyword to predicate 
+the condition.
+
+===== PAGE 26 =====
+Adding constraints to the existing table
+❑Add a UNIQUE Constraint.
+ALTER TABLE employees ADD CONSTRAINT unique_email UNIQUE (email);
+❑Add a CHECK Constraint.
+ALTER TABLE employees ADD CONSTRAINT check_salary CHECK (salary >= 0);
+❑Add a FOREIGN KEY Constraint.
+ALTER TABLE table_name ADD CONSTRAINT fk_department FOREIGN 
+KEY (department_id) REFERENCES departments(id);
+
+===== PAGE 27 =====
+Example of Creating a Table with Multiple 
+Constraints
+• Here's a comprehensive example that demonstrates defining multiple constraints 
+in a single table creation statement:
+• Example:
+CREATE TABLE employees ( 
+id INT PRIMARY KEY,
+name VARCHAR(100) NOT NULL, 
+email VARCHAR(100) UNIQUE,
+hire_date DATE DEFAULT CURRENT_DATE, 
+salary DECIMAL(10, 2) CHECK (salary >= 0), 
+department_id INT,
+FOREIGN KEY (department_id) REFERENCES departments(id)
+);
+
+===== PAGE 28 =====
+IN operator:
+• IN  operator  in  sql  used  to  filter  record  based  on  whether  a  specified  value 
+matches any value in the list of values or subquery result.
+• It is coinvent way to specify 
+clause.
+• SYNTAX:
+multiple possible values for a column In a WHERE
+• column_name IN (value1, value2, value3, ...);
+column_name
+• OR, For a subquery you can use:
+• column_name
+IN (SELECT 
+condition);
+FROM
+table_name
+WHERE
+
+===== PAGE 29 =====
+Examples
+• Using IN with a list of values;
+□
+SELECT * FROM employees WHERE department_id IN (1, 2, 3); 
+NOTE: This query retrieves all employees who department id is 1,2,3
+• Using IN with a Subquery:
+□SELECT*
+FROM employeesWHERE
+departments WHERE location = 'New York’);
+department_idIN (SELECT id
+FROM
+• Using NOT IN The NOT IN operator can be used to filter out records that match any 
+value in the specified list.
+□SELECT * FROM employees WHERE department_id NOT IN (1, 2, 3);
+
+===== PAGE 30 =====
+Functions: Aggregate functions
+•Definition:
+Aggregate functions in SQL are used to perform calculations on a set of values and 
+return a single value. They are commonly used in conjunction with the GROUP BY 
+clause to group rows that have the same values in specified columns and then 
+perform the aggregation on those groups. Here are some of the most commonly 
+used aggregate functions:
+1.
+COUNT()
+2.
+SUM()
+3.
+AVG()
+4.
+MIN()
+5.
+MAX()
+
+===== PAGE 31 =====
+• COUNT(): Returns the number of rows that match a specified criterion.
+• Syntax:
+SELECT COUNT(*) AS total_employees FROM employees;
+• SUM(): Returns the total sum of a numeric column.
+• Syntax:
+• SELECT SUM(salary) AS total_salaries FROM employees;
+• AVG(): Returns the average value of a numeric column.
+• Syntax:
+• SELECT AVG(salary) AS average_salary FROM employees;
+• MIN(): Returns the smallest value in a set and MAX() returns the largest value in a set.
+• Syntax:
+• SELECT MIN(salary), MAX(salary) AS lowest_salary FROM employees;
+
+===== PAGE 32 =====
+Using Aggregate Functions with GROUP BY
+• Aggregate functions are often used with the GROUP BY clause to group rows that 
+have the same values in specified columns:
+• Example:
+• SELECT department_id, COUNT(*) AS employee_count FROM employees GROUP 
+BY department_id;
+
+===== PAGE 33 =====
+Using Aggregate Functions with HAVING
+• You can use the HAVING clause to filter the results of aggregate functions:
+• Syntax:
+SELECT department_id, AVG(salary) AS average_salary FROM employees GROUP BY
+department_id HAVING AVG(salary) > 60000;
+EXAMPLE OF MULTIPLE AGGREGATE FUNCTION WITH EXAMPLE: 
+SELECT
+department_id,
+COUNT(*) AS employee_count, 
+SUM(salary) AS total_salaries, 
+AVG(salary) AS average_salary
+FROM employees
+GROUP BY department_id;
+
+===== PAGE 34 =====
+BUILT-IN FUNCTION
+• Built-in  functions  in  SQL  are  predefined  functions  provided  by  the  SQL  database 
+management system (DBMS) to perform specific tasks on data.
+• These functions can be categorized into several types based on their purpose, such as 
+string functions, numeric functions, date and time functions, and more.
+• Here’s an overview of some commonly used built-in functions across these categories:
+• String functions
+• Numeric functions
+• Date and Time Functions
+• Aggregate Functions
+• Conversion Functions
+• Here are the basic inbuilt functions which are performing based on given predicates.
+
+===== PAGE 35 =====
+String functions
+• UPPER(): Converts a string to uppercase. 
+Syntax:
+SELECT UPPER(name) AS upper_name FROM employees;
+• LOWER(): Converts a string to lowercase. 
+Syntax:
+SELECT LOWER(name) AS lower_name FROM employees;
+• LENGTH(): Returns the length of a string. 
+Syntax:
+SELECT LENGTH(name) AS name_length FROM employees;
+
+===== PAGE 36 =====
+• SUBSTRING(): Extracts a substring from a string. 
+Syntax:
+SELECT SUBSTRING(name, 1, 3) AS short_name FROM employees; -- First 3 characters
+• TRIM(): Removes leading and trailing spaces from a string. 
+Syntax:
+SELECT TRIM(name) AS trimmed_name FROM employees;
+
+===== PAGE 37 =====
+Numeric Functions
+• ROUND(): Rounds a numeric value to a specified number of decimal places.
+Syntax:
+SELECT ROUND(salary, 2) AS rounded_salary FROM employees;
+• ABS(): Returns the absolute value of a number.
+Syntax:
+SELECT ABS(-100) AS absolute_value; -- Returns 100
+FLOOR(): Rounds down to the nearest integer.
+Syntax:
+SELECT ROUND(salary, 2) AS rounded_salary FROM employees;
+
+===== PAGE 38 =====
+• CEIL(): Rounds up to the nearest integer.sql 
+Syntax:
+SELECT CEIL(salary) AS ceiled_salary FROM employees;
+
+===== PAGE 39 =====
+Date functions
+• CURRENT_DATE: Returns the current date.sql
+Syntax:
+SELECT CURRENT_DATE AS today;
+• NOW(): Returns the current date and time.
+Syntax:
+SELECT NOW() AS current_datetime;
+• DATEDIFF(): Returns the difference between two dates.
+Syntax:
+SELECT DATEDIFF(NOW(), hire_date) AS days_since_hired FROM employees;
+
+===== PAGE 40 =====
+• DATE_FORMAT(): Formats a date value based on a specified format. 
+Syntax:
+SELECT DATE_FORMAT(hire_date, '%Y-%m-%d') AS formatted_hire_date FROM 
+employees;
+
+===== PAGE 41 =====
+Aggregate function
+•COUNT()
+•SUM()
+•AVG()
+•MIN()
+•MAX()
+•TOTAL()
+NOTE: These functions are already discussed previously.
+
+===== PAGE 42 =====
+SET OPERATIONS IN SQL
+• Set operations in SQL allow you to combine the results of two or more queries. The 
+main set operations include UNION, UNION ALL, INTERSECT, and EXCEPT (or 
+MINUS in some systems). Here's a breakdown of each operation:
+• 1. UNION:
+□The UNION operator combines the results of two or more SELECT statements and 
+removes duplicate rows from the result set.
+Syntax:
+SELECT column1, column2 FROM table1
+UNION
+SELECT column1, column2 FROM table2;
+Example:
+SELECT name FROM employees 
+UNION
+SELECT name FROM contractors;
+
+===== PAGE 43 =====
+2. UNION ALL:
+SELECT column1, column2 FROM table1
+UNION ALL
+SELECT column1, column2 FROM table2;
+□The UNION ALL operator combines the results of two or more SELECT statements but 
+includes all duplicates.
+Syntax:
+Example:
+Syntax:
+SELECT column1, column2 FROM table1
+INTERSECT
+SELECT column1, column2 FROM table2;
+3. INTERSECT:
+□ The INTERSECT operator returns only the rows that are common to both SELECT 
+statements.
+Example:
+SELECT name FROM employees
+UNION ALL
+SELECT name FROM contractors;
+SELECT name FROM employees
+INTERSECT
+SELECT name FROM contractors;
+
+===== PAGE 44 =====
+• EXCEPT (or MINUS)
+□The EXCEPT operator (or MINUS in some SQL dialects like Oracle) returns rows from the 
+first SELECT statement that are not present in the second.
+Syntax:
+SELECT column1, column2 FROM table1 
+EXCEPT
+SELECT column1, column2 FROM table2;
+Example:
+SELECT name FROM employees
+EXCEPT
+SELECT name FROM contractors;
+
+===== PAGE 45 =====
+Subqueries and correlated subqueries
+• 1. Subqueries:
+□A subquery (or inner query) is a query nested inside another SQL query. It can be used in 
+various parts of a SQL statement, such as the SELECT, FROM, WHERE, or HAVING clauses. 
+Subqueries are typically used to retrieve a set of values to be used by the outer query.
+SELECT name, salary 
+FROM employees WHERE 
+department_id = (
+SELECT id
+FROM departments
+WHERE department_name = 'Sales'
+);
+
+===== PAGE 46 =====
+• 2. Correlated Subqueries
+□A correlated subquery is a type of subquery that references columns from the outer 
+query. Unlike a regular subquery, which can be executed independently, a correlated 
+subquery is executed repeatedly, once for each row processed by the outer query.
+Syntax:
+SELECT e.name, e.salary 
+FROM employees e 
+WHERE e.salary > (
+SELECT AVG(salary) 
+FROM employees
+WHERE department_id = e.department_id
+);
+
+===== PAGE 47 =====
+Use of group by, having, order by
+• The GROUP BY, HAVING, and ORDER BY clauses in SQL are essential for organizing 
+and summarizing data in queries. Here’s an overview of each clause and how they can be 
+used together.
+• 1. GROUP BY:
+□The GROUP BY clause is used to group rows that have the same values in specified 
+columns into summary rows. It is often used with aggregate functions (like COUNT(), 
+SUM(), AVG(), etc.) to perform calculations on each group.
+Example:
+SELECT department_id, COUNT(*) AS employee_count 
+FROM employees
+GROUP BY department_id;
+▪This query counts the number of employees in each department by grouping the results 
+based on department_id.
+
+===== PAGE 48 =====
+• 2. HAVING:
+□The HAVING clause is used to filter records after the aggregation has taken place. While the 
+WHERE  clause  filters  records  before  aggregation,  HAVING  is  specifically  for  filtering 
+grouped records.
+Syntax:
+SELECT department_id, AVG(salary) AS average_salary 
+FROM employees
+GROUP BY department_id
+HAVING AVG(salary) > 60000;
+▪In this example, the query retrieves departments with an average salary greater than 60,000 
+after calculating the average salary for each department.
+
+===== PAGE 49 =====
+• 3. ORDER BY:
+□The ORDER BY clause is used to sort the result set of a query by one or more columns. By 
+default, the sorting is in ascending order, but you can specify descending order using the 
+DESC keyword.
+Syntax:
+SELECT name, salary 
+FROM employees 
+ORDER BY salary DESC;
+❑Using GROUP BY, HAVING, and ORDER BY Together.
+Example:
+SELECT department_id, COUNT(*) AS employee_count, AVG(salary) AS 
+average_salary FROM employees
+GROUP BY department_id
+HAVING AVG(salary) > 60000
+ORDER BY employee_count DESC;
+
+===== PAGE 50 =====
+Thank You 

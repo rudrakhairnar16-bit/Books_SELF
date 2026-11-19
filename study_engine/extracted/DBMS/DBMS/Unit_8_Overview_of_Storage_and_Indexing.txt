@@ -1,0 +1,620 @@
+SOURCE: SEM3/DBMS/DBMS!/Unit 8 Overview of Storage and Indexing.pdf
+
+===== PAGE 1 =====
+Unit-8
+Overview of Storage and Indexing 
+
+===== PAGE 2 =====
+1
+Topics to be covered
+•Index
+•B-trees
+•Hashing
+
+===== PAGE 3 =====
+2
+What is database Index?
+•Indexes are special lookup tables that the database search engine 
+can use to speed up data retrieval.
+•A database index is a data structure that improves the speed of data 
+retrieval operations on a database table.
+•An index in a database is very similar to an index in the back of a 
+book.
+•Indexes are used to retrieve data from the database very fast. The 
+users  cannot  see  the  indexes,  they  are  just  used  to  speed  up 
+searches/queries.
+•Updating a table with indexes takes more time than updating a table 
+without (because the indexes also need an update)
+
+===== PAGE 4 =====
+3
+Syntax to create an Index
+•Syntax:
+CREATE INDEX index_name
+ON table_name (column1, column2, ...);
+•Example:
+CREATE INDEX idx_studentname 
+ON student (studentname);
+
+===== PAGE 5 =====
+4
+What is Indexing?
+•Indexing is a way to optimize the performance of a database by 
+minimizing the number of disk accesses required when a query is 
+processed.
+•It is a data structure technique which is used to quickly locate and 
+access the data in a database.
+
+===== PAGE 6 =====
+5
+Structure of Index in database
+•Indexes are created using a few database columns.
+1.
+The first column is the Search key that contains a copy of the primary 
+key or candidate key of the table. These values are stored in sorted 
+order so that the corresponding data can be accessed quickly.
+2.
+The second column is the Data Reference or Pointer which contains a 
+set of pointers holding the address of the disk block where that 
+particular key value can be found.
+search-key
+pointer
+
+===== PAGE 7 =====
+6
+Attributes of Indexing
+•The indexing has various attributes:
+1.
+Access Types: This refers to the type of access such as value based 
+search, range access, etc.
+2.
+Access Time: It refers to the time needed to find particular data 
+element or set of elements.
+3.
+Insertion Time: It refers to the time taken to find the appropriate space 
+and insert a new data.
+4.
+Deletion Time: Time taken to find an item and delete it as well as 
+update the index structure.
+5.
+Space Overhead: It refers to the additional space required by the index.
+
+===== PAGE 8 =====
+7
+Indexing Methods 
+(Types)
+Dense
+Sparse
+
+===== PAGE 9 =====
+8
+Primary Index
+•If the index is created on the primary key of the table, then it is 
+known as primary index. These primary keys are unique to each 
+record.
+•As primary keys are stored in sorted order, the performance of the 
+searching operation is quite efficient.
+•Student(RollNo, Name, Address, City, MobileNo) 
+CREATE INDEX idx_StudentRno
+ON Student (RollNo);
+•The primary index can be classified into two types:
+1.
+Dense index
+2.
+Sparse index
+
+===== PAGE 10 =====
+9
+Dense Index
+•In dense index, there is an index 
+record  for  every  search  key 
+value in the database.
+•This makes searching faster but 
+requires  more  space  to  store 
+index records.
+•In this, the number of records in 
+the index table is same as the 
+number of records in the main 
+table.
+•Index  records  contain  search 
+key value and a pointer to the 
+actual record on the disk.
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+Rno
+Name
+101
+Raj
+102
+Meet
+103
+Suresh
+104
+Mira
+105
+Nita
+106
+Om
+107
+Ajay
+108
+Amit
+109
+Jeet
+110
+Nayan
+Index Table
+Main Table
+
+===== PAGE 11 =====
+10
+Sparse Index
+•In sparse index, index records 
+are
+not created for every
+search key.
+•The index record appears only 
+for a few items in the data file.
+maintenance
+overhead
+•It requires
+less space,
+less
+for
+insertion,  and  deletions  but  is 
+slower compared to the dense 
+index for locating records.
+101
+104
+107
+110
+Rno
+Name
+101
+Raj
+102
+Meet
+103
+Suresh
+104
+Mira
+105
+Nita
+106
+Om
+107
+Ajay
+108
+Amit
+109
+Jeet
+110
+Nayan
+Index Table
+Main Table
+
+===== PAGE 12 =====
+11
+Sparse Index
+•To search a
+record in
+sparse index  we  search  
+for  a
+value that is less than 
+or equalto value in
+index for which we are looking.
+•After
+getting the firstrecord,
+linear
+search
+is
+performed to retrieve the
+desired record.
+•In  the  sparse  indexing,  as  the 
+size of the main table grows, the 
+size of index table also grows.
+101
+104
+107
+110
+Rno
+Name
+101
+Raj
+102
+Meet
+103
+Suresh
+104
+Mira
+105
+Nita
+106
+Om
+107
+Ajay
+108
+Amit
+109
+Jeet
+110
+Nayan
+Index Table
+Main Table
+
+===== PAGE 13 =====
+12
+Secondary Index
+•In secondary indexing, to reduce 
+the  size  of  mapping,  another 
+level of indexing is introduced.
+•In this method, the huge range
+for the columns
+is
+selected
+initially so thatthe mapping
+size of the first level becomes 
+small.
+•Then
+each
+range
+is
+further divided into smaller 
+ranges.
+Rno
+Name
+101
+Raj
+102
+Meet
+111
+Mira
+112
+Nita
+201
+Ajay
+202
+Amit
+211
+Nayan
+212
+Zeel
+101
+101
+111
+201
+301
+201
+401
+211
+301
+311
+Primary 
+Index
+Main 
+Table
+Secondary 
+Index
+
+===== PAGE 14 =====
+13
+Secondary Index
+•The mapping of the first level is 
+stored in the primary memory, 
+so that address fetch is faster.
+•The  mapping  of  the  second 
+level and actual data are stored 
+in the secondary memory (hard 
+disk).
+Rno
+Name
+101
+Raj
+102
+Meet
+111
+Mira
+112
+Nita
+201
+Ajay
+202
+Amit
+211
+Nayan
+212
+Zeel
+101
+101
+111
+201
+301
+201
+401
+211
+301
+311
+Primary 
+Index
+Main 
+Table
+Secondary 
+Index
+
+===== PAGE 15 =====
+Secondary Index
+•If you want to find the record 
+of roll 112, then it will search
+the highest entry
+which
+is
+smaller than or equal to 112 in 
+the first level index. It will get 
+101 at this level.
+•Then in the second index level, 
+again it does max (112) <= 
+112 
+and gets 111. Now using 
+the
+address111,
+it
+goes
+to
+the
+data block and starts searching 
+each record till it gets 112.
+•This
+is
+how
+a
+search
+isperformed in this method.
+•Inserting, updating or deleting
+is
+alsodone
+in
+the sam1e4
+Rno
+Name
+101
+Raj
+102
+Meet
+111
+Mira
+112
+Nita
+201
+Ajay
+202
+Amit
+211
+Nayan
+212
+Zeel
+101
+101
+111
+201
+301
+201
+401
+211
+301
+311
+Primary 
+Index
+Main 
+Table
+Secondary 
+Index
+
+===== PAGE 16 =====
+15
+Clustering Index
+•Sometimes
+created
+on
+non-primary
+columns
+which
+may
+not
+the index
+is
+key
+be
+unique for each record.
+•In  this  case,  to  identify  the 
+record  faster,  we  will  group 
+two or more columns to get 
+the unique value and create
+index
+out of them.
+This 
+method  is  called  a  clustering 
+index.
+similar characteristics 
+grouped,
+and
+indexes
+•The
+records which have
+are 
+are
+created for these group.
+Dept
+Name
+CE
+Raj
+CE
+Meet
+EE
+Mira
+EE
+Nita
+EC
+Ajay
+EC
+Amit
+ME
+Nayan
+ME
+Zeel
+CE
+EE
+EC
+ME
+Index 
+Table
+Main 
+Table
+
+===== PAGE 17 =====
+16
+B-tree
+•B-tree is a data structure that store data in its node in sorted order. 
+We can represent sample B-tree as follows.
+11
+3, 6
+16, 20
+1,2
+4,5 7,10
+12, 13, 14 18, 19 24, 25
+•B-tree stores data in such a way that each node contains keys in 
+ascending order.
+•Each of these keys has two references to another two child nodes.
+•The left side child node keys are less than the current keys and the 
+right side child node keys are greater than the current keys.
+Root Node
+Leaf Node
+Intermediary Node
+
+===== PAGE 18 =====
+17
+•Suppose we want to search 18 in the above B tree structure.
+•First, we will fetch for the intermediary node which will direct to the 
+leaf node that can contain a record for 18.
+•So, in the intermediary node, we will find a branch between 16 and 
+20 nodes.
+•Then at the end, we will be redirected to the fifth leaf node. Here 
+DBMS will perform a sequential search to find 18.
+11
+3, 6 16, 20
+1,2 4,5 7,10
+12, 13, 14 18, 19
+24, 25
+Searching a record in B-tree Root Node
+Leaf Node
+Intermediary Node
+
+===== PAGE 19 =====
+18
+Hashing
+•For a huge database, it can be almost next to impossible to search 
+all  the  index  values  through  all  its  level  and  then  reach  the 
+destination data block to retrieve the desired data.
+•Hashing is a technique to directly search the location of desired data 
+on the disk without using index structure.
+•Data  is  stored  in  the  form  of  data  blocks  whose  address  is 
+generated  by  applying  a  hash  function  in  the  memory  location 
+where these records are stored known as a data block or data 
+bucket.
+•Hashing uses hash functions with search keys as parameters to 
+generate the address of a data record.
+
+===== PAGE 20 =====
+19
+Hashing
+•Data bucket: Data buckets are the memory locations where the 
+records are stored.
+•Hash Function: Hash function is a mapping function that maps all the 
+set of search keys to actual record address. Generally, hash function 
+uses primary key to generate the hash index – address of the data 
+block.
+
+===== PAGE 21 =====
+20
+Types of hashing methods
+1.
+Static hashing
+2.
+Dynamic hashing
+
+===== PAGE 22 =====
+21
+Static hashing
+•In the static hashing, the resultant data bucket address will always 
+remain the same.
+•Therefore, if you generate an address for say Student_ID = 10 using 
+hashing function mod(3), the resultant bucket address will always be
+1. So, you will not see any change in the bucket address.
+•Therefore, in this static hashing method, the number of data buckets 
+in memory always remains constant.
+
+===== PAGE 23 =====
+22
+Dynamic hashing
+•The drawback of static hashing is that that it does not expand or 
+shrink dynamically as the size of the database grows or shrinks.
+•In dynamic
+hashing,data
+buckets grows
+or
+shrinks (added
+or removed dynamically) as the records increases or decreases.
+•Dynamic hashing is also known as extended hashing.
+
+===== PAGE 24 =====
+23
+Dynamic hashing
+•In dynamic hashing, the hash function is made to produce a large 
+number of values.
+•For Example, there are three data records D1, D2 and D3 .
+•The hash function generates three addresses 1001, 0101 and 1010 
+respectively.
+•This method of storing considers only part of this address – especially 
+only first one bit to store the data.
+•So it tries to load three of them at address 0 and 1.
+D1
+D2
+D3
+0
+1
+
+===== PAGE 25 =====
+24
+Dynamic hashing
+•But the problem is that no bucket address is remaining for D3.
+•The bucket has to grow dynamically to accommodate D3.
+•So it changes the address have 2 bits rather than 1 bit, and then it 
+updates the existing data to have 2 bit address.
+•Then it tries to accommodate D3.
+D1
+D2
+D3
+10
+11
+00
+01
+
+===== PAGE 26 =====
+25
+Questions asked in GTU
+1.
+Explain indexing and different types of indexes.
+2.
+Explain B-tree.
+3.
+Explain hashing.
+
+===== PAGE 27 =====
+Thank You

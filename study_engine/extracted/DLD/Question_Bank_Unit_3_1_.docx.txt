@@ -1,0 +1,36 @@
+SOURCE: SEM3/DLD/Question Bank Unit 3 (1).docx.pdf
+
+===== PAGE 1 =====
+ 
+Digital Logic Design 
+B.Tech CSE / CE - 3rd Sem 
+Question Bank: Module - 3 
+ 
+Sr. 
+No 
+. 
+Module : 3 
+1 
+Explain Multiplexer and Demultiplexer with suitable diagram and 
+truthtable. 
+2 
+Explain Encoder and Decoder with suitable diagram and truth table. 
+3 
+Explain half adder and full adder with suitable diagram and truth table. 
+4 
+Explain half subtractor and full subtractor with suitable diagram 
+andtruth table. 
+5 
+Explain serial adder. Write Advantages & Disadvantages for the same. 
+6 
+Explain priority Encoder. 
+7 
+Explain binary parallel adder. 
+8 
+Explain Carry Look AheadAdder with diagram and truth table. 
+9 
+Explain parity checker and generator with suitable example. 
+Differentiate between odd parity and even parity. 
+10 
+Explain Q- M method with example. 
+ 

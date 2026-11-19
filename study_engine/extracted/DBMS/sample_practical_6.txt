@@ -1,0 +1,142 @@
+SOURCE: SEM3/DBMS/sample practical 6.pdf
+
+===== PAGE 1 =====
+Practical No. 6 – To Study Single-Row Functions
+Aim: To study and perform different single-row functions such as date, numeric, character, 
+and conversion functions in SQL.
+1. Display the current date and label the column as Date.
+SELECT SYSDATE AS "Date"
+FROM DUAL;
+Example output:
+Date
+---------
+31-AUG-26
+SYSDATE returns the current date and time of the Oracle database server.
+2. Display employee number, job, salary, and salary increased by 15%. Express the new 
+salary as a whole number and label it New Salary. 
+SELECT EMPNO,JOB,SAL,ROUND(SAL * 1.15) AS "New Salary"
+FROM EMP;
+Example output:
+EMPNO   JOB         SAL     New Salary
+-----   ---------   -----   ----------
+7369    CLERK        800        920
+7499    SALESMAN    1600       1840
+7521    SALESMAN    1250       1438
+7566    MANAGER     2975       3421
+Here,
+New Salary = Old Salary + 15%
+           = SAL × 1.15
+3. Add another column showing the difference between old salary and new salary. Label 
+it Increase. 
+SELECT EMPNO,JOB,SAL,
+       ROUND(SAL * 1.15) AS "New Salary",
+       ROUND(SAL * 1.15) - SAL AS "Increase"
+FROM EMP;
+Example output:
+EMPNO   JOB         SAL    New Salary   Increase
+-----   ---------   ----   ----------   --------
+7369    CLERK        800       920        120
+
+===== PAGE 2 =====
+7499    SALESMAN    1600      1840        240
+7521    SALESMAN    1250      1438        188
+7566    MANAGER     2975      3421        446
+4. Display employee names with first letter capitalized and remaining letters lowercase. 
+Also display name length for employees whose names start with J, A, or M. Sort by 
+employee name. 
+SELECT INITCAP(ENAME) AS "Employee Name",
+       LENGTH(ENAME) AS "Name Length"
+FROM EMP
+WHERE UPPER(SUBSTR(ENAME,1,1)) IN ('J','A','M')
+ORDER BY ENAME;
+Example output:
+Employee Name    Name Length
+-------------    -----------
+Adams                 5
+Allen                  5
+James                  5
+Jones                  5
+Martin                 6
+Miller                 6
+Functions used:
+INITCAP() → First letter uppercase
+LENGTH()  → Number of characters
+SUBSTR()  → Extracts part of a string
+UPPER()   → Converts text to uppercase
+5. Produce the following sentence for every employee: <employee name> earns 
+<salary> monthly. 
+SELECT ENAME || ' earns ' || SAL || ' monthly'
+       AS "Employee Salary"
+FROM EMP;
+Example output:
+Employee Salary
+--------------------------
+SMITH earns 800 monthly
+ALLEN earns 1600 monthly
+WARD earns 1250 monthly
+JONES earns 2975 monthly
+MARTIN earns 1250 monthly
+The || operator is used for concatenation.
+
+===== PAGE 3 =====
+6. Display employee name, hire date, number of months employed, and day of the week 
+on which the employee started. Order results beginning with Monday. 
+SELECT ENAME,
+       HIREDATE,
+       ROUND(MONTHS_BETWEEN(SYSDATE, HIREDATE)) AS "Months Employed",
+       TO_CHAR(HIREDATE,'DAY') AS "Day"
+FROM EMP
+ORDER BY MOD(TO_CHAR(HIREDATE,'D') + 5, 7);
+Example structure:
+ENAME    HIREDATE    Months Employed    Day
+------   ---------   ---------------    ---------
+SMITH    17-DEC-80        ...           WEDNESDAY
+ALLEN    20-FEB-81        ...           FRIDAY
+WARD     22-FEB-81        ...           SUNDAY
+Because SYSDATE changes, the exact Months Employed value changes depending on when 
+you execute the query.
+7. Display the hire date in a format similar to “Seventh of June 1994 12:00:00 AM.” 
+SELECT ENAME,
+       TO_CHAR(
+           HIREDATE,
+           'Ddspth "of" Month YYYY HH:MI:SS AM'
+       ) AS "Hire Date"
+FROM EMP;
+Example output:
+ENAME    Hire Date
+------   ------------------------------------------
+SMITH    Seventeenth of December 1980 12:00:00 AM
+ALLEN    Twentieth of February 1981 12:00:00 AM
+If your Oracle version does not format DDSPTH as expected, your lab version may require a 
+slightly different date-format expression.
+8. Calculate the annual compensation of all employees using salary and commission. 
+SELECT EMPNO,
+       ENAME,
+       SAL,
+       COMM,
+       (SAL * 12) + NVL(COMM,0) AS "Annual Compensation"
+FROM EMP;
+Example:
+
+===== PAGE 4 =====
+EMPNO   ENAME    SAL    COMM    Annual Compensation
+-----   -------  ----   ----    -------------------
+7369    SMITH     800   0         9600
+7499    ALLEN    1600    300         19500
+7521    WARD     1250    500         15500
+7654    MARTIN   1250   1400         16400
+SAL * 12
+SAL = monthly salary
+There are 12 months in a year.
+So:
+Annual Salary = Monthly Salary × 12
+For example:
+SAL = 5,000
+5000 × 12 = 60,000
+2. NVL(COMM, 0)
+COMM = commission
+NVL() means if the value is NULL, replace it with another value.
+NVL(COMM, 0)
+means:
+If COMM has a value → use that value.
+If COMM is NULL → use 0.

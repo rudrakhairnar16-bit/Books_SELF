@@ -1,0 +1,236 @@
+SOURCE: SEM3/Python_Programing/Lab_Manual_PP formatting CSE.pdf
+
+===== PAGE 1 =====
+Computer Science & Engineering 
+KSET/KPGU 
+Enrollment : 
+ 
+: 
+ 
+ 
+Page | 1 
+ 
+PP/SEM 6/ CSE/ KSET/KPGU 
+ 
+                                            
+ 
+ 
+ 
+Sr.No 
+Date 
+List of Practical 
+Page 
+No 
+Grade 
+Sign of 
+Faculty 
+1 
+Install the Python programming environment (IDLE/VS 
+Code/PyCharm), configure the interpreter, and execute a 
+simple Python program to verify successful installation. 
+2 
+Write a Python program to demonstrate the use of variables, 
+identifiers, keywords, and different built-in data types such as 
+integer, float, string, Boolean, list, tuple, and dictionary. 
+3 
+Write a Python program to perform arithmetic operations 
+including addition, subtraction, multiplication, division, 
+modulus, exponentiation, and floor division on user-provided 
+inputs. 
+4 
+Develop a Python program to demonstrate the use of 
+relational, logical, assignment, and membership operators by 
+evaluating different expressions. 
+5 
+Write a Python program to evaluate mathematical 
+expressions using operator precedence and associativity, and 
+display the intermediate and final results. 
+6 
+Develop a menu-driven calculator using conditional statements 
+(if, if-elif-else) to perform basic arithmetic operations based on 
+user choice. 
+7 
+Write a Python program to determine whether a given number is 
+positive, negative, or zero and check whether it is even or odd 
+using nested conditional statements. 
+8 
+Write a Python program to determine the largest and smallest 
+among three numbers entered by the user using decision-
+making statements. 
+9 
+Write a Python program using a for loop to generate 
+multiplication tables for a given number up to a specified 
+range. 
+10 
+Develop a Python program using a while loop to calculate the 
+factorial of a given number and validate the user input. 
+11 
+Write a Python program to generate the Fibonacci series up to a 
+specified number of terms using iterative looping constructs. 
+12 
+Develop a Python program to display all prime numbers within 
+a given range and count the total number of prime numbers 
+found. 
+13 
+Write a Python program using user-defined functions to 
+perform arithmetic operations such as addition, subtraction, 
+multiplication, and division. 
+14 
+Develop a Python program demonstrating different types of 
+function arguments including positional, keyword, default, and 
+
+===== PAGE 2 =====
+Computer Science & Engineering 
+KSET/KPGU 
+Enrollment : 
+ 
+: 
+ 
+ 
+Page | 2 
+ 
+PP/SEM 6/ CSE/ KSET/KPGU 
+ 
+variable-length arguments. 
+15 
+Write Python functions to calculate the Greatest Common 
+Divisor (GCD) and Least Common Multiple (LCM) of two 
+numbers. 
+16 
+Develop a recursive Python program to calculate the factorial 
+of a number and compare its output with the iterative approach. 
+17 
+Write a recursive Python program to generate the Fibonacci 
+sequence and analyze the recursive function calls. 
+18 
+Develop a Python program demonstrating the concepts of local 
+variables, global variables, and variable scope within functions. 
+19 
+Write a Python program to perform various list operations 
+including insertion, deletion, updating, sorting, reversing, 
+searching, and slicing. 
+20 
+Develop a Python program demonstrating tuple creation, 
+indexing, slicing, concatenation, and the concept of tuple 
+immutability. 
+21 
+Write a Python program to perform dictionary operations 
+including insertion, updating, deletion, searching, and traversal 
+of key-value pairs. 
+22 
+Develop a Python program to count the frequency of words in a 
+given paragraph using dictionary data structures. 
+23 
+Write a Python program to create a text file and perform 
+write, append, and overwrite operations using file handling 
+functions. 
+24 
+Develop a Python program to read a text file and calculate 
+the total number of characters, words, and lines present in the 
+file. 
+25 
+Write a Python program to copy the contents of one text file into 
+another and verify the copied data. 
+26 
+Develop a Python program demonstrating exception handling 
+using try, except, else, and finally blocks by handling multiple 
+runtime exceptions. 
+27 
+Write a Python program to create a Student class with 
+appropriate data members and member functions to display 
+student information. 
+28 
+Develop a Python program demonstrating single and multilevel 
+inheritance using suitable real-world examples such as 
+Employee and Manager classes. 
+29 
+Write a Python program to demonstrate method 
+overriding and runtime polymorphism using inheritance. 
+30 
+Develop a Python program using the NumPy library to create 
+one-dimensional and two-dimensional arrays and perform 
+indexing, slicing, reshaping, and aggregation operations. 
+31 
+Write a Python program using NumPy to perform matrix 
+addition, subtraction, multiplication, transpose, determinant, 
+and inverse operations. 
+
+===== PAGE 3 =====
+Computer Science & Engineering 
+KSET/KPGU 
+Enrollment : 
+ 
+: 
+ 
+ 
+Page | 3 
+ 
+PP/SEM 6/ CSE/ KSET/KPGU 
+ 
+32 
+Develop a Python program using the Pandas library to create 
+DataFrames, perform sorting, filtering, grouping, and 
+descriptive statistical analysis. 
+33 
+Write a Python program using Pandas to read data from a CSV 
+file, handle missing values, perform data cleaning, and generate 
+summary statistics. 
+34 
+Develop Python programs using the Turtle graphics module to 
+draw geometric shapes, polygons, spirals, and user-defined 
+graphical patterns with different colours. 
+35 
+Develop a GUI-based application using the Tkinter library 
+(such as a Student Information System, Calculator, Login 
+Form, or Unit Converter) with appropriate widgets and event 
+handling. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 4 =====
+Computer Science & Engineering 
+KSET/KPGU 
+Enrollment : 
+ 
+: 
+ 
+ 
+Page | 4 
+ 
+PP/SEM 6/ CSE/ KSET/KPGU 
+ 
+Practical No:(like 1,2,3….) 
+ 
+Aim: 
+(Times New roman, 14, Bold) 
+Content have to be written here, have to maintain margin. Content should be 
+in 12, 
+Times new roman, Justify, 1.15 space b/w lines). 
+This orange line should be maintaining for margin. For that use Ruler. 
+ 
+Footer: 12, bold, times new roman. Page number have to write with pen. 
+Header: Logo should be in left and in right side, 12, bold, times new roman 
+ 
+ 
+ 
+ 

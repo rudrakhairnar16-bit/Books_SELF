@@ -1,0 +1,582 @@
+SOURCE: SEM3/DLD/Digital Logic Design_Syllabus.pdf
+
+===== PAGE 1 =====
+DRS. KIRAN & PALLAVI PATEL GLOBAL UNIVERSITY, VADODARA (KPGU) 
+ 
+ 
+ 
+ 
+ 
+ 
+Course Title 
+Digital Logic 
+Design 
+Course No 
+(Will be 
+assigned) 
+Specialization 
+Computer 
+Engineering 
+Structure 
+Course/ Branch 
+CSE/CE/IT 
+L 
+T 
+P 
+C 
+Offered for 
+3rd Semester 
+3 
+0 
+0 
+3 
+Faculty 
+Faculty of 
+Engineering and 
+Technology 
+Status 
+HSS 
+AEC 
+VAC 
+SEC 
+BSC 
+ESC 
+PCC 
+PEC 
+ 
+Pre-requisite 
+Y 
+N 
+- 
+Yes 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+OE 
+EL 
+CC 
+MC 
+Honors/Minor 
+- 
+- 
+- 
+- 
+For Office Use Only 
+Date of 
+Submission 
+Type 
+New 
+Modification 
+Merging 
+To take effect 
+from 
+2025-26 
+Yes 
+- 
+- 
+Date of approval 
+by Board of 
+Study 
+Date of 
+approval by 
+Academic 
+Council 
+ 
+Year: 2 
+Semester: 3 
+Sr 
+No 
+Name of 
+Subject 
+Teaching Scheme 
+Evaluation Scheme 
+Credits 
+Theory Hours/week 
+Tutorial Hours/week 
+Practical Hours/week 
+Total 
+Theory 
+Practical 
+Total Marks 
+Theory 
+Practical 
+Ex 
+Internal 
+Internal 
+External 
+Continuous 
+Evaluation 
+Term Work 
+Viva/ Practical Exam 
+SEE 
+Attendance 
+Assignment 
+Mid Sem 
+Attendance 
+Participation/ 
+Teamwork 
+Report Writing 
+Quiz/Lab 
+Exam 
+1 
+Digital 
+Logic 
+Design 
+3 
+0 
+0 
+3 
+70 
+5 
+5 
+20 
+- 
+- 
+- 
+- 
+- 
+100 
+3 
+- 
+
+===== PAGE 2 =====
+DRS. KIRAN & PALLAVI PATEL GLOBAL UNIVERSITY, VADODARA (KPGU) 
+ 
+ 
+ 
+ 
+Course Outcomes (COs): 
+L1 – Remember, L2 – Understand, L3 – Apply, L4 – Analyze, L5 – Evaluate, L6 – Create 
+ 
+ 
+Sr. 
+No. 
+Course Outcome 
+Blooms 
+Taxonomy 
+Level * 
+CO1 
+Recall and explain number systems, Boolean algebra, logic gates, 
+and binary arithmetic concepts. 
+L1, L2 
+CO2 
+Apply  K-map  techniques  to  simplify  Boolean  functions  and 
+implement logic using NAND/NOR gates. 
+L3 
+CO3 
+Analyze combinational logic circuits such as multiplexers, decoders, 
+adders, subtractors, and code converters. 
+L4 
+CO4 Evaluate the behavior and performance of sequential circuits 
+including flip-flops, registers, and counters. 
+L5 
+CO5 Design and develop digital systems such as counters, shift registers, 
+and A/D–D/A converter based circuits. 
+L6 
+
+===== PAGE 3 =====
+DRS. KIRAN & PALLAVI PATEL GLOBAL UNIVERSITY, VADODARA (KPGU) 
+ 
+ 
+ 
+ 
+ 
+Content of the Course 
+Module 
+Contents/ Topics to be covered 
+Hours 
+Weight 
+age % 
+Module -1 
+Number Systems and Logic Gates: 
+Digital computer and digital systems fundamentals AND, OR,
+NOT, NAND, NOR and Exclusive-OR operations, Boolean
+algebra, examples of IC gates, number systems-binary, signed
+binary, octal hexadecimal number, binary arithmetic,
+complements arithmetic, r’s, (r-1)’s complements, error
+detecting and correcting codes, addition and subtraction of
+unsigned and signed numbers 
+ 
+ 
+ 
+06 
+ 
+ 
+ 
+15% 
+Module -2 
+Boolean Function Simplification: 
+2,3,4,5 variable K-map representation and simplification of 
+logic functions using K-map, SOP and POS minimization of 
+logical functions. Don’t care conditions, VEM k-map, NAND 
+or NOR implementation 
+ 
+ 
+08 
+ 
+ 
+20% 
+Module -3 
+Combinational Logic Circuits: 
+Multiplexer, De-Multiplexer, Design of decoders, encoders,
+priority encoder, realization of Boolean functions using
+decoders, Design of half adder, full adder, half subtractor, full
+subtractor, ripple adders and subtractors, carry look ahead
+adder, serial adder, parity checker/generator, code converters,
+Q M method of function realization 
+ 
+ 
+ 
+06 
+ 
+ 
+ 
+15% 
+Module -4 
+Sequential Logic Circuits: 
+Sequential Logic: Introduction, Classification of sequential
+circuits, latch and flip-flop, RS- latch using NAND and NOR
+Gates, truth tables, RS, JK, D, T Flip-Flops, Triggering of Flip-
+Flops, Flip-Flop Excitation Tables, Analysis of Clocked
+Sequential Circuits, State Reduction and Assignment Design 
+Procedure, Design of Counters, Design with State Equations 
+ 
+08 
+ 
+20% 
+Module -5 
+Registers, Counters: 
+Shift registers, applications of shift registers, serial to parallel
+converter, parallel to serial converter, ring counter, sequence
+generator, ripple (Asynchronous) counters, Synchronous
+Counters, counters design using flip flops, Johnson counter,
+applications of counters 
+ 
+06 
+ 
+15% 
+Module -6 
+A/D and D/A Conversion: 
+A/D and D/A Converters Digital to analog converters:
+weighted resistor/converter, R-2R Ladder D/A converter,
+specifications for D/A converters, parallel comparator A/D
+converter, successive approximation A/D converter, counting
+A/D converter, dual slope A/D converter, A/D converter using 
+voltage to frequency and voltage to time conversion, 
+specifications of A/D converter 
+06 
+15% 
+ 
+Total 
+40 
+100% 
+
+===== PAGE 4 =====
+DRS. KIRAN & PALLAVI PATEL GLOBAL UNIVERSITY, VADODARA (KPGU) 
+ 
+ 
+ 
+ 
+Textbooks 
+1 
+"Digital logic and Computer design", M. M. Mano, Pearson Education India, 2016. 
+2 
+“Fundamentals of Digital Circuits", A. Kumar, Prentice Hall India, 2016 
+3 
+“Digital Principles and Applications” Malvino & Leach, McGraw-Hill Education 
+References 
+1 
+"Modern Digital Electronics", R. P. Jain, McGraw Hill Education, 2009. 
+2 
+Kohavi, Jha, “Switching and Finite Automata Theory”, 3rd edition, Cambridge. 
+3 
+Roth, “Fundamentals of Logic Design”, 5th edition, Cengage. 
+Web content Link / E- material links 
+1 
+https://nptel.ac.in/courses - NPTEL Course 
+
+===== PAGE 5 =====
+DRS. KIRAN & PALLAVI PATEL GLOBAL UNIVERSITY, VADODARA (KPGU) 
+ 
+ 
+ 
+ 
+Suggested Distribution of Marks as per Bloom’s Taxonomy: 
+ 
+Suggested Distribution of Marks as per Bloom’s Taxonomy (%) 
+Remember 
+Level 
+Understanding 
+Level 
+Applying 
+Level 
+Analyzing 
+Level 
+Evaluation 
+Level 
+Create 
+Level 
+10 
+20 
+30 
+20 
+10 
+10 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 6 =====
+DRS. KIRAN & PALLAVI PATEL GLOBAL UNIVERSITY, VADODARA (KPGU) 
+ 
+ 
+ 
+ 
+ 
+ 
+Course Title 
+Digital Logic 
+Design 
+Laboratory 
+Course No 
+(Will be 
+assigned) 
+Specialization 
+Computer 
+Engineering 
+Structure 
+Course/ Branch 
+CSE/CE/IT 
+L 
+T 
+P 
+C 
+Offered for 
+3rd Semester 
+0 
+0 
+2 
+1 
+Faculty 
+Faculty of 
+Engineering and 
+Technology 
+Status 
+HSS 
+AEC 
+VAC 
+SEC 
+BSC 
+ESC 
+PCC 
+PEC 
+ 
+Pre-requisite 
+Y 
+N 
+- 
+Yes 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+OE 
+EL 
+CC 
+MC 
+Honors/Minor 
+- 
+- 
+- 
+- 
+For Office Use Only 
+Date of 
+Submission 
+Type 
+New 
+Modification 
+Merging 
+To take effect 
+from 
+2025-26 
+Yes 
+- 
+- 
+Date of approval 
+by Board of 
+Study 
+Date of 
+approval by 
+Academic 
+Council 
+ 
+Year: 2 
+Semester: 3 
+Sr 
+No 
+Name of 
+Subject 
+Teaching Scheme 
+Evaluation Scheme 
+Credits 
+Theory Hours/week 
+Tutorial Hours/week 
+Practical Hours/week 
+Total 
+Theory 
+Practical 
+Total Marks 
+Theory 
+Practical 
+Ex 
+Internal 
+Internal 
+External 
+Continuous 
+Evaluation 
+Term Work 
+Viva/ Practical Exam 
+SEE 
+Attendance 
+Assignment 
+Mid Sem 
+Attendance 
+Participation/ 
+Teamwork 
+Report Writing 
+Quiz/Lab 
+Exam 
+1 
+Digital 
+Logic 
+Design 
+Laboratory 
+0 
+0 
+2 
+2 
+- 
+- 
+- 
+- 
+5 
+5 
+5 
+5 
+30 
+50 
+- 
+1 
+
+===== PAGE 7 =====
+DRS. KIRAN & PALLAVI PATEL GLOBAL UNIVERSITY, VADODARA (KPGU) 
+ 
+ 
+ 
+ 
+ 
+List of Practical 
+ 
+Name of Laboratory: Digital Logic Design Laboratory 
+List of Practical/Experiment 
+Sr. 
+No. 
+Objectives 
+Performance 
+Study 
+Self-Study 
+1 
+Getting familiar with various digital integrated circuits of 
+different logic families. Study of data sheet of these logic 
+Families. 
+- 
+Yes 
+- 
+2 
+To study the implementation of AND, OR and NOT gates using 
+NAND and NOR gate. 
+Yes 
+Yes 
+- 
+3 
+To Simplify and Implement given Boolean function using logic 
+gates. 
+- 
+Yes 
+- 
+4 
+To study and verify Code Conversion circuits Binary to Gray code 
+Gray to Binary code BCD to XS-3 code. 
+Yes 
+Yes 
+- 
+5 
+To study Half adder, Full adder,2 bit parallel adder and Half 
+Subtractor circuit and verify its truth table. 
+Yes 
+Yes 
+- 
+6 
+To study different Flip Flops and verify its truth table 
+Yes 
+Yes 
+- 
+7 
+To study 4 to 1 line Multiplexer and 1 to 4 line Demultiplexer 
+and verify its truth table. 
+Yes 
+Yes 
+- 
+8 
+To study 8 to 3 line Encoder and 3 to 8 line Decoder and verify 
+its truth table. 
+Yes 
+Yes 
+- 
+9 
+To study 4 bit Ripple Up/Down Counter. 
+Yes 
+Yes 
+- 
+10 
+To study Serial In-Parallel Out 4 bits Shift Register. 
+Yes 
+Yes 
+- 
+11 
+Study and configuration of A to D and D to A converter. 
+Yes 
+Yes 
+- 
+ 

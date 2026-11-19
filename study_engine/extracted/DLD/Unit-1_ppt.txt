@@ -1,0 +1,745 @@
+SOURCE: SEM3/DLD/Unit-1 ppt.pdf
+
+===== PAGE 1 =====
+1.Number system and Logic 
+Gates 
+
+===== PAGE 2 =====
+Digital System 
+• Takes a set of discrete information inputs and discrete 
+internal information (system state) and generates a set of 
+discrete information outputs. 
+ 
+System State 
+Discrete 
+Information 
+Processing 
+System 
+Discrete 
+Inputs 
+Discrete 
+Outputs 
+
+===== PAGE 3 =====
+Types of Digital Systems 
+• No state present 
+– Combinational Logic System 
+– Output = Function(Input) 
+• State present 
+– State updated at discrete times 
+   => Synchronous Sequential System 
+– State updated at any time 
+   =>Asynchronous Sequential System 
+– State = Function (State, Input) 
+– Output = Function (State)  
+or Function (State, Input) 
+ 
+
+===== PAGE 4 =====
+A Digital Computer Example 
+Synchronous or 
+Asynchronous? 
+Inputs: Keyboard, 
+mouse, modem, 
+microphone 
+Outputs: CRT, 
+LCD, modem, 
+speakers 
+Memory
+Control
+unit
+Datapath
+Input/Output
+CPU
+
+===== PAGE 5 =====
+Signal 
+• An information variable represented by physical 
+quantity.  
+• For digital systems, the variable takes on discrete values.    
+• Two level, or binary values are the most prevalent values 
+in digital systems.  
+• Binary values are represented abstractly by: 
+– digits 0 and 1 
+– words (symbols) False (F) and True (T) 
+– words (symbols) Low (L) and High (H)  
+– and words On and Off. 
+• Binary values are represented by values or ranges of 
+values of physical quantities 
+
+===== PAGE 6 =====
+Signal Examples Over Time 
+Analog 
+Asynchronous 
+Synchronous 
+Time 
+Continuous 
+in value & 
+time 
+Discrete in       
+value & 
+continuous 
+in time 
+Discrete in 
+value & time 
+Digital 
+
+===== PAGE 7 =====
+Binary variables 
+• Two discrete values:  
+• 0 and 1’s 
+• Variable TRUE or FALSE 
+• Electronic computers 
+– 1/TRUE =  positive voltage 
+– 0/FALSE= zero voltage 
+• Digital abstraction -> 0/1: 
+– ignore physical variables (voltage levels, current 
+levels, rotating gears, electron spin, molecule 
+state, mechanical position, etc) 
+Copyright © 2016 Elsevier Ltd. All rights 
+reserved. 
+
+===== PAGE 8 =====
+Decimal Numbers 
+• Decimal Numbers 
+– Digits: {0,1, …. 9} 
+– Weights are powers of 10 
+Copyright © 2016 Elsevier Ltd. All rights 
+reserved. 
+
+===== PAGE 9 =====
+Binary numbers 
+Binary numbers 
+
+Digits: {0,1} 
+
+Weights are powers of 2 
+ 
+
+Information  
+ 
+
+===== PAGE 10 =====
+Binary numbers 
+Copyright © 2016 Elsevier Ltd. All rights reserved. 
+Binary numbers 
+
+===== PAGE 11 =====
+Logic Gates 
+• Logic gates is a electronic circuit which can 
+take one or more inputs but output will be 
+one. 
+• Logic gates are made up of diodes and 
+transistors. 
+• A logic gate is used to allow and denied a 
+digital signal.  
+
+===== PAGE 12 =====
+Types of logic Gates 
+• AND Gate 
+• OR Gate 
+• Not Gate 
+• NAND Gate 
+• XOR Gate 
+• XNOR Gate 
+• NOR Gate 
+Simple gates 
+Combinations of gates that is why 
+its called universal gate 
+
+===== PAGE 13 =====
+AND gate 
+
+===== PAGE 14 =====
+OR gate 
+
+===== PAGE 15 =====
+More two-input logic gates 
+
+===== PAGE 16 =====
+ XNOR gate 
+
+===== PAGE 17 =====
+Multiple input gates 
+
+===== PAGE 18 =====
+BOLEAN ALGEBRA 
+Developed by English Mathematician George 
+Boole in between 1815 - 1864. 
+It is described as an algebra of logic or an 
+algebra of two values i.e True or False. 
+The term logic means a statement having 
+binary decisions i.e True/Yes or False/No.  
+
+===== PAGE 19 =====
+• It is used to perform the logical operations in 
+digital computer. 
+• In digital computer True represent by ‘1’ (high 
+volt) and False represent by ‘0’ (low volt) 
+• Logical operations are performed by logical 
+operators. The fundamental logical operators 
+are: 
+  
+1. 
+AND (conjunction) 
+  
+2. 
+OR (disjunction) 
+  
+3. 
+NOT (negation/complement) 
+ 
+APPLICATION OF BOOLEAN ALGEBRA 
+
+===== PAGE 20 =====
+Truth Table 
+• Truth table is a table that contains all possible 
+values of logical variables/statements in a 
+Boolean expression. 
+ 
+  No. of possible combination =  
+  2n, where n=number of variables used in a 
+Boolean expression. 
+
+===== PAGE 21 =====
+Truth Table 
+The truth table for XY + Z is as follows: 
+  
+Dec X 
+Y 
+Z 
+XY 
+XY+Z 
+  
+0 
+0 
+0 
+0 
+0 
+0 
+  
+1 
+0 
+0 
+1 
+0 
+1 
+  
+2 
+0 
+1 
+0 
+0 
+0 
+  
+3 
+0 
+1 
+1 
+0 
+1 
+  
+4 
+1 
+0 
+0 
+0 
+0 
+  
+5 
+1 
+0 
+1 
+0 
+1 
+  
+6 
+1 
+1 
+0 
+1 
+1 
+  
+7 
+1 
+1 
+1 
+1 
+1 
+ 
+
+===== PAGE 22 =====
+TautologTAUTOLOGY & FALLACY& 
+Fallacy 
+If the output of Boolean expression is always 
+True or 1 is called Tautology. 
+  
+If the output of Boolean expression is always 
+False or 0 is called Fallacy. 
+ 
+
+===== PAGE 23 =====
+Exercise 
+1. Evaluate the following Boolean expression 
+using Truth Table. 
+(a) X’Y’+X’Y 
+ 
+(b) X’YZ’+XY’ 
+(c) XY’(Z+YZ’)+Z’ 
+2. Verify that P+(PQ)’ is a Tautology. 
+3. Verify that (X+Y)’=X’Y’ 
+
+===== PAGE 24 =====
+Implementation 
+• Boolean 
+Algebra 
+applied 
+in 
+computers 
+electronic circuits. These circuits perform 
+Boolean operations and these are called logic 
+circuits or logic gates. 
+
+===== PAGE 25 =====
+Logic Gate 
+* A gate is an digital circuit which operates on 
+one or more signals and produce single 
+output.  
+* Gates are digital circuits because the input and 
+output signals are denoted by either 1(high 
+voltage) or 0(low voltage). 
+ 
+
+===== PAGE 26 =====
+ 
+PRACTICAL APPLICATIONS OF LOGIC GATES 
+ 
+ 
+ 
+ 
+ 
+AND Gate 
+So while going out of the house you set the "Alarm Switch" and if the burglar enters 
+he will set the "Person switch", and tada the alarm will ring. 
+
+===== PAGE 27 =====
+PRACTICAL APPLICATIONS OF LOGIC GATES 
+ 
+                                     
+OR GATE 
+You would of course want your doorbell to ring when 
+someone presses either the front door switch or the 
+back door switch.. 
+
+===== PAGE 28 =====
+PRACTICAL APPLICATIONS OF LOGIC GATES 
+NOT Gate 
+When the temperature falls below 20c the Not gate will set 
+on the central heating system (cool huh). 
+
+===== PAGE 29 =====
+Basic Theorem of Boolean Algebra 
+ 
+• T1 : Properties of 0 
+   (a) 0 + A = A  
+(b) 0 A = 0  
+• T2 : Properties of 1 
+   (a) 1 + A = 1  
+(b) 1 A = A  
+ 
+
+===== PAGE 30 =====
+• T3 : Commutative Law  
+    (a) A + B = B + A 
+(b) A B = B A  
+• T4 : Associate Law  
+(a) (A + B) + C = A + (B + C)  
+(b) (A B) C = A (B C)  
+• T5 : Distributive Law  
+    (a) A (B + C) = A B + A C 
+ (b) A + (B C) = (A + B) (A + C)  
+    (c) A+A’B = A+B 
+ 
+Basic Theorem of Boolean Algebra 
+
+===== PAGE 31 =====
+Basic Theorem of Boolean Algebra 
+• T6 : Indempotence (Identity ) Law  
+   (a) A + A = A  
+(b) A A = A  
+ 
+• T7 : Absorption (Redundance) Law  
+   (a) A + A B = A  
+(b) A (A + B) = A  
+ 
+
+===== PAGE 32 =====
+• T8 : Complementary Law 
+   (a) X+X’=1 
+   (b) X.X’=0 
+• T9 : Involution 
+   (a)  x’’   = x 
+• T10 : De Morgan's Theorem  
+    (a) (X+Y)’=X’.Y’  
+    (b) (X.Y)’=X’+Y’ 
+ 
+Basic Theorem of Boolean Algebra 
+
+===== PAGE 33 =====
+De Morgan's Theorem 1 
+Theorem 1  A . B = A + B 
+
+===== PAGE 34 =====
+De Morgan's Theorem 1 
+Theorem 1  A . B = A + B 
+
+===== PAGE 35 =====
+De Morgan's Theorem 1  
+Theorem 1  A . B = A + B 
+
+===== PAGE 36 =====
+De Morgan's Theorem  2 
+Theorem 2  A + B = A . B 
+
+===== PAGE 37 =====
+De Morgan's Theorem  2 
+Theorem 2  A + B = A . B 
+
+===== PAGE 38 =====
+De Morgan's Theorem  2 
+Theorem 2  A + B = A . B 
+
+===== PAGE 39 =====
+NUMBER SYSTEMS 
+• A number system relates quantities and 
+symbols.  
+• The 
+base 
+or 
+radix 
+of 
+a 
+number 
+system represents the number of digits or 
+basic symbols in that particular number 
+system.  
+• In decimal system the base is 10, because of 
+use the numbers 0, 1,2,3,4,5,6,7,8 and 9. 
+
+===== PAGE 40 =====
+Number system 
+•
+Decimal System 
+•
+The decimal numeral system is the most commonly used and the standard 
+system in daily life. It uses the number 10 as its base (radix). Therefore, it has 
+10 symbols: The numbers from 0 to 9; namely 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9. 
+•
+For instance, take the number 2345.67 in the decimal system:  
+•
+The digit 5 is in the position of ones (100, which equals 1), 
+•
+4 is in the position of tens (101) 
+•
+3 is in the position of hundreds (102) 
+•
+2 is in the position of thousands (103) 
+•
+Meanwhile, the digit 6 after the decimal point is in the tenths (1/10, which is 
+10-1) and 7 is in the hundredths (1/100, which is 10-2) position 
+•
+Thus, the number 2345.67 can also be represented as follows: (2 * 103) + (3 * 
+102) + (4 * 101) + (5 * 100) + (6 * 10-1) + (7 * 10-2) 
+ 
+
+===== PAGE 41 =====
+• Binary System 
+• The binary numeral system uses the number 2 as 
+its base (radix). As a base-2 numeral system, it 
+consists of only two numbers: 0 and 1.  
+• Reading a binary number is easier than it looks: 
+This is a positional system; therefore, every digit 
+in a binary number is raised to the powers of 2, 
+starting from the rightmost with 20. In the binary 
+system, each binary digit refers to 1 bit. 
+• Decimal to binary conversion examples 
+• (51)10 = (110011)2 
+• (217)10 = (11011001)2 
+• (8023)10 = (1111101010111)2 
+ 
+
+===== PAGE 42 =====
+• A binary number system is a code that uses 
+only two basic symbols. The digits can be any 
+two distinct characters, but it should be 0 or 1. 
+The binary equivalent for some decimal 
+numbers are given below. 
+  
+
+===== PAGE 43 =====
+Each digit in a binary number has a value or 
+weight. The LSB has a value of 1. The second 
+from the right has a value of 2, the next 4 
+etc..  
+
+===== PAGE 44 =====
+Decimal to Binary 
+• In this method the decimal number is divided 
+by 2 progressively and the remainder is 
+written 
+after 
+each 
+division. 
+Then 
+the 
+remainders are taken in the reverse order to 
+form the binary number.  
+
+===== PAGE 45 =====
+Decimal to Binary 
+
+===== PAGE 46 =====
+Fractions 
+ 
+     The fraction is multiplied by 2 and the carry in the integer 
+position is written after each multiplication. Then they are 
+written in the forward order to get the corresponding 
+binary equivalent.  
+
+===== PAGE 47 =====
+Octal number system 
+• Octal number system has a base of 8 i.e. it has 
+eight basic symbols. First eight decimal digits 0, 
+1,2,3,4,5,6,7 are used in this system. 
+• Octal to decimal conversion:  
+• In 
+the 
+octal 
+number 
+system 
+each 
+digit 
+corresponds to the powers of 8. The weight of 
+digital position in octal number is as follows. 
+  
+
+===== PAGE 48 =====
+• To convert from octal to decimal multiply each 
+octal digit by its weight and add the resulting 
+products.  
+
+===== PAGE 49 =====
+Decimal to Octal conversion 
+ 
+•
+The number is divided by 8 progressively and each time the remainder is 
+written and finally the remainders are written in the reverse order to form 
+the octal number.  
+•
+If the number has a fraction part, that part is multiplied by 8 and carry in 
+the integer part is taken. Finally the carries are taken in the forward order.  
+
+===== PAGE 50 =====
+Octal to Binary conversion 
+• Since the base of octal number is 8, i.e., the 
+third power of 2, each octal number is 
+converted into its equivalent binary digit of 
+length three.  
+
+===== PAGE 51 =====
+Binary to Octal 
+• The given binary number is grouped into a 
+group of 3 bits, starting at the octal point and 
+each group is converted into its octal 
+equivalent.  
+
+===== PAGE 52 =====
+Hexadecimal Number System 
+ 
+• The hexadecimal number system has a base of 
+16. It has 16 symbols from 0 through 9 and A 
+through F.  
+
+===== PAGE 53 =====
+Binary to hexadecimal:  
+ 
+• The binary number is grouped into bits of 4 
+from the binary point then the corresponding 
+hexadecimal equivalent is written.  
+
+===== PAGE 54 =====
+Hexadecimal to binary:  
+ 
+• Since the base of hexadecimal number is 16, 
+i.e., the fourth power of 2, each hexadecimal 
+number is converted into its equivalent binary 
+digit of length four.  
+
+===== PAGE 55 =====
+Decimal to hexadecimal  
+ 
+• The decimal number is divided by 16 and carries are 
+taken after each division and then written in the 
+reverse order. The fractional part is multiplied by 16 
+and carry is taken in the forward order.  
+
+===== PAGE 56 =====
+
+===== PAGE 57 =====
+Hexadecimal to decimal:  
+ 
+• Each digit of the hexadecimal number is 
+multiplied by its weight and then added.  
+
+===== PAGE 58 =====
+Binary Arithmetic  
+• Binary Addition:  
+• To perform the binary addition we have to 
+follow the binary table given below.  
+
+===== PAGE 59 =====
+• Carry-overs are performed in the same manner 
+as in decimal arithmetic. Since 1 is the largest 
+digit in the binary system, any sum greater than 1 
+requires that a digit be considered over.  
+
+===== PAGE 60 =====
+Binary Subtraction  
+ 
+• To perform the binary subtraction the following 
+binary subtraction table should be followed.  
+ 
+
+===== PAGE 61 =====
+
+===== PAGE 62 =====
+1’s complement:  
+To obtain 1’s complement of a binary number each bit of the 
+number is subtracted from 1.  
+Thus 1’s complement of a binary number is the number that 
+results when we change each 0 to a 1 and each 1 to a 0.  
+
+===== PAGE 63 =====
+1’s complement subtraction 
+ 
+• Instead of subtracting the second number from the first, the 
+1’s complement of the second number is added to the first 
+number. The last carry which is said to be a END AROUND 
+CARRY, is added to get the final result. 
+ 
+
+===== PAGE 64 =====
+• If there is no carry in the 1’s complement 
+subtraction, it indicates that the result is a 
+negative and number will be in its 1’s 
+complement form. So complement it to get 
+the final result.  
+
+===== PAGE 65 =====
+ 
+• 1. Write the first number (minuend) as such.  
+• 2. Write the 1’s complement of second 
+number(subtrahend)  
+• 3. Add the two numbers.  
+• 4. The carry that arises from the addition is said to be 
+“end around carry”.  
+• 5. End-around carry should be added with the sum to 
+get the result.  
+• 6. If there is no end around carry find out the 1’s 
+complement of the sum and put a negative sign before 
+the result as the result is negative.  
+• The following points should be noted down when we 
+do 1’s complement subtraction.  
+
+===== PAGE 66 =====
+2’s Complement:  
+ 
+• 2’s complement results when we add ‘1’ to 1’s 
+complement of the given number i.e., 2’s 
+complement =1’s complement + 1  
+
+===== PAGE 67 =====
+• 2’s Complement Subtraction: Steps:  
+• 1. Write the first number as such  
+• 2. Write down the 2’s complement of the 
+second number.  
+• 3. Add the two numbers.  
+• 4. If there is a carry, discard it and the 
+remaining part (sum) will be the result 
+(positive).  
+• 5. If there is no carry, find out the 2’s 
+complement of the sum and put negative sign 
+before the result as the result is negative.  
+ 
+
+===== PAGE 68 =====
+
+===== PAGE 69 =====
+Binary multiplication  
+ 
+• The table for binary multiplication is given 
+below  
+
+===== PAGE 70 =====
+
+===== PAGE 71 =====
+Binary division 
+ 
+• The table for binary division is as follows.  
+• 0 ÷ 1 = 0  
+• 1 ÷ 1 = 1  
+• As in the decimal system division by zero is 
+meaning less.  
+
+===== PAGE 72 =====
+• BCD Addition  
+• Binary Coded Decimal(BCD) is a way to express 
+each of the decimal digits with a binary code. 
+There are only ten code groups in the BCD system. 
+The 8421 code is a type of BCD code. In BCD each 
+decimal digit , 0 through 9 is represented by a 
+binary code of four bits. The designation of 8421 
+indicates the binary weights of the four bits 
+(23,22,21,20). The largest 4-bit code is 1001. The 
+numbers 1010, 1011, 1100, 1101, 1110, and 1111 
+are called forbidden numbers. The following table 
+represents the decimal and 8421 equivalent 
+numbers.  
+
+===== PAGE 73 =====
+8421 Addition:  
+In 8421 addition, if there is a carry or if it results in a forbidden group, then 0110(6) should be 
+added in order to bring the result to the 8421 mode again.  
+
+===== PAGE 74 =====
+
+===== PAGE 75 =====
+ 
+•
+1. ASCII: American Standard Code for Information Interchange.  
+•
+2. EBCDIC: Extended Binary Coded Decimal Interchange Code. It is an 8 bit 
+code.  
+•
+Alphanumeric code  
+•
+Computers, printers and the other devices must process both alphabetic 
+and numeric information. Serial coding systems have been developed to 
+represent alphanumeric information as a series of 1’s and 0’s. The 
+characters to be coded are alphabets(26), numerals (10) and special 
+characters such as +,-, /,*, $ etc,  
+•
+In order to code a character, string of binary digits is used. In order to 
+ensure uniformity in coding, two standard codes have been used.  
+•
+ASCII is 7-bit code of the form X6, X5, X4, X3, X2, X1, X0 and is used to 
+code two types of information. One type is the printable character such as 
+alphabets, digits and special characters. The other type is known as 
+control characters which represent the coded information to control the 
+operation of the digital computer and are not printed.  
+
+===== PAGE 76 =====
+    
+ 
+ 
+Exercise 

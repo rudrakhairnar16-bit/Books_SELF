@@ -1,0 +1,26 @@
+TITLE: Mentor Notes — How to Write Answers (1 to 10 marks)
+# Marks → Answer Length Rule
+> 1 mark = 1 line  |  2 marks = 2-3 lines + keyword  |  3 marks = definition + 2 points/example
+> 4-5 marks = definition + diagram/table + 4-5 points + example
+> 7 marks = intro + diagram + explanation (6-8 points) + example + conclusion
+> 10 marks = all of 7-mark + comparison table / solved numerical / algorithm + advantages & limits
+
+## The 5-step frame for any long answer
+1. **Define** the term in 1-2 lines (examiner's first tick).
+2. **Draw** — diagram, table, circuit, tree or flowchart (examiners love visuals).
+3. **Explain** points with __keywords underlined__.
+4. **Example** — SQL query / code / numerical / truth table.
+5. **Conclude** — advantages, applications or one-line summary.
+
+! Always write the formula first, then substitute, then the final answer with units/box.
+! For numericals: show every step — step marks are given even if the final answer is wrong.
+- Use headings and bullet points; never write one giant paragraph.
+- Leave 2 lines between answers; start each long answer on a new page.
+  - Write question numbers in the margin, exactly as printed in the paper.
+
+TIP: Attempt the questions you know best FIRST — it builds speed and confidence.
+MEM: "D-D-E-E-C" = Define, Draw, Explain, Example, Conclude.
+
+## Time budget for a 70-mark, 3-hour paper
+> ≈ 2.3 minutes per mark  →  7-mark answer ≈ 15 min,  MCQ section ≤ 10 min
+- Last 10 minutes: revise, underline keywords, check you didn't skip any sub-part.

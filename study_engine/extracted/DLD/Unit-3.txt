@@ -1,0 +1,1203 @@
+SOURCE: SEM3/DLD/Unit-3.pdf
+
+===== PAGE 1 =====
+COMBINATIONAL LOGIC
+
+===== PAGE 2 =====
+Contents
+• Multiplexer
+• De-Multiplexer/Decoders
+• Adders
+• Subtractors
+• BCD Arithmetic
+• Carry Look Ahead Adder
+• Serial Adder
+• Parity Checker/Generator
+• Code Converters
+• Priority Encoders
+• Decoders/Drivers for Display Devices
+• Q-M Method of Function Realization 
+
+===== PAGE 3 =====
+Combinational Circuits
+• Combinational circuit is a circuit in which we combine the different
+gates in the circuit, for example encoder, decoder, multiplexer and
+demultiplexer.
+• Some of the characteristics of combinational circuits are following:
+• The output of combinational circuit at any instant of time, depends
+only on the levels present at input terminals.
+• The combinational circuit do not use any memory. The previous state
+of input does not have any effect on the present state of the circuit.
+• A combinational circuit can have an n number of inputs and m number
+of outputs.
+
+===== PAGE 4 =====
+Combinational Circuits
+• The outputs of Combinational Logic
+Circuits are only determined by the
+logical function of their current input
+state(s), logic “0” or(and) logic “1”, at
+any given instant.
+• Combinational logic circuits give us
+many
+useful devices like Adders,
+Subtractors,Multiplexers, Comparators,
+Encoders, Decoders etc.
+
+===== PAGE 5 =====
+Binary Adder
+• HalfAdder
+• A Half Adder is a combinational circuit with two binary inputs (augends and
+addend bits and two binary outputs (sum and carry bits.) It adds the two inputs
+(A and B) and produces the sum (S) and the carry (C) bits.
+
+===== PAGE 6 =====
+HALF ADDER
+
+===== PAGE 7 =====
+FULL ADDER
+• A full adder is a logical circuit that
+performs an addition operation on
+three binary digits.
+• The full-adder adds the bits A and B
+and
+the
+carry
+from
+the
+previous
+column called the carry-in Cin and
+outputs the sum bit S and the carry
+bit called the carry-out Cout .
+
+===== PAGE 8 =====
+FULL ADDER
+
+===== PAGE 9 =====
+FULL ADDER USING HALF ADDERS
+
+===== PAGE 10 =====
+Binary Subtractor
+• A Half-subtractor is a combinational circuit which is used to perform
+subtraction of two bits; it has two inputs A and B and two outputs
+difference(d) and borrow(b).
+
+===== PAGE 11 =====
+Full Subtractor
+• A full subtractor performs subtraction of three input bits: the
+minuend, subtrahend, and borrow_in and generates two output bits
+difference and borrow out .
+
+===== PAGE 12 =====
+Full Subtractor
+• Block Diagram:
+• Logic Diagram:
+
+===== PAGE 13 =====
+Binary Adder/ Subtractor
+• In order to make an adder/ subtractor circuit, it is necessary to use a gate that can either pass the
+value through or generate its one’s complement. The Exclusive OR, XOR gate does this operation
+exactly.
+• For Ex: Consider A=1101and B=1011
+• If K=0, then the circuit acts as an Adder (Here A=1101, B XOR 0=1011, C=0). It performs A+B.
+• If K=1, then the circuit acts as a Subtractor (Here A=1101, B XOR 1=0100B=B’, C=1 ). It
+performs A+B’+1 A-B.
+
+===== PAGE 14 =====
+Parallel Adder/ Subtractor
+• A Binary Parallel Adder or Ripple Carry Adder (fig-1) is a digital
+circuit that adds two binary numbers in parallel form and produces the
+arithmetic sum of those numbers in parallel form.
+• Similarly, a binary parallel subtractor (fig-2) performs subtraction using
+2’s complement form.
+
+===== PAGE 15 =====
+Continues…..
+• It is possible to create a logical circuit using multiple full adders to add
+N-bit numbers.
+• Each full adder inputs a Cin, which is the Cout of the previous adder.
+• This kind of adder is a ripple carry adder, since each carry bit "ripples"
+to the next full adder.
+• However, the ripple carry adder is relatively slow, since each full
+adder must wait for the carry bit to be calculated from the previous full
+adder.
+• The gate delay can easily be calculated by inspection of the full adder
+circuit.
+
+===== PAGE 16 =====
+Carry Look Ahead Adder
+• In parallel-adder , the speed with which an addition can be performed is governed by
+the time required for the carries to propagate or ripple through all of the stages of the
+adder.
+• The propagation delay time in a parallel adder is the time it takes the carry to
+propagate through the full adder.
+• So, the carry propagation time is a limiting factor on the speed
+with which two
+numbers are added in parallel.
+• To avoid that, another adder is widely used which employs the principle of Look-
+ahead carry.
+• The look-ahead carry adder speeds up the process by eliminating this ripple carry
+delay.
+• A carry look-ahead adder reduces the propagation delay by introducing more
+complex hardware.
+
+===== PAGE 17 =====
+Continues…..
+
+===== PAGE 18 =====
+Continues…..
+• Consider the full adder circuit shown with the corresponding truth table. We
+define two variables as ‘carry generate’ Gi and ‘carry propagate’ Pi then,
+• Pi = Ai ꚚBi
+• Gi = Ai Bi
+• The output Sum and Carry can be expressed in terms of Gi and Pi as:
+• Si = Pi ꚚCi
+• Ci+1 = Gi + Pi Ci
+• Gi is called as carry generator and Pi is called as carry propagator.
+• These equations show that a carry signal will be generated in two cases:
+1) if both bits Ai and Bi are 1
+2) if either Ai or Bi is 1 and the carry-in Ci is 1.
+
+===== PAGE 19 =====
+Continues…..
+• Let's apply these equations for a 4-bit adder:
+• C1 = G0 + P0C0
+• C2 = G1 + P1C1 = G1 + P1(G0 + P0C0) = G1 + P1G0 + P1P0C0 
+• C3 = G2 + P2C2 = G2 + P2G1 + P2P1G0 + P2P1P0C0
+• C4 = G3 + P3C3 = G3 + P3G2 + P3P2G1 + P3P2P1G0 + P3P2P1P0C0
+•These expressions show that C2, C3 and C4 do not depend on its previous carry-in.
+•Therefore, C4 does not need to wait for C3 to propagate.
+•As soon as C0 is computed, C4 can reach steady state.
+•The same is also true for C2 and C3.
+•The general expression is
+• Ci+1= Gi+ PiGi-1 + PiPi-1Gi-2 + ....... PiPi-1....P2P1G0 + PiPi-1 .... P1P0C0.
+•This is a two-level circuit.
+
+===== PAGE 20 =====
+Carry Look Ahead Adder
+• Carry Look-Ahead Generator
+• Full Adder with Look-Ahead Carry
+
+===== PAGE 21 =====
+Advantages & Disadvantages
+• Advantages:
+• CLA Adders generate the carry-in for each full adder simultaneously, by using
+simplified equations involving Pi, Gi, and Cin.
+• This system reduces the propagation delay.
+• This is because the output carry at any stage is dependent only on the first
+Carry
+signal given at the input.
+• It is the fastest adder when compared to other addition mechanisms.
+• Disadvantages:
+• The carry look-ahead adder circuit gets more complicated as the number of variables
+increase.
+• The circuit for a carry look-ahead adder is expensive as it involves more hardware.
+• As the number of variables increases, the circuit implements more hardware.
+• Thus, when the carry look-ahead adder is implemented as an IC, the area is bound to
+increase.
+
+===== PAGE 22 =====
+Serial Adder
+• A serial binary adder is a binary adder circuit which is used to add binary
+numbers in serial form.
+• Serial binary adder performs bit by bit addition.
+• In the serial adder, the two binary numbers which are added serially are stored in
+two shift registers, let shift register A and shift register B.
+• A single full adder is used to add one pair of bits at a time along with the carry.
+• The carry output from the full adder is applied to a D flip-flop.
+• After that output is used as carry for next significant bits.
+• The sum bit from the output of the full adder can be transferred into a third shift
+register.
+
+===== PAGE 23 =====
+Continues…..
+• Shift Register is a group of flip flops used
+to store multiple bits of data. There are
+two shift registers used in the serial binary
+adder. In one shift register augend is
+stored
+and,
+in
+another
+shift
+register,
+addend is stored.
+• Full Adder is the combinational circuit
+which takes three inputs and gives two
+outputs as sum and carry. The circuit adds
+one pair at a time with the help of it.
+• The D flip-flop is used to store the carry
+output bit. Further, the output of D flip-
+flop is used as a carry input for the next
+pair of significant bits.
+
+===== PAGE 24 =====
+Working Process
+• The two shift registers A and B are used to store the numbers to be added.
+• Initially, the D flip flop is cleared to 0, hence no carry bit is present.
+• A single full adder is used to add one pair of bits at a time along with the carry.
+• The contents of the shift registers shift from left to right and their output starting
+from A and B are fed into a single full adder along with the output of the carry
+flip-flop upon application of each clock pulse.
+• The sum output of the full adder is fed to the most significant bit of the sum
+register.
+• The content of sum register is also shifted to right when clock pulse is applied.
+• After applying four clock pulse the addition of two registers (A & B) contents are
+stored in sum register.
+• Hence, the addition of two binary numbers in serial form is accomplished by
+supplying a pair of bits together with the previous carry to a full adder circuit, and
+transferring
+a
+sum
+bit
+at
+a
+time
+into
+the
+shift
+register
+A.
+
+===== PAGE 25 =====
+Parity Checker/Generator
+• A parity bit is an extra bit included in a binary message to make total number of 1’s either
+odd or even.
+• Parity word denotes number of 1’s in a binary string.
+• There are two parity system-Even Parity and Odd Parity.
+• In even parity system 1 is appended to a binary string if there is an odd number of 1’s in
+the string; otherwise, 0 is appended to make total even number of 1’s.
+• In odd parity system 1 is appended to a binary string if there is an even number of
+1’s; otherwise, 0 is appended to make total odd number of 1’s.
+• Suppose if sender is an odd parity generator, then there must be an odd number of 1’s in
+the received binary string.
+• If an error occurs to a single bit i.e., either bit is changed to 1 to 0 or 0 to 1, then the
+received binary string will have an even number of 1’s which will indicate an error.
+• The limitation of this method is that only error in a single bit would be identified.
+• It does not tell which bit is incorrect and it can not correct the incorrect bit.
+
+===== PAGE 26 =====
+Parity Generator
+• A combinational logic circuit that can generate the parity bit according to
+the original digital code is known as a parity bit generator or parity
+generator.
+• Its primary function is to calculate and add the parity bit to the data stream
+based on the chosen parity scheme (even or odd).
+• The parity generator is used at the transmitter end and generate and add a
+parity bit the original code before transmission.
+• First, a parity generator reads the input data and calculates the parity bit
+accordingly.
+• Once the parity bit is generated, it is added to the original data code.
+• This gives an output code which is the original code with a newly generated
+parity bit.
+
+===== PAGE 27 =====
+Even/Odd Parity Generator
+
+===== PAGE 28 =====
+Continues…..
+• An even parity generator is a type of parity generator in which the parity
+bit, either a 0 or a 1 is added to the original data so that the final digital code
+contains an even number of 1s, including the parity bit.
+• In even parity bit scheme, the parity bit is ‘0’ if there are even number of 1s
+in the data stream and the parity bit is ‘1’ if there are odd number of 1s in
+the data stream.
+• A type of parity generator that adds a parity bit to a binary code so that the
+total number of 1s in the output code is an odd number, it is called an odd
+parity generator.
+• In odd parity bit scheme, the parity bit is ‘1’ if there are even number of 1s
+in the data stream and the parity bit is ‘0’ if there are odd number of 1s in
+the data stream.
+
+===== PAGE 29 =====
+Parity Checker
+• A combinational circuit that checks and verifies the correctness of the transmitted
+data by analyzing the parity bit is called a Parity Checker. The main function of a
+parity checker is to detect errors that can occur during the data transmission.
+• Parity checkers are used at the receiver end of the communication channel. It
+receives the transmitted data from the communication channel. This data includes
+the original message code and the parity bit.
+• After that, the parity checker counts the number of 1s in the data code and
+compares this number with the expected code to determine whether there is any
+error or not. If there is any error in the received data, the parity checker takes an
+appropriate action like request to retransmit the data.
+• The parity checker is an essential component in the digital communication systems
+to ensure the correctness and integrity of data. It also provides a simple and
+effective method for error detection.
+
+===== PAGE 30 =====
+Even/Odd Parity Checker
+• The type of parity checker that verifies whether the received data is
+correct as per the even parity system is called an even parity checker.
+• The even parity checker counts and verifies that the received data
+contains an even number of 1s, including the parity bit.
+• An odd parity checker is a combinational logic circuit that checks and
+verifies whether the received data is correct as per the odd parity
+system.
+• An odd parity checker counts and confirms that the received data
+contains odd number of 1s including the parity bit.
+
+===== PAGE 31 =====
+Even Parity Generator and Checker
+Parity Generator
+Parity Generator
+Parity Checker
+Parity Checker
+Odd Parity Generator and Checker
+Parity Generator and Checker
+
+===== PAGE 32 =====
+Applications
+• In digital communication systems, parity generators and checkers are
+used to ensure integrity and accuracy of the transmitted and received
+data. Parity generators and checkers help to detect errors in the data
+that can be caused due to noise and interference during transmission
+over communication channels.
+• Parity generators and checkers are used in storage systems like RAM
+and ROM to detect errors in the data stored and retrieved.
+• In digital networking, parity generators and checkers are used to
+improve reliability of data transmission and verify the correctness of
+the transmitted data.
+• Parity
+generators
+and
+checkers
+are
+also
+used
+in
+medical
+equipment used to diagnose and monitor patient’s health and avoid any
+kind errors in medical reports and diagnosis data.
+
+===== PAGE 33 =====
+Code Converters
+• A code converter is a digital electronic circuit that is designed to
+convert a digital code from one form to another.
+• A digital code is nothing but a piece of data or information represented
+in binary format, i.e., in the form of strings of 0s and 1s.
+• A code converter is simply a translator which translates a code from
+one format to another.
+• For example, binary to decimal converter, BCD to Excess-3 converter,
+binary to gray code converter, etc.
+• The primary function of a code converter is to accept the code in one
+format and translate it into a different format.
+
+===== PAGE 34 =====
+Binary to Gray Code Converter
+• A binary-to-gray code converter is a type of code
+converter that can translate a binary code into its
+equivalent gray code.
+• The binary-to-gray code converter accepts a binary
+number as the input and produces a corresponding gray
+code as the output.
+• The Most Significant Bit (MSB) of the gray code is
+always equal to the MSB of the given binary code.
+• Other bits of the output gray code can be obtained by
+Ex-ORing binary code bit at that index and previous
+index.
+• Corresponding minimized Boolean Expressions are
+given as:
+• g0​=b0b1′​+b1b0′​=b0⊕b1
+• g1​=b2b1′​+b1b2′​=b1⊕b2
+• g2​=b2b3′​+b3b2′​=b2⊕b3
+• g3​=b3
+
+===== PAGE 35 =====
+Gray to Binary Code Converter
+• A gray code-to-binary converter is a digital circuit that can
+translate a gray code into an equivalent pure binary code.
+• Thus, a gray code to binary converter takes a gray code as
+input and gives a pure binary code as output.
+• The Most Significant Bit (MSB) of the binary code is
+always equal to the MSB of the given binary number.
+• Other bits of the output binary code can be obtained by
+checking gray code bit at that index. If current gray code bit
+is 0, then copy previous binary code bit, else copy invert of
+previous binary code bit.
+• Corresponding minimized Boolean Expressions are given
+as:
+• G0 ⊕G1 ⊕G2 ⊕G3 = B0
+• G1 ⊕G2 ⊕G3 = B1
+• G2 ⊕G3 = B2
+• G3 = B3
+
+===== PAGE 36 =====
+Multiplexer
+• A Multiplexer or Mux is a device that has many
+inputs and a single output.
+• It selects a single input to the output from several
+inputs.
+• The particular input chosen for output is determined
+by the value of the multiplexer’s control lines.
+• To be able to select among n inputs, log2n control
+lines are needed.
+• Amultiplexer is also called as a data selector.
+• The main purpose of Mux is to perform high speed
+switching.
+• In analog applications, these are made up of transistor
+switches and relays, where as in digital applications,
+these are made up of logic gates.
+
+===== PAGE 37 =====
+4x1 Multiplexer
+•
+This is what a 4-to-1 multiplexer looks
+like on the inside.
+•
+The 4X1 multiplexer comprises of 4-
+input bits, 1- output bit, and 2- control
+bits.
+•
+The control bit AB decides which
+of the input
+data bit should transmit
+the output.
+•
+For example, when the control bits AB
+=00,
+then the higher AND gate is
+allowed while
+remaining AND gates
+are restricted. Thus, data
+input d0 is
+transmitted to the output “q”.
+
+===== PAGE 38 =====
+8x1 Multiplexer
+
+===== PAGE 39 =====
+16x1 Multiplexer
+
+===== PAGE 40 =====
+Applications of Multiplexer
+• A Multiplexer is used in various applications wherein multiple data can be
+transmitted using a single line.
+• A Multiplexer is used to increase the efficiency of the communication system by
+allowing the transmission of data, such as audio & video data from different
+channels via cables and single lines.
+• A Multiplexer is used in computer memory to decrease the number of copper
+lines necessary to connect the memory to other parts of the computer.
+• A multiplexer is used in telephone networks to integrate the multiple audio signals
+on a single line of transmission.
+• A Multiplexer is used to transmit the data signals from the computer system of a
+satellite to the ground system by using a GSM (Global System for Mobile
+communication) communication.
+
+===== PAGE 41 =====
+De-Multiplexer
+•
+A Demultiplexer or Demux is a circuit which can
+distribute or deliver multiple outputs from a single
+input.
+•
+It can perform as a single input many output switch.
+•
+The
+output
+lines
+of
+demultiplexer
+are
+‘N’ in
+number, select/ control line number is ‘M’ and N =
+2M.
+•
+The control signal or select input code decides the
+output line to which the input has to be transmitted.
+•
+It is also called as Data Distributor.
+•
+There are several types of Demultiplexers
+1:2 Demultiplexer or 1-to-2 Demultiplexer
+1:4 Demultiplexer
+1:8 Demultiplexer
+1:16 Demultiplexer
+
+===== PAGE 42 =====
+1x2 De-Multiplexer
+• In the 1 to 2 De-multiplexer, there
+are only two outputs, i.e., I0, and I1,
+one selection line, i.e., S, and a
+single input, i.e., D.
+• On the basis of the selection value,
+the input will be connected to one
+of the outputs.
+• The logical expression of the term I
+is as follows:
+I0=S’.D
+I1=S.D
+
+===== PAGE 43 =====
+1x4 De-Multiplexer
+
+===== PAGE 44 =====
+Continues…..
+• The input bit is Data I with two select lines S0and S1.
+• The input bit I is transmitted to four output bitsY0, Y1, Y2, and Y3.
+• When S0S1 is 00, the lower AND gate is enabled while the other
+AND gates are disabled. Thus, the data is transmitted to Y0.
+• Similarly, when S0S1 is 1 1 , the upper AND gate is enabled while the
+other AND gates are disabled. Thus, the data is transmitted toY3.
+• If I is low, then Y0 is low and if I is high, Y0 is high. The value of Y0
+depends on the value of I.
+
+===== PAGE 45 =====
+1x8 De-Multiplexer
+
+===== PAGE 46 =====
+Applications of De-Multiplexer
+•
+Demux are widely used in microprocessor, computers and digital electronics.
+•
+Demultiplexer and Multiplexer both are used in communication systems to carry
+multiple data signals (i.e. audio, video etc) using single line for transmission.
+•
+In Arithmetic logic unit (ALU), the output of ALU can be stored in storage unit
+(multiple registers) by using Demultiplexer.
+•
+It is also used
+To enable the different rows of memory chips depends on the address. Also to
+chose different banks of memory.
+To enable different functional unit in the system
+To select different IO devices for data transfer
+In Data acquisition systems
+In Automatic test equipment systems
+In Security monitoring systems
+
+===== PAGE 47 =====
+Decoders
+•
+Decoder
+is
+a
+combinational
+logic
+circuit whose purpose is to decode the
+information.
+•
+It is comprised of n number of input lines
+and 2n number of output lines.
+•
+In every probable input condition, among
+the various output signals, only
+one
+output signal will produce the logic one.
+•
+So, this is n-to-2ndecoder, where n input
+lines and 2n output lines.
+•
+Generally,
+there
+are
+3
+types
+of
+line
+decoders (2-to-4, 3-to-8 and 4-to-16).
+•
+Decoder circuits are commonly used for
+address decoding in memory and input/
+output
+devices.
+Adders
+are
+used
+in
+arithmetic operations and digital signal
+processing.
+
+===== PAGE 48 =====
+High Order Implementation
+Fig: 3x8 Decoder Using 2x4 Decoders
+Fig: 4x16 Decoder Using 3x8 Decoders
+Fig: 3x8 Decoder Logic Diagram
+
+===== PAGE 49 =====
+Encoders
+• An Encoder is a combinational circuit
+that performs the reverse operation of a
+Decoder.
+• It has maximum of 2N input lines and
+‘N’ output lines, hence it encodes the
+information from 2N inputs into an N-
+bit code.
+• It
+will
+produce
+a
+binary
+code
+equivalent to the
+input, which is
+active High.
+• Generally, there are 3 types of line
+encoders (4-to-2, 8-to-3 and 16-to-4).
+
+===== PAGE 50 =====
+Examples
+• The 4 to 2 Encoder consists of four inputs Y3,
+Y2, Y1, Y0 and two outputs A1 and A0.
+• At any time, only one of these 4 inputs can be ‘1’
+in order to get the respective binary code at the
+output.
+• The 8 to 3 Encoder or Octal to Binary encoder
+consists of 8 inputs : Y7 to Y0 and 3 outputs :
+A2,A1 & A0.
+• Each input line corresponds to each octal digit and
+three outputs generate corresponding binary code.
+
+===== PAGE 51 =====
+8 to 3 Binary Encoder
+At any one time, only
+one input line has a value of 1.
+Inputs
+Outputs
+D0 D1 D2 D3 D4 D5 D6 D7
+A B C
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0 0
+0
+1
+0
+0
+0
+0
+0
+0
+0
+0 1
+0
+0
+1
+0
+0
+0
+0
+0
+0
+1 0
+0
+0
+0
+1
+0
+0
+0
+0
+0
+1 1
+0
+0
+0
+0
+1
+0
+0
+0
+1
+0 0
+0
+0
+0
+0
+0
+1
+0
+0
+1
+0 1
+0
+0
+0
+0
+0
+0
+1
+0
+1
+1 0
+0
+0
+0
+0
+0
+0
+0
+1
+1
+1 1
+
+===== PAGE 52 =====
+Priority Encoders
+• One of the main disadvantages of standard digital encoder is that they can generate the
+wrong output code when there is more than one input present at logic level “1”.
+• One simple way to overcome this problem is to “Prioritize” the level of each input pin.
+• If there is more than one input at logic level “1” at the same time, the actual output
+code would only correspond to the input with the highest designated priority.
+• This type of digital encoder is known as Priority Encoder or P-Encoder for short.
+• The Priority Encoder solves the problems by allocating a priority level to each input.
+• The priority encoders output corresponds to the currently active input which has the
+highest priority.
+• So, when an input with a higher priority is present, all other inputs with a lower priority
+will be ignored.
+• A Priority Encoder is a type of Encoder circuit that selects the highest priority input line
+and generates the corresponding binary code as the output.
+
+===== PAGE 53 =====
+4 to 2 Priority Encoder
+• From the truth table, we see that when all
+inputs are 0, our V bit or the valid bit is
+zero and outputs are not used.
+• The x’s in the table show the don’t care
+condition, i.e, it may either be 0 or 1.
+• Here,
+D3
+has
+the
+highest
+priority,
+therefore, whatever be the other inputs,
+when D3 is high, output has to be 11.
+• And D0 has the lowest priority, therefore
+the output would be 00 only when D0 is
+high and the other input lines are low.
+• Similarly, D2 has higher priority over D1
+and D0 but lower than D3 therefore the
+output would be 010 only when D2 is
+high and D3 are low (D0 & D1 are don’t
+care).
+D3
+D2
+D1
+D0
+X
+Y
+V
+0
+0
+0
+0
+x
+x
+0
+0
+0
+0
+1
+0
+0
+1
+0
+0
+1
+x
+0
+1
+1
+0
+1
+x
+x
+1
+0
+1
+1
+x
+x
+x
+1
+1
+1
+
+===== PAGE 54 =====
+Decoders/Drivers for Display Devices
+• Display Drivers are the circuits that drive the segments or pixels of a display
+device, such as LEDs, LCDs or digital screens.
+• Display Drivers are used in digital clock displays, calculators, and
+dashboard displays.
+• A type of integrated circuit (IC) which is designed to decode information
+specified in the binary form is known as decoder driver IC. A decoder
+driver IC generates output signals to drive different electronic devices like
+LEDs, electronic relays, electric motors, etc.
+• Decoder driver ICs are most commonly used in electronic systems to
+convert digital signals specified in binary form into specific output signals
+that then drive an output device.
+
+===== PAGE 55 =====
+Q-M Method of Function Realization
+• The Quine-McCluskey method also called the tabulation method is a very
+useful and convenient method for simplification of the Boolean functions
+for a large number of variables (greater than 4).
+• This method is useful over K-map when the number of variables is larger
+for which K-map formation is difficult. This method uses prime implicants
+for simplification.
+• In this method, we construct multiple tables according to the question and at
+the last, we make a prime implicant table which is used to obtain essential
+prime implicants which are present in the simplified Boolean expression.
+• Majorly, this method includes the use of minterms, and prime implicants
+and obtains essential prime implicants which are further used in the
+simplified Boolean functions.
+
+===== PAGE 56 =====
+Continues…..
+• The
+Quine-McCluskey
+method
+is
+a
+systematic
+technique
+of
+minimizing complex Boolean expressions.
+• Another major advantage of Quine-McCluskey method is that it is
+equally suitable for both hand computation and machine computation,
+as it is programmable.
+• Implicant: Implicant is defined as a group of 1’s(for minterm).
+• Prime implicant: It is the largest possible group of 1’s(for minterm).
+• Essential Prime implicant: Essential prime implicants are groups that
+cover at least one minterm which cannot be covered by other
+applicants.
+
+===== PAGE 57 =====
+Steps
+1. Arrange the given minterms according to the number of ones present in
+their binary representation in ascending order.
+2. Take the minterms from the continuous group if there is only a one-bit
+change to make their pair.
+3. Place the ‘-‘ symbol where there is a bit change accordingly and keep the
+remaining bits the same.
+4. Repeat steps 2 to 3 until we get all prime implicants (when all the bits
+present in the table are different).
+5. Make a prime implicant table that consists of the prime implicants
+(obtained minterms) as rows and the given minterms (given in problem) as
+columns.
+6. Place ‘1’ in the minterms (cell) which are covered by each prime implicant.
+7. Observe the table, if the minterm is covered by only one prime implicant
+then it is an essential to prime implicant.
+8. Add the essential prime implicants to the simplified Boolean function.
+
+===== PAGE 58 =====
+Example
+• Simplify
+using
+tabulation
+method
+:
+F(A,B,C,D)=∑m(0,1,2,4,6,8,9,11,13, 15)
+• Solution: Convert the given minterms
+into
+their
+binary
+representation
+and
+arrange them according to the number of
+ones
+present
+in
+the
+binary
+representation.
+• As 0 has no 1 in its representation it is
+kept in one group(0). Similarly, 1 2 4,
+and
+8
+contain
+one
+1
+in
+their
+representation so it is kept in the next
+group(1). 6 and 9 in the next group(2),
+11, and 13 in the next group(3), 15 in the
+last group(4).
+TABLE 1
+Group Minte
+rm
+A
+B
+C
+D
+0
+0
+0
+0
+0
+0
+1
+1
+2
+4
+8
+0
+0
+0
+1
+0
+0
+1
+0
+0
+1
+0
+0
+1
+0
+0
+0
+2
+6
+9
+0
+1
+1
+0
+1
+0
+0
+1
+3
+11
+13
+1
+1
+0
+1
+1
+0
+1
+1
+4
+15
+1
+1
+1
+1
+
+===== PAGE 59 =====
+Continues…..
+• Now, for table-2 take minterms from
+successive groups (simultaneous group
+only) which have an only a 1-bit
+difference in their representation and
+form their pair by merging them and
+making a group of the pairs which are
+from the same groups that are merged.
+• For example 0 is from group 0 and 1 is
+from group 1 so it is added to the
+group 0.
+• 0 belongs to group 0 in table 1 and 2
+belongs to group 1 in table 1 so it is
+kept in the same group in table 2.
+• Similarly, make all the possible pairs
+with the help of the above table and
+mark – where there is a bit difference.
+TABLE-2
+Group
+Pair
+A
+B
+C
+D
+0
+(0,1)
+(0,2)
+(0,4)
+(0,8)
+0
+0
+0
+–
+0
+0
+–
+0
+0
+–
+0
+0
+–
+0
+0
+0
+1
+(1,9)
+(2,6)
+(4,6)
+(8,9)
+–
+0
+0
+1
+0
+–
+1
+0
+0
+1
+–
+0
+1
+0
+0
+–
+2
+(9,11)
+(9,13)
+1
+1
+0
+–
+–
+0
+1
+1
+3
+(11,15)
+(13,15)
+1
+1
+–
+1
+1
+–
+1
+1
+
+===== PAGE 60 =====
+Continues…..
+• For table 3 repeat the same
+step
+by
+taking
+pairs
+of
+successive
+groups
+merging
+them where there is only a 1-
+bit difference and keeping
+them in groups according to
+the groups from where they
+are merged and placed – in
+bit difference.
+• After table 3 the process is
+stopped as there is no 1-bit
+difference in the remaining
+group
+minterms
+in
+the
+simultaneous groups of table
+3.
+TABLE-3
+Group
+Quad
+A
+B
+C
+D
+0
+(0,1,8,9)
+(0,2,4,6)
+–
+0
+0
+–
+0
+–
+–
+0
+1
+(9,11,13,
+15)
+1
+–
+–
+1
+
+===== PAGE 61 =====
+Continues…..
+• Now, the remaining quads present in
+table 3 represent the prime implicants
+for the given Boolean function.
+• So, we construct prime implicants
+table
+which
+contains
+the
+obtained
+prime implicants as rows and the given
+minterms as columns.
+• Place 1 in the corresponding place
+which the minterm can represent.
+• Add the minterm to the simplified
+Boolean
+expression
+if
+the
+given
+minterm is only covered by this prime
+implicant.
+• B’C’ is
+in
+simplified
+function
+as
+minterm 1 is only covered by B’C’.
+• Similarly, minterms 2,4,6 are only
+covered
+by
+A’D’
+and
+minterms
+11,13,15 are only covered by AD.
+PRIME IMPLICANT TABLE
+Minterms ⇢
+Prime Implicants ⇣
+0 1 2 4 6 8 9 11 13 15
+B’C’ (0,1,8,9)
+1 1 
+1 1
+A’D'(0,2,4,6)
+1 
+1 1 1
+AD(9,11,13,15)
+1 1 1 
+1
+Simplified Boolean function = B’C’ + A’D’ + AD
+
+===== PAGE 62 =====
+Advantages and Disadvantages of Q-M Method
+•
+Advantages:
+•
+This method is suitable for a large number of inputs(n>4) for which K-map
+construction is a tedious task.
+•
+The Q-M method provides a systematic minimization process to find a minimal
+version of a complex Boolean expression.
+•
+The Q-M method is based on a systematic algorithm that helps to reduce human
+errors.
+•
+It does not require pattern recognition.
+•
+Disadvantages:
+•
+The computational complexity of this method is high. It is because, we have to
+check all the possible combinations of minterms.
+•
+But it also becomes impractical for very large number of variables, typically
+more than 7 variables.
+•
+The Q-M method involves extensive manual computation that makes it tedious
+and is not much effective for certain types of Boolean functions.

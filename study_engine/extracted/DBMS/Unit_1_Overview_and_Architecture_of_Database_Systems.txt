@@ -1,0 +1,986 @@
+SOURCE: SEM3/DBMS/Unit 1 Overview and Architecture of Database Systems.pdf
+
+===== PAGE 1 =====
+Unit-1
+Overview and Architecture of 
+Database Systems
+
+===== PAGE 2 =====
+✓Outline
+• Introduction of DBMS
+• Applications of DBMS
+• Advantages of DBMS
+• Three levels ANSI SPARC database system
+• Data Abstraction in DBMS
+• Mappings and data independence
+• Database users and DBA
+• Database system architecture
+
+===== PAGE 3 =====
+Introduction to DBMS
+Section - 1
+
+===== PAGE 4 =====
+What is Database Management System (DBMS)?
+□Data - Fact that can be recorded or stored
+□e.g. Person Name, Age, Gender and Weight etc.
+□Database - Collection of logically related data
+□e.g. Books Database in Library, Student Database in University etc.
+□Management - Manipulation, Searching and Security of data
+□e.g. Viewing result in GTU website, Searching exam papers in GTU website etc.
+□System - Programs or tools used to manage database
+□e.g. SQL Server Studio Express, Oracle etc.
+□DBMS - A Database Management System is a software for creating and managing databases.
+□Database Management System (DBMS) is a  software designed to define, manipulate, 
+retrieve and manage data in a database.
+□e.g. MS SQL Server, Oracle, My SQL, SQLite, MongoDB etc.
+
+===== PAGE 5 =====
+Applications of DBMS
+Section - 2
+
+===== PAGE 6 =====
+Applications of DBMS
+□DBMS is a computerized record-keeping system.
+□DBMS is required where ever data need to be stored.
+□E-Commerce (Flikart, Amazon, Shopclues, eBay etc...)
+□Online Television Streaming (Hotstar, Amazon Prime etc...)
+□Social Media (WhatsApp, Facebook, Twitter, LinkedIn etc...)
+□Banking & Insurance
+□Airline & Railway
+□Universities and Colleges/Schools
+□Library Management System
+□Human Resource Department
+□Hospitals and Medical Stores
+□Government Organizations
+Exercise Write down any five applications of DBMS other than 
+above.
+
+===== PAGE 7 =====
+Advantages of DBMS
+Section - 3
+
+===== PAGE 8 =====
+Reduce data redundancy (duplication)
+Civil
+Electrical
+Mechanical
+Same data is stored at 
+four different places.
+Database management system 
+can remove such data 
+redundancy by storing data 
+centrally.
+Computer
+Emp_Name
+Address
+Mobile
+Subject
+Prof. Ajay 
+Shah
+Rajkot
+1234
+PPS
+Emp_Name
+Address
+Mobile
+Subject
+Prof. Ajay 
+Shah
+Rajkot
+1234
+PPS
+Emp_Name
+Address
+Mobile
+Subject
+Prof. Ajay 
+Shah
+Rajkot
+1234
+PPS
+Emp_Name
+Address
+Mobile
+Subject
+Prof. Ajay 
+Shah
+Rajkot
+1234
+PPS
+
+===== PAGE 9 =====
+Remove data inconsistency
+Civil
+Electrical
+Mechanical
+Computer
+Emp_Name
+Address
+Mobile
+Subject
+Prof. Ajay 
+Shah
+Rajkot
+1234
+PPS
+Emp_Name
+Address
+Mobile
+Subject
+Prof. Ajay 
+Shah
+Rajkot
+16273894
+PPS
+Emp_Name
+Address
+Mobile
+Subject
+Prof. Ajay 
+Shah
+Rajkot
+1234
+PPS
+Same data having
+different state (values)
+Database management 
+system can keep data in 
+consistent state.
+Mobile no is changed
+Emp_Name
+Address
+Mobile
+Subject
+Prof. Ajay 
+Shah
+Rajkot
+6789
+1234
+PPS
+
+===== PAGE 10 =====
+Data isolation
+□Data are scattered in various files.
+□Files may be in different formats.
+□Difficult to retrieve the appropriate data.
+Emp_N
+File -
+1
+ame
+Address
+Mobile
+Subject
+Prof. Ajay 
+Shah
+Rajkot
+1234
+PPS
+Emp_N
+File -
+2
+ame
+Post
+Salary
+Load
+Prof. Ajay 
+Shah
+Lecturer 50,000
+15
+g
+File -
+3
+Teaching
+Knowledge
+Ratin
+Emp_Name
+Prof. Ajay 
+Shah
+Good
+Excellent
+9
+DBMS allow us to access (retrieve) appropriate data 
+easily.
+Data isolation is a property that determines when and 
+how changes made by one operation become visible to 
+other concurrent users and systems.
+This issue occurs in a concurrency situation.
+
+===== PAGE 11 =====
+Guaranteed atomicity
+□Atomicity: Either transaction execute 0% or 100%.
+Person A 
+Account 
+A
+Bal : 2000
+Person B 
+Account 
+B
+Bal : 1000
+Transfer 500
+Step 1 : Debit 500 from Account A
+Step 2 : Credit 500 into Account B
+Sum of both account 
+before transfer is 3000
+Sum of both account 
+after transfer is 3000
+Sum of both 
+account is 2500 
+so inconsistent
+Transaction 
+is failed
+
+===== PAGE 12 =====
+Allow to implement integrity constraints
+Emp_Name
+Address
+Mobile_No
+Subject
+Prof. Ajay 
+Shah
+Rajkot
+9876543210
+PPS
+Student_Name
+Branch
+Backlog
+SPI
+Nirav Patel
+Rajkot
+0
+8.5
+Should contain exact 10 digits
+Should be between 0 to 10
+DBMS allows us to implement such business rules in our 
+database..
+
+===== PAGE 13 =====
+Sharing of data among multiple users
+Civil
+Electrical
+Mechanical
+Computer
+Emp_Name
+Address
+Mobile
+Subject
+Prof. Ajay 
+Shah
+Rajkot
+1234
+PPS
+Emp_Name
+Address
+Mobile
+Subject
+Prof. Ajay 
+Shah
+Rajkot
+1234
+PPS
+Emp_Name
+Address
+Mobile
+Subject
+Prof. Ajay 
+Shah
+Rajkot
+1234
+PPS
+Emp_Name
+Address
+Mobile
+Subject
+Prof. Ajay 
+Shah
+Rajkot
+1234
+PPS
+Database management system 
+allows more than one user to 
+access same data simultaneously.
+Want to access
+Want to access
+
+===== PAGE 14 =====
+Restricting unauthorized access to data
+Emp_N
+Emp_N
+Emp_Name
+Teaching
+Knowledge
+Ratin
+g
+Prof. Ajay 
+Shah
+Good
+Excellent
+9
+File -
+2
+ame
+Post
+Salary
+Load
+Prof. Ajay 
+Shah
+Lecturer 50,000
+15
+File -
+3
+File -
+1
+ame
+Address
+Mobile
+Subject
+Prof. Ajay 
+Shah
+Rajkot
+1234
+PPS
+DBMS prevents unauthorized user to access data.
+Faculty
+of other
+college
+Wants to 
+access
+RAI 
+UNIVERSITY
+Faculty
+Wants to 
+access
+
+===== PAGE 15 =====
+Providing backup and recovery services
+Provides facilities to backup and restore the database in case of failure.
+
+===== PAGE 16 =====
+Advantages of DBMS (Summary)
+□Reduce data redundancy (duplication)
+□
+Avoids unnecessary duplication of data by storing data centrally.
+□Remove data inconsistency
+□By eliminating redundancy, data inconsistency can be removed.
+□Data isolation
+□A user can easily retrieve proper data as per his/her requirement.
+□Guaranteed atomicity
+□Either transaction executes 0% or 100%.
+
+===== PAGE 17 =====
+Advantages of DBMS (Summary)
+□Allow implementing integrity constraints
+□
+Business rules can be implemented such as do not allow to store amount less than Rs. 0 in balance.
+□Sharing of data among multiple users
+□
+More than one users can access same data at the same time.
+□Restricting unauthorized access to data
+□A user can only access data which is authorized to him/her.
+□Providing backup and recovery services
+□Can take a regular auto or manual backup and use it to restore the database if it corrupts.
+
+===== PAGE 18 =====
+Basic Terms
+Section - 4
+
+===== PAGE 19 =====
+Basic terms
+□Data
+□Data is raw, unorganized facts that need to be processed.
+□Example: Marks of students
+□Student_1 = 50/100, Student_2 = 25/100.
+□Information
+□When data is processed, organized, structured or presented in a given context so as to make it useful, it is 
+called information.
+□Example: Result of students (Pass or Fail)
+□Student_1 = Pass, Student_2 = Fail.
+
+===== PAGE 20 =====
+Basic terms (cont…)
+□Metadata
+□Metadata is data about data.
+□Data such as table name, column name, data type, authorized user and user access privileges for any table 
+is called metadata for that table.
+□Metadata of above table is:
+▪Table name such as Faculty
+▪Column name such as Emp_Name, Address, Mobile_No, Subject
+▪Datatype such as Varchar, Decimal
+▪Access privileges such as Read, Write (Update)
+Faculty
+Emp_Name
+Address
+Mobile_No
+Subject
+Prof. Ajay 
+Shah
+Rajkot
+9876543210
+PPS
+
+===== PAGE 21 =====
+Basic terms (cont…)
+Emp_Name
+Address
+Mobile_No
+Subject
+Prof. Ajay 
+Shah
+Rajkot
+9876543210
+PPS
+Prof. Ajay 
+Patel
+Surat
+0123456789
+DBMS
+Faculty
+□Data dictionary
+□A data dictionary is an information repository which contains metadata.
+• Table Name – Faculty
+• Column Name – EmpName, Address, Mob, Subject, Salary
+• Datatype – Varchar, Decimal
+• Access Privileges – Read, Write (Update)
+□Data warehouse
+□A data warehouse is an information repository which stores data.
+Exercise Why data dictionary and data warehouse are stored in the different 
+places?
+
+===== PAGE 22 =====
+Basic terms (cont…)
+ord / Tuple
+Faculty
+Emp_Name
+Address
+Mobile_No
+Subject
+Prof. Ajay 
+Shah
+Rajkot
+9876543210
+PPS
+Prof. Ajay 
+Patel
+Surat
+0123456789
+DBMS
+Shah
+Prof. Ajay
+Rajkot
+9876543210
+PPS
+Prof. Ajay 
+Patel
+Surat
+0123456789
+DBMS
+Prof. Ajay Shah
+Rajkot
+□Field
+□A field is a character or group of characters that have a specific meaning.
+□E.g, the value of Emp_Name, Address, Mobile_No etc are all fields of Faculty table.
+Fields
+□Rec
+□A record is a collection of logically related fields.
+□E.g, the collection of fields (Emp_Name, Address, Mobile_No, Subject) forms a record for the Faculty.
+Record / Tuple
+9876543210
+
+===== PAGE 23 =====
+3 Levels ANSI SPARC 
+Database System
+Section - 5
+
+===== PAGE 24 =====
+3 Levels ANSI SPARC Database System
+View 
+Level
+Logical 
+Level
+Physical 
+Level
+Conceptual 
+Level
+Internal 
+Level
+Database
+User 1
+User 2
+User 3
+View 1
+View 2
+View 3
+How the data are actually 
+stored on storage devices?
+What data are stored and 
+What relationships exist?
+How data are viewed 
+by each users?
+
+===== PAGE 25 =====
+3 Levels ANSI SPARC Database System
+□Internal level (Physical level)
+□It describes how a data is stored on the storage device.
+□Deals with physical storage of data.
+▪Structure of records on disk - files, pages, blocks and indexes and ordering of records
+□Internal view is described by the internal schema.
+□Conceptual level (Logical level)
+□
+What data are stored and what relationships exist among those data?
+□It hides low level complexities of physical storage.
+□For Example, STUDENT database may contain STUDENT and COURSE tables which will be visible to 
+users but users are unaware about their storage.
+□Database administrator works at this level to determine what data to keep in the database.
+
+===== PAGE 26 =====
+3 Levels ANSI SPARC Database System
+□External level (View level)
+□It describes only part of the entire database that an end user concern or how data are viewed by each user.
+□Different user needs different views of the database, so there can be many views in a view level abstraction 
+of the database. Used by end users and application programmers.
+□End users need to access only part of the database rather than the entire database.
+
+===== PAGE 27 =====
+3 Levels ANSI SPARC Database System: Example
+View 
+Level
+Logical 
+Level
+Physical 
+Level
+Conceptual 
+Level
+Internal 
+Level
+Database
+User 1
+User 2
+User 3
+View 1
+View 2
+View 3
+Records can be described as blocks of storage (bytes, 
+gigabytes, terabytes etc.) in memory.
+These details are often hidden from the programmers.
+Records can be described as fields and attributes along 
+with their data types, their relationship among each other 
+can be logically implemented.
+Programmers generally work at this level.
+User just interact with system with the help of GUI. 
+Users are not aware of how and what the data is stored.
+We are storing student information in a student 
+table.
+
+===== PAGE 28 =====
+Data Abstraction in DBMS
+□Database systems are made-up of complex data structures.
+□To ease the user interaction with database, the developers hide internal irrelevant details from 
+users.
+□This process of hiding irrelevant details from user is called data abstraction.
+
+===== PAGE 29 =====
+Mapping and Data Independence
+View 
+Level
+Logical 
+Level
+Physical 
+Level
+View 1
+View 2
+View 3
+Conceptual 
+Level
+Internal 
+Level
+Database
+User 1
+User 2
+User 3
+Want to access some data
+Request
+Result
+Process of transforming requests and results between the 
+three levels is called mapping.
+Ability to modify a schema definition in one level without 
+affecting a schema definition in the next higher level.
+
+===== PAGE 30 =====
+Types of Data Independence
+□Physical Data Independence
+□Physical Data Independence is the ability to modify the physical schema without requiring any change in 
+logical (conceptual) schema and application programs.
+□Modifications at the internal levels are occasionally necessary to improve performance.
+□Possible modifications at internal levels are changes in file structures, compression techniques, hashing 
+algorithms, storage devices, etc.
+□Logical Data Independence
+□Logical data independence is the ability to modify the conceptual schema without requiring any change in 
+application programs.
+□Modification at the logical levels is necessary whenever the logical structure of the database is changed.
+□Application programs are heavily dependent on logical structures of the data they access. So any change in 
+logical structure also requires programs to change.
+
+===== PAGE 31 =====
+Types of Database Users
+Section - 6
+
+===== PAGE 32 =====
+Types of Database Users
+□Naive Users (End Users)
+□
+Unsophisticated users who have zero knowledge of database system
+□End user interacts to database via sophisticated software or tools
+□e.g. Clerk in bank
+□Application Programmers
+□
+Programmers who write software using tools such as Java, .Net, PHP etc…
+□e.g. Software developers
+□Sophisticated Users
+□
+Interact with database system without using an application program
+□Use query tools like SQL
+□e.g. Analyst
+□Specialized Users (DBA)
+□User write specialized database applications program
+□Use administration tools
+□e.g. Database Administrator
+
+===== PAGE 33 =====
+Role of DBA
+(Database Administrator)
+Section - 7
+
+===== PAGE 34 =====
+Role of DBA
+□Schema Definition
+□DBA defines the logical schema of the database.
+□Storage Structure and Access Method Definition
+□DBA decides how the data is to be represented in the database & how to access it.
+□Defining Security and Integrity Constraints
+□DBA decides on various security and integrity constraints.
+□Granting of Authorization for Data Access
+□DBA determines which user needs access to which part of the database.
+
+===== PAGE 35 =====
+Role of DBA
+□Assisting Application Programmer
+□DBA provides assistance to application programmers to develop application programs.
+□Monitoring Performance
+□DBA ensures that better performance is maintained by making a change in the physical or logical 
+schema if required.
+□Backup and Recovery
+□DBA backing up the database on some storage devices such as DVD, CD or magnetic tape or remote 
+servers and recover the system in case of failures, such as flood or virus attack from this backup.
+
+===== PAGE 36 =====
+Database System Architecture
+Section - 8
+
+===== PAGE 37 =====
+
+===== PAGE 38 =====
+This figure shows the overall architecture of a Database Management System (DBMS) and how users/applications 
+interact with the database.
+1.Users & Application Programs – Users send queries, while application programs send requests through the DML 
+Compiler. 
+2.DDL Compiler – Converts the database schema definitions given by the DBA (Database Administrator) into a 
+form understood by the DBMS. 
+3.Query Processor – Processes user queries and includes: 
+1. Query Optimizer – Finds an efficient way to execute a query. 
+2. Command Processor – Executes the processed query. 
+3. Authorization Control – Checks whether the user has permission. 
+4. Integrity Checker – Ensures database rules and constraints are maintained. 
+4.Transaction & Data Management –
+1. Transaction Manager manages database transactions. 
+2. Scheduler controls the order of concurrent transactions. 
+3. Recovery Manager restores the database after failures. 
+4. Buffer Manager manages data temporarily stored in memory. 
+5.Data Dictionary Manager – Maintains information about the database schema, tables, attributes, constraints, 
+and other metadata. 
+6.Data Files + Data Dictionary – These are the actual storage components where database data and metadata are 
+stored. 
+In short:
+Users/Application → Query Processing → Database Management → Data Management → Data Files
+
+===== PAGE 39 =====
+Questions asked
+1.
+List and explain the advantages of DBMS over file based system. OR Explain 
+disadvantages of files based system.
+2.
+Draw and explain 3 level architecture of DBMS.
+3.
+List and explain different categories/types of database users.
+4.
+List and explain different tasks/roles/functions/duties of DBA (Database Administrator).
+5.
+Explain DBMS architecture with block diagram. OR Explain Database System architecture 
+with block diagram.
+
+===== PAGE 40 =====
+Data Models
+
+===== PAGE 41 =====
+What is a Database Models?
+□A database model is a type of data model that defines the logical structure of a database.
+□It determine how data can be stored, accessed and updated in a database management 
+system.
+□The most popular example of a database model is the relational model, which uses a 
+table-based format.
+
+===== PAGE 42 =====
+Type of Database Models
+Hierarchical Model
+Network Model
+Entity-relationship Model 
+Relational Model
+Object-oriented database Model
+
+===== PAGE 43 =====
+Hierarchical Model
+□The hierarchical model organizes data into a tree-like structure, where each record has a 
+single parent or root.
+Department
+Student
+Professor
+□The hierarchy starts from the Root data, and expands like a tree, adding child nodes to
+the parent nodes.
+□In hierarchical model, data is organized into tree-like structure with one-to-many
+relationship between two different types of data, for example, one department can have
+many professors and many students.
+
+===== PAGE 44 =====
+Network Model
+□This is an extension of the hierarchical model, allowing many-to-many relationships in a 
+tree-like structure that allows multiple parents.
+A
+B
+C
+D
+E
+F
+
+===== PAGE 45 =====
+Entity-relationship Model
+□In this database model, relationships are created by dividing object of interest into entity
+and its characteristics into attributes.
+Student
+Book
+Issue
+RollNo
+Name
+Branch
+Sem
+BookNo
+Name
+Author
+Price
+Entities
+Attributes 
+Relationship
+
+===== PAGE 46 =====
+Relational Model
+□In this model, data is organized in two-dimensional tables and the relationship is 
+maintained by storing a common attribute.
+Rno
+Student_Nam 
+e
+Age
+101
+Raj Patel
+20
+102
+21
+SubI
+D
+Subject_Nam 
+e
+Teacher
+1
+DBMS
+Doshi
+DS
+Vyash
+ResI
+D
+Rno
+SubI 
+D
+Mark 
+s
+1
+101
+1
+80
+2
+101
+2
+85
+3
+102
+1
+75
+4
+102
+2
+80
+FMoreeeitgSnhah
+Foreign 2
+Key
+Key
+
+===== PAGE 47 =====
+Object-oriented database Model
+□This data model is another method of representing real world objects.
+□It considers each object in the world as objects and isolates it from each other.
+□It groups its related functionalities together and allows inheriting its functionality to 
+other related sub-groups.
+
+===== PAGE 48 =====
+
+===== PAGE 49 =====
+
+===== PAGE 50 =====
+Architected comprehensive ER diagram with entities, attributes, relationships, and 
+keys
+Lines link attributes to entities and entities to relationships
+This combines all six symbols into
+one ER example: Student and
+Course are entities (rectangles),
+linked
+through
+the
+Enrolls
+relationship
+(diamond).
+Student_ID and Course_ID are
+primary key attributes (underlined
+ellipses), Phone_Numbers is a
+multivalued
+attribute
+(double
+ellipse), Title is a regular attribute
+(ellipse), and the plain lines tie
+everything together.
+
+===== PAGE 51 =====
+
+===== PAGE 52 =====
+Symbol
+Name
+Meaning
+Example
+Rectangle ▭
+Entity
+Represents an object or 
+real-world thing
+Student, Teacher
+Oval ⬭
+Attribute
+Describes properties of an 
+entity
+Student_Name, Age
+Diamond ◇
+Relationship
+Shows relationship between 
+entities
+Student enrolls Course
+Line ─
+Connection
+Connects entities, 
+attributes, and relationships Student ─ Enrolls
+Double Rectangle
+Weak Entity
+Entity that depends on 
+another entity
+Dependent
+Double Oval
+Multivalued Attribute
+Attribute that can have 
+multiple values
+Phone_No
+Dashed Oval
+Derived Attribute
+Attribute calculated from 
+another attribute
+Age from DOB
+Underlined Attribute
+Key Attribute
+Uniquely identifies an entity Student_ID
+Double Diamond
+Identifying Relationship
+Relationship between weak 
+entity and owner entity
+Employee–Dependent
+
+===== PAGE 53 =====
+Questions asked [E-R diagrams]
+1.
+Draw E-R diagram for Bank Management System.
+2.
+Define E-R diagram. Draw an E-R diagram for Library Management System. Assume
+relevant entities and attributes for the given system.
+3.
+Construct an E-R diagram for a car-insurance company whose customers own one or more
+cars each. Each car has associated with it zero to any number of recorded accidents.
+4.
+Design a generalization–specialization hierarchy for a motor-vehicle sales company. The
+company sells motorcycles, passenger cars, vans, and buses. Justify your placement of
+attributes at each level of the hierarchy. Explain why they should not be placed at a higher
+or lower level.
+
+===== PAGE 54 =====
+Questions asked [E-R diagrams]
+ER Diagram Examples / Topics
+Student–Course Management System
+Entities: Student, Course, Faculty
+Relationships: Enrolls, Teaches
+Library Management System
+Entities: Student, Book, Librarian
+Relationships: Issues, Returns
+Hospital Management System
+Entities: Patient, Doctor, Nurse, Department
+Relationships: Consults, Admits, Works_In
+College Management System
+Entities: Student, Faculty, Department, Course
+Relationships: Studies, Teaches, Offers
+Restaurant Management System
+Entities: Customer, Food, Order, Payment
+Relationships: Places, Contains, Makes
+Bank Management System
+Entities: Customer, Account, Branch, Loan
+Relationships: Owns, Provides, Takes
+Online Shopping System
+Entities: Customer, Product, Order, Payment
+Relationships: Places, Contains, Makes
+Hotel Management System
+Entities: Customer, Room, Booking, Staff
+Relationships: Books, Allocates, Manages
+Employee Payroll System
+Entities: Employee, Department, Salary, Attendance
+Relationships: Works_In, Receives, Has
+Railway Reservation System
+Entities: Passenger, Train, Station, Ticket
+Relationships: Books, Travels, Stops_At
+
+===== PAGE 55 =====
+
+===== PAGE 56 =====
+
+===== PAGE 57 =====
+Questions asked [E-R diagrams and Database]
+1.
+Design a database for an airline. The database must keep track of customers and their
+reservations, flights and their status, seat assignments on individual flights, and the schedule
+and routing of future flights. Your design should include an E-R diagram, a set of relational
+schemas, and a list of constraints, including primary-key and foreign-key constraints.
+2.
+Design a database for a hospital with a set of patients and
+a set of medical doctors.
+Associate with each patient a log of the various tests and examinations conducted. Your
+design should include an E-R diagram, a set of relational schemas, and a list of constraints,
+including primary-key and foreign-key constraints.
+
+===== PAGE 58 =====
+Thank You

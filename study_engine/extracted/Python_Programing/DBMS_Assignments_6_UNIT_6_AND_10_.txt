@@ -1,0 +1,43 @@
+SOURCE: SEM3/Python_Programing/DBMS Assignments 6 (UNIT 6 AND 10).pdf
+
+===== PAGE 1 =====
+Krishna School of Emerging Technology and Applied Research, 
+Department of Computer Science and Engineering 
+Assignments 
+UNIT – 6 And 10 
+ 
+ 
+1. Define transactions and explain the properties of transactions (ACID properties). 
+2. Discuss the 
+concept 
+of 
+serializability of 
+transactions 
+and 
+explain 
+how 
+serializability is tested. 
+3. Explain the two-phase commit protocol and its role in ensuring the atomicity of transactions. 
+4. Describe log-based recovery and system recovery methods used in databases. 
+5. Discuss the locking mechanisms 
+used in 
+databases and how 
+they solve concurrency-
+related problems. 
+6. Define deadlock in the context of databases. Explain how deadlocks are detected and resolved. 
+7. Explain the two-phase locking protocol and how it ensures isolation in transactions. Provide 
+examples 
+8. Explain the structure of a PL/SQL block and write a PL/SQL program that calculates the factorial of 
+a number using loops. 
+9. Define cursors in PL/SQL. Write a program using an explicit cursor to retrieve and display all 
+employee names and salaries from an employee table. 
+10. Write a PL/SQL program using a cursor FOR loop to display details of products with a price greater 
+than 100 from a product table. 
+11. Create a stored procedure that takes a department ID as input and displays all the employee details 
+for that department from the employee table. 
+12. Define a stored function in PL/SQL. Write a function that accepts a product ID and returns the total 
+price (price * quantity) of that product from the inventory table. 
+13. Write a trigger that automatically inserts a record into a log table whenever a new employee is added 
+to the employee table. 
+14. Explain exception handling in PL/SQL. Write a PL/SQL program that handles the 
+NO_DATA_FOUND and ZERO_DIVIDE exceptions using the EXCEPTION block. 

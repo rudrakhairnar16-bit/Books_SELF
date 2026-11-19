@@ -1,0 +1,1416 @@
+SOURCE: SEM3/Python_Programing/PP_module_3.pdf
+
+===== PAGE 1 =====
+ 
+Module -3 Functions and Modules 
+Python Functions  
+A function is a reusable block of code that performs a specific task. Functions help 
+break down a  program into smaller, manageable parts.  
+The idea is to put some commonly or repeatedly done tasks together and make a function so 
+that instead of  writing the same code again and again for different inputs, we can do the 
+function calls to reuse code  contained in it over and over again.  
+Some Benefits of Using Functions  
+• Increase Code Readability   
+• Increase Code Reusability  
+Python Function Declaration  
+The syntax to declare a function is:  
+ 
+Types of Functions in Python  
+There are mainly two types of functions in Python.  
+1. Built-in library function: These are Standard functions in Python that are 
+available to use.  
+2. User-defined function: We can create our own functions based on our 
+requirements.  
+Creating a Function in Python  
+We can define a function in Python, using the def keyword. We can add any type of 
+functionalities and  properties to it as we require.  
+# A simple Python function   
+def fun():  
+ print("Welcome to Python") 
+ 
+Calling a Python Function  
+After creating a function in Python we can call it by using the name of the function followed 
+by parenthesis  containing parameters of that particular function.  
+# A simple Python function  
+
+===== PAGE 2 =====
+ 
+def fun():  
+ print("Welcome to Python”)  
+# Driver code to call a function  
+fun()  
+Output:  
+Welcome to Python  
+Function Parameters  
+• Positional parameters: These are parameters that must be passed in the 
+correct order. 
+ Code  
+def sub(a, b):  
+ return a - b  
+print(sub(4, 3))  
+# Outputs: 1  
+• Keyword parameters: These allow you to pass arguments by explicitly specifying the 
+parameter  name.  
+Code  
+def greet(name, age):  
+ print(f"{name} is {age} years old.")  
+greet(age=30, name="Bob")  
+ 
+#Output 
+Bob is 30 years old. 
+Calling the Function using - Pass by Reference vs Value  
+The function calling mechanism of Python differs from that of C and C++. There are two 
+main function  calling mechanisms: Call by Value and Call by Reference.  
+When a variable is passed to a function, what does the function do to it? If any changes to its 
+variable does not  get reflected in the actual argument, then it uses call by value mechanism. 
+On the other hand, if the change  is reflected, then it becomes call by reference mechanism. 
+ 
+
+===== PAGE 3 =====
+ 
+ 
+Pass By Reference Vs Value  
+Pass by Value vs Pass by Reference  
+1.Pass by Value (C / C++) 
+● In C/C++, functions work on copies of data. 
+ 
+● When you pass a variable to a function: 
+ 
+○ A copy of the variable’s value is sent. 
+ 
+○ Changes made inside the function do NOT affect the original variable. 
+ 
+Example idea (not Python): 
+x = 10 
+function(x)   → function gets a copy of 10 
+ 
+Original x remains 10. 
+2. How Python Works (Important Concept) 
+ Python uses “pass by object reference” 
+ (This is often loosely called pass by reference) 
+● In Python: 
+ 
+○ A variable is not a box, it is a label (reference) to an object in memory. 
+ 
+○ When you pass a variable to a function, both variables refer to the SAME 
+object. 
+ 
+We can confirm this using the id() function. 
+Example 1: Passing a String (Immutable Object) 
+
+===== PAGE 4 =====
+ 
+Code: 
+def testfunction(arg): 
+    print("ID inside the function:", id(arg)) 
+ 
+var = "Hello" 
+print("ID before passing:", id(var)) 
+testfunction(var) 
+Explanation (Line by Line): 
+● def testfunction(arg): 
+ 
+○ Defines a function with one parameter arg. 
+ 
+● id(arg) 
+ 
+○ Shows the memory address of the object arg refers to. 
+ 
+● var = "Hello" 
+ 
+○ var refers to a string object "Hello" in memory. 
+ 
+● testfunction(var) 
+ 
+○ var is passed to the function. 
+ 
+○ arg now refers to the same object as var. 
+ 
+Output: 
+ID before passing: 1996838294128 
+ID inside the function: 1996838294128 
+ Both IDs are the same → same memory object 
+Example 2: Passing a Number (Immutable Object) 
+Code: 
+def testfunction(arg): 
+    print("ID inside the function:", id(arg)) 
+    arg = arg + 1 
+    print("new object after increment", arg, id(arg)) 
+ 
+var = 10 
+print("ID before passing:", id(var)) 
+testfunction(var) 
+
+===== PAGE 5 =====
+ 
+print("value after function call", var) 
+ 
+Explanation: 
+● var = 10 
+ 
+○ 10 is an immutable object (cannot be changed). 
+ 
+● Inside function: 
+ 
+○ arg = arg + 1 
+ 
+○ This does NOT modify 10 
+ 
+○ Python creates a new object (11) and arg points to it. 
+ 
+Output: 
+ID before passing: 140719550297160 
+ID inside the function: 140719550297160 
+new object after increment 11 140719550297192 
+value after function call 10 
+ 
+Important Observations: 
+● Same ID initially → same object 
+ 
+● After arg + 1 → new ID 
+ 
+● Original var is still 10 
+ 
+Because numbers are immutable 
+ 
+Example 3: Passing a List (Mutable Object) 
+Code: 
+def testfunction(arg): 
+    print("Inside function:", arg) 
+    print("ID inside the function:", id(arg)) 
+    arg.append(100) 
+ 
+var = [10, 20, 30, 40] 
+
+===== PAGE 6 =====
+ 
+print("ID before passing:", id(var)) 
+testfunction(var) 
+print("list after function call", var) 
+ 
+Explanation: 
+● var is a list, and lists are mutable. 
+ 
+● arg.append(100) 
+ 
+○ Modifies the same list object 
+ 
+○ No new object is created 
+ 
+Output: 
+ID before passing: 2716006372544 
+Inside function: [10, 20, 30, 40] 
+ID inside the function: 2716006372544 
+list after function call [10, 20, 30, 40, 100] 
+ 
+Comparison Summary Diagram 
+IMMUTABLE OBJECT (int, str) 
+--------------------------- 
+var ──▶ 10 
+arg ──▶ 10 
+arg = arg + 1 
+arg ──▶ 11   (new) 
+var ──▶ 10   (unchanged) 
+MUTABLE OBJECT (list) 
+--------------------- 
+var ──▶ [1,2,3] 
+arg ──▶ [1,2,3] 
+arg.append(4) 
+var ──▶ [1,2,3,4] ✔ 
+
+===== PAGE 7 =====
+ 
+Function Arguments  
+The process of a function often depends on certain data provided to it while calling it. While 
+defining a  function, you must give a list of variables in which the data passed to it is collected. 
+The variables in the  parentheses are called formal arguments.  
+When the function is called, value to each of the formal arguments must be provided. Those 
+are called actual  arguments.  
+ 
+Python Function with Parameters  
+If you have experience in C/C++ or Java then you must be thinking about the return type of 
+the function and  data type of arguments. That is possible in Python as well (specifically for 
+Python 3.5 and above).  
+Defining and calling a function with parameters  
+def function_name(parameter: data_type) -> return_type:  
+—–def → keyword used to define a function 
+ 
+function_name → name of the function 
+ 
+parameter → input value received by the function 
+ 
+data_type → expected type of the parameter 
+ 
+-> return_type → expected type of value returned by 
+the function 
+ 
+: → indicates start of function body 
+ 
+ """Docstring"""  
+ # body of the function  
+ return expression  
+—Sends the calculated result back to the function call 
+def add(num1: int, num2: int) -> int:  
+—Defines a function named add 
+
+===== PAGE 8 =====
+ 
+ 
+num1 and num2 are input parameters 
+ 
+Both parameters are expected to be integers 
+ 
+Function will return an integer 
+ 
+ """Add two numbers"""  
+ 
+ num3 = num1 + num2  
+ return num3  
+—Returns the sum to the calling statement 
+# Driver code  
+num1, num2 = 5, 15  
+—Assigns values 5 and 15 to variables num1 and num2 
+ans = add(num1, num2)  
+— Calls the add() function 
+ 
+     Passes num1 and num2 as arguments 
+ 
+     Stores returned value in ans 
+ 
+print(f"The addition of {num1} and {num2} results {ans}.")  
+ 
+—Prints output using formatted string (f-string) 
+ 
+Displays values of num1, num2, and ans 
+ 
+print("The addition of ",num1," and ", num2,"result is ",ans)  
+—-Prints output using normal print statement 
+ 
+Displays the same result in another format 
+ 
+Output: 
+The addition of 5 and 15 results 20.  
+ 
+ 
+# some more functions  
+def is_prime(n):  
+ if n in [2, 3]:  
+ return True  
+ if (n == 1) or (n % 2 == 0):  
+ return False  
+ r = 3  
+
+===== PAGE 9 =====
+ 
+ while r * r <= n:  
+ if n % r == 0:  
+ return False  
+ r += 2  
+ return True  
+print(is_prime(78), is_prime(79))  
+Output:  
+False True  
+ 
+Let’s imagine is_prime(78) 
+Step 1: 
+n = 78 
+Step 2: 
+if n in [2, 3]: 
+● 78 is not 2 or 3 
+ 
+● Condition  false → move ahead 
+ 
+Step 3: 
+if (n == 1) or (n % 2 == 0): 
+ 
+● 78 % 2 == 0 → True (even number) 
+ 
+● Condition  true 
+ 
+ Function returns False immediately 
+Result: 
+is_prime(78) → False 
+(No loop runs because function already returned) 
+Let’s imagine is_prime(79) 
+Step 1: 
+
+===== PAGE 10 =====
+ 
+n = 79 
+Step 2: 
+if n in [2, 3]: 
+● 79 is not 2 or 3 
+ 
+● Condition  false 
+ 
+Step 3: 
+if (n == 1) or (n % 2 == 0): 
+● 79 % 2 == 0 → False 
+ 
+● n == 1 → False 
+ 
+● Condition  false 
+ 
+Step 4: 
+r = 3 
+● Start checking divisibility from 3 
+ 
+Step 5: While Loop 
+while r * r <= n: 
+ 
+r 
+r × r 
+≤ 79? 
+n % r 
+Action 
+3 
+9 
+Yes 
+1 
+r += 2 
+5 
+25 
+Yes 
+4 
+r += 2 
+7 
+49 
+Yes 
+2 
+r += 2 
+9 
+81 
+No 
+— 
+Exit loop 
+● No divisor found 
+ 
+Step 6: 
+return True 
+● Number is prime 
+
+===== PAGE 11 =====
+ 
+ 
+Result: 
+is_prime(79) → True 
+Final Output 
+print(is_prime(78), is_prime(79)) 
+False True 
+Python Function Arguments  
+Arguments are the values passed inside the parenthesis of the function. A function can have 
+any number of  arguments separated by a comma.  
+In this example, we will create a simple function in Python to check whether the number 
+passed as an  argument to the function is even or odd.  
+# A simple Python function to check  
+# whether x is even or odd  
+def evenOdd(x):  
+ if (x % 2 == 0):  
+ print("even")  
+ else:  
+ print("odd")  
+# Driver code to call the function  
+evenOdd(2) 
+ 
+evenOdd(3)  
+Output:  
+even  
+odd  
+Types of Python Function Arguments  
+Python supports various types of arguments that can be passed at the time of the function 
+call. In Python, we  have the following 4 types of function arguments.  
+
+===== PAGE 12 =====
+ 
+• Default argument  
+• Keyword arguments (named arguments)  
+• Positional arguments  
+• Arbitrary arguments (variable-length arguments *args and **kwargs)  
+Let’s discuss each type in detail.   
+Default Arguments  
+A default argument is a parameter that assumes a default value if a value is not provided in 
+the function call  for that argument. The following example illustrates Default arguments.   
+# Python program to demonstrate  
+# default arguments  
+def myFun(x, y=50):  
+ print("x: ", x)  
+ print("y: ", y)  
+# Driver code (We call myFun() with only  
+# argument)  
+myFun(10)  
+Output:  
+x: 10  
+y: 50  
+Like C++ default arguments, any number of arguments in a function can have a default 
+value. But once we  have a default argument, all the arguments to its right must also 
+have default values. 
+ 
+Keyword Arguments  
+The idea is to allow the caller to specify the argument name with values so that the caller 
+does not need to  remember the order of parameters.  
+# Python program to demonstrate Keyword Arguments  
+def student(firstname, lastname):  
+ print(firstname, lastname)  
+# Keyword arguments  
+student(firstname='Hello', lastname='Python')  
+student(lastname='Python', firstname='Hello')  
+
+===== PAGE 13 =====
+ 
+Output:  
+Hello Python  
+Hello Python  
+Positional Arguments  
+We used the Position argument during the function call so that the first argument (or value) is 
+assigned to  name and the second argument (or value) is assigned to age. By changing the 
+position, or if you forget the  order of the positions, the values can be used in the wrong places, 
+as shown in the Case-2 example below,  where 27 is assigned to the name and Suraj is assigned 
+to the age.  
+def nameAge(name, age):  
+ print("Hi, I am", name)  
+ print("My age is ", age)  
+# You will get correct output because argument is given in order  
+print("Case-1:")  
+nameAge("Suraj", 27)  
+# You will get incorrect output because argument is not in order  
+print("\nCase-2:")  
+nameAge(27, "Suraj")  
+Output:  
+Case-1:  
+Hi, I am Suraj  
+My age is 27  
+Case-2: 
+ 
+Hi, I am 27  
+My age is Suraj  
+Arbitrary Keyword Arguments  
+In Python Arbitrary Keyword Arguments, *args, and **kwargs can pass a variable number 
+of arguments to  a function using special symbols. There are two special symbols:  
+*args in Python (Non-Keyword Arguments)  
+**kwargs in Python (Keyword Arguments)  
+Example 1: Variable length non-keywords argument  
+# Python program to illustrate  
+
+===== PAGE 14 =====
+ 
+# *args for variable number of arguments  
+def myFun(*argv): // argv behaves like a tuple that holds all the arguments , argv and argc 
+are same just  the placeholder name for values  
+ for arg in argv:  
+ print(arg)  
+myFun('Hello', 'Welcome', 'to', 'World')  
+Output:  
+Hello  
+Welcome  
+to  
+World  
+Example 2: Variable length keyword arguments  
+# Python program to illustrate  
+# *kwargs for variable number of keyword arguments  
+def myFun(**kwargs): // ** before kwargs tells Python to collect all keyword arguments into 
+a dictionary.  
+ for key, value in kwargs.items():  
+ print("%s == %s" % (key, value))  
+# Driver code  
+myFun(first='hi', mid='hello', last='python')  
+Output:  
+first == hi  
+mid == hello  
+last == python 
+ 
+Note: “We use the “wildcard” or “*” notation like this – *args OR **kwargs – as our 
+function’s argument  when we have doubts about the number of arguments we should pass 
+in a function.”  
+What is Python *args?  
+The special syntax *args in function definitions in Python is used to pass a variable number 
+of arguments to  a function. It is used to pass a non-keyworded, variable-length argument 
+list.   
+The syntax is to use the symbol * to take in a variable number of arguments; by convention, 
+it is often used  with the word args.  
+What *args allows you to do is take in more arguments than the number of formal arguments 
+that you  previously defined. With *args, any number of extra arguments can be tacked on to 
+your current formal  parameters (including zero extra arguments).  
+
+===== PAGE 15 =====
+ 
+For example, we want to make a multiply function that takes any number of arguments and 
+is able to multiply  them all together. It can be done using *args.  
+Using the *, the variable that we associate with the * becomes iterable meaning you can do 
+things like iterate  over it, run some higher-order functions such as map and filter, etc.  
+Example 1:  
+Python program to illustrate *args for a variable number of arguments  
+def myFun(*argv):  
+ for arg in argv:  
+ print(arg)  
+myFun('Hello', 'Welcome', 'to', 'GeeksforGeeks')  
+Output:  
+Hello  
+Welcome  
+to  
+GeeksforGeeks  
+Example 2: Python program to illustrate *args with a first extra argument  
+def myFun(arg1, *argv):  
+ print("First argument :", arg1)  
+ for arg in argv:  
+ print("Next argument through *argv :", arg)  
+myFun('Hello', 'Welcome', 'to', 'GeeksforGeeks')  
+Output:  
+First argument : Hello  
+Next argument through *argv : Welcome 
+ 
+Next argument through *argv : to  
+Next argument through *argv : GeeksforGeeks  
+What is Python **kwargs?  
+The special syntax **kwargs in function definitions in Python is used to pass a keyworded, 
+variable-length  argument list. We use the name kwargs with the double star. The reason is 
+that the double star allows us to  pass through keyword arguments (and any number of them).  
+A keyword argument is where you provide a name to the variable as you pass it into the 
+function.  
+
+===== PAGE 16 =====
+ 
+One can think of the kwargs as being a dictionary that maps each keyword to the value that 
+we pass alongside  it. That is why when we iterate over the kwargs there doesn’t seem to be 
+any order in which they were printed  out.  
+Example 1:   
+Python program to illustrate *kwargs for a variable number of keyword arguments. Here 
+**kwargs accept  keyworded variable-length argument passed by the function call. for 
+first=’Geeks’ first is key and ‘Geeks’ is  a value. in simple words, what we assign is value, 
+and to whom we assign is key.   
+def myFun(**kwargs):  
+ for key, value in kwargs.items():  
+ print("%s == %s" % (key, value))  
+# Driver code  
+myFun(first='Geeks', mid='for', last='Geeks')  
+Output:  
+first == Geeks  
+mid == for  
+last == Geeks  
+Example 2: Python program to illustrate **kwargs for a variable number of keyword 
+arguments with one  extra argument. All the same, but one change is we passing non-keyword 
+argument which acceptable by  positional argument(arg1 in myFun). and keyword arguments 
+we passing are acceptable by **kwargs. simple  right?  
+def myFun(arg1, **kwargs):  
+ for key, value in kwargs.items():  
+ print("%s == %s" % (key, value))  
+# Driver code  
+myFun("Hi", first='Geeks', mid='for', last='Geeks')  
+Output:  
+first == Geeks  
+mid == for  
+last == Geeks  
+Using both *args and **kwargs in Python to call a function 
+ 
+Example 1: Here, we are passing *args and **kwargs as an argument in the myFun function. 
+Passing *args  to myFun simply means that we pass the positional and variable-length 
+arguments which are contained by  args. so, “Geeks” pass to the arg1 , “for” pass to the arg2, 
+and “Geeks” pass to the arg3. When we pass  **kwargs as an argument to the myFun it means 
+that it accepts keyword arguments. Here, “arg1” is key and  the value is “Geeks” which is 
+passed to arg1, and just like that “for” and “Geeks” pass to arg2 and arg3  respectively. After 
+passing all the data we are printing all the data in lines.   
+def myFun(arg1, arg2, arg3):  
+ print("arg1:", arg1)  
+ print("arg2:", arg2)  
+
+===== PAGE 17 =====
+ 
+ print("arg3:", arg3)  
+# Now we can use *args or **kwargs to pass arguments to this function :  
+args = ("Geeks", "for", "Geeks")  
+myFun(*args)  
+kwargs = {"arg1": "Geeks", "arg2": "for", "arg3": "Geeks"}  
+myFun(**kwargs)  
+Output:  
+arg1: Geeks  
+arg2: for  
+arg3: Geeks  
+arg1: Geeks  
+arg2: for  
+arg3: Geeks  
+Example 2: Here, we are passing *args and **kwargs as an argument in the myFun function. 
+where ‘geeks’,  ‘for’, ‘geeks’ is passed as *args, and first=”Geeks”, mid=”for”, last=”Geeks” 
+is passed as **kwargs and  printing in the same line.  
+def myFun(*args, **kwargs):  
+ print("args: ", args)  
+ print("kwargs: ", kwargs)  
+# Now we can use both *args ,**kwargs to pass arguments to this function :  
+myFun('geeks', 'for', 'geeks', first="Geeks", mid="for", last="Geeks")  
+Output:  
+args: ('geeks', 'for', 'geeks')  
+kwargs: {'first': 'Geeks', 'mid': 'for', 'last': 'Geeks'} 
+ 
+Docstring  
+The first string after the function is called the Document string or Docstring in short. This is 
+used to describe  the functionality of the function. The use of docstring in functions is optional 
+but it is considered a good  practice.  
+The below syntax can be used to print out the docstring of a function:  
+Syntax: print(function_name.__doc__)  
+Example: Adding Docstring to the function  
+# A simple Python function to check whether x is even or odd  
+def evenOdd(x):  
+ """Function to check if the number is even or odd"""  
+
+===== PAGE 18 =====
+ 
+   
+ if (x % 2 == 0):  
+ print("even")  
+ else:  
+ print("odd")  
+# Driver code to call the function  
+print(evenOdd.__doc__)  
+Output:  
+Function to check if the number is even or odd  
+The following diagram shows the order of formal arguments −  
+Python Function within Functions  
+A function that is defined inside another function is known as the inner function or nested 
+function. Nested  functions can access variables of the enclosing scope. Inner functions are 
+used so that they can be protected  from everything happening outside the function.  
+# Python program to demonstrate accessing of variables of nested functions  
+def f1():  
+ s = 'Hello Python'  
+   
+ def f2():  
+ print(s)  
+  
+f2()  
+# Driver's code  
+f1()  
+Output: Hello Python  
+Anonymous Functions in Python  
+In Python, an anonymous function means that a function is without a name. As we already 
+know the def  keyword is used to define the normal functions and the lambda keyword is used 
+to create anonymous  functions.  
+# Python code to illustrate the cube of a number # using lambda function  
+def cube(x): return x*x*x  
+cube_v2 = lambda x : x*x*x  
+
+===== PAGE 19 =====
+ 
+print(cube(7))  
+print(cube_v2(7))  
+Output:  
+343  
+343  
+Recursive Functions in Python  
+Recursion in Python refers to when a function calls itself. There are many instances when 
+you have to build  a recursive function to solve Mathematical and Recursive Problems.  
+Using a recursive function should be done with caution, as a recursive function can become 
+like a non terminating loop. It is better to check your exit statement while creating a 
+recursive function.  
+def factorial(n):  
+ if n == 0:   
+ return 1  
+ else:  
+ return n * factorial(n - 1)   
+   
+print(factorial(4))  
+Output  
+24  
+Here we have created a recursive function to calculate the factorial of the number. You can 
+see the end  statement for this function is when n is equal to 0.  
+Return Statement in Python Function  
+The function return statement is used to exit from a function and go back to the function 
+caller and return the  specified value or data item to the caller. The syntax for the return 
+statement is: 
+ 
+return [expression_list]  
+The return statement can consist of a variable, an expression, or a constant which is returned 
+at the end of  the function execution. If none of the above is present with the return 
+statement a None object is returned.  
+Example: Python Function Return Statement  
+def square_value(num):  
+ """This function returns the square  
+ value of the entered number"""  
+ return num**2  
+print(square_value(2))  
+
+===== PAGE 20 =====
+ 
+print(square_value(-4))  
+When to use yield instead of return in Python?  
+The yield statement suspends a function’s execution and sends a value back to the caller, but 
+retains enough  state to enable the function to resume where it left off. When the function 
+resumes, it continues execution  immediately after the last yield run. This allows its code to 
+produce a series of values over time, rather than  computing them at once and sending them 
+back like a list.  
+Let’s see with an example:  
+# A Simple Python program to demonstrate working of yield  
+# A generator function that yields 1 for the first time, 2 second time and 3 third time  
+def simpleGeneratorFun():  
+ yield 1  
+ yield 2  
+ yield 3  
+# Driver code to check above generator function  
+for value in simpleGeneratorFun():  
+ print(value)  
+Output:  
+1  
+2  
+3  
+Return sends a specified value back to its caller whereas Yield can produce a sequence of 
+values. We should  use yield when we want to iterate over a sequence, but don’t want to store 
+the entire sequence in memory.  Yield is used in Python generators. A generator function is 
+defined just like a normal function, but whenever  it needs to generate a value, it does so with 
+the yield keyword rather than return. If the body of a def contains  yield, the function 
+automatically becomes a generator function. 
+ 
+ 
+ 
+Python lambda  
+In Python, an anonymous function means that a function is without a name. As we already 
+know that def  keyword is used to define the normal functions and the lambda keyword is used 
+to create anonymous  functions.  
+Python lambda Syntax:  
+lambda arguments : expression  
+Python lambda Example:  
+calc = lambda num: "Even number" if num % 2 == 0 else "Odd number"  
+print(calc(20))  
+
+===== PAGE 21 =====
+ 
+Python lambda properties:  
+• This function can have any number of arguments but only one expression, which is 
+evaluated and  returned.  
+• One is free to use lambda functions wherever function objects are required.  
+• You need to keep in your knowledge that lambda functions are syntactically restricted 
+to a single  expression.  
+• It has various uses in particular fields of programming, besides other types of 
+expressions in  functions.  
+Example 1: Program to demonstrate return type of Python lambda keyword   
+string = 'GeeksforGeeks'  
+# lambda returns a function object  
+print(lambda string: string)  
+Output  
+<function <lambda> at 0x7fd7517ade18>  
+Explanation: In this above example, the lambda is not being called by the print function, but 
+simply returning  the function object and the memory location where it is stored. So, to make 
+the print to print the string first,  we need to call the lambda so that the string will get pass the 
+print.  
+Example 3: Difference between lambda and normal function call  
+The main difference between lambda function and other functions defined using def keyword 
+is that, we  cannot use multiple statements inside a lambda function and allowed statements 
+are also very limited inside  lambda statements. Using lambda functions to do complex 
+operations may affect the readability of the code.  
+def cube(y):  
+ print(f"Finding cube of number:{y}")  
+ return y * y * y  
+lambda_cube = lambda num: num ** 3 
+ 
+# invoking simple function  
+print("invoking function defined with def keyword:")  
+print(cube(30))  
+# invoking lambda function  
+print("invoking lambda function:", lambda_cube(30)  
+Scoping Rules (Local, Enclosing, Global, Built-in)  
+• Local Scope: Variables defined inside a function are local to that function and cannot 
+be accessed  outside.  
+
+===== PAGE 22 =====
+ 
+• Global Scope: Variables defined outside any function are global and can be accessed 
+inside functions  using the global keyword.  
+• Enclosing Scope: Functions defined inside other functions have access to variables 
+from the outer  function's scope.  
+• Built-in Scope: Python's standard library and built-in functions.  
+Global and Local Variables in Python  
+Python Global variables are those which are not defined inside any function and have a global 
+scope whereas  Python local variables are those which are defined inside a function and their 
+scope is limited to that function  only. In other words, we can say that local variables are 
+accessible only inside the function in which it was  initialized whereas the global variables are 
+accessible throughout the program and inside every function.   
+ 
+Python Local Variables  
+Local variables in Python are those which are initialized inside a function and belong only to 
+that particular  function. It cannot be accessed anywhere outside the function. Let’s see how 
+to create a local variable.  
+Creating local variables in Python , Defining and accessing local variables  
+def f():  
+ # local variable  
+ s = "Hello Python"  
+ print(s)  
+# Driver code  
+f()  
+Can a local variable be used outside a function?  
+If we will try to use this local variable outside the function then let’s see what will happen.  
+def f():  
+   
+ # local variable  
+ s = "I love Geeksforgeeks" 
+ 
+ print("Inside Function:", s)  
+# Driver code  
+f()  
+print(s)  
+
+===== PAGE 23 =====
+ 
+Output:  
+NameError: name 's' is not defined  
+Python Global Variables  
+These are those which are defined outside any function and which are accessible throughout 
+the program,  i.e., inside and outside of every function. Let’s see how to create a Python 
+global variable.  
+Create a global variable in Python  
+Defining and accessing Python global variables.  
+# This function uses global variable s  
+def f():  
+ print("Inside Function", s)  
+# Global scope  
+s = "I love Geeksforgeeks"  
+f()  
+print("Outside Function", s)  
+Output  
+Inside Function I love Geeksforgeeks  
+Outside Function I love Geeksforgeeks  
+The variable s is defined as the global variable and is used both inside the function as well as 
+outside the  function.  
+Note: As there are no locals, the value from the globals will be used but make sure both the 
+local and the  global variables should have same name.  
+Why do we use Local and Global variables in Python?  
+Now, what if there is a Python variable with the same name initialized inside a function as 
+well as globally?  Now the question arises, will the local variable will have some effect on the 
+global variable or vice versa,  and what will happen if we change the value of a variable inside 
+of the function f()? Will it affect the globals  as well? We test it in the following piece of code:   
+Example  
+If a variable with the same name is defined inside the scope of the function as well then it 
+will print the value  given inside the function only and not the global value.   
+# This function has a variable with name same as s.  
+def f():  
+ s = "Me too."  
+ print(s) 
+ 
+# Global scope  
+s = "I love Geeksforgeeks"  
+f()  
+
+===== PAGE 24 =====
+ 
+print(s)  
+Output  
+Me too.  
+I love Geeksforgeeks  
+Now, what if we try to change the value of a global variable inside the function? Let’s see it 
+using the below  example.  
+# This function uses global variable s  
+def f():  
+ s += 'GFG'  
+ print("Inside Function", s)  
+# Global scope  
+s = "I love Geeksforgeeks"  
+f()  
+Output:  
+UnboundLocalError: local variable 's' referenced before assignment  
+To make the above program work, we need to use the “global” keyword in Python. Let’s see 
+what this global  keyword is.  
+The global Keyword  
+We only need to use the global keyword in a function if we want to do assignments or change 
+the global  variable. global is not needed for printing and accessing. Python “assumes” that 
+we want a local variable due  to the assignment to s inside of f(), so the first statement throws 
+the error message. Any variable which is  changed or created inside of a function is local if it 
+hasn’t been declared as a global variable. To tell Python,  that we want to use the global 
+variable, we have to use the keyword “global”, as can be seen in the following  example:   
+Example 1: Using Python global keyword  
+# This function modifies the global variable 's'  
+def f():  
+ global s  
+ s += ' GFG'  
+ print(s)  
+ s = "Look for Geeksforgeeks Python Section"  
+ print(s)   
+# Global Scope 
+s = "Python is great!"  
+f()  
+print(s)  
+
+===== PAGE 25 =====
+ 
+Output  
+Python is great! GFG  
+Look for Geeksforgeeks 
+Python Section Look for 
+Geeksforgeeks Python 
+Section  
+Now there is no ambiguity.   
+Example 2: Using Python global 
+and local variables a = 1  
+# Uses global because 
+there is no local 'a' def 
+f():  
+ print('Inside f() : ', a)  
+# Variable 'a' is redefined as a local  
+def g():  
+ a = 2  
+ print('Inside g() : ', a)  
+# Uses global keyword to 
+modify global 'a' def h():  
+ global a  
+ a = 3  
+ print('Inside h() : ', a)  
+# Global scope  
+print('global : ', a)  
+f()  
+print('global : ', a)  
+g()  
+print('global : ', a)  
+h()  
+print('global : ', a)  
+Output  
+global : 1  
+Inside f() : 1  
+global : 1  
+Inside g() : 2  
+global : 1  
+Inside h() : 3  
+global : 3 
+ 
+Difference b/w Local Variable Vs. Global Variables 
+
+===== PAGE 26 =====
+ 
+Comparisi
+on  
+Basis  
+Global Variable  
+Local Variable 
+Definition  
+declared outside the functions  
+declared within the functions 
+Lifetime 
+They are created the execution of the  
+program begins and are lost when the  
+program is ended 
+They are created when the 
+function  starts its execution and 
+are lost when the  function ends 
+Data 
+Sharing  
+Offers Data Sharing  
+It doesn’t offers Data Sharing 
+Scope  
+Can be access throughout the code  
+Can access only inside the 
+function 
+Parameters   
+needed  
+parameter passing is not necessary  
+parameter passing is necessary 
+Storage  
+A fixed location selected by the compiler  
+They are kept on the stack 
+Value  
+Once the value changes it is reflected  
+throughout the code 
+once changed the variable don’t 
+affect  other functions of the 
+program 
+ 
+ 
+Python Variable Scope  
+A variable in Python is a symbols name to the object in computer's memory. Python works on 
+the concept  of namespaces to define the context for various identifiers such as functions, 
+variables etc. A namespace is a  collection of symbolic names defined in the current context.  
+Python provides the following types of namespaces −  
+• Built-in namespace contains built-in functions and built-in exceptions. They are 
+loaded in the  memory as soon as Python interpreter is loaded and remain till the 
+interpreter is running. • Global namespace contains any names defined in the main 
+program. These names remain in memory  till the program is running.  
+• Local namespace contains names defined inside a function. They are available till the 
+function is  running.  
+These namespaces are nested one inside the other. Following diagram shows relationship 
+between  namespaces.  
+
+===== PAGE 27 =====
+ 
+ 
+The life of a certain variable is restricted to the namespace in which it is defined. As a result, 
+it is not possible  to access a variable present in the inner namespace from any outer 
+namespace. 
+ 
+Recursion in Python  
+The term Recursion can be defined as the process of defining something in terms of itself. In 
+simple words,  it is a process in which a function calls itself directly or indirectly.  
+Advantages of using recursion  
+• A complicated function can be split down into smaller sub-problems 
+utilizing recursion. • Sequence creation is simpler through recursion than 
+utilizing any nested iteration. • Recursive functions render the code look 
+simple and effective.  
+Disadvantages of using recursion  
+1. A lot of memory and time is taken through recursive calls which makes it 
+expensive for use. 2. Recursive functions are challenging to debug.  
+3. The reasoning behind recursion can sometimes be tough to think through.  
+Syntax:  
+def func(): <--  
+ |  
+ | (recursive call)  
+ |  
+ func() ----  
+
+===== PAGE 28 =====
+ 
+Example 1: A Fibonacci sequence is the integer sequence of 0, 1, 1, 2, 3, 5, 8….   
+   
+# Program to print the fibonacci series upto n_terms  
+# Recursive function  
+def recursive_fibonacci(n):  
+ if n <= 1:  
+ return n  
+ else:  
+ return(recursive_fibonacci(n-1) + recursive_fibonacci(n-2))  
+n_terms = 10  
+# check if the number of terms is valid  
+if n_terms <= 0:  
+ print("Invalid input ! Please input a positive value")  
+else:  
+ print("Fibonacci series:")  
+for i in range(n_terms):  
+ print(recursive_fibonacci(i)) 
+ 
+Output  
+Fibonacci series:  
+0  
+1  
+1  
+2  
+3  
+5  
+8  
+13  
+21  
+34  
+Example 2: The factorial of 6 is denoted as 6! = 
+1*2*3*4*5*6 = 720.     
+# Program to print factorial of a number recursively.  
+# Recursive function  
+def recursive_factorial(n):  
+ if n == 1:  
+ return n  
+ else:  
+ return n * recursive_factorial(n-1)  
+# user input  
+
+===== PAGE 29 =====
+ 
+num = 6  
+# check if the input is valid or not  
+if num < 0:  
+ print("Invalid input ! Please enter a 
+positive number.") elif num == 0:  
+ print("Factorial of number 0 is 1")  
+else:  
+ print("Factorial of number", num, "=", recursive_factorial(num))  
+Output  
+Factorial of number 6 = 720 
+ 
+Specifications in Python 
+  
+
+===== PAGE 30 =====
+ 
+
+===== PAGE 31 =====
+ 
+ 
+Modules in Python  
+What is a Module?  
+Consider a module to be the same as a code library.  
+A file containing a set of functions you want to include in your application.  
+Create a Module  
+To create a module just save the code you want in a file with the file extension .py: 
+Eg - Save this code in a file named mymodule.py 
+def greeting(name):  
+ print("Hello, " + name)  
+Use a Module  
+
+===== PAGE 32 =====
+ 
+Now we can use the module we just created, by using the import statement:  
+Example  
+Import the module named mymodule, and call the greeting function:  
+import mymodule  
+mymodule.greeting("Jonathan")  
+Note: When using a function from a module, use the syntax: module_name.function_name.  
+Variables in Module  
+The module can contain functions, as already described, but also variables of all types (arrays, dictionaries,  
+objects etc):  
+Example  
+Save this code in the file mymodule.py  
+person1 = {  
+ "name": "John",  
+ "age": 36,  
+ "country": "Norway"  
+}  
+Example  
+Import the module named mymodule, and access the person1 dictionary:  
+import mymodule  
+a = mymodule.person1["age"]  
+print(a)  
+Naming a Module  
+You can name the module file whatever you like, but it must have the file extension 
+.py Re-naming a Module  
+You can create an alias when you import a module, by using the as keyword:  
+Example  
+Create an alias for mymodule called mx: 
+import mymodule as mx  
+a = mx.person1["age"]  
+print(a)  
+Built-in Modules  
+
+===== PAGE 33 =====
+ 
+There are several built-in modules in Python, which you can import whenever you 
+like. Example  
+Import and use the platform module:  
+import platform  
+x = platform.system()  
+print(x)  
+Using the dir() Function  
+There is a built-in function to list all the function names (or variable names) in a module.  
+The dir() function:  
+Example  
+List all the defined names belonging to the platform module:  
+import platform  
+x = dir(platform)  
+print(x)  
+Note: The dir() function can be used on all modules, also the ones you create yourself.  
+Import From Module  
+You can choose to import only parts from a module, by using the from 
+keyword. Example  
+The module named mymodule has one function and one dictionary:  
+def greeting(name):  
+ print("Hello, " + name)  
+person1 = {  
+ "name": "John",  
+ "age": 36,  
+ "country": "Norway"  
+} 
+ 
+Example  
+Import only the person1 dictionary from the module:  
+from mymodule import person1  
+print (person1["age"])  
+
+===== PAGE 34 =====
+ 
+Note: When importing using the from keyword, do not use the module name when referring to elements in  
+the module. Example: person1["age"], not mymodule.person1["age"]   
+(It will throw an error because mymodule itself is not imported, only person1 is.)  
+Python Import From Module  
+Python’s from statement lets you import specific attributes from a module without importing the module as  
+a whole.  
+Import Specific Attributes from a Python module  
+Here, we are importing specific sqrt and factorial attributes from the math module.  
+   
+# importing sqrt() and factorial from the module math  
+from math import sqrt, factorial  
+# if we simply do "import math", then math.sqrt(16) and math.factorial() are 
+required. print(sqrt(16))  
+print(factorial(6))  
+Output:   
+4.0  
+720  
+Import all Names   
+The * symbol used with the import statement is used to import all the names from a module to a current  
+namespace.  
+Syntax:  
+from module_name import *  
+What does import * do in Python?  
+The use of * has its advantages and disadvantages. If you know exactly what you will be needing from the  
+module, it is not recommended to use *, else do so.  
+   
+# importing sqrt() and factorial from the module math  
+from math import *  
+# if we simply do "import math", then math.sqrt(16) and math.factorial() are 
+required. print(sqrt(16)) 
+print(factorial(6))  
+Output  
+4.0  
+720  
+Locating Python Modules  
+
+===== PAGE 35 =====
+ 
+Whenever a module is imported in Python the interpreter looks for several locations. First, it will check for  
+the built-in module, if not found then it looks for a list of directories defined in the sys.path. Python interpreter  
+searches for the module in the following manner –  
+First, it searches for the module in the current directory.  
+If the module isn’t found in the current directory, Python then searches each directory in the shell variable  
+PYTHONPATH. The PYTHONPATH is an environment variable, consisting of a list of directories. If that 
+also fails python checks the installation-dependent list of directories configured at the time Python is  
+installed.  
+Directories List for Modules  
+Here, sys.path is a built-in variable within the sys module. It contains a list of directories that the interpreter  
+will search for the required module.  
+   
+# importing sys module  
+import sys  
+# importing sys.path  
+print(sys.path)  
+Output:  
+[‘/home/nikhil/Desktop/gfg’, ‘/usr/lib/python38.zip’, ‘/usr/lib/python3.8’, ‘/usr/lib/python3.8/lib-dynload’,  
+”, 
+‘/home/nikhil/.local/lib/python3.8/site-packages’, 
+‘/usr/local/lib/python3.8/dist-packages’,  
+‘/usr/lib/python3/dist-packages’, 
+‘/usr/local/lib/python3.8/dist-packages/IPython/extensions’,  
+‘/home/nikhil/.ipython’]  
+Renaming the Python Module  
+We can rename the module while importing it using the keyword.  
+Syntax: Import Module_name as Alias_name  
+   
+# importing sqrt() and factorial from the module math  
+import math as mt  
+# if we simply do "import math", then math.sqrt(16) and math.factorial() are 
+required. print(mt.sqrt(16))  
+print(mt.factorial(6)) 
+ 
+Output  
+4.0  
+720  
+Python Built-in modules  
+There are several built-in modules in Python, which you can import whenever you like. Eg  
+
+===== PAGE 36 =====
+ 
+# importing built-in module math  
+import math  
+# using square root(sqrt) function contained   
+# in math module  
+print(math.sqrt(25))   
+# using pi function contained in math module  
+print(math.pi)   
+# 2 radians = 114.59 degrees  
+print(math.degrees(2))   
+# 60 degrees = 1.04 radians  
+print(math.radians(60))   
+# Sine of 2 radians  
+print(math.sin(2))   
+# Cosine of 0.5 radians  
+print(math.cos(0.5))   
+# Tangent of 0.23 radians  
+print(math.tan(0.23))   
+# 1 * 2 * 3 * 4 = 24  
+print(math.factorial(4))   
+# importing built in module random  
+import random  
+# printing random integer between 0 and 5  
+print(random.randint(0, 5))   
+# print random floating point number between 0 and 1  
+print(random.random())   
+# random number between 0 and 100  
+print(random.random() * 100)  
+ 
+List = [1, 4, True, 800, "python", 27, "hello"]  
+# using choice function in random module for choosing   
+# a random element from a set such as a list  
+print(random.choice(List))   
+# importing built in module datetime  
+
+===== PAGE 37 =====
+ 
+import datetime  
+from datetime import date  
+import time  
+# Returns the number of seconds since the  
+# Unix Epoch, January 1st 1970  
+print(time.time())   
+# Converts a number of seconds to a date object  
+print(date.fromtimestamp(454554))   
+Output:  
+5.0  
+3.14159265359  
+114.591559026  
+1.0471975512  
+0.909297426826  
+0.87758256189  
+0.234143362351  
+24  
+3  
+0.401533172951  
+88.4917616788  
+True  
+1461425771.87  
+Hello world  
+GeeksforGeeks  
+123 456  
+2.Packages in Python 
+A package is a collection of related Python modules organized in a directory (folder). Packages are useful 
+for organizing large Python applications. 
+Example of Package Structure 
+my_package/ 
+    __init__.py 
+    arithmetic.py 
+    calculation.py 
+Here, my_package is the package, while arithmetic.py and calculation.py are modules. 
+For example, arithmetic.py: 
+def add(a, b): 
+    return a + b 
+We can import it into another program: 
+from my_package.arithmetic import add 
+ 
+
+===== PAGE 38 =====
+ 
+print(add(10, 20)) 
+Output: 
+30 
+ 
+ 
+ 
+Module vs Package 
+Module 
+Package 
+Usually a single .py file 
+A directory containing related modules 
+Contains functions, classes, variables, etc. Organizes multiple modules 
+Suitable for smaller functionality 
+Useful for larger applications 
+Example: calculator.py 
+Example: my_package/ 
+ 
+3. Importing Modules 
+Importing means making the functions, classes, or variables of a module available in another Python 
+program. 
+Method 1: import module 
+import math 
+ 
+print(math.sqrt(25)) 
+Output: 
+5.0 
+ 
+Method 2: from module import function 
+We can import a specific function from a module. 
+from math import sqrt 
+ 
+print(sqrt(36)) 
+Output: 
+6.0 
+ 
+Method 3: Import Multiple Functions 
+from math import sqrt, factorial 
+ 
+
+===== PAGE 39 =====
+ 
+print(sqrt(16)) 
+print(factorial(5)) 
+Output: 
+4.0 
+120 
+ 
+Method 4: Using an Alias 
+We can give a short name (alias) to a module. 
+import math as m 
+ 
+print(m.sqrt(49)) 
+Output: 
+7.0 
+ 
+Method 5: Importing from a Package 
+from my_package.arithmetic import add 
+ 
+result = add(15, 10) 
+print(result) 
+Output: 
+25 
+ 

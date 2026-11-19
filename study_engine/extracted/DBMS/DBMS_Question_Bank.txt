@@ -1,0 +1,296 @@
+SOURCE: SEM3/DBMS/DBMS Question Bank.pdf
+
+===== PAGE 1 =====
+1 | P a g e 
+ 
+Subject Name: Database Management Systems (25B1PC301) 
+Assignment 1 
+ 
+Sr. 
+No. 
+Question 
+Marks 
+1 
+Define a DBMS. State any two advantages of using a DBMS over 
+traditional file processing systems. 
+3 
+2 
+What is normalization? Explain the purpose of normalization in 
+relational database design. 
+3 
+3 
+Define an entity, attribute, and relationship in an ER model with suitable 
+examples. 
+3 
+4 
+What is a weak entity set? Explain how it differs from a strong entity set. 
+3 
+5 
+Explain Selection, Projection, and Rename operators of Relational 
+Algebra with their symbols. 
+3 
+6 
+What is a database transaction? Explain any two ACID properties. 
+3 
+7 
+Explain 1NF, 2NF, and 3NF with suitable examples. 
+4 
+8 
+Explain the three-schema architecture of DBMS and describe the three 
+levels of data abstraction. 
+4 
+9 
+Given the relation STUDENT(RollNo, Name, Department, Marks), 
+write Relational Algebra expressions to select CSE students and display 
+their Name and Marks. 
+4 
+10 
+Differentiate between DDL, DML, and DCL. Give two SQL commands 
+for each category. 
+4 
+11 
+Explain Generalization, Specialization, and Aggregation in the Extended 
+ER model with suitable examples. 
+4 
+12 
+Explain authentication, authorization, DAC, and RBAC in database 
+security. 
+4 
+13 
+Explain the major steps of SQL query processing, including parsing, 
+optimization, and query evaluation. 
+4 
+14 
+Design a complete ER diagram for a Hospital Management System. 
+Include Patient, Doctor, Department, Appointment, Room, and Bill 
+entities with suitable attributes, relationships, and cardinalities. 
+7 
+15 
+Explain database normalization in detail. Discuss 1NF, 2NF, 3NF, and 
+BCNF and explain insertion, deletion, and update anomalies with 
+examples. 
+7 
+16 
+Given Student(ID, Name, Dept) and Takes(ID, CourseID, Grade), write 
+suitable Relational Algebra and Tuple Relational Calculus (TRC) 
+expressions to retrieve students enrolled in a specified course. 
+7 
+17 
+Explain DDL, DML, DCL, and TCL in SQL. Give suitable examples 
+and describe the purpose of each category. 
+7 
+18 
+Explain transaction processing and concurrency control in DBMS. 
+Discuss serial and concurrent schedules, serializability, locking, and the 
+Two-Phase Locking protocol. 
+7 
+19 
+Explain database security mechanisms in detail. Discuss authentication, 
+authorization, DAC, MAC, and RBAC, and compare DAC and RBAC 
+with a suitable example. 
+7 
+20 
+Explain query processing and query optimization in DBMS. Discuss 
+query parsing, query trees, cost estimation, indexes, and selection of an 
+efficient execution plan. 
+7 
+
+===== PAGE 2 =====
+2 | P a g e 
+ 
+MCQs 
+Sr. No 
+Question 
+1 
+Which of the following is a major advantage of a DBMS over a traditional file 
+processing system? 
+A) Increased data redundancy 
+B) Data inconsistency 
+C) Controlled data sharing and reduced redundancy 
+D) Program-data dependence 
+2 
+Which normal form removes partial functional dependency? 
+A) 1NF 
+B) 2NF 
+C) 3NF 
+D) BCNF 
+3 
+A candidate key is a: 
+A) Minimal superkey 
+B) Foreign key 
+C) Duplicate attribute 
+D) NULL value 
+4 
+Which SQL command is used to define the structure of a database object? 
+A) SELECT 
+B) INSERT 
+C) CREATE 
+D) UPDATE 
+5 
+Which level of the three-schema architecture describes the complete logical structure of 
+the database? 
+A) External level 
+B) Conceptual level 
+C) Internal level 
+D) Physical device level 
+6 
+Which constraint ensures that a primary key cannot contain NULL values? 
+A) Referential integrity 
+B) Entity integrity 
+C) Domain integrity 
+D) User-defined integrity 
+7 
+Which symbol represents an entity set in an ER diagram? 
+A) Rectangle 
+B) Oval 
+C) Diamond 
+D) Double oval 
+8 
+A relationship set is generally represented by a: 
+A) Rectangle 
+B) Diamond 
+C) Oval 
+D) Triangle 
+9 
+A weak entity set is represented by a: 
+A) Single rectangle 
+B) Double rectangle 
+C) Single oval 
+D) Double oval 
+10 
+Which ER concept is used to combine lower-level entity sets into a higher-level entity 
+set? 
+A) Specialization 
+
+===== PAGE 3 =====
+3 | P a g e 
+ 
+B) Generalization 
+C) Aggregation 
+D) Mapping 
+11 
+In an ER diagram, a multivalued attribute is represented by a: 
+A) Double oval 
+B) Rectangle 
+C) Diamond 
+D) Dashed oval 
+12 
+A relationship in which one entity can be associated with many instances of another 
+entity is called: 
+A) 1:1 
+B) 1:N 
+C) 0:0 
+D) N:0 
+13 
+The relational algebra operator used to select tuples satisfying a condition is: 
+A) π 
+B) σ 
+C) ρ 
+D) × 
+14 
+The relational algebra operator used to select specific attributes is: 
+A) σ 
+B) π 
+C) − 
+D) × 
+15 
+The relational algebra symbol ρ represents: 
+A) Selection 
+B) Projection 
+C) Rename 
+D) Join 
+16 
+Which SQL command is used to retrieve data from a table? 
+A) INSERT 
+B) SELECT 
+C) UPDATE 
+D) DELETE 
+17 
+Which SQL command is used to modify existing records? 
+A) UPDATE 
+B) CREATE 
+C) GRANT 
+D) DROP 
+18 
+Which SQL clause is used to filter rows according to a condition? 
+A) GROUP BY 
+B) ORDER BY 
+C) WHERE 
+D) FROM 
+19 
+Which ACID property ensures that a transaction is completed completely or not at all? 
+A) Consistency 
+B) Atomicity 
+C) Isolation 
+D) Durability 
+20 
+Which ACID property ensures that committed data survives system failure? 
+A) Atomicity 
+B) Consistency 
+C) Isolation 
+
+===== PAGE 4 =====
+4 | P a g e 
+ 
+D) Durability 
+21 
+DAC stands for: 
+A) Discretionary Access Control 
+B) Data Access Control 
+C) Database Access Code 
+D) Direct Access Control 
+22 
+RBAC stands for: 
+A) Role-Based Access Control 
+B) Relation-Based Access Control 
+C) Record-Based Access Control 
+D) Role-Based Authentication Code 
+23 
+Which concurrency control technique uses locks to control simultaneous access to data? 
+A) Locking protocol 
+B) Normalization 
+C) Indexing 
+D) Hashing 
+24 
+Which technique is commonly used to restore a database after a failure? 
+A) Recovery 
+B) Projection 
+C) Specialization 
+D) Compilation 
+25 
+Which DBMS component is responsible for processing SQL queries? 
+A) Query Processor 
+B) Printer Manager 
+C) Keyboard Manager 
+D) User Interface only 
+26 
+The main objective of query optimization is to: 
+A) Increase execution cost 
+B) Find an efficient execution plan 
+C) Remove all indexes 
+D) Increase redundancy 
+27 
+Which index structure is generally efficient for both equality and range queries? 
+A) B+ Tree 
+B) Heap file 
+C) Unordered list 
+D) Sequential scan only 
+28 
+Which component estimates the cost of alternative query execution plans? 
+A) Query Optimizer 
+B) DDL Interpreter 
+C) Buffer only 
+D) Authentication Manager 
+29 
+A query execution plan specifies: 
+A) How a query will be executed 
+B) How users are registered 
+C) How passwords are generated 
+D) How entities are drawn 
+30 
+Which operation combines tuples from two relations based on a matching condition? 
+A) Projection 
+B) Selection 
+C) Join 
+D) Rename 
+ 

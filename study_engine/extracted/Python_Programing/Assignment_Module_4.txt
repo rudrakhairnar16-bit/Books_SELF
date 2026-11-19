@@ -1,0 +1,98 @@
+SOURCE: SEM3/Python_Programing/Assignment Module 4.pdf
+
+===== PAGE 1 =====
+Python Programming 
+Assignment No – 4 
+ 
+Given Date – 08/10/2026 
+Submission Date – 15/10/2026 
+ 
+Q.No Question 
+CO 
+BT Level 
+1 
+Define list, tuple, set and dictionary. For each one, write the bracket type 
+used and one example. 
+CO1 
+L1 
+ 
+Explain the difference between each pair, and predict the output of 
+print(type(...)) for each: 
+• 
+(a) (50) and (50,) 
+• 
+(b) {} and set() 
+• 
+(c) [10, 20, 30] and (10, 20, 30) 
+ 
+CO1 
+L2 
+2 
+Write a Python program to generate the Fibonacci series up to a 
+specified number of terms using iterative looping constructs. 
+CO2 
+L3 
+3 
+Develop a Python program to display all prime numbers within a given 
+range and count the total number of prime numbers found. 
+CO2 
+L3 
+4 
+Write a program that reads the marks of 5 students into a list using a for 
+loop. Display the total, the average and the highest mark. Use if-else to 
+print Pass or Fail (pass mark is 40) for each student. 
+CO2 
+L3 
+5 
+Explain Sets in Python. Describe the importance of unique elements and 
+demonstrate Union, Intersection, and Difference operations with 
+suitable Python programs. 
+CO3 
+L4 
+6 
+ List any four list methods and four dictionary methods, with the purpose 
+of each.  
+CO3 
+L1 
+7 
+Explain the differences between a list and a tuple with examples. Why 
+can a tuple, but not a list, be used as a dictionary key?  
+CO3 
+L2 
+8 
+Each line below produces an error. Identify the error type, explain why it 
+occurs, and write a corrected version. 
+python 
+colors = ("Red", "Green") 
+colors[0] = "Blue" 
+marks = [70, 80, 90] 
+marks.remove(60) 
+student = {"name": "Priya"} 
+print(student["age"]) 
+print(marks[5]) 
+ 
+CO4 
+L5 
+9 
+A student wrote this function: 
+CO4 
+L5 
+
+===== PAGE 2 =====
+Python Programming 
+Assignment No – 4 
+ 
+python 
+def average(marks): 
+    return sum(marks) / len(marks) 
+Test it with [70, 90], [80] and []. Evaluate whether it is correct for all 
+inputs. Then fix it using try-except or an if check, and explain why your 
+fix is better. 
+ 
+10 
+Create a program that stores subject names and marks in a dictionary, 
+uses list comprehension to list the subjects with marks above 80, and 
+draws a bar chart of all subject marks using Matplotlib. 
+CO5 
+L6 
+ 

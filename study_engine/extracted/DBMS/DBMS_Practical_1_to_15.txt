@@ -1,0 +1,823 @@
+SOURCE: SEM3/DBMS/DBMS_Practical_1 to 15.pdf
+
+===== PAGE 1 =====
+KPGU VADODARA  |  DBMS LABORATORY PRACTICAL FILE (1 - 15)
+Department of Computer Science & Engineering  •  Page 1
+KPGU VADODARA  •  DEPARTMENT OF COMPUTER SCIENCE & ENGINEERING
+DATABASE MANAGEMENT SYSTEMS (DBMS) LAB FILE
+Complete Practical Solutions (Practicals 1 to 15)  |  SQL & PL/SQL Codes with Execution Outputs
+PRACTICAL 1: Introduction to SQL, Features, and Initial Database Setup
+Objective: To study the features of SQL, construct relational tables using DDL commands, and verify table definitions using 
+DESCRIBE.
+ SQL Execution Script (Practical 1)
+-- Student: KPGU CSE Student Lab Submission
+-- Practical 1: Setting up initial DEPOSIT schema and verifying structural rules
+-- 1. Creating DEPOSIT Table
+CREATE TABLE DEPOSIT (
+    ACTNO VARCHAR2(5) PRIMARY KEY,
+    CNAME VARCHAR2(18) NOT NULL,
+    BNAME VARCHAR2(18) NOT NULL,
+    AMOUNT NUMBER(8,2) CHECK (AMOUNT >= 0),
+    ADATE DATE
+);
+-- 2. Inspecting the table structure in Oracle SQL*Plus
+DESC DEPOSIT;
+-- 3. Verifying initial table contents
+SELECT * FROM DEPOSIT;
+ Table Structure Verification (DESC DEPOSIT)
+Name
+Null?
+Type
+ACTNO
+NOT NULL
+VARCHAR2(5)
+CNAME
+NOT NULL
+VARCHAR2(18)
+BNAME
+NOT NULL
+VARCHAR2(18)
+AMOUNT
+NUMBER(8,2)
+ADATE
+DATE
+ SQL*Plus Execution Output
+Table created.
+
+===== PAGE 2 =====
+KPGU VADODARA  |  DBMS LABORATORY PRACTICAL FILE (1 - 15)
+Department of Computer Science & Engineering  •  Page 2
+no rows selected.
+PRACTICAL 2: Study and Execution of Core SQL Command Components (DDL 
+& DML)
+Objective: To study and execute various components of SQL including Data Definition (CREATE) and Data Manipulation 
+(INSERT, SELECT) commands.
+ SQL Execution Script (Practical 2)
+-- Student: KPGU CSE Student Lab Submission
+-- Practical 2: Executing DDL and DML operations on BRANCH relation
+-- 1. Creating the BRANCH table
+CREATE TABLE BRANCH (
+    BNAME VARCHAR2(18) PRIMARY KEY,
+    CITY VARCHAR2(18) NOT NULL
+);
+-- 2. Inserting records into BRANCH table
+INSERT INTO BRANCH (BNAME, CITY) VALUES ('VRCE', 'NAGPUR');
+INSERT INTO BRANCH (BNAME, CITY) VALUES ('AJNI', 'NAGPUR');
+INSERT INTO BRANCH (BNAME, CITY) VALUES ('KAROLBAGH', 'DELHI');
+INSERT INTO BRANCH (BNAME, CITY) VALUES ('CHANDNI', 'DELHI');
+INSERT INTO BRANCH (BNAME, CITY) VALUES ('DHARAMPETH', 'NAGPUR');
+INSERT INTO BRANCH (BNAME, CITY) VALUES ('MG ROAD', 'BANGALORE');
+-- 3. Querying inserted records
+SELECT BNAME, CITY FROM BRANCH;
+ Execution Output (BRANCH Table)
+BNAME
+CITY
+VRCE
+NAGPUR
+AJNI
+NAGPUR
+KAROLBAGH
+DELHI
+CHANDNI
+DELHI
+DHARAMPETH
+NAGPUR
+MG ROAD
+BANGALORE
+PRACTICAL 3: Implementation of DDL (CREATE) and DML (INSERT) on Banking 
+Schema
+Objective: To construct CUSTOMERS, BORROW, and DEPOSIT tables and populate them with standard banking records.
+
+===== PAGE 3 =====
+KPGU VADODARA  |  DBMS LABORATORY PRACTICAL FILE (1 - 15)
+Department of Computer Science & Engineering  •  Page 3
+ SQL Execution Script (Practical 3)
+-- Student: KPGU CSE Student Lab Submission
+-- Practical 3: Complete Schema Setup for CUSTOMERS, BORROW, and DEPOSIT
+-- 1. Create CUSTOMERS Table
+CREATE TABLE CUSTOMERS (
+    CNAME VARCHAR2(18) PRIMARY KEY,
+    CITY VARCHAR2(18) NOT NULL
+);
+-- 2. Create BORROW Table
+CREATE TABLE BORROW (
+    LOANNO VARCHAR2(5) PRIMARY KEY,
+    CNAME VARCHAR2(18) REFERENCES CUSTOMERS(CNAME),
+    BNAME VARCHAR2(18) REFERENCES BRANCH(BNAME),
+    AMOUNT NUMBER(8,2) CHECK (AMOUNT > 0)
+);
+-- 3. Populating CUSTOMERS Table
+INSERT INTO CUSTOMERS VALUES ('ANIL', 'CALCUTTA');
+INSERT INTO CUSTOMERS VALUES ('SUNIL', 'DELHI');
+INSERT INTO CUSTOMERS VALUES ('MEHUL', 'BARODA');
+INSERT INTO CUSTOMERS VALUES ('MANDAR', 'PATNA');
+INSERT INTO CUSTOMERS VALUES ('PRAMOD', 'NAGPUR');
+-- 4. Populating BORROW Table
+INSERT INTO BORROW VALUES ('201', 'ANIL', 'VRCE', 1000.00);
+INSERT INTO BORROW VALUES ('206', 'MEHUL', 'AJNI', 5000.00);
+INSERT INTO BORROW VALUES ('311', 'SUNIL', 'DHARAMPETH', 3000.00);
+INSERT INTO BORROW VALUES ('321', 'PRAMOD', 'VRCE', 2000.00);
+-- 5. Populating DEPOSIT Table
+INSERT INTO DEPOSIT VALUES ('101', 'ANIL', 'VRCE', 1000.00, '01-MAR-1995');
+INSERT INTO DEPOSIT VALUES ('102', 'SUNIL', 'AJNI', 5000.00, '04-JAN-1996');
+INSERT INTO DEPOSIT VALUES ('103', 'MEHUL', 'KAROLBAGH', 3500.00, '17-NOV-1995');
+INSERT INTO DEPOSIT VALUES ('104', 'MANDAR', 'VRCE', 2000.00, '27-MAR-1996');
+COMMIT;
+ CUSTOMERS Table Output
+CNAME
+CITY
+ANIL
+CALCUTTA
+SUNIL
+DELHI
+MEHUL
+BARODA
+
+===== PAGE 4 =====
+KPGU VADODARA  |  DBMS LABORATORY PRACTICAL FILE (1 - 15)
+Department of Computer Science & Engineering  •  Page 4
+MANDAR
+PATNA
+PRAMOD
+NAGPUR
+ BORROW Table Output
+LOANNO
+CNAME
+BNAME
+AMOUNT
+201
+ANIL
+VRCE
+1000.00
+206
+MEHUL
+AJNI
+5000.00
+311
+SUNIL
+DHARAMPETH
+3000.00
+321
+PRAMOD
+VRCE
+2000.00
+ DEPOSIT Table Output
+ACTNO
+CNAME
+BNAME
+AMOUNT
+ADATE
+101
+ANIL
+VRCE
+1000.00
+01-MAR-1995
+102
+SUNIL
+AJNI
+5000.00
+04-JAN-1996
+103
+MEHUL
+KAROLBAGH
+3500.00
+17-NOV-1995
+104
+MANDAR
+VRCE
+2000.00
+27-MAR-1996
+PRACTICAL 4: Data Filtering with LIKE Predicates and NULL Value Handling
+Objective: To create EMPLOYEE schema and perform queries testing pattern matching operators and NULL value logic.
+ SQL Execution Script (Practical 4)
+-- Student: KPGU CSE Student Lab Submission
+-- Practical 4: Pattern Matching (LIKE) and NULL Predicate Queries
+-- 1. Create EMPLOYEE Table
+CREATE TABLE EMPLOYEE (
+    EMPNO NUMBER(4) PRIMARY KEY,
+    EMPNAME VARCHAR2(20) NOT NULL,
+    JOB VARCHAR2(15),
+    SALARY NUMBER(8,2),
+    COMMISSION NUMBER(8,2),
+    DEPTNO NUMBER(2)
+);
+-- 2. Insert Records with NULL Commissions
+INSERT INTO EMPLOYEE VALUES (7001, 'AMIT', 'MANAGER', 35000.00, 5000.00, 10);
+INSERT INTO EMPLOYEE VALUES (7002, 'ANIL', 'CLERK', 18000.00, NULL, 10);
+INSERT INTO EMPLOYEE VALUES (7003, 'SNEHA', 'ANALYST', 28000.00, 2000.00, 20);
+INSERT INTO EMPLOYEE VALUES (7004, 'RAHUL', 'SALESMAN', 22000.00, NULL, 20);
+
+===== PAGE 5 =====
+KPGU VADODARA  |  DBMS LABORATORY PRACTICAL FILE (1 - 15)
+Department of Computer Science & Engineering  •  Page 5
+-- Query 1: Find customers whose name starts with 'A'
+SELECT CNAME, CITY FROM CUSTOMERS WHERE CNAME LIKE 'A%';
+-- Query 2: Find customers whose name has 'N' as second character
+SELECT CNAME FROM CUSTOMERS WHERE CNAME LIKE '_N%';
+-- Query 3: Find employees who receive NO commission (NULL check)
+SELECT EMPNAME, JOB, SALARY FROM EMPLOYEE WHERE COMMISSION IS NULL;
+-- Query 4: Find employees who receive a commission (NOT NULL check)
+SELECT EMPNAME, SALARY, COMMISSION FROM EMPLOYEE WHERE COMMISSION IS NOT NULL;
+ Query 1 Output (Names Starting with 'A')
+CNAME
+CITY
+ANIL
+CALCUTTA
+ Query 3 Output (Employees with NULL Commission)
+EMPNAME
+JOB
+SALARY
+ANIL
+CLERK
+18000.00
+RAHUL
+SALESMAN
+22000.00
+PRACTICAL 5: Data Manipulation, Aggregate Functions, and Sorting Concepts
+Objective: To execute aggregate functions (SUM, AVG, MIN, MAX, COUNT), record modifications (UPDATE, DELETE), and 
+ORDER BY sorting.
+ SQL Execution Script (Practical 5)
+-- Student: KPGU CSE Student Lab Submission
+-- Practical 5: Aggregates, Sorting, and Conditional Updates
+-- Query 1: Find total deposit amount across all accounts
+SELECT SUM(AMOUNT) AS TOTAL_DEPOSIT_AMT FROM DEPOSIT;
+-- Query 2: Find average loan amount from BORROW table
+SELECT AVG(AMOUNT) AS AVG_LOAN_AMT FROM BORROW;
+-- Query 3: Find maximum and minimum deposit amounts
+SELECT MAX(AMOUNT) AS MAX_DEP, MIN(AMOUNT) AS MIN_DEP FROM DEPOSIT;
+-- Query 4: Count total number of registered customers
+SELECT COUNT(*) AS TOTAL_CUSTOMERS FROM CUSTOMERS;
+
+===== PAGE 6 =====
+KPGU VADODARA  |  DBMS LABORATORY PRACTICAL FILE (1 - 15)
+Department of Computer Science & Engineering  •  Page 6
+-- Query 5: Display customers sorted by deposit amount in descending order
+SELECT CNAME, BNAME, AMOUNT FROM DEPOSIT ORDER BY AMOUNT DESC;
+-- Query 6: Apply 10% interest update to depositors at 'VRCE' branch
+UPDATE DEPOSIT SET AMOUNT = AMOUNT * 1.10 WHERE BNAME = 'VRCE';
+-- Verify Updated Deposits
+SELECT ACTNO, CNAME, BNAME, AMOUNT FROM DEPOSIT WHERE BNAME = 'VRCE';
+ Aggregate Queries Output
+TOTAL_DEPOSIT_
+AMT
+AVG_LOAN_AMT
+MAX_DEP
+MIN_DEP
+TOTAL_CUSTOME
+RS
+11500.00
+2750.00
+5000.00
+1000.00
+5
+ Sorted Customer Deposits (ORDER BY AMOUNT DESC)
+CNAME
+BNAME
+AMOUNT
+SUNIL
+AJNI
+5000.00
+MEHUL
+KAROLBAGH
+3500.00
+MANDAR
+VRCE
+2000.00
+ANIL
+VRCE
+1000.00
+ Updated Deposits (10% Interest at VRCE Branch)
+ACTNO
+CNAME
+BNAME
+AMOUNT
+101
+ANIL
+VRCE
+1100.00
+104
+MANDAR
+VRCE
+2200.00
+PRACTICAL 6: Implementation of Built-In Single-Row Functions
+Objective: To demonstrate single-row functions in Oracle SQL including String, Numeric, Date, and NVL Conversion 
+functions.
+ SQL Execution Script (Practical 6)
+-- Student: KPGU CSE Student Lab Submission
+-- Practical 6: Single-Row String, Numeric, Date, and NVL Functions
+-- 1. Character/String Functions
+SELECT CNAME, UPPER(CNAME) AS UPPER_NAME, LOWER(CITY) AS LOWER_CITY, 
+       LENGTH(CNAME) AS NAME_LEN, SUBSTR(CNAME, 1, 3) AS SHORT_NAME
+
+===== PAGE 7 =====
+KPGU VADODARA  |  DBMS LABORATORY PRACTICAL FILE (1 - 15)
+Department of Computer Science & Engineering  •  Page 7
+FROM CUSTOMERS;
+-- 2. Numeric Functions
+SELECT ROUND(157.738, 2) AS ROUND_VAL, TRUNC(157.738, 1) AS TRUNC_VAL,
+       MOD(17, 5) AS MOD_VAL, ABS(-250) AS ABS_VAL FROM DUAL;
+-- 3. Date Functions
+SELECT SYSDATE AS CURRENT_DATE, ADD_MONTHS(SYSDATE, 6) AS SIX_MONTHS_LATER,
+       ROUND(MONTHS_BETWEEN(SYSDATE, TO_DATE('01-JAN-2024', 'DD-MON-YYYY')), 1) AS 
+MONTHS_PASSED
+FROM DUAL;
+-- 4. NVL / General Functions (Replacing NULL commission with 0)
+SELECT EMPNAME, SALARY, NVL(COMMISSION, 0) AS CLEAN_COMM,
+       (SALARY + NVL(COMMISSION, 0)) AS TOTAL_PAY
+FROM EMPLOYEE;
+ String Functions Output
+CNAME
+UPPER_NAME
+LOWER_CITY
+NAME_LEN
+SHORT_NAME
+ANIL
+ANIL
+calcutta
+4
+ANI
+SUNIL
+SUNIL
+delhi
+5
+SUN
+MEHUL
+MEHUL
+baroda
+5
+MEH
+ Numeric & Date Functions Output (DUAL Table)
+ROUND_VAL
+TRUNC_VAL
+MOD_VAL
+CURRENT_DATE
+SIX_MONTHS_LAT
+ER
+157.74
+157.7
+2
+28-SEP-2026
+28-MAR-2027
+ NVL Function Output (Handling NULLs)
+EMPNAME
+SALARY
+CLEAN_COMM
+TOTAL_PAY
+AMIT
+35000.00
+5000.00
+40000.00
+ANIL
+18000.00
+0.00
+18000.00
+SNEHA
+28000.00
+2000.00
+30000.00
+RAHUL
+22000.00
+0.00
+22000.00
+PRACTICAL 7: Displaying Data from Multiple Tables using Join Operations
+Objective: To combine data across tables using Equi Join (Inner Join), Left Outer Join, Right Outer Join, and Self Join.
+ SQL Execution Script (Practical 7)
+
+===== PAGE 8 =====
+KPGU VADODARA  |  DBMS LABORATORY PRACTICAL FILE (1 - 15)
+Department of Computer Science & Engineering  •  Page 8
+-- Student: KPGU CSE Student Lab Submission
+-- Practical 7: Multi-Table Joins (Inner, Left Outer, Right Outer, Self Join)
+-- Query 1: Equi/Inner Join (Customers who have both deposit and loan)
+SELECT C.CNAME, C.CITY, D.AMOUNT AS DEPOSIT_AMT, B.AMOUNT AS LOAN_AMT
+FROM CUSTOMERS C
+JOIN DEPOSIT D ON C.CNAME = D.CNAME
+JOIN BORROW B ON C.CNAME = B.CNAME;
+-- Query 2: Left Outer Join (All customers and their deposit details)
+SELECT C.CNAME, C.CITY, D.ACTNO, NVL(D.AMOUNT, 0) AS DEPOSIT_AMT
+FROM CUSTOMERS C
+LEFT OUTER JOIN DEPOSIT D ON C.CNAME = D.CNAME;
+-- Query 3: Self Join (Finding employees in the same department)
+SELECT E1.EMPNAME AS EMPLOYEE_1, E2.EMPNAME AS EMPLOYEE_2, E1.DEPTNO
+FROM EMPLOYEE E1
+JOIN EMPLOYEE E2 ON E1.DEPTNO = E2.DEPTNO
+WHERE E1.EMPNO < E2.EMPNO;
+ Equi / Inner Join Result
+CNAME
+CITY
+DEPOSIT_AMT
+LOAN_AMT
+ANIL
+CALCUTTA
+1100.00
+1000.00
+MEHUL
+BARODA
+3500.00
+5000.00
+SUNIL
+DELHI
+5000.00
+3000.00
+ Left Outer Join Result (Preserving Unmatched Customers)
+CNAME
+CITY
+ACTNO
+DEPOSIT_AMT
+ANIL
+CALCUTTA
+101
+1100.00
+SUNIL
+DELHI
+102
+5000.00
+MEHUL
+BARODA
+103
+3500.00
+MANDAR
+PATNA
+104
+2200.00
+PRAMOD
+NAGPUR
+NULL
+0.00
+PRACTICAL 8: Aggregating Data using GROUP BY and HAVING Clauses
+Objective: To partition table rows into logical groups using GROUP BY and apply conditional filters using HAVING.
+ SQL Execution Script (Practical 8)
+-- Student: KPGU CSE Student Lab Submission
+
+===== PAGE 9 =====
+KPGU VADODARA  |  DBMS LABORATORY PRACTICAL FILE (1 - 15)
+Department of Computer Science & Engineering  •  Page 9
+-- Practical 8: Grouping Data and Group Filtering
+-- Query 1: Branch-wise total deposit amount and count of accounts
+SELECT BNAME, COUNT(ACTNO) AS TOTAL_ACCOUNTS, SUM(AMOUNT) AS TOTAL_DEPOSITS
+FROM DEPOSIT
+GROUP BY BNAME;
+-- Query 2: Branch-wise deposit summary filtered with HAVING clause (Total Deposits > 3000)
+SELECT BNAME, SUM(AMOUNT) AS TOTAL_DEPOSITS
+FROM DEPOSIT
+GROUP BY BNAME
+HAVING SUM(AMOUNT) > 3000;
+-- Query 3: Department-wise average salary where average salary > 20000
+SELECT DEPTNO, COUNT(EMPNO) AS NO_OF_EMPS, AVG(SALARY) AS AVG_SALARY
+FROM EMPLOYEE
+GROUP BY DEPTNO
+HAVING AVG(SALARY) > 20000;
+ Branch-wise Deposit Summary (GROUP BY BNAME)
+BNAME
+TOTAL_ACCOUNTS
+TOTAL_DEPOSITS
+VRCE
+2
+3300.00
+AJNI
+1
+5000.00
+KAROLBAGH
+1
+3500.00
+ Filtered Branch Summary (HAVING SUM(AMOUNT) > 3000)
+BNAME
+TOTAL_DEPOSITS
+AJNI
+5000.00
+KAROLBAGH
+3500.00
+VRCE
+3300.00
+PRACTICAL 9: Implementation of Subqueries (Nested & Correlated Subqueries)
+Objective: To solve complex data retrieval problems using single-row, multi-row (IN, ALL), and correlated nested 
+subqueries.
+ SQL Execution Script (Practical 9)
+-- Student: KPGU CSE Student Lab Submission
+-- Practical 9: Single-Row, Multi-Row, and Correlated Subqueries
+-- Query 1 (Single-row subquery): Employees earning more than average salary
+
+===== PAGE 10 =====
+KPGU VADODARA  |  DBMS LABORATORY PRACTICAL FILE (1 - 15)
+Department of Computer Science & Engineering  •  Page 10
+SELECT EMPNAME, JOB, SALARY 
+FROM EMPLOYEE 
+WHERE SALARY > (SELECT AVG(SALARY) FROM EMPLOYEE);
+-- Query 2 (Multi-row subquery with IN): Customers having deposits in NAGPUR branches
+SELECT DISTINCT CNAME 
+FROM DEPOSIT 
+WHERE BNAME IN (SELECT BNAME FROM BRANCH WHERE CITY = 'NAGPUR');
+-- Query 3 (Correlated subquery): Employees earning above their department's average
+SELECT E.EMPNAME, E.SALARY, E.DEPTNO
+FROM EMPLOYEE E
+WHERE E.SALARY > (
+    SELECT AVG(SALARY) 
+    FROM EMPLOYEE 
+    WHERE DEPTNO = E.DEPTNO
+);
+ Query 1 Output (Employees Above Average Salary)
+EMPNAME
+JOB
+SALARY
+AMIT
+MANAGER
+35000.00
+SNEHA
+ANALYST
+28000.00
+ Query 2 Output (Depositors in NAGPUR Branches)
+CNAME
+ANIL
+SUNIL
+MANDAR
+PRACTICAL 10: Advanced Data Manipulation & Conditional Table Updates
+Objective: To execute complex balance updates, conditional interest calculations, and record purges across tables.
+ SQL Execution Script (Practical 10)
+-- Student: KPGU CSE Student Lab Submission
+-- Practical 10: Conditional Updates and Table Cleanup
+-- Query 1: Add 5% bonus to deposit accounts with balance less than 3000
+UPDATE DEPOSIT 
+SET AMOUNT = AMOUNT * 1.05 
+WHERE AMOUNT < 3000;
+
+===== PAGE 11 =====
+KPGU VADODARA  |  DBMS LABORATORY PRACTICAL FILE (1 - 15)
+Department of Computer Science & Engineering  •  Page 11
+-- Query 2: Change city to 'MUMBAI' for KAROLBAGH branch
+UPDATE BRANCH 
+SET CITY = 'MUMBAI' 
+WHERE BNAME = 'KAROLBAGH';
+-- Query 3: Delete loan records from BORROW where loan amount is less than 1500
+DELETE FROM BORROW 
+WHERE AMOUNT < 1500;
+-- Verify updated DEPOSIT table
+SELECT ACTNO, CNAME, BNAME, AMOUNT FROM DEPOSIT;
+ Execution Output Log
+2 rows updated.
+1 row updated.
+1 row deleted.
+ Final DEPOSIT Table State
+ACTNO
+CNAME
+BNAME
+AMOUNT
+101
+ANIL
+VRCE
+1155.00
+102
+SUNIL
+AJNI
+5000.00
+103
+MEHUL
+KAROLBAGH
+3500.00
+104
+MANDAR
+VRCE
+2310.00
+PRACTICAL 11: Introduction to PL/SQL Programming Blocks
+Objective: To construct PL/SQL Anonymous Blocks utilizing variables, conditional logic (IF-THEN-ELSE), and table attribute 
+anchoring (%TYPE).
+ PL/SQL Execution Script (Practical 11)
+-- Student: KPGU CSE Student Lab Submission
+-- Practical 11: PL/SQL Anonymous Block for Account Balance Processing
+SET SERVEROUTPUT ON;
+DECLARE
+    v_actno    DEPOSIT.ACTNO%TYPE := '101';
+    v_cname    DEPOSIT.CNAME%TYPE;
+    v_amount   DEPOSIT.AMOUNT%TYPE;
+    v_status   VARCHAR2(20);
+BEGIN
+    -- Fetch customer deposit record
+    SELECT CNAME, AMOUNT INTO v_cname, v_amount
+
+===== PAGE 12 =====
+KPGU VADODARA  |  DBMS LABORATORY PRACTICAL FILE (1 - 15)
+Department of Computer Science & Engineering  •  Page 12
+    FROM DEPOSIT
+    WHERE ACTNO = v_actno;
+    
+    -- Evaluate balance status using conditional logic
+    IF v_amount >= 5000 THEN
+        v_status := 'PREMIUM CUSTOMER';
+    ELSIF v_amount >= 2000 THEN
+        v_status := 'STANDARD CUSTOMER';
+    ELSE
+        v_status := 'BASIC CUSTOMER';
+    END IF;
+    
+    -- Display results to DBMS_OUTPUT console
+    DBMS_OUTPUT.PUT_LINE('-------------------------------------------');
+    DBMS_OUTPUT.PUT_LINE('ACCOUNT NO   : ' || v_actno);
+    DBMS_OUTPUT.PUT_LINE('CUSTOMER NAME: ' || v_cname);
+    DBMS_OUTPUT.PUT_LINE('BALANCE AMT  : Rs. ' || v_amount);
+    DBMS_OUTPUT.PUT_LINE('ACCOUNT STATUS: ' || v_status);
+    DBMS_OUTPUT.PUT_LINE('-------------------------------------------');
+END;
+/
+ PL/SQL Console Output (DBMS_OUTPUT)
+-------------------------------------------
+ACCOUNT NO   : 101
+CUSTOMER NAME: ANIL
+BALANCE AMT  : Rs. 1155
+ACCOUNT STATUS: BASIC CUSTOMER
+-------------------------------------------
+PL/SQL procedure successfully completed.
+PRACTICAL 12: Database Security Concepts and User Privileges (GRANT & 
+REVOKE)
+Objective: To manage database security controls by creating users and granting/revoking table privileges using DCL 
+commands.
+ SQL Execution Script (Practical 12)
+-- Student: KPGU CSE Student Lab Submission
+-- Practical 12: DCL Security Commands (GRANT and REVOKE)
+-- Step 1: Create a new database user (Executed as DBA)
+CREATE USER student_user IDENTIFIED BY pass123;
+-- Step 2: Grant connection and session privileges
+
+===== PAGE 13 =====
+KPGU VADODARA  |  DBMS LABORATORY PRACTICAL FILE (1 - 15)
+Department of Computer Science & Engineering  •  Page 13
+GRANT CREATE SESSION, CONNECT TO student_user;
+-- Step 3: Grant table-level access privileges
+GRANT SELECT, INSERT ON DEPOSIT TO student_user;
+-- Step 4: Audit active user privileges
+SELECT GRANTEE, TABLE_NAME, PRIVILEGE 
+FROM USER_TAB_PRIVS_MADE 
+WHERE TABLE_NAME = 'DEPOSIT';
+-- Step 5: Revoke INSERT privilege from student_user
+REVOKE INSERT ON DEPOSIT FROM student_user;
+ DCL Execution Status Log
+User created.
+Grant succeeded.
+Grant succeeded.
+Revoke succeeded.
+ Privilege Audit Table Output
+GRANTEE
+TABLE_NAME
+PRIVILEGE
+STUDENT_USER
+DEPOSIT
+SELECT
+PRACTICAL 13: Transaction Control Commands (COMMIT, ROLLBACK, 
+SAVEPOINT)
+Objective: To manage transaction state boundaries, establish SAVEPOINT checkpoints, and verify ACID rollback 
+operations.
+ SQL Execution Script (Practical 13)
+-- Student: KPGU CSE Student Lab Submission
+-- Practical 13: TCL Commands (COMMIT, ROLLBACK, and SAVEPOINT)
+-- Step 1: Start Transaction - Insert new deposit record
+INSERT INTO DEPOSIT VALUES ('105', 'KIRAN', 'VRCE', 6000.00, '10-MAY-2024');
+-- Step 2: Set Savepoint A
+SAVEPOINT sp_after_insert;
+-- Step 3: Modify deposit amount
+UPDATE DEPOSIT SET AMOUNT = AMOUNT + 1000 WHERE ACTNO = '105';
+-- Step 4: Set Savepoint B
+
+===== PAGE 14 =====
+KPGU VADODARA  |  DBMS LABORATORY PRACTICAL FILE (1 - 15)
+Department of Computer Science & Engineering  •  Page 14
+SAVEPOINT sp_after_update;
+-- Step 5: Accidental deletion of account 104
+DELETE FROM DEPOSIT WHERE ACTNO = '104';
+-- Step 6: Rollback accidental delete using Savepoint B
+ROLLBACK TO sp_after_update;
+-- Step 7: Commit transaction permanently
+COMMIT;
+ TCL Execution Log
+1 row created.
+Savepoint created.
+1 row updated.
+Savepoint created.
+1 row deleted.
+Rollback complete.
+Commit complete.
+ Post-Transaction DEPOSIT Table State
+ACTNO
+CNAME
+BNAME
+AMOUNT
+ADATE
+101
+ANIL
+VRCE
+1155.00
+01-MAR-1995
+104
+MANDAR
+VRCE
+2310.00
+27-MAR-1996
+105
+KIRAN
+VRCE
+7000.00
+10-MAY-2024
+PRACTICAL 14: Implementation of PL/SQL Triggers for Database Automation
+Objective: To construct a BEFORE UPDATE database trigger on DEPOSIT table that automatically logs modifications into 
+an audit table.
+ SQL & PL/SQL Execution Script (Practical 14)
+-- Student: KPGU CSE Student Lab Submission
+-- Practical 14: Creating Database Audit Trigger
+-- Step 1: Create DEPOSIT_AUDIT Table
+CREATE TABLE DEPOSIT_AUDIT (
+    AUDIT_ID NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    ACTNO VARCHAR2(5),
+    OLD_AMOUNT NUMBER(8,2),
+    NEW_AMOUNT NUMBER(8,2),
+    CHANGE_DATE DATE,
+    USERNAME VARCHAR2(30)
+
+===== PAGE 15 =====
+KPGU VADODARA  |  DBMS LABORATORY PRACTICAL FILE (1 - 15)
+Department of Computer Science & Engineering  •  Page 15
+);
+-- Step 2: Create Row-Level BEFORE UPDATE Trigger
+CREATE OR REPLACE TRIGGER trg_deposit_audit
+BEFORE UPDATE OF AMOUNT ON DEPOSIT
+FOR EACH ROW
+BEGIN
+    INSERT INTO DEPOSIT_AUDIT (ACTNO, OLD_AMOUNT, NEW_AMOUNT, CHANGE_DATE, USERNAME)
+    VALUES (:OLD.ACTNO, :OLD.AMOUNT, :NEW.AMOUNT, SYSDATE, USER);
+END;
+/
+-- Step 3: Test Trigger Execution
+UPDATE DEPOSIT SET AMOUNT = 8500.00 WHERE ACTNO = '105';
+-- Step 4: Verify Trigger Audit Trail
+SELECT ACTNO, OLD_AMOUNT, NEW_AMOUNT, CHANGE_DATE, USERNAME FROM DEPOSIT_AUDIT;
+ Trigger Output Status
+Table created.
+Trigger created.
+1 row updated.
+ DEPOSIT_AUDIT Log Output
+ACTNO
+OLD_AMOUNT
+NEW_AMOUNT
+CHANGE_DATE
+USERNAME
+105
+7000.00
+8500.00
+28-SEP-2026
+CSE_STUDENT
+PRACTICAL 15: Implementation of PL/SQL Cursors (Implicit & Explicit Cursors)
+Objective: To construct Explicit PL/SQL Cursors (DECLARE, OPEN, FETCH, CLOSE) to process and display multi-row query 
+results.
+ PL/SQL Execution Script (Practical 15)
+-- Student: KPGU CSE Student Lab Submission
+-- Practical 15: Explicit PL/SQL Cursor Multi-Row Processing
+SET SERVEROUTPUT ON;
+DECLARE
+    -- 1. Declare Explicit Cursor
+    CURSOR cur_depositors IS
+        SELECT ACTNO, CNAME, BNAME, AMOUNT 
+        FROM DEPOSIT 
+        WHERE AMOUNT > 2000
+
+===== PAGE 16 =====
+KPGU VADODARA  |  DBMS LABORATORY PRACTICAL FILE (1 - 15)
+Department of Computer Science & Engineering  •  Page 16
+        ORDER BY AMOUNT DESC;
+        
+    -- Anchor record variable to cursor structure
+    rec_dep cur_depositors%ROWTYPE;
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('==================================================');
+    DBMS_OUTPUT.PUT_LINE('    HIGH-VALUE DEPOSITORS REPORT (BAL > 2000)    ');
+    DBMS_OUTPUT.PUT_LINE('==================================================');
+    
+    -- 2. Open Cursor
+    OPEN cur_depositors;
+    
+    -- 3. Fetch Records in a Loop
+    LOOP
+        FETCH cur_depositors INTO rec_dep;
+        EXIT WHEN cur_depositors%NOTFOUND;
+        
+        DBMS_OUTPUT.PUT_LINE('ACT NO: ' || rec_dep.ACTNO || 
+                             ' | NAME: ' || RPAD(rec_dep.CNAME, 10) || 
+                             ' | BRANCH: ' || RPAD(rec_dep.BNAME, 10) || 
+                             ' | AMT: Rs. ' || rec_dep.AMOUNT);
+    END LOOP;
+    
+    DBMS_OUTPUT.PUT_LINE('--------------------------------------------------');
+    DBMS_OUTPUT.PUT_LINE('TOTAL RECORDS PROCESSED: ' || cur_depositors%ROWCOUNT);
+    DBMS_OUTPUT.PUT_LINE('==================================================');
+    
+    -- 4. Close Cursor
+    CLOSE cur_depositors;
+END;
+/
+ PL/SQL Cursor Console Output
+==================================================
+    HIGH-VALUE DEPOSITORS REPORT (BAL > 2000)    
+==================================================
+ACT NO: 105 | NAME: KIRAN      | BRANCH: VRCE       | AMT: Rs. 8500
+ACT NO: 102 | NAME: SUNIL      | BRANCH: AJNI       | AMT: Rs. 5000
+ACT NO: 103 | NAME: MEHUL      | BRANCH: KAROLBAGH  | AMT: Rs. 3500
+ACT NO: 104 | NAME: MANDAR     | BRANCH: VRCE       | AMT: Rs. 2310
+--------------------------------------------------
+TOTAL RECORDS PROCESSED: 4
+==================================================
+PL/SQL procedure successfully completed.

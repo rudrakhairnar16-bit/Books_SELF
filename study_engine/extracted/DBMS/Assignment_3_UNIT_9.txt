@@ -1,0 +1,30 @@
+SOURCE: SEM3/DBMS/Assignment 3 UNIT 9.pdf
+
+===== PAGE 1 =====
+Issue Date: 31/08/2026 
+Submission Date: 21/09/2026 
+ 
+ 
+ 
+ 
+ 
+Krishna School of Emerging Technology and Applied Research, 
+Department of Computer Science and Engineering 
+Module:9 
+Assignment:3 
+ 
+1. Explain the importance of database security. Discuss common threats to 
+database systems. 
+2. Differentiate between authentication, authorization, and access control in the 
+context of databases. 
+3. Describe the DAC, MAC, and RBAC models of access control. Provide 
+examples of each. 
+4. Discuss the role of intrusion detection in database security. Explain different 
+types of intrusion detection techniques. 
+5. Explain the concept of SQL injection and how it can be prevented. 
+6. Perform a case study on a real-world database security breach. Analyse the 
+factors leading to the breach. 
+7. Design a secure database system using appropriate security measures, including 
+authentication, authorization, and access control. 
+ 
+ 

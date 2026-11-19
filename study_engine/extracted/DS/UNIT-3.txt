@@ -1,0 +1,348 @@
+SOURCE: SEM3/DS/UNIT-3.pdf
+
+===== PAGE 1 =====
+Linked List Algorithm 
+ 
+Algorithm for traversing a linked list 
+ 
+Step 1: [INITIALIZE] SET PTR = START 
+Step 2: Repeat Steps 3 and 4 while PTR != NULL 
+Step 3: Apply Process to PTR DATA 
+Step 4: SET PTR = PTR NEXT 
+[END OF LOOP] 
+Step 5: EXIT 
+ 
+ 
+Algorithm to insert a new node at the beginning 
+ 
+Step 1: IF AVAIL = NULL 
+Write OVERFLOW 
+Go to Step 7 
+[END OF IF] 
+Step 2: SET NEW_NODE = AVAIL 
+Step 3: SET AVAIL = AVAIL -> NEXT 
+Step 4: SET NEW_NODE - > DATA = VAL 
+Step 5: SET NEW_NODE -> NEXT = START 
+Step 6: SET START = NEW_NODE 
+Step 7: EXIT 
+ 
+ 
+Algorithm to insert a new node at the end  
+ 
+Step 1: IF AVAIL = NULL 
+Write OVERFLOW 
+Go to Step 1 
+[END OF IF] 
+Step 2: SET NEW_NODE= AVAIL 
+Step 3: SET AVAIL = AVAIL -> NEXT 
+Step 4: SET NEW_NODE - > DATA = VAL 
+Step 5: SET NEW_NODE -> NEXT = NULL 
+
+===== PAGE 2 =====
+Step 6: SET PTR = START 
+Step 7: Repeat Step 8 while PTR -> NEXT != NULL 
+Step 8: SET PTR = PTR  -> NEXT 
+[END OF LOOP] 
+Step 9: SET PTR  -> NEXT = NEW_NODE 
+Step 10: EXIT 
+ 
+New node before a given node in a singly linked list  
+ 
+Step 1: Check for Overflow  
+​
+IF AVAIL = NULL  
+Write "OVERFLOW"  
+Go to  
+Step 12 [END OF IF]  
+Step 2: Allocate New Node  
+​
+SET NEW_NODE = AVAIL  
+Step 3: Update AVAIL  
+​
+SET AVAIL = AVAIL -> NEXT  
+Step 4: Assign Data to New Node  
+​
+SET NEW_NODE -> DATA = VAL  
+Step 5: Initialize Pointers for Traversal  
+​
+SET PTR = START  
+Step 6: Set PREPTR = PTR  
+​
+SET PREPTR = PTR  (Initializes a pointer PREPTR to keep track of the previous node 
+during traversal. ) 
+Step 7: Loop Until Target Node is Found  
+​
+Repeat Steps 8 and 9 while PREPTR -> DATA != NUM (Continues traversing the list 
+until PREPTR holds the value NUM. ) 
+Step 8: Move PREPTR to Current PTR  
+​
+SET PREPTR = PTR (Saves the current node as the previous node before moving 
+forward. ) 
+Step 9: Move PTR to Next Node  
+​
+SET PTR = PTR -> NEXT (Advances the pointer to the next node in the list. ) 
+Step 10: Link PREPTR to NEW_NODE  
+​
+SET PREPTR -> NEXT = NEW_NODE (Inserts NEW_NODE after PREPTR. ) 
+Step 11: Link NEW_NODE to PTR  
+​
+SET NEW_NODE -> NEXT = PTR (Completes the link by connecting NEW_NODE 
+to the current node (PTR). ) 
+Step 12: EXIT  
+ 
+
+===== PAGE 3 =====
+ 
+deleting a node from the beginning of a singly linked list  
+ 
+Step 1: Check for Underflow (Empty List)  
+IF START = NULL  
+Write UNDERFLOW  
+Go to Step 5  
+[END OF IF]  
+ 
+Step 2: Store the First Node in PTR  
+SET PTR = START  
+ 
+Step 3: Move START to the Next Node  
+SET START = START -> NEXT  
+ 
+Step 4: Free the Removed Node  
+FREE PTR  
+ 
+Step 5: EXIT  
+ 
+ 
+Delete the last node from a singly linked list.  
+ 
+Step 1: Check for Underflow (Empty List)  
+IF START = NULL  
+Write UNDERFLOW  
+Go to Step 5  
+[END OF IF]  
+ 
+Step 2: Store the First Node in PTR  
+SET PTR = START  
+ 
+Step 3: Traverse the List Until Last Node  
+Repeat Steps 4 and 5 while PTR -> NEXT != NULL  
+ 
+Step 4: Update PREPTR  
+SET PREPTR = PTR (Stores the current node before moving PTR forward. ) 
+ 
+Step 5: Move PTR to the Next Node  
+SET PTR = PTR -> NEXT  
+
+===== PAGE 4 =====
+ 
+Step 6: Unlink the Last Node  
+SET PREPTR -> NEXT = NULL (Disconnects the last node from the list ) 
+ 
+Step 7: Free the Last Node  
+FREE PTR  
+ 
+Step 5: EXIT 
+ 
+ 
+Add new node at the start of a circular singly linked list  
+ 
+ 
+Step 1: Check for Overflow  
+IF AVAIL = NULL  
+Write OVERFLOW  
+Go to Step 11  
+[END OF IF]  
+ 
+Step 2: Allocate a New Node  
+SET NEW_NODE = AVAIL  
+
+===== PAGE 5 =====
+Step 3: Update AVAIL 
+SET AVAIL = AVAIL -> NEXT 
+ 
+Step 4: Store the Data 
+SET NEW_NODE -> DATA = VAL 
+ 
+Step 5: Start Traversal 
+SET PTR = START 
+ 
+Step 6: Traverse Until Last Node 
+Repeat Step 7 while PTR -> NEXT != START (Loop until PTR points to the last node in 
+the circular list. ) 
+ 
+Step 7: Move Pointer Forward 
+PTR = PTR -> NEXT 
+ 
+Step 8: Point New Node to Old Start 
+SET NEW_NODE -> NEXT = START(The new node’s NEXT should point to the old 
+START. ) 
+ 
+Step 9: Update Last Node to Point to New Node 
+SET PTR -> NEXT = NEW_NODE (The last node (pointed by PTR) now points to the new 
+node. ) 
+ 
+Step 10: Update START 
+SET START = NEW_NODE 
+ 
+Step 11: EXIT  
+ 
+Delete the first node in a circular singly linked list.  
+
+===== PAGE 6 =====
+ 
+ 
+Step 1: Check for Underflow  
+IF START = NULL  
+Write UNDERFLOW  
+Go to Step 8  
+[END OF IF]  
+ 
+Step 2: Initialize Traversal  
+SET PTR = START  
+ 
+Step 3 & 4: Find the Last Node  
+Repeat Step 3 while PTR -> NEXT != START  
+Step 4: SET PTR = PTR -> NEXT  
+[END OF LOOP]  
+ 
+Step 5: Link Last Node to Second Node  
+SET PTR -> NEXT = START -> NEXT  
+ 
+Step 6: Free the First Node  
+FREE START  
+ 
+Step 7: Update START  
+SET START = PTR -> NEXT  
+
+===== PAGE 7 =====
+ 
+Step 8: EXIT  
+ 
+ 
+Deleting the last node in a circular singly linked list.  
+ 
+ 
+ 
+Step 1: Check for Underflow  
+IF START = NULL  
+Write UNDERFLOW  
+Go to Step 8  
+[END OF IF]  
+ 
+Step 2: Initialize Traversal  
+SET PTR = START  
+ 
+Step 3 & 4: Find the Last Node  
+Repeat Step 3 while PTR -> NEXT != START  
+Step 4: SET PTR = PTR -> NEXT  
+[END OF LOOP]  
+
+===== PAGE 8 =====
+ 
+Step 6: Link Second Last Node to First Node  
+SET PREPTR -> NEXT = START  
+ 
+Step 7: Free the Last Node  
+FREE PTR  
+ 
+Step 8: EXIT  
+ 
+ 
+Insert a new node at the beginning of a doubly linked list.  
+ 
+Step 1: Check for Overflow  
+​
+IF AVAIL = NULL  
+Write "OVERFLOW"  
+Go to  
+Step 12 [END OF IF]  
+Step 2: Allocate New Node  
+​
+SET NEW_NODE = AVAIL  
+Step 3: Update AVAIL  
+​
+SET AVAIL = AVAIL -> NEXT  
+Step 4: Assign Data to New Node  
+​
+SET NEW_NODE -> DATA = VAL  
+Step 5: Set PREV of New Node  
+​
+SET NEW_NODE -> PREV = NULL 
+Step 6: Link New Node to Existing List  
+SET NEW_NODE -> NEXT  = START  
+Step 7: SET START -> PREV = NEW_NODE  
+Step 8: SET START = NEW_NODE  
+Step 9: EXIT  
+ 
+ 
+Algorithm: Insert at End (Doubly Linked List)  
+ 
+Step 1: IF AVAIL = NULL  
+Write OVERFLOW  
+Go to Step 11  
+[END OF IF]  
+Step 2: SET NEW_NODE= AVAIL  
+
+===== PAGE 9 =====
+Step 3: SET AVAIL = AVAIL-> NEXT  
+Step 4: SET NEW_NODE-> DATA = VAL  
+Step 5: SET NEW_NODE -> NEXT= NULL  
+Step 6: SET PTR = START  
+Step 7: Repeat Step 8 while PTR -> NEXT != NULL  
+Step 8: SET PTR = PTR -> NEXT  
+[END OF LOOP]  
+Step 9: SET PTR ->NEXT = NEW_NODE  
+Step 10 : SET NEW_NODE ->PREV = PTR  
+Step 11: EXIT  
+ 
+ 
+Deleting the First Node from a Doubly Linked List 
+ 
+ 
+Step 1: Check for Underflow (Empty List)  
+IF START = NULL  
+Write UNDERFLOW  
+Go to Step 5  
+[END OF IF]  
+ 
+Step 2: Store the First Node in PTR  
+SET PTR = START  
+ 
+Step 3: Move START to the Next Node  
+SET START = START -> NEXT  
+ 
+Step 4: SET START ->  PREV = NULL 
+ 
+Step 4: Free the Removed Node  
+FREE PTR  
+ 
+Step 5: EXIT  
+
+===== PAGE 10 =====
+ 
+ 
+Deleting the Last Node from a Doubly Linked List 
+ 
+ 
+Step 1: Check for Underflow (Empty List)  
+IF START = NULL  
+Write UNDERFLOW  
+Go to Step 7 
+[END OF IF]  
+ 
+Step 2: Store the First Node in PTR  
+SET PTR = START  
+ 
+Step 3: Traverse the List Until Last Node  
+Repeat Steps 4  while PTR -> NEXT != NULL  
+ 
+Step 4: Move PTR to the Next Node  
+SET PTR = PTR -> NEXT  
+ 
+Step 5: Unlink the Last Node  
+SET PTR -> PREV -> NEXT = NULL 
+ 
+Step 6: Free the Removed Node  
+FREE PTR  
+ 
+Step 7: EXIT  

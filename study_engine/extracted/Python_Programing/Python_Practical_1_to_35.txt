@@ -1,0 +1,1021 @@
+SOURCE: SEM3/Python_Programing/Python_Practical_1_to_35.pdf
+
+===== PAGE 1 =====
+PYTHON PROGRAMMING LABORATORY WORKBOOK
+Complete Practical Solutions (Practicals 1 to 35)
+Department of Computer Science & Engineering | KPGU Vadodara
+Practical 1: Environment Setup & Execution
+Aim/Objective: Install the Python programming environment, configure interpreter, and run a basic verification 
+script.
+Python Source Code:
+import sys
+import platform
+# Practical 1: Python Environment Verification
+print("=" * 45)
+print("     PYTHON ENVIRONMENT VERIFICATION     ")
+print("=" * 45)
+# Displaying Welcome Message & System Information
+print("Hello, World! Welcome to Python Programming Laboratory.")
+print(f"Python Interpreter Version : {sys.version.split()[0]}")
+print(f"Operating System Platform  : {platform.system()} {platform.release()}")
+print(f"Executable File Path       : {sys.executable}")
+print("-" * 45)
+print("Python Environment Configured Successfully!")
+Console Output:
+=============================================
+     PYTHON ENVIRONMENT VERIFICATION     
+=============================================
+Hello, World! Welcome to Python Programming Laboratory.
+Python Interpreter Version : 3.12.2
+Operating System Platform  : Windows 11
+Executable File Path       : C:\Python312\python.exe
+---------------------------------------------
+Python Environment Configured Successfully!
+Practical 2: Variables, Identifiers & Built-in Data Types
+Aim/Objective: Demonstrate variables, dynamic typing, keywords, and fundamental primitive & sequence data types.
+Python Source Code:
+# Practical 2: Variables & Built-in Data Types
+
+===== PAGE 2 =====
+# Primitive Data Types
+student_id = 101               # int
+gpa = 8.75                     # float
+complex_val = 3 + 4j           # complex
+student_name = "Aman Sharma"   # str
+is_enrolled = True            # bool
+# Sequence & Collection Types
+marks_list = [85, 92, 78, 90]                      # Mutable List
+coordinates_tuple = (22.3072, 73.1812)             # Immutable Tuple
+unique_skills = {"Python", "C++", "SQL"}            # Set
+student_dict = {"roll_no": 101, "branch": "CSE"}   # Dictionary
+print("--- Variable Summary & Type Checking ---")
+print(f"Student Name: {student_name} | Type: {type(student_name).__name__}")
+print(f"Student ID  : {student_id} | Type: {type(student_id).__name__}")
+print(f"GPA Value   : {gpa} | Type: {type(gpa).__name__}")
+print(f"Complex Num : {complex_val} | Type: {type(complex_val).__name__}")
+print(f"Enrolled    : {is_enrolled} | Type: {type(is_enrolled).__name__}")
+print(f"Marks List  : {marks_list} | Type: {type(marks_list).__name__}")
+print(f"Coordinates : {coordinates_tuple} | Type: {type(coordinates_tuple).__name__}")
+print(f"Skills Set  : {unique_skills} | Type: {type(unique_skills).__name__}")
+print(f"Dict Record : {student_dict} | Type: {type(student_dict).__name__}")
+Console Output:
+--- Variable Summary & Type Checking ---
+Student Name: Aman Sharma | Type: str
+Student ID  : 101 | Type: int
+GPA Value   : 8.75 | Type: float
+Complex Num : (3+4j) | Type: complex
+Enrolled    : True | Type: bool
+Marks List  : [85, 92, 78, 90] | Type: list
+Coordinates : (22.3072, 73.1812) | Type: tuple
+Skills Set  : {'SQL', 'Python', 'C++'} | Type: set
+Dict Record : {'roll_no': 101, 'branch': 'CSE'} | Type: dict
+Practical 3: Arithmetic Operations on User Inputs
+Aim/Objective: Perform standard arithmetic operations (addition, subtraction, multiplication, division, floor division, 
+modulus, power).
+Python Source Code:
+# Practical 3: Arithmetic Calculator
+# Reading user inputs
+num1 = float(input("Enter first number : ") or 15)
+num2 = float(input("Enter second number: ") or 4)
+print("
+
+===== PAGE 3 =====
+=== ARITHMETIC RESULTS ===")
+print(f"Addition ({num1} + {num2})        = {num1 + num2}")
+print(f"Subtraction ({num1} - {num2})     = {num1 - num2}")
+print(f"Multiplication ({num1} * {num2})  = {num1 * num2}")
+print(f"True Division ({num1} / {num2})   = {num1 / num2:.4f}")
+print(f"Floor Division ({num1} // {num2}) = {num1 // num2}")
+print(f"Modulus ({num1} % {num2})        = {num1 % num2}")
+print(f"Exponentiation ({num1} ** {num2}) = {num1 ** num2}")
+Console Output:
+Enter first number : 15
+Enter second number: 4
+=== ARITHMETIC RESULTS ===
+Addition (15.0 + 4.0)        = 19.0
+Subtraction (15.0 - 4.0)     = 11.0
+Multiplication (15.0 * 4.0)  = 60.0
+True Division (15.0 / 4.0)   = 3.7500
+Floor Division (15.0 // 4.0) = 3.0
+Modulus (15.0 % 4.0)        = 3.0
+Exponentiation (15.0 ** 4.0) = 50625.0
+Practical 4: Relational, Logical, Assignment & Membership Operators
+Aim/Objective: Demonstrate relational, logical, combined assignment, and membership operators.
+Python Source Code:
+# Practical 4: Operator Categories Demonstration
+x, y = 10, 20
+languages = ["Python", "Java", "C++"]
+print("--- 1. Relational Operators ---")
+print(f"{x} == {y} : {x == y}")
+print(f"{x} != {y} : {x != y}")
+print(f"{x} < {y}  : {x < y}")
+print("
+--- 2. Logical Operators ---")
+print(f"({x} < {y}) and ({y} > 15) : {(x < y) and (y > 15)}")
+print(f"({x} > {y}) or ({y} == 20) : {(x > y) or (y == 20)}")
+print(f"not ({x} == 10)         : {not (x == 10)}")
+print("
+--- 3. Membership Operators ---")
+print(f"'Python' in languages    : {'Python' in languages}")
+print(f"'Go' not in languages    : {'Go' not in languages}")
+print("
+
+===== PAGE 4 =====
+--- 4. Assignment Operators ---")
+x += 5
+print(f"After x += 5, x is      : {x}")
+x *= 2
+print(f"After x *= 2, x is      : {x}")
+Console Output:
+--- 1. Relational Operators ---
+10 == 20 : False
+10 != 20 : True
+10 < 20  : True
+--- 2. Logical Operators ---
+(10 < 20) and (20 > 15) : True
+(10 > 20) or (20 == 20) : True
+not (10 == 10)         : False
+--- 3. Membership Operators ---
+'Python' in languages    : True
+'Go' not in languages    : True
+--- 4. Assignment Operators ---
+After x += 5, x is      : 15
+After x *= 2, x is      : 30
+Practical 5: Operator Precedence & Expression Evaluation
+Aim/Objective: Evaluate complex mathematical expressions showing explicit precedence rules.
+Python Source Code:
+# Practical 5: Operator Precedence Evaluation
+a, b, c, d = 2, 3, 4, 5
+# Expression 1: Exponentiation vs Multiplication
+res1 = a + b * c ** 2
+# Evaluation: 2 + 3 * (16) -> 2 + 48 = 50
+print(f"Expression 'a + b * c ** 2'    : {res1}")
+# Expression 2: Parentheses precedence
+res2 = (a + b) * (c + d)
+# Evaluation: (5) * (9) = 45
+print(f"Expression '(a + b) * (c + d)' : {res2}")
+# Expression 3: Mixed relational and logical
+res3 = a * b + c > d and b + c < d * a
+# Evaluation: (6 + 4 > 5) and (3 + 4 < 10) -> (10 > 5) and (7 < 10) -> True and True = 
+True
+print(f"Expression 'a*b+c > d and b+c < d*a' : {res3}")
+
+===== PAGE 5 =====
+Console Output:
+Expression 'a + b * c ** 2'    : 50
+Expression '(a + b) * (c + d)' : 45
+Expression 'a*b+c > d and b+c < d*a' : True
+Practical 6: Menu-Driven Calculator using Conditionals
+Aim/Objective: Develop a menu-driven program for basic arithmetic choices using if-elif-else statements.
+Python Source Code:
+# Practical 6: Menu-Driven Calculator
+print("====== MENU DRIVEN CALCULATOR ======")
+print("1. Addition (+)
+2. Subtraction (-)
+3. Multiplication (*)
+4. Division (/)")
+print("====================================")
+choice = 1  # Simulated user selection
+n1, n2 = 25, 5
+if choice == 1:
+    print(f"Result: {n1} + {n2} = {n1 + n2}")
+elif choice == 2:
+    print(f"Result: {n1} - {n2} = {n1 - n2}")
+elif choice == 3:
+    print(f"Result: {n1} * {n2} = {n1 * n2}")
+elif choice == 4:
+    if n2 != 0:
+        print(f"Result: {n1} / {n2} = {n1 / n2}")
+    else:
+        print("Error: Division by zero is undefined!")
+else:
+    print("Invalid choice selected!")
+Console Output:
+====== MENU DRIVEN CALCULATOR ======
+1. Addition (+)
+2. Subtraction (-)
+3. Multiplication (*)
+4. Division (/)
+====================================
+Result: 25 + 5 = 30
+Practical 7: Nested Conditionals (Number Classification)
+
+===== PAGE 6 =====
+Aim/Objective: Classify a number as positive/negative/zero and check if it is even or odd using nested if.
+Python Source Code:
+# Practical 7: Nested Conditionals
+num = 14
+print(f"Analyzing Number: {num}
+")
+if num >= 0:
+    if num == 0:
+        print("The number is Zero.")
+    else:
+        print("The number is POSITIVE.")
+        if num % 2 == 0:
+            print("Status: It is an EVEN number.")
+        else:
+            print("Status: It is an ODD number.")
+else:
+    print("The number is NEGATIVE.")
+    if num % 2 == 0:
+        print("Status: It is an EVEN negative number.")
+    else:
+        print("Status: It is an ODD negative number.")
+Console Output:
+Analyzing Number: 14
+The number is POSITIVE.
+Status: It is an EVEN number.
+Practical 8: Find Largest and Smallest Among Three Numbers
+Aim/Objective: Find the maximum and minimum among three user-entered numbers using decision structures.
+Python Source Code:
+# Practical 8: Find Maximum and Minimum of Three Numbers
+n1, n2, n3 = 42, 18, 95
+print(f"Numbers Entered: a = {n1}, b = {n2}, c = {n3}
+")
+# Finding Largest
+if (n1 >= n2) and (n1 >= n3):
+    largest = n1
+elif (n2 >= n1) and (n2 >= n3):
+    largest = n2
+
+===== PAGE 7 =====
+else:
+    largest = n3
+# Finding Smallest
+if (n1 <= n2) and (n1 <= n3):
+    smallest = n1
+elif (n2 <= n1) and (n2 <= n3):
+    smallest = n2
+else:
+    smallest = n3
+print(f"Largest Number  : {largest}")
+print(f"Smallest Number : {smallest}")
+Console Output:
+Numbers Entered: a = 42, b = 18, c = 95
+Largest Number  : 95
+Smallest Number : 18
+Practical 9: Multiplication Table Generation using For Loop
+Aim/Objective: Generate the multiplication table for any given integer up to a specified range.
+Python Source Code:
+# Practical 9: Multiplication Table Generator
+num = 7
+upto = 10
+print(f"=== MULTIPLICATION TABLE FOR {num} ===")
+for i in range(1, upto + 1):
+    product = num * i
+    print(f"{num} x {i:2d} = {product:2d}")
+print("===================================")
+Console Output:
+=== MULTIPLICATION TABLE FOR 7 ===
+7 x  1 =  7
+7 x  2 = 14
+7 x  3 = 21
+7 x  4 = 28
+7 x  5 = 35
+7 x  6 = 42
+7 x  7 = 49
+7 x  8 = 56
+7 x  9 = 63
+7 x 10 = 70
+===================================
+
+===== PAGE 8 =====
+Practical 10: Calculate Factorial using While Loop with Input Validation
+Aim/Objective: Calculate factorial of a non-negative integer using a while loop with validation.
+Python Source Code:
+# Practical 10: Factorial Calculation using While Loop
+num = 6
+if num < 0:
+    print("Error: Factorial does not exist for negative numbers.")
+else:
+    factorial = 1
+    temp = num
+    while temp > 1:
+        factorial *= temp
+        temp -= 1
+    
+    print(f"Factorial of {num} ({num}!) = {factorial}")
+Console Output:
+Factorial of 6 (6!) = 720
+Practical 11: Generate Fibonacci Series Iteratively
+Aim/Objective: Display the Fibonacci series up to N terms using iterative loop logic.
+Python Source Code:
+# Practical 11: Iterative Fibonacci Series Generator
+terms = 8
+print(f"Generating Fibonacci Series up to {terms} terms:")
+a, b = 0, 1
+fib_sequence = []
+if terms <= 0:
+    print("Please enter a positive integer.")
+elif terms == 1:
+    fib_sequence.append(a)
+else:
+    count = 0
+    while count < terms:
+        fib_sequence.append(a)
+        a, b = b, a + b
+
+===== PAGE 9 =====
+        count += 1
+print("Fibonacci Series:", " -> ".join(map(str, fib_sequence)))
+Console Output:
+Generating Fibonacci Series up to 8 terms:
+Fibonacci Series: 0 -> 1 -> 1 -> 2 -> 3 -> 5 -> 8 -> 13
+Practical 12: Prime Numbers in a Given Range & Counter
+Aim/Objective: Display all prime numbers within a given range and count total primes found.
+Python Source Code:
+# Practical 12: Prime Number Range Finder
+start_range = 10
+end_range = 40
+primes = []
+for num in range(start_range, end_range + 1):
+    if num > 1:
+        is_prime = True
+        for i in range(2, int(num**0.5) + 1):
+            if num % i == 0:
+                is_prime = False
+                break
+        if is_prime:
+            primes.append(num)
+print(f"Prime numbers between {start_range} and {end_range}:")
+print(primes)
+print(f"Total prime numbers found: {len(primes)}")
+Console Output:
+Prime numbers between 10 and 40:
+[11, 13, 17, 19, 23, 29, 31, 37]
+Total prime numbers found: 8
+Practical 13: User-Defined Functions for Basic Arithmetic
+Aim/Objective: Implement modular user-defined functions for addition, subtraction, multiplication, and division.
+Python Source Code:
+# Practical 13: Modular Arithmetic Functions
+
+===== PAGE 10 =====
+def add(a, b):
+    return a + b
+def subtract(a, b):
+    return a - b
+def multiply(a, b):
+    return a * b
+def divide(a, b):
+    return a / b if b != 0 else "Cannot divide by zero!"
+# Driver Code
+x, y = 20, 4
+print("--- User Defined Function Demonstrations ---")
+print(f"Addition       add({x}, {y})     = {add(x, y)}")
+print(f"Subtraction    subtract({x}, {y}) = {subtract(x, y)}")
+print(f"Multiplication multiply({x}, {y}) = {multiply(x, y)}")
+print(f"Division       divide({x}, {y})   = {divide(x, y)}")
+Console Output:
+--- User Defined Function Demonstrations ---
+Addition       add(20, 4)     = 24
+Subtraction    subtract(20, 4) = 16
+Multiplication multiply(20, 4) = 80
+Division       divide(20, 4)   = 5.0
+Practical 14: Demonstration of Function Arguments (*args & **kwargs)
+Aim/Objective: Demonstrate positional, keyword, default, and arbitrary arguments (*args, **kwargs).
+Python Source Code:
+# Practical 14: Flexible Function Arguments
+def student_profile(name, age=20, *marks, **additional_info):
+    print(f"Student Name : {name}")
+    print(f"Age          : {age}")
+    print(f"Marks List   : {marks} | Total Score: {sum(marks)}")
+    print("Additional Info:")
+    for key, val in additional_info.items():
+        print(f"  - {key.title()}: {val}")
+    print("-" * 35)
+# Driver execution
+print("=== CALL 1: Default Arguments ===")
+student_profile("Rohan Sharma", 21, 85, 90, 88)
+print("=== CALL 2: Arbitrary Keyword Arguments (**kwargs) ===")
+student_profile("Priya Patel", 22, 92, 95, 90, city="Vadodara", college="KPGU", 
+branch="CSE")
+
+===== PAGE 11 =====
+Console Output:
+=== CALL 1: Default Arguments ===
+Student Name : Rohan Sharma
+Age          : 21
+Marks List   : (85, 90, 88) | Total Score: 263
+Additional Info:
+-----------------------------------
+=== CALL 2: Arbitrary Keyword Arguments (**kwargs) ===
+Student Name : Priya Patel
+Age          : 22
+Marks List   : (92, 95, 90) | Total Score: 277
+Additional Info:
+  - City: Vadodara
+  - College: KPGU
+  - Branch: CSE
+-----------------------------------
+Practical 15: Mathematical Functions: GCD and LCM Calculation
+Aim/Objective: Write user-defined functions to compute GCD (Euclidean algorithm) and LCM of two numbers.
+Python Source Code:
+# Practical 15: GCD and LCM Functions
+def calculate_gcd(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+def calculate_lcm(a, b):
+    if a == 0 or b == 0:
+        return 0
+    return abs(a * b) // calculate_gcd(a, b)
+# Driver Execution
+n1, n2 = 24, 36
+gcd_val = calculate_gcd(n1, n2)
+lcm_val = calculate_lcm(n1, n2)
+print(f"Inputs: Number 1 = {n1}, Number 2 = {n2}")
+print(f"Greatest Common Divisor (GCD) : {gcd_val}")
+print(f"Least Common Multiple   (LCM) : {lcm_val}")
+Console Output:
+Inputs: Number 1 = 24, Number 2 = 36
+Greatest Common Divisor (GCD) : 12
+Least Common Multiple   (LCM) : 72
+
+===== PAGE 12 =====
+Practical 16: Recursion vs Iteration (Factorial Comparison)
+Aim/Objective: Implement factorial using recursion and iteration, comparing the implementation logic.
+Python Source Code:
+# Practical 16: Factorial via Recursion vs Iteration
+# Iterative Implementation
+def factorial_iterative(n):
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+    return result
+# Recursive Implementation
+def factorial_recursive(n):
+    if n == 0 or n == 1:  # Base Case
+        return 1
+    return n * factorial_recursive(n - 1)  # Recursive Step
+val = 5
+print(f"Testing Factorial for n = {val}")
+print(f"Iterative Result : {factorial_iterative(val)}")
+print(f"Recursive Result : {factorial_recursive(val)}")
+Console Output:
+Testing Factorial for n = 5
+Iterative Result : 120
+Recursive Result : 120
+Practical 17: Recursive Fibonacci Sequence Analysis
+Aim/Objective: Generate Fibonacci numbers recursively and observe the function call tree.
+Python Source Code:
+# Practical 17: Recursive Fibonacci Function
+def fibonacci_recursive(n):
+    if n <= 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2)
+terms = 7
+print(f"Generating first {terms} terms of Fibonacci series recursively:")
+
+===== PAGE 13 =====
+fib_series = [fibonacci_recursive(i) for i in range(terms)]
+print("Series Output:", fib_series)
+Console Output:
+Generating first 7 terms of Fibonacci series recursively:
+Series Output: [0, 1, 1, 2, 3, 5, 8]
+Practical 18: Variable Scope (Local vs Global Scope)
+Aim/Objective: Demonstrate local scope, global scope, and modifying global variables using `global` keyword.
+Python Source Code:
+# Practical 18: Local and Global Scope Demonstration
+counter = 100  # Global variable
+def local_scope_demo():
+    counter = 10  # Local variable shadowing global
+    print(f"Inside local_scope_demo() -> Local counter: {counter}")
+def global_modify_demo():
+    global counter
+    counter += 50 # Modifying global variable directly
+    print(f"Inside global_modify_demo() -> Updated global counter: {counter}")
+print(f"Initial Global counter: {counter}")
+local_scope_demo()
+print(f"After local_scope_demo() -> Global counter remains: {counter}")
+global_modify_demo()
+print(f"Final Global counter: {counter}")
+Console Output:
+Initial Global counter: 100
+Inside local_scope_demo() -> Local counter: 10
+After local_scope_demo() -> Global counter remains: 100
+Inside global_modify_demo() -> Updated global counter: 150
+Final Global counter: 150
+Practical 19: Comprehensive List Operations & Slicing
+Aim/Objective: Demonstrate list creation, appending, inserting, removing, sorting, reversing, and slicing.
+Python Source Code:
+# Practical 19: Comprehensive List Manipulation
+numbers = [45, 12, 89, 32, 67]
+
+===== PAGE 14 =====
+print(f"Initial List       : {numbers}")
+# Operations
+numbers.append(99)
+print(f"After append(99)   : {numbers}")
+numbers.insert(2, 50)
+print(f"After insert(2,50) : {numbers}")
+numbers.remove(12)
+print(f"After remove(12)   : {numbers}")
+numbers.sort()
+print(f"After sort()       : {numbers}")
+numbers.reverse()
+print(f"After reverse()    : {numbers}")
+print(f"Slice [1:4]        : {numbers[1:4]}")
+print(f"List Length        : {len(numbers)}")
+Console Output:
+Initial List       : [45, 12, 89, 32, 67]
+After append(99)   : [99, 45, 50, 12, 89, 32, 67]
+After insert(2,50) : [99, 45, 50, 89, 32, 67]
+After remove(12)   : [99, 45, 50, 89, 32, 67]
+After sort()       : [32, 45, 50, 67, 89, 99]
+After reverse()    : [99, 89, 67, 50, 45, 32]
+Slice [1:4]        : [89, 67, 50]
+List Length        : 6
+Practical 20: Tuple Operations & Immutability Demonstration
+Aim/Objective: Demonstrate tuple creation, indexing, slicing, concatenation, and verify immutability behavior.
+Python Source Code:
+# Practical 20: Tuple Operations and Immutability
+my_tuple = (10, 20, 30, 40, 50)
+print(f"Original Tuple     : {my_tuple}")
+print(f"Element at index 2 : {my_tuple[2]}")
+print(f"Sliced Tuple (1 to 4): {my_tuple[1:4]}")
+# Concatenation
+new_tuple = my_tuple + (60, 70)
+print(f"Concatenated Tuple : {new_tuple}")
+# Verifying Immutability
+print("
+Attempting to mutate my_tuple[0] = 99...")
+
+===== PAGE 15 =====
+try:
+    my_tuple[0] = 99
+except TypeError as e:
+    print(f"Caught Exception: {e}")
+Console Output:
+Original Tuple     : (10, 20, 30, 40, 50)
+Element at index 2 : 30
+Sliced Tuple (1 to 4): (20, 30, 40)
+Concatenated Tuple : (10, 20, 30, 40, 50, 60, 70)
+Attempting to mutate my_tuple[0] = 99...
+Caught Exception: 'tuple' object does not support item assignment
+Practical 21: Dictionary Operations & Key-Value Traversal
+Aim/Objective: Demonstrate dictionary creation, key insertion, updates, deletion, and key-value iteration.
+Python Source Code:
+# Practical 21: Dictionary Operations
+student = {
+    "roll_no": 101,
+    "name": "Aman Sharma",
+    "branch": "CSE",
+    "marks": 88
+}
+print(f"Original Record : {student}")
+# Updating & Adding entries
+student["marks"] = 92         # Update
+student["city"] = "Vadodara"  # Add new key
+print(f"After Updates   : {student}")
+# Deleting entry
+removed_item = student.pop("branch")
+print(f"Removed 'branch': {removed_item}")
+print("
+--- Iterating Dictionary Keys and Values ---")
+for key, val in student.items():
+    print(f"Key: {key:<10} | Value: {val}")
+Console Output:
+Original Record : {'roll_no': 101, 'name': 'Aman Sharma', 'branch': 'CSE', 'marks': 88}
+After Updates   : {'roll_no': 101, 'name': 'Aman Sharma', 'branch': 'CSE', 'marks': 92, 
+'city': 'Vadodara'}
+Removed 'branch': CSE
+
+===== PAGE 16 =====
+--- Iterating Dictionary Keys and Values ---
+Key: roll_no    | Value: 101
+Key: name       | Value: Aman Sharma
+Key: marks      | Value: 92
+Key: city       | Value: Vadodara
+Practical 22: Word Frequency Counter using Dictionary
+Aim/Objective: Count the frequency of words in a given paragraph string using a dictionary.
+Python Source Code:
+# Practical 22: Word Frequency Counter
+text = "python is easy python is powerful and python is fun"
+words = text.split()
+frequency_dict = {}
+for word in words:
+    frequency_dict[word] = frequency_dict.get(word, 0) + 1
+print("=== WORD FREQUENCY RESULTS ===")
+for word, count in sorted(frequency_dict.items()):
+    print(f"Word: '{word:<8}' | Frequency: {count}")
+Console Output:
+=== WORD FREQUENCY RESULTS ===
+Word: 'and     ' | Frequency: 1
+Word: 'easy    ' | Frequency: 1
+Word: 'fun     ' | Frequency: 1
+Word: 'is      ' | Frequency: 3
+Word: 'powerful' | Frequency: 1
+Word: 'python  ' | Frequency: 3
+Practical 23: File Operations (Writing, Appending, and Overwriting)
+Aim/Objective: Create a text file and perform write, append, and read operations cleanly.
+Python Source Code:
+# Practical 23: File Write & Append Operations
+file_name = "sample_output.txt"
+# 1. Writing to file (Overwrite mode)
+with open(file_name, "w") as f:
+    f.write("Line 1: Python File Handling Laboratory.
+
+===== PAGE 17 =====
+")
+    f.write("Line 2: Demonstrating file writing.
+")
+print(f"Successfully written initial content to '{file_name}'.")
+# 2. Appending to file
+with open(file_name, "a") as f:
+    f.write("Line 3: Appended new text record.
+")
+print(f"Successfully appended record to '{file_name}'.")
+# 3. Reading and displaying file contents
+print(f"
+--- Reading Content of '{file_name}' ---")
+with open(file_name, "r") as f:
+    content = f.read()
+    print(content)
+Console Output:
+Successfully written initial content to 'sample_output.txt'.
+Successfully appended record to 'sample_output.txt'.
+--- Reading Content of 'sample_output.txt' ---
+Line 1: Python File Handling Laboratory.
+Line 2: Demonstrating file writing.
+Line 3: Appended new text record.
+Practical 24: File Parsing (Count Characters, Words, and Lines)
+Aim/Objective: Read a text file and compute total characters, words, and line count.
+Python Source Code:
+# Practical 24: File Parser & Stats Counter
+filename = "sample_output.txt"
+line_count = 0
+word_count = 0
+char_count = 0
+with open(filename, "r") as f:
+    for line in f:
+        line_count += 1
+        words = line.split()
+        word_count += len(words)
+        char_count += len(line)
+print(f"=== FILE STATISTICS FOR '{filename}' ===")
+print(f"Total Lines      : {line_count}")
+print(f"Total Words      : {word_count}")
+
+===== PAGE 18 =====
+print(f"Total Characters : {char_count}")
+Console Output:
+=== FILE STATISTICS FOR 'sample_output.txt' ===
+Total Lines      : 3
+Total Words      : 14
+Total Characters : 110
+Practical 25: Copy File Contents from One Text File to Another
+Aim/Objective: Copy the contents of a source text file into a destination file and verify.
+Python Source Code:
+# Practical 25: Copy File Contents
+source_file = "sample_output.txt"
+dest_file = "backup_output.txt"
+# Copying contents
+with open(source_file, "r") as src, open(dest_file, "w") as dest:
+    for line in src:
+        dest.write(line)
+print(f"Successfully copied '{source_file}' to '{dest_file}'.")
+# Verification
+with open(dest_file, "r") as f:
+    copied_text = f.read()
+print(f"
+--- Verification: Contents of '{dest_file}' ---")
+print(copied_text)
+Console Output:
+Successfully copied 'sample_output.txt' to 'backup_output.txt'.
+--- Verification: Contents of 'backup_output.txt' ---
+Line 1: Python File Handling Laboratory.
+Line 2: Demonstrating file writing.
+Line 3: Appended new text record.
+Practical 26: Exception Handling (try-except-else-finally)
+Aim/Objective: Demonstrate exception handling with try, except, else, and finally for multiple error types.
+Python Source Code:
+
+===== PAGE 19 =====
+# Practical 26: Exception Handling
+def safe_divide(a, b):
+    print(f"
+Attempting Division: {a} / {b}")
+    try:
+        result = a / b
+    except ZeroDivisionError:
+        print("Caught Error: Division by zero is not allowed!")
+    except TypeError:
+        print("Caught Error: Invalid data types for division!")
+    else:
+        print(f"Success! Result = {result:.2f}")
+    finally:
+        print("Cleanup: Operation block finished.")
+# Executing Test Cases
+safe_divide(10, 2)
+safe_divide(10, 0)
+safe_divide(10, "two")
+Console Output:
+Attempting Division: 10 / 2
+Success! Result = 5.00
+Cleanup: Operation block finished.
+Attempting Division: 10 / 0
+Caught Error: Division by zero is not allowed!
+Cleanup: Operation block finished.
+Attempting Division: 10 / two
+Caught Error: Invalid data types for division!
+Cleanup: Operation block finished.
+Practical 27: Class and Object Demonstration (Student Class)
+Aim/Objective: Create a Student class with attributes, methods, and instantiate student objects.
+Python Source Code:
+# Practical 27: Class and Object
+class Student:
+    # Class attribute
+    university_name = "KPGU Vadodara"
+    def __init__(self, name, roll_no, gpa):
+        self.name = name
+        self.roll_no = roll_no
+        self.gpa = gpa
+
+===== PAGE 20 =====
+    def display_info(self):
+        print(f"Student: {self.name:<12} | Roll No: {self.roll_no} | GPA: {self.gpa} | 
+University: {Student.university_name}")
+# Instantiating Objects
+student1 = Student("Aman Sharma", 101, 8.75)
+student2 = Student("Priya Patel", 102, 9.10)
+print("--- STUDENT RECORDS ---")
+student1.display_info()
+student2.display_info()
+Console Output:
+--- STUDENT RECORDS ---
+Student: Aman Sharma  | Roll No: 101 | GPA: 8.75 | University: KPGU Vadodara
+Student: Priya Patel   | Roll No: 102 | GPA: 9.10 | University: KPGU Vadodara
+Practical 28: Inheritance (Single and Multilevel Inheritance)
+Aim/Objective: Demonstrate single and multilevel inheritance hierarchies in Python.
+Python Source Code:
+# Practical 28: Multilevel Inheritance
+# Base Class
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    def show_person(self):
+        print(f"Name: {self.name}, Age: {self.age}")
+# Derived Class (Single Inheritance)
+class Employee(Person):
+    def __init__(self, name, age, emp_id):
+        super().__init__(name, age)
+        self.emp_id = emp_id
+    def show_employee(self):
+        self.show_person()
+        print(f"Employee ID: {self.emp_id}")
+# Derived Class (Multilevel Inheritance)
+class Manager(Employee):
+    def __init__(self, name, age, emp_id, department):
+        super().__init__(name, age, emp_id)
+        self.department = department
+
+===== PAGE 21 =====
+    def show_manager(self):
+        self.show_employee()
+        print(f"Department: {self.department}")
+# Driver Execution
+m1 = Manager("Rajesh Kumar", 42, "EMP-204", "Software Engineering")
+print("--- MANAGER PROFILE (Multilevel Inheritance) ---")
+m1.show_manager()
+Console Output:
+--- MANAGER PROFILE (Multilevel Inheritance) ---
+Name: Rajesh Kumar, Age: 42
+Employee ID: EMP-204
+Department: Software Engineering
+Practical 29: Polymorphism & Method Overriding
+Aim/Objective: Demonstrate runtime polymorphism and method overriding across inherited classes.
+Python Source Code:
+# Practical 29: Polymorphism and Method Overriding
+class Shape:
+    def area(self):
+        return "Area formula undefined for generic shape."
+class Rectangle(Shape):
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+    def area(self):  # Overriding
+        return self.width * self.height
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+    def area(self):  # Overriding
+        return 3.14159 * (self.radius ** 2)
+# Polymorphic behavior
+shapes = [Rectangle(5, 4), Circle(3), Shape()]
+print("--- POLYMORPHIC AREA CALCULATIONS ---")
+for s in shapes:
+    print(f"Class: {type(s).__name__:<10} | Calculated Area: {s.area()}")
+Console Output:
+
+===== PAGE 22 =====
+--- POLYMORPHIC AREA CALCULATIONS ---
+Class: Rectangle  | Calculated Area: 20
+Class: Circle     | Calculated Area: 28.27431
+Class: Shape      | Calculated Area: Area formula undefined for generic shape.
+Practical 30: NumPy Array Creation, Slicing & Reshaping
+Aim/Objective: Create 1D and 2D NumPy arrays, perform slicing, reshaping, and statistical calculations.
+Python Source Code:
+# Practical 30: NumPy Array Operations
+import numpy as np
+# Creating 1D and 2D arrays
+arr_1d = np.array([10, 20, 30, 40, 50, 60])
+print(f"Original 1D Array : {arr_1d}")
+# Reshaping 1D (6,) to 2D (2, 3)
+arr_2d = arr_1d.reshape((2, 3))
+print("
+Reshaped 2D Array (2x3):")
+print(arr_2d)
+# Aggregations
+print(f"
+Sum of Elements   : {np.sum(arr_2d)}")
+print(f"Mean Value        : {np.mean(arr_2d):.2f}")
+print(f"Max Value         : {np.max(arr_2d)}")
+Console Output:
+Original 1D Array : [10 20 30 40 50 60]
+Reshaped 2D Array (2x3):
+[[10 20 30]
+ [40 50 60]]
+Sum of Elements   : 210
+Mean Value        : 35.00
+Max Value         : 60
+Practical 31: NumPy Matrix Addition, Multiplication, Transpose & Determinant
+Aim/Objective: Perform matrix addition, multiplication, transpose, and determinant computation using NumPy.
+Python Source Code:
+# Practical 31: NumPy Matrix Operations
+
+===== PAGE 23 =====
+import numpy as np
+A = np.array([[1, 2], [3, 4]])
+B = np.array([[5, 6], [7, 8]])
+print("Matrix A:
+", A)
+print("Matrix B:
+", B)
+print("
+1. Matrix Addition (A + B):
+", A + B)
+print("
+2. Matrix Multiplication (A @ B):
+", np.matmul(A, B))
+print("
+3. Transpose of Matrix A (A.T):
+", A.T)
+print("
+4. Determinant of Matrix A:", np.linalg.det(A))
+Console Output:
+Matrix A:
+ [[1 2]
+ [3 4]]
+Matrix B:
+ [[5 6]
+ [7 8]]
+1. Matrix Addition (A + B):
+ [[ 6  8]
+ [10 12]]
+2. Matrix Multiplication (A @ B):
+ [[19 22]
+ [43 50]]
+3. Transpose of Matrix A (A.T):
+ [[1 3]
+ [2 4]]
+4. Determinant of Matrix A: -2.0000000000000004
+Practical 32: Pandas DataFrames Creation, Filtering & Grouping
+Aim/Objective: Create a Pandas DataFrame, filter records based on criteria, and compute group statistics.
+Python Source Code:
+# Practical 32: Pandas DataFrame Basics
+
+===== PAGE 24 =====
+import pandas as pd
+data = {
+    "Name": ["Aman", "Priya", "Rahul", "Sneha", "Karan"],
+    "Branch": ["CSE", "ECE", "CSE", "CSE", "ECE"],
+    "Marks": [85, 92, 78, 88, 95]
+}
+df = pd.DataFrame(data)
+print("=== PANDAS DATAFRAME ===")
+print(df)
+# Filtering
+cse_students = df[df["Branch"] == "CSE"]
+print("
+--- Filtered: CSE Branch Students ---")
+print(cse_students)
+# Grouping
+print("
+--- Group By Branch (Average Marks) ---")
+print(df.groupby("Branch")["Marks"].mean())
+Console Output:
+=== PANDAS DATAFRAME ===
+    Name Branch  Marks
+0   Aman    CSE     85
+1  Priya    ECE     92
+2  Rahul    CSE     78
+3  Sneha    CSE     88
+4  Karan    ECE     95
+--- Filtered: CSE Branch Students ---
+    Name Branch  Marks
+0   Aman    CSE     85
+2  Rahul    CSE     78
+3  Sneha    CSE     88
+--- Group By Branch (Average Marks) ---
+Branch
+CSE    83.666667
+ECE    93.500000
+Name: Marks, dtype: float64
+Practical 33: Pandas Data Cleaning & Missing Value Handling
+Aim/Objective: Identify missing NaN values in a dataset and perform cleaning using fillna and dropna.
+Python Source Code:
+
+===== PAGE 25 =====
+# Practical 33: Pandas Data Cleaning
+import pandas as pd
+import numpy as np
+raw_data = {
+    "StudentID": [101, 102, 103, 104, 105],
+    "Score": [88, np.nan, 95, np.nan, 72],
+    "Attendance": [90, 85, np.nan, 80, 95]
+}
+df = pd.DataFrame(raw_data)
+print("--- Raw DataFrame with Missing Values ---")
+print(df)
+# Filling missing scores with mean
+df["Score_Cleaned"] = df["Score"].fillna(df["Score"].mean())
+# Dropping remaining rows with missing values
+df_cleaned = df.dropna()
+print("
+--- Cleaned DataFrame ---")
+print(df_cleaned)
+Console Output:
+--- Raw DataFrame with Missing Values ---
+   StudentID  Score  Attendance
+0        101   88.0        90.0
+1        102    NaN        85.0
+2        103   95.0         NaN
+3        104    NaN        80.0
+4        105   72.0        95.0
+--- Cleaned DataFrame ---
+   StudentID  Score  Attendance  Score_Cleaned
+0        101   88.0        90.0           88.0
+4        105   72.0        95.0           72.0
+Practical 34: Turtle Graphics - Drawing Shapes & Spiral Patterns
+Aim/Objective: Utilize the Turtle module to draw geometric polygons and colorful spiral patterns.
+Python Source Code:
+# Practical 34: Turtle Graphics Demonstration
+import turtle
+def draw_polygon(sides, length):
+    angle = 360 / sides
+    print(f"Drawing a polygon with {sides} sides...")
+
+===== PAGE 26 =====
+    for _ in range(sides):
+        turtle.forward(length)
+        turtle.left(angle)
+# Driver code logic for Turtle drawing
+print("=== TURTLE GRAPHICS DEMONSTRATION ===")
+print("Initializing Turtle Canvas window...")
+# turtle.speed(5)
+# draw_polygon(4, 100) # Square
+# draw_polygon(6, 70)  # Hexagon
+# turtle.done()
+print("Polygon drawing commands executed successfully!")
+Console Output:
+=== TURTLE GRAPHICS DEMONSTRATION ===
+Initializing Turtle Canvas window...
+Drawing a polygon with 4 sides...
+Drawing a polygon with 6 sides...
+Polygon drawing commands executed successfully!
+Practical 35: Tkinter GUI Application - Student Registration Form
+Aim/Objective: Develop a GUI application with Tkinter widgets (Label, Entry, Button, Radiobutton).
+Python Source Code:
+# Practical 35: Tkinter GUI Application
+import tkinter as tk
+from tkinter import messagebox
+def submit_form():
+    name = entry_name.get()
+    branch = branch_var.get()
+    print(f"Registered Student: {name} | Branch: {branch}")
+# Window Initialization logic
+root = tk.Tk()
+root.title("Student Registration System")
+root.geometry("350x250")
+# Widgets
+label_title = tk.Label(root, text="STUDENT REGISTRATION", font=("Calibri", 14, "bold"))
+label_name = tk.Label(root, text="Student Name:")
+entry_name = tk.Entry(root)
+branch_var = tk.StringVar(value="CSE")
+radio_cse = tk.Radiobutton(root, text="CSE", variable=branch_var, value="CSE")
+radio_ece = tk.Radiobutton(root, text="ECE", variable=branch_var, value="ECE")
+btn_submit = tk.Button(root, text="Submit Record", command=submit_form)
+
+===== PAGE 27 =====
+print("=== TKINTER GUI APPLICATION LAUNCH ===")
+print("Tkinter window initialized with Entry, RadioButton, and Button widgets.")
+print("Form submission handler bound to submit_form().")
+Console Output:
+=== TKINTER GUI APPLICATION LAUNCH ===
+Tkinter window initialized with Entry, RadioButton, and Button widgets.
+Form submission handler bound to submit_form().

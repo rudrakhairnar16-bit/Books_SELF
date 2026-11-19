@@ -1,0 +1,93 @@
+SOURCE: SEM3/DBMS/Updated Assignments 2.pdf
+
+===== PAGE 1 =====
+Krishna School of Emerging Technology and Applied Research 
+Department of Computer Science and Engineering 
+Assignments 
+Module:2 & 3       
+Assignment:2 
+Issue Date: 26/08/2026 
+Submission Date: 10/09/2026 
+ 
+ 
+ 
+ 
+1. Explain the fundamental operators of relational algebra. Provide examples of 
+how each operator is used. 
+2. Write relational algebra queries for a given set of database schemas: 
+ 
+STUDENT(roll_no, name, dept_id, year) DEPARTMENT(dept_id, dept_name) 
+COURSE(course_id, course_name, dept_id) ENROLLMENT(roll_no, 
+course_id, grade) 
+ 
+1. List the names of students in the 'CSE' department 
+2. 2. Find roll numbers of students who have enrolled in course 'DBMS' 
+3. Get the names of students who scored grade 'A' in any course 
+4. List all courses offered by the 'IT' department 
+5. Find names of students who have taken both 'DBMS' and 'OS' courses 
+ 
+3. Define relational calculus and differentiate between tuple and domain-oriented 
+relational calculus. 
+4. Explain the structure of relational databases, including database schemas and 
+schema diagrams. Provide examples. 
+5. Define and explain different types of keys (candidate keys, primary keys, 
+alternate keys, and foreign keys) and the rules associated with them. 
+6. Discuss the concept of relational data integrity and its importance in maintaining 
+the accuracy of data in a database. 
+7. Illustrate the concept of null values and other integrity constraints. 
+8. Define the basic concepts of the Entity-Relationship (ER) model, and explain the 
+types of entities and relationships. 
+9. Design an ER diagram for a University Management System that stores details 
+of students, professors, courses, and enrollments. Identify the entities, attributes, 
+and relationships clearly. 
+
+===== PAGE 2 =====
+Krishna School of Emerging Technology and Applied Research 
+Department of Computer Science and Engineering 
+Assignments 
+Module:3 & 3       
+Assignment:3 
+Issue Date: 26/08/2026 
+Submission Date: 10/09/2026 
+ 
+ 
+ 
+10. Discuss constraints in the ER model. Explain how mapping and weak entity sets 
+are handled in ER diagrams. 
+11. Convert the following ER diagram of a University Management System into a 
+relational schema. Clearly explain each step involved in the conversion process, 
+including how entities, relationships, and attributes are mapped into tables, 
+primary keys, and foreign keys. 
+12. Describe extended ER features, such as generalization, specialization, and 
+aggregation. Provide examples of each. 
+13. Differentiate between weak and strong entity sets. Provide real-life examples of 
+both. 
+14. Discuss the role of ER models in database design. Explain how they help in 
+structuring data effectively.
+
+===== PAGE 3 =====
+ 
+ 
+
+===== PAGE 4 =====
+ 
+
+===== PAGE 5 =====
+ 
+ 
+
+===== PAGE 6 =====
+ 
+ 
+
+===== PAGE 7 =====
+ 
+ 
+
+===== PAGE 8 =====
+ 
+ 
+
+===== PAGE 9 =====
+ 
+ 

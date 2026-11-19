@@ -1,0 +1,337 @@
+SOURCE: SEM3/DLD/MCQS Unit 3.pdf
+
+===== PAGE 1 =====
+Unit 3 Combinational Logic Circuits 
+MCQs 
+1. The principle of a subtractor using IC 7483 is based on ______. 
+(a) 1’s complement 
+(b) 2’s complement 
+(c) 10’s complement 
+(d) Excess-3 
+       Ans. (b) 2’s complement 
+2.  A decimal adder is same as ______ adder. 
+(a) Binary 
+(b) BCD 
+(c) Excess-3 
+(d) Gray  
+       Ans. (b) BCD 
+3.  The basic 1-bit magnitude comparator has ______ outputs. 
+(a) 1 
+(b) 2 
+(c) 3 
+(d) 4 
+       Ans. (c) 3 
+4.  When numbers, letters or words are represented by a specific group of symbols, it is 
+said that the number, letter or word is being ______. 
+(a) Encoded 
+(b) Multiplexed 
+(c) Decoded 
+(d) Converted  
+       Ans.(a) Encoded 
+5.  A ______ is a digital circuit which selects one of the n data inputs and routes it to the 
+output. 
+(a) Multiplexer 
+(b) Encoder 
+(c) Decoder 
+(d) Comparator 
+Ans.(a) Multiplexer 
+6. The ______ acts like a digitally controlled single pole, multiple way switch. 
+(a) DEMUX 
+(b) Multiplexer 
+(c) Encoder 
+(d) Decoder 
+       Ans.(b) Multiplexer 
+7. A ______ is a digital circuit which selects one of the n data inputs and routes it to the 
+output. 
+
+===== PAGE 2 =====
+(a) Multiplexer 
+(b) Encoder 
+(c) Decoder 
+(d) Comparator  
+Ans.(a) Multiplexer 
+8. The ______ acts like a digitally controlled single pole, multiple way switch. 
+(a) DEMUX 
+(b) Multiplexer 
+(c) Encoder 
+(d) Decoder 
+ Ans. (b) Multiplexer 
+9. Multiplexer improves the reliability of the digital system because it reduces the 
+number of ______. 
+      (a) External wired connections 
+     (b) Logic gates 
+     (c) Flip-flops 
+     (d) Registers  
+             Ans.(a) External wired connections 
+10.  A demultiplexer performs the ______ operation of multiplexer. 
+(a) Reverse 
+(b) Same 
+(c) Complement 
+(d) Encoding 
+Ans (a) Reverse 
+11. A 4:1 multiplexer has ______ number of select lines. 
+(a) One 
+(b) Two 
+(c) Four 
+(d) Eight  
+       Ans: (b) Two 
+12.  A MUX has ______ outputs. 
+(a) One 
+(b) Two 
+(c) n 
+
+===== PAGE 3 =====
+(d) Zero  
+                      Ans. (a) One 
+13.  A 1:4 demux has ______ input and ______ outputs. 
+(a) 1, 4 
+(b) 4, 1 
+(c) 2, 4 
+(d) 1, 2 
+        Ans. (a) 1 input, 4 outputs 
+14.  A 2:4 decoder has ______ inputs and ______ outputs. 
+(a) 1, 2 
+(b) 2, 4 
+(c) 3, 8 
+(d) 4, 16  
+        Ans.(b) 2 inputs, 4 outputs 
+15.  VLSI stands for ______. 
+(a) Very Low Scale Integration 
+(b) Very Large Scale Integration 
+(c) Variable Logic System Integration 
+(d) Very Linear System Integration 
+        Ans.(b) Very Large Scale Integration 
+16. For a MUX, the output Y = ______, when E = 0. 
+(a) One 
+(b) Zero 
+(c) Undefined 
+(d) High impedance 
+Ans. (b) Zero 
+17. A ______ can be used for minimizing the number of connections. 
+(a)Multiplexer 
+        (b) Demultiplexer 
+        (c) Decoder 
+        (d) Encoder 
+Ans. (c) Decoder 
+18.  A multiplexer is also known as ______. 
+(a) Data selector 
+(b) Data distributor 
+(c) Data encoder 
+(d) Data converter  
+              Ans. (a) Data selector 
+
+===== PAGE 4 =====
+19.  Demultiplexer is used to route data from ______ to ______ outputs. 
+(a) One input, many outputs 
+(b) Many inputs, one output 
+(c) Many inputs, many outputs 
+(d) One input, one output  
+Ans. (a) One input, many outputs 
+20.  A multiplexer having 32 data input lines needs ______ select lines. 
+(a) 4 
+(b) 5 
+(c) 6 
+(d) 8 
+Ans. (b) 5 
+21. The number of LEDs used in each seven segment display is ______. 
+(a) 7 
+(b) 8 
+(c) 9 
+(d) 10 
+                      Ans.(a) 7 
+22.  A ______ circuit does not have the select inputs. 
+(a) Multiplexer 
+(b) Demultiplexer 
+(c) Decoder 
+(d) Comparator  
+        Ans.(c) Decoder 
+23. The circuit that converts BCD to Binary is called a: 
+(a) Code converter 
+(b) Multiplexer 
+(c) Decoder 
+(d) Comparator  
+      Ans. (a) Code converter 
+24.  The ______ and ______ are universal gates. 
+(a) AND, OR 
+(b) NAND, NOR 
+(c) EX-OR, EX-NOR 
+(d) Buffer, Inverter  
+Ans. (b) NAND, NOR 
+25. The ALU is made of small subunits such as ______. 
+(a) Adders, Subtractors 
+(b) Multiplexers, Decoders 
+(c) Registers, Flip-flops 
+(d) Counters, Comparators  
+
+===== PAGE 5 =====
+Ans.(a) Adders, Subtractors 
+26.  A half adder is a ______ logic circuit with two inputs and two outputs. 
+(a) Combinational 
+(b) Sequential 
+(c) PLD 
+(d) Decoder  
+        Ans.(a) Combinational 
+27. The addition of three bits is not possible to perform by using a ______ adder. 
+(a) Half adder 
+(b) Full adder 
+(c) Parallel adder 
+(d) Ripple adder  
+       Ans. (a) Half adder 
+28. The ______ adder is a three-input and two-output combinational circuit. 
+(a) Half adder 
+(b) Full adder 
+(c) Sequential adder 
+(d) Parallel adder  
+Ans.(b) Full adder 
+29. A ______ subtractor is a combinational circuit with two inputs and two outputs. 
+(a) Half subtractor 
+(b) Full subtractor 
+(c) Sequential subtractor 
+(d) Parallel subtractor 
+ Ans. (a) Half subtractor 
+30. A half subtractor can only perform the subtraction of binary ______ bits. 
+(a) One 
+(b) Two 
+(c) Three 
+(d) Four 
+               Ans. (a) One 
+31.  The ______ subtractor is a combinational circuit with three inputs A, B, and Bₙ, and     
+two outputs D and B₀. 
+(a) Full subtractor 
+(b) Half subtractor 
+(c) Sequential subtractor 
+(d) Parallel subtractor  
+       Ans. (a) Full subtractor 
+32.  A half adder is also known as ______ gate. 
+(a) EX-OR 
+
+===== PAGE 6 =====
+(b) EX-NOR 
+(c) OR 
+(d) NAND  
+       Ans.(a) EX-OR 
+33. A comparison between serial and parallel adder reveals that serial adder is ______. 
+(a) Slower 
+(b) Faster 
+(c) None 
+(d) Equal speed 
+      Ans. (a) Slower 
+34. A half adder circuit is constructed by using a 2-input ______ gate and a 2-input AND 
+gate. 
+(a) EX-NOR 
+(b) EX-OR 
+(c) OR 
+(d) NAND 
+     Ans.(b) EX-OR 
+35. A combinational circuit is characterized by:  
+(a) Presence of memory elements 
+ (b) Feedback paths 
+ (c) Output depends only on present inputs 
+ (d) Clock signals required 
+   Ans: (c) Output depends only on present inputs 
+ 
+36. How many selection lines are required for an 8-to-1 multiplexer?  
+  (a) 2 
+  (b) 3 
+  (c) 4 
+  (d) 8 
+  Ans: (b) 3 
+ 
+37. A decoder with n inputs can have a maximum of _____ outputs.  
+  (a) n² 
+  (b) 2n 
+  (c) 2ⁿ 
+  (d) n+1 
+        Ans: (c) 2ⁿ 
+ 
+38.  A 4-to-16 decoder has _____ input lines. 
+(a) 2 
+( b) 4 
+
+===== PAGE 7 =====
+  (c) 8 
+  (d) 16 
+         Ans: (b) 4 
+ 
+39.  Which device performs the reverse operation of a decoder?  
+(a)Encoder 
+(b) Multiplexer 
+                 (c)Adder 
+ (d)Comparator 
+Ans: (a) Encoder 
+ 
+40. A Half Adder adds:  
+(a) Three bits 
+(b) Two bits and a carry 
+(c) Two binary bits 
+(d) Four binary bits 
+             Ans: (c) Two binary bits 
+ 
+41. The outputs of a Half Adder are: 
+    (a) Sum and Difference 
+    (b) Sum and Carry 
+    (c) Product and Carry 
+    (d) Quotient and Remainder 
+           Ans:(b) Sum and Carry 
+ 
+42.  A Full Adder has _____ inputs.  
+(a) 2 
+(b) 3 
+(c) 4 
+(d) 5 
+             Ans: (b) 3 
+43. Which circuit can perform binary subtraction?  
+(a) Decoder (b) Comparator (c) Subtractor  (d) Encoder 
+    Ans: (c) Subtractor 
+ 
+
+===== PAGE 8 =====
+44. A 2-to-4 decoder generates how many outputs?  
+(a) 2   (b) 4    (c) 8  (d) 16 
+     Ans:(b) 4 
+ 
+ 
+45.  Which combinational circuit compares two binary numbers? 
+(a) Encoder 
+(b) Comparator 
+(c) MUX 
+(d) Decoder 
+Ans: (b) Comparator 
+ 
+46.  The carry output of a Half Adder is given by: 
+(a) A + B    (b) A ⊕ B    (c) AB    (d) A̅B 
+     Ans: (c) AB 
+ 
+47.  The sum output of a Half Adder is: 
+(a) A + B 
+(b) AB 
+(c) A ⊕ B 
+(d) A̅B̅ 
+ Ans: (c) A ⊕ B 
+ 
+48. Which combinational circuit selects one input from many inputs?  
+(a) Decoder  (b) Encoder  (c) Multiplexer   (d) Comparator 
+Ans: (c) Multiplexer 
+ 
+49. A demultiplexer has: 
+   (a) Many inputs and one output 
+   (b) One input and many outputs 
+   (c) One input and one output 
+   (d) Many inputs and many outputs 
+  Ans: (b) One input and many outputs 
+ 
+50.  The output of a combinational circuit depends on:  
+(a) Previous input values   (b) Clock pulse   (c) Present input values only    
+(d) Memory contents 
+    Ans: (c) Present input values only 
+ 
+51. How many data inputs are present in a 16-to-1 MUX? 
+   (a) 4 
+   (b) 8 
+
+===== PAGE 9 =====
+   (c) 16 
+   (d) 32 
+          Ans: (c) 16 
+ 
+ 

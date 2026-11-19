@@ -1,0 +1,3 @@
+# re-creatable rendered scan pages (python3 study_engine/tools/render_pages.py)
+study_engine/_scan_pages/
+__pycache__/

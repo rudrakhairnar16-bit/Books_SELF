@@ -1,0 +1,253 @@
+SOURCE: SEM3/MATHS3/Question Bank for MID 2.pdf
+
+===== PAGE 1 =====
+ 
+Krishna School of Emerging Technology And Applied Research  
+Subject Name & Subject Code : Maths - III (25B1BS301) 
+B. Tech: 3rd Semester(2026-2027) 
+1 
+The joint probability distribution of two random variable X & Y is given by 
+Y                X 
+-1 
+0 
+1 
+-1 
+0 
+0 
+1/3 
+0 
+0 
+0 
+0 
+1 
+0 
+1/3 
+1/3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Find Conditional Probability distribution of X given that Y = 1. 
+2 
+The joint distribution of X and Y is given by 
+Y \ X 
+1 
+2 
+3 
+2 
+1/8 
+1/24 
+1/12 
+4 
+1/4 
+1/4 
+0 
+6 
+1/8 
+1/24 
+1/12 
+ 
+Find P(X < 4), P(Y > 1), P(X < 4 / Y > 1), P(Y = 2 / X = 2), P(X + Y ≤ 7). 
+3 
+A sales tax officer has reported that the average deviation of the 500 business that he 
+has to deal with during a year is Rs. 36,000 with standard deviation of 10,000. 
+Assuming that the sales in this business are normally distributed, find i) the number of 
+businesses as the sales of which are Rs. 40,000 ii) the percentage of business the sales 
+of which are likely to range between Rs. 30,000 and Rs. 40,000. 
+4 
+The joint probability function of  X and Y is given by  
+𝑓(𝑥, 𝑦) = {
+6 −𝑥−𝑦
+8
+ ;      0 < 𝑥<  2,   2 < 𝑦< 4
+0 ;          𝑜𝑡ℎ𝑒𝑤𝑖𝑠𝑒 
+ 
+Find 𝑓( 𝑦| 𝑥= 2) 
+ 
+
+===== PAGE 2 =====
+ 
+5 
+Calculate mean, median & Mode from the following data: 
+ 
+Class 
+Interval 
+10-15 
+15-20 
+20-25 
+25-30 
+30-35 
+35-40 
+f 
+11 
+20 
+35 
+20 
+8 
+6 
+ 
+6 
+Find the mode from the following data: 
+Class interval 
+0-10 
+10-20 
+20-30 
+30-40 
+40-50 
+f 
+45 
+20 
+14 
+7 
+3 
+ 
+7 
+ 
+The number of accidents in a year attributed to a taxi drivers in a city follows poission 
+distribution with a mean of 3. Out of 1000 taxi drivers find approximately the number 
+of drivers with i) no accidents in a year, ii) more than 3 accidents in a year. 
+8 
+ 
+Calculate mean, median from the following data: 
+ 
+Class 
+Interval 
+0-10 10-20 20-30 30-40 40-50 50-60 60-70 70-80 80-90 90-100 
+f 
+5 
+3 
+4 
+3 
+3 
+4 
+7 
+9 
+7 
+8 
+ 
+9 
+The incidence of an occupational disease in an industry is such that the workers have a 20% 
+chance of suffering from it. What is the probability that out of 6 workers chosen at random, four 
+or more will suffer from the disease? 
+10 
+ 
+ 
+If 10% of the rivets produced by a machine are defective, find the probability that out of 5 rivets 
+chosen at random I) None will be defective II) One will be defective III) At most two rivets will be 
+defective. 
+11 
+If hens of a certain breed lay eggs on 5 days a week on an average, find how many days during a 
+season of 100 days a will poultry keeper with 5 hens of this breed expect to receive at least 4 
+eggs. 
+12 
+The average time required for a passenger to complete a security check is 3 minutes. Assume that 
+the service time follows an exponential distribution. Calculate the probability that:  
+i) The security check takes less than 1 minute. 
+ii) The security check takes between 2 and 4 minutes. 
+iii) The security check takes more than 5 minutes. 
+ 
+13 
+In a certain factory turning out blades, there is a small chance of 1/500 for any blade to be 
+defective. The blades are supplied in pockets of 10. Calculate the approximate number of packets 
+containing no defective, 2 defective blades in a consignment of 10000 packets. 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+14 
+Number of monthly breakdowns of a computer is a random variable having Poisson distribution 
+with mean equal to 1.8. Find the probability that the computer will function for a month i) 
+without a breakdown ii) with only one breakdown and iii) with at least 1. 
+15 
+From the following table for joint distribution of (x,y), find 
+ 𝑃(𝑋≤1), 𝑃(𝑌≤3), 𝑃(𝑋≤1, 𝑌≤3), 𝑃(𝑋+ 𝑌≤4) 
+X         Y     1 
+2 
+3 
+4 
+5 
+6 
+0 
+0 
+0 
+1/32 
+2/32 
+2/32 
+3/32 
+1 
+1/16 
+1/16 
+1/8 
+1/8 
+1/8 
+1/8 
+2 
+1/32 
+1/32 
+1/64 
+1/64 
+0 
+2/64 
+ 
+16 
+Calculate mean, median and mode from the following data: 
+x 
+5 
+7 
+9 
+11 
+13 
+15 
+17 
+19 
+f 
+1 
+2 
+7 
+9 
+11 
+8 
+5 
+4 
+ 
+17 
+The joint Probability density function of two continuous random variable X & Y is 
+given by,  
+f(x, y) = {cxy ;      0 < x <  4
+0 ;          othewise                     
+Find (1) Constant C 
+         (2) P(X ≥3, Y ≤2) 
+         (3) P(1 <  X  <  2,  2  <  Y  <  3) 
+18 
+If the masses of 300 students are normally distributed with mean 68kgs and standard 
+deviation 3kgs, how many students have masses i) greater than 72kgs, ii) less than or equal 
+to 64kgs and iii) between 65 and 71 kgs inclusive. 
+(z (1.33) = 0.90824, z(-1.33) = 0.09176, z(1) = 0.84134, z(-1) = 0.15866) 
+19 
+The average time it takes to serve a customer at a petrol pump is 6 minutes. The service 
+time follows exponential distribution. Calculate the probability that i) a customer will take 
+less than 2 minutes to complete the service ii) a customer will take between 4 and 5 
+minutes to get the service iii) a customer will take more than 10 minutes for his service. 
+20 
+The joint probability density function of two continuous random variables X and Y is 
+given by  
+𝑓(𝑥, 𝑦) = {6𝑒−3𝑥−3𝑦 ;     𝑥> 0, 𝑦> 0
+0 ;          𝑜𝑡ℎ𝑒𝑤𝑖𝑠𝑒 
+ 
+(i) Find marginal probability of X and Y. 
+(ii)Test whether X and Y are independent or not? 
+21 
+A sales tax officer has reported that the average deviation of the 500 business that he 
+has to deal with during a year is Rs. 36,000 with standard deviation of 10,000. 
+Assuming that the sales in this business are normally distributed, find i) the number of 
+businesses as the sales of which are Rs. 40,000 ii) the percentage of business the sales 
+of which are likely to range between Rs. 30,000 and Rs. 40,000. 
+ 
+
+===== PAGE 4 =====
+ 
+ 

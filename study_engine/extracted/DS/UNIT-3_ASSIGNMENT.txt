@@ -1,0 +1,799 @@
+SOURCE: SEM3/DS/UNIT-3 ASSIGNMENT.pdf
+
+===== PAGE 1 =====
+Module 3 
+Linked List 
+ 
+Introduction to Structure and Pointer 
+Structure 
+structure is a way of organizing and storing data in a computer so that it can be accessed and 
+used efficiently. It refers to the logical or mathematical representation of data, as well as the 
+implementation in a computer program. 
+ 
+A structure is a user-defined data type that allows us to store different types of data 
+together. 
+struct Student 
+{ 
+    int rollno; 
+    char name[20]; 
+    float marks; 
+}; 
+ 
+Example 
+#include <stdio.h> 
+struct Student 
+{ 
+    int rollno; 
+    char name[20]; 
+    float marks; 
+}; 
+int main() 
+{ 
+
+===== PAGE 2 =====
+    struct Student s; 
+    s.rollno = 101; 
+    s.marks = 85.5; 
+    printf("Roll No = %d\n", s.rollno); 
+    printf("Marks = %.2f\n", s.marks); 
+    return 0; 
+} 
+ 
+Pointer 
+A pointer is a variable that stores the address of another variable. 
+A pointer is a special type of variable that stores the memory address of another variable 
+rather than storing a direct value. Pointers allows low-level memory access, dynamic 
+memory allocation, and many other functionality. 
+Syntax: pointer_variable = &variable; 
+ 
+A pointer variable points to a data type (like int) of the same type, and is created with 
+the * operator. 
+Example: int *ptr = &x; 
+int a = 10; 
+int *p; 
+p = &a; 
+ 
+Example 
+#include <stdio.h> 
+int main() 
+{ 
+    int a; 
+    int *p; 
+ 
+
+===== PAGE 3 =====
+    printf("Enter value of a: "); 
+    scanf("%d", &a); 
+    p = &a; 
+    printf("Value of a = %d\n", a); 
+    printf("Value using pointer = %d\n", *p); 
+    return 0; 
+} 
+ 
+Dynamic Memory Allocations 
+Dynamic memory allocation allows programs to allocate and manage memory at runtime 
+according to their requirements 
+Dynamic Memory Allocation means allocating memory during program execution 
+(runtime) instead of deciding the memory size before the program runs. 
+It is useful when the required memory size is not known in advance. 
+ 
+Allocate a block of memory: a new operator is also used to allocate a block(an array) of 
+memory of type data type.  
+Syntax: pointer-variable = new data-type[size]; 
+ 
+Dynamic Memory Allocation Functions 
+C provides four main functions for dynamic memory management: malloc(), calloc(), 
+realloc(), and free().  
+These functions are declared in the <stdlib.h> header file. 
+Function 
+Purpose 
+Initial Value 
+Syntax 
+malloc() 
+Allocates memory 
+Garbage/indeterminate values 
+malloc(size) 
+calloc() 
+Allocates memory for 
+multiple elements 
+Initializes all to 0 
+calloc(n, size) 
+realloc() 
+Changes the size of allocated 
+memory 
+Existing data is preserved as much as 
+possible 
+realloc(ptr, 
+new_size) 
+free() 
+Releases allocated memory 
+— 
+free(ptr) 
+ 
+
+===== PAGE 4 =====
+Representation of linked list 
+linked list is represented using a user-defined structure (struct). Because elements (nodes) 
+are not stored in contiguous memory like arrays, each node must explicitly store its data and 
+a pointer (address) to the next node in the chain. 
+ 
+A linked list is a linear data structure made of nodes connected using pointers. Each node 
+has: 
+• Data: The value stored in the node.  
+• Pointer: A reference to the next node. 
+ 
+ 
+ 
+ 
+Operations on linked list 
+No. Operation 
+Example Before 
+Main Pointer Operation 
+Value / 
+Position 
+Example After 
+1 
+Insert at 
+Beginning 
+10 → 20 → 30 
+newNode->next = head;  
+head = newNode; 
+Insert 5 
+5 → 10 → 20 → 30 
+2 
+Insert at 
+End 
+10 → 20 → 30 
+Traverse to last node → 
+temp->next = newNode 
+Insert 40 
+10 → 20 → 30 → 40 
+3 
+Insert at 
+Middle 
+10 → 20 → 30 → 
+40 
+newNode->next =  
+temp->next;  
+temp->next = newNode; 
+Insert 25 at 
+position 3 
+10 → 20 → 25 → 30 → 
+40 
+4 
+Delete at 
+Beginning 
+10 → 20 → 30 
+temp = head;  
+head = head->next; 
+free(temp); 
+Delete 10 
+20 → 30 
+
+===== PAGE 5 =====
+5 
+Delete at 
+End 
+10 → 20 → 30 
+Find last node → prev->next 
+= NULL; free(temp); 
+Delete 30 
+10 → 20 
+6 
+Delete at 
+Middle 
+10 → 20 → 30 → 
+40 
+deleteNode = temp >next;  
+temp->next = deleteNode-
+>next; 
+free(deleteNode); 
+Delete 30 at 
+position 3 
+10 → 20 → 40 
+ 
+Insertion  
+ 
+ 
+Deletion 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 6 =====
+Singly Linked List 
+A singly linked list is a fundamental data structure, it consists of nodes where each node 
+contains a data field and a reference to the next node in the linked list. The next of the last 
+node is null, indicating the end of the list.  
+Basic operations 
+• 
+Insertion — add a node at the beginning, end, or a particular position.  
+• 
+Deletion — remove a node.  
+• 
+Traversal — visit nodes one by one from HEAD to NULL.  
+• 
+Searching — find a particular value. 
+ 
+struct Node { 
+    int data; 
+    struct Node *next; 
+}; 
+ 
+Example 
+#include <stdio.h> 
+#include <stdlib.h> 
+struct Node { 
+    int data; 
+    struct Node *next; 
+}; 
+int main() { 
+    struct Node *head, *second, *third; 
+    head = malloc(sizeof(struct Node)); 
+    second = malloc(sizeof(struct Node)); 
+    third = malloc(sizeof(struct Node)); 
+ 
+    head->data = 10; 
+    head->next = second; 
+ 
+    second->data = 20; 
+    second->next = third; 
+ 
+
+===== PAGE 7 =====
+    third->data = 30; 
+    third->next = NULL; 
+ 
+    printf("Linked List: "); 
+ 
+    struct Node *temp = head; 
+ 
+    while (temp != NULL) { 
+        printf("%d -> ", temp->data); 
+        temp = temp->next; 
+    } 
+ 
+    printf("NULL"); 
+ 
+    return 0; 
+} 
+ 
+Doubly Linked List 
+A Doubly Linked List (DLL) is a linked list in which each node contains three parts: 
+1. Previous pointer (prev) – points to the previous node.  
+2. Data – stores the value.  
+3. Next pointer (next) – points to the next node. 
+ 
+ 
+struct Node { 
+    int data; 
+    struct Node *prev; 
+    struct Node *next; 
+}; 
+ 
+ 
+
+===== PAGE 8 =====
+Node Previous Data Next 
+1st 
+NULL 
+10 
+Node 2 
+2nd 
+Node 1 
+20 
+Node 3 
+3rd 
+Node 2 
+30 
+Node 4 
+4th 
+Node 3 
+40 
+NULL 
+ 
+Example 
+#include <stdio.h> 
+#include <stdlib.h> 
+ 
+struct Node { 
+    int data; 
+    struct Node *prev, *next; 
+}; 
+ 
+int main() { 
+    struct Node *a, *b, *c; 
+ 
+    a = malloc(sizeof(struct Node)); 
+    b = malloc(sizeof(struct Node)); 
+    c = malloc(sizeof(struct Node)); 
+ 
+    a->data = 10; 
+    a->prev = NULL; 
+    a->next = b; 
+ 
+    b->data = 20; 
+    b->prev = a; 
+    b->next = c; 
+ 
+    c->data = 30; 
+    c->prev = b; 
+    c->next = NULL; 
+ 
+    printf("%d <-> %d <-> %d", a->data, b->data, c->data); 
+    return 0; 
+} 
+
+===== PAGE 9 =====
+Circular Linked List 
+A Circular Linked List is a type of linked list in which the last node points back to the first 
+node, forming a circle. Unlike a linear linked list, there is no NULL pointer at the end. 
+Types of Circular Linked Lists 
+1. Circular Singly Linked List  
+o Each node has:  
+▪ 
+Data  
+▪ 
+Pointer to the next node  
+o The last node's next points to the first node.  
+2. Circular Doubly Linked List  
+o Each node has:  
+▪ 
+Data  
+▪ 
+Pointer to the next node  
+▪ 
+Pointer to the previous node  
+o The first node's prev points to the last node, and the last node's next points to 
+the first node. 
+ 
+1. Circular Singly Linked List 
+In Circular Singly Linked List, each node has just one pointer called the "next" pointer. The 
+next pointer of the last node points back to the first node and this results in forming a circle 
+ 
+ 
+struct Node { 
+    int data; 
+    struct Node *next; 
+}; 
+
+===== PAGE 10 =====
+Example 
+#include <stdio.h> 
+#include <stdlib.h> 
+ 
+struct Node { 
+    int data; 
+    struct Node *next; 
+}; 
+ 
+int main() { 
+    struct Node *head = NULL, *new, *temp; 
+    int n, i; 
+    printf("Enter number of nodes: "); 
+    scanf("%d", &n); 
+ 
+    for(i = 0; i < n; i++) { 
+        new = malloc(sizeof(struct Node)); 
+ 
+        printf("Enter value: "); 
+        scanf("%d", &new->data); 
+ 
+        if(head == NULL) { 
+            head = new; 
+            new->next = head; 
+        } else { 
+            temp = head; 
+            while(temp->next != head) 
+                temp = temp->next; 
+            temp->next = new; 
+            new->next = head; 
+        } 
+    } 
+    temp = head; 
+    do { 
+        printf("%d -> ", temp->data); 
+        temp = temp->next; 
+    } while(temp != head); 
+    return 0; 
+} 
+ 
+
+===== PAGE 11 =====
+2. Circular Doubly Linked List: 
+In circular doubly linked list, each node has two pointers prev and next, similar to doubly 
+linked list. The prev pointer points to the previous node and the next points to the next 
+node.  
+ 
+ 
+struct Node { 
+    int data; 
+    struct Node *prev; 
+    struct Node *next; 
+}; 
+Example 
+#include <stdio.h> 
+#include <stdlib.h> 
+ 
+struct Node { 
+    int data; 
+    struct Node *prev, *next; 
+}; 
+ 
+int main() { 
+    struct Node *head = NULL, *new, *last; 
+    int n, i; 
+ 
+    printf("Enter number of nodes: "); 
+    scanf("%d", &n); 
+ 
+    for(i = 0; i < n; i++) { 
+        new = malloc(sizeof(struct Node)); 
+ 
+        printf("Enter value: "); 
+        scanf("%d", &new->data); 
+ 
+        if(head == NULL) { 
+
+===== PAGE 12 =====
+            head = new; 
+            new->next = new->prev = head; 
+        } else { 
+            last = head->prev; 
+ 
+            new->next = head; 
+            new->prev = last; 
+            last->next = new; 
+            head->prev = new; 
+        } 
+    } 
+ 
+    last = head; 
+    do { 
+        printf("%d <-> ", last->data); 
+        last = last->next; 
+    } while(last != head); 
+ 
+    return 0; 
+} 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 13 =====
+Difference Between Singly, Doubly and circular Linked list 
+Feature 
+Singly Linked List 
+Doubly Linked List 
+Circular Linked List 
+Definition 
+A list where each node 
+points to the next node. 
+A list where each node 
+points to both the 
+previous and next node. 
+A list where the last node 
+points back to the first node. 
+Node structure 
+Data + Next 
+Prev + Data + Next 
+Data + Next 
+Number of pointers 
+1 
+2 
+1 
+Pointer names 
+next 
+prev, next 
+next 
+First node 
+head points to first node 
+head points to first node 
+head points to first node 
+Last node points to 
+NULL 
+NULL 
+First node (head) 
+Direction of traversal 
+Forward only 
+Forward and backward 
+Forward continuously 
+Backward traversal 
+ Not possible 
+ Possible 
+ Not directly possible 
+NULL pointer 
+Last node's next = NULL 
+First prev = NULL, last next 
+= NULL 
+No NULL at the end 
+Memory required 
+Less 
+More 
+Less 
+Implementation 
+Easy 
+More complex 
+Moderate 
+Insertion at beginning Easy 
+Easy 
+Easy 
+Insertion at end 
+Easy with tail, otherwise 
+traversal required 
+Easy with tail 
+Easy with tail 
+Deletion 
+Requires tracking 
+previous node 
+Easier because prev is 
+available 
+Requires careful handling of 
+circular connection 
+Searching 
+Sequential search 
+Sequential search 
+Sequential search until 
+reaching head again 
+Traversal stopping 
+condition 
+Reach NULL 
+Reach NULL 
+Reach the starting node again 
+Main advantage 
+Simple and memory 
+efficient 
+Can move in both 
+directions 
+Useful for repeated/cyclic 
+traversal 
+Main disadvantage 
+Cannot move backward 
+Extra memory and more 
+pointer handling 
+More difficult to detect the end 
+Example 
+10 → 20 → 30 → NULL 
+NULL ← 10 ⇄ 20 ⇄ 30 → 
+NULL 
+10 → 20 → 30 → 10 
+Common applications 
+Simple lists, stacks 
+Browser history, 
+undo/redo 
+Round-robin scheduling, 
+playlists 
+C structure 
+struct Node { int data; 
+struct Node *next; }; 
+struct Node { int data; 
+struct Node *prev, *next; 
+}; 
+struct Node { int data; struct 
+Node *next; }; 
+Overall complexity 
+Simple 
+More flexible 
+Good for cyclic operations 
+ 
+ 
+
+===== PAGE 14 =====
+ 
+Application of Linked list 
+ 
+Applications of Linked Lists in Computer Science 
+• 
+Data Structures: Implement stacks, queues, and adjacency lists in graphs. 
+• 
+Memory Management: Dynamic memory allocation using free blocks. 
+• 
+File & Directory Management: Maintain directories, symbol tables, and sparse 
+matrices. 
+• 
+Mathematical Operations: Long integer arithmetic, polynomial manipulation. 
+• 
+Image & Signal Processing: Represent images, pixels, or signals. 
+• 
+Operating Systems: Task scheduling, process management. 
+• 
+Compilers: Symbol table management. 
+Real-World Applications 
+• 
+Image viewer, web browser, music player: Navigate previous/next items. 
+• 
+GPS & Robotics: Manage routes and robot control systems. 
+• 
+Undo/Redo functionality: Represent actions in applications. 
+• 
+File systems & simulations: Store hierarchical directories or system states. 
+• 
+Speech recognition & polynomial representation: Each node represents an element. 
+Circular Linked Lists 
+• 
+Efficient queues and cyclic operations (e.g., OS task scheduling). 
+• 
+Used in databases, networking buffers, video/audio streaming, and games. 
+• 
+Traffic light control systems: Cycle through phases repeatedly. 
+Doubly Linked Lists 
+• 
+Undo/Redo, back/forward buttons in browsers. 
+• 
+Most recently used (MRU) lists. 
+• 
+Game objects, networking, graph algorithms. 
+• 
+OS process scheduling (traverse forward/backward efficiently). 
+ 
+
+===== PAGE 15 =====
+Linked Implementation of stack and queue 
+ 
+Stack - Linked List Implementation 
+A stack is a linear data structure that follows the Last-In-First-Out (LIFO) principle.  
+A stack using a linked list is a dynamic implementation of a stack where each element is 
+stored in a node. 
+• 
+TOP points to the first node.  
+• 
+PUSH → Insert a node at the beginning.  
+• 
+POP → Delete a node from the beginning.  
+• 
+DISPLAY → Show elements from TOP to the last node. 
+ 
+ 
+ 
+Example 
+#include <stdio.h> 
+#include <stdlib.h> 
+ 
+struct Node { 
+    int data; 
+    struct Node *next; 
+}; 
+ 
+struct Node *top = NULL; 
+
+===== PAGE 16 =====
+ 
+void push(int x) { 
+    struct Node *n = malloc(sizeof(struct Node)); 
+    n->data = x; 
+    n->next = top; 
+    top = n; 
+} 
+ 
+void pop() { 
+    if (top == NULL) 
+        printf("Stack Underflow\n"); 
+    else { 
+        struct Node *t = top; 
+        printf("Popped = %d\n", top->data); 
+        top = top->next; 
+        free(t); 
+    } 
+} 
+ 
+void display() { 
+    struct Node *t = top; 
+    while (t != NULL) { 
+        printf("%d ", t->data); 
+        t = t->next; 
+    } 
+} 
+ 
+int main() { 
+    push(10); 
+    push(20); 
+    push(30); 
+ 
+    display(); 
+    pop(); 
+ 
+    return 0; 
+} 
+ 
+ 
+ 
+ 
+
+===== PAGE 17 =====
+ 
+Linked implementation of queue in DS 
+ 
+Implement a Queue using a Linked List, this queue has no fixed capacity and can grow 
+dynamically until memory is available. 
+The Queue must support the following operations: 
+(i) enqueue(x): Insert an element x at the rear of the queue. 
+(ii) dequeue(): Remove the front element from the queue. If the queue is empty, do nothing. 
+(iii) getFront(): Return front element if not empty, else -1. 
+(iv) isEmpty(): Return true if the queue is empty else return false. 
+(v) size(): Return the number of elements currently in the queue. 
+A queue using a linked list is a dynamic data structure that follows the FIFO (First In, First 
+Out) principle. 
+In linked implementation: 
+• 
+Each element is stored in a node.  
+• 
+Each node contains data and a next pointer.  
+• 
+Two pointers are used:  
+o FRONT → points to the first node.  
+o REAR → points to the last node.  
+• 
+Enqueue: Insert a new node at the REAR.  
+• 
+Dequeue: Delete a node from the FRONT.  
+• 
+Queue size is dynamic, so no fixed array size is required. 
+ 
+Example 
+#include <stdio.h> 
+#include <stdlib.h> 
+ 
+struct Node { 
+    int data; 
+    struct Node *next; 
+}; 
+ 
+struct Node *front = NULL, *rear = NULL; 
+ 
+
+===== PAGE 18 =====
+void enqueue(int x) { 
+    struct Node *n = malloc(sizeof(struct Node)); 
+    n->data = x; 
+    n->next = NULL; 
+ 
+    if (rear == NULL) 
+        front = rear = n; 
+    else { 
+        rear->next = n; 
+        rear = n; 
+    } 
+} 
+void dequeue() { 
+    if (front == NULL) 
+        printf("Queue Empty"); 
+    else { 
+        struct Node *t = front; 
+        printf("Deleted: %d\n", front->data); 
+        front = front->next; 
+        if (front == NULL) rear = NULL; 
+        free(t); 
+    } 
+} 
+void display() { 
+    struct Node *t = front; 
+    while (t) { 
+        printf("%d ", t->data); 
+        t = t->next; 
+    } 
+} 
+int main() { 
+    enqueue(10); 
+    enqueue(20); 
+    enqueue(30); 
+    display(); 
+    dequeue(); 
+    return 0; 
+} 

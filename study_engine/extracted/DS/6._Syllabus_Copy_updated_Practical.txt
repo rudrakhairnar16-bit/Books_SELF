@@ -1,0 +1,483 @@
+SOURCE: SEM3/DS/6. Syllabus Copy_updated Practical.pdf
+
+===== PAGE 1 =====
+ 
+ 
+ 
+Course Title 
+Data Structures 
+Course 
+No 
+21CS2303 
+Specialization 
+Structure 
+Course/ 
+Branch 
+CSE 
+L 
+T 
+P 
+C 
+Offered for 
+3rd Sem 
+3 
+0 
+0 
+3 
+Faculty 
+E & T 
+Status 
+BSC HSC ESC PCC 
+Prof. 
+Elective 
+Open 
+Elective 
+Minor 
+(Hons) 
+Pre-requisite 
+Y 
+N 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+Project/ 
+Seminar 
+Internship 
+Mandatory 
+- 
+- 
+- 
+- 
+For Office Use Only 
+Date of 
+Submission 
+Type 
+New 
+Modification 
+Merging 
+To take effect 
+from 
+Date of 
+approval by 
+Board of 
+Study 
+Date of 
+approval 
+by 
+Academic 
+Council 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Sr 
+No 
+Name of 
+Course 
+Teaching Scheme 
+Evaluation Scheme 
+Credits 
+Theory Hours/week 
+Tutorial Hours/week 
+Practical Hours/week 
+Total 
+Theory 
+Practical 
+Total Marks 
+Theory 
+Practical 
+Ex 
+Internal 
+Internal 
+External 
+Continuous 
+Evaluation 
+Term Work 
+Viva/ Practical Exam 
+ESS 
+Attendance 
+Assignment 
+Mid Sem -I 
+Mid Sem -II 
+Attendance 
+Lab work 
+Report 
+Writing 
+Performance 
+ 
+1 
+Data 
+Structures 
+3 
+0 
+0 
+3 
+70 
+5 
+5 
+10 
+10 
+- 
+- 
+- 
+- 
+- 
+100 
+3 
+- 
+
+===== PAGE 3 =====
+ 
+Content of the Course 
+Module 
+Contents/ Topics to be covered 
+Hours 
+Module - 
+1 
+Introduction to Data Structures 
+Types of data structure. Linear and non-linear, Data types – Primitive and Non- 
+Primitive, Application of data structure, Performance Analysis and Measurement (Time and 
+space analysis of algorithms-Average, best- and worst-case analysis), 
+04 
+ 
+ 
+ 
+ 
+ 
+Module - 
+2 
+LINEAR DATA STRUCTURE 
+Array: Representation of arrays, Applications of arrays, sparse matrix and its representation 
+Stack and Queues: Introduction of stack, Operations on stack, Applications of stack, 
+Polish Expression, Reverse Polish Expression and Their Compilation, Infix to postfix 
+conversion and Evaluation of postfix expression, Recursion implementation, Tower of Hanoi 
+Queue: Representation of Queue, Operations on Queue, Circular Queue, Priority Queue, 
+Array representation of Priority Queue, Double Ended Queue, Applications of Queue 
+Linked List: Overview of linked list, Dynamic memory allocation, linked list operations: 
+Insert node, delete node, Search node, traversal, copy linked list, merge linked list 
+Types of linked list: Singly, Circular, Doubly, Sorted. Application of linked list, 
+Introduction to object-oriented programming through stacks, queues and linked lists 
+13 
+ 
+ 
+ 
+Module - 
+3 
+NONLINEAR DATA STRUCTURE 
+Tree: Tree: Introduction to tree, Representations of tree, Properties of trees, Binary tree, 
+Binary tree representation, Binary tree properties, Binary tree traversals (inorder, preorder, 
+postorder), Binary tree implementation, Threaded Binary Tree, Binary Search Tree, 
+Conversion of General Tree to Binary Tree, Application of trees, Balanced tree mechanism, 
+AVL Tree, 2-3 trees, Height Balance, Weight balance 
+Graphs: Introduction to graph, Representation of Graphs, Breadth first search and 
+Depth first search in directed and undirected graph , Spanning tree, shortest path, minimal 
+spanning tree 
+13 
+ 
+Module - 
+4 
+Sorting and Searching 
+Time and space complexity, Introduction to sorting, Selection sort, Bubble sort, 
+Insertion sort, Merge sort and Quick sort, Sequential Search, Binary Search, Comparison of 
+sorting and searching methods 
+07 
+ 
+Module - 
+5 
+HASHING AND FILE STRUCTURES 
+Hashing: The symbol table, Hashing Functions, Collision Resolution Techniques, 
+File Structure: Concepts of fields, records and files, Sequential, Indexed and 
+Relative/Random, File Organization, indexing structure for index files, hashing for direct 
+files, Multi-Key file organization and access methods. 
+08 
+
+===== PAGE 4 =====
+ 
+Textbooks 
+1 An Introduction to Data Structures with Applications. by Jean-Paul Tremblay & Paul G. Sorenson 
+Publisher- Tata McGraw Hill 
+2 Data Structures using C & C++, Ten Baum, Prenctice-Hall International 
+3 Fundamentals of Data Structures in C, 2nd Edition, E.Horowitz, S.Sahni and Susan Anderson- 
+Freed, Universities Press. 
+4 Data Structures A Programming Approach with C, D.S.Kushwaha and A.K.Misra, PHI 
+5 Data Structure using C, Third edition, 2012, Reema Thareja, Oxford University press 
+6 Fundamentals of Computer Algorithms, 2001 edition, Horowitz, Sahni,Galgotia 
+References 
+1 Data Structures: A Pseudo-code Approach with C, Gilberg & Forouzan, Thomson Learning 
+2 Data 
+Structures 
+and 
+Algorithm 
+Analysis 
+in 
+C, 
+2nd 
+edition, 
+M.A.Weiss, 
+Pearson 
+Web content Link / E- material links 
+1 NPTEL tutorials 
+2 www.coursera.org 
+3 www.geeksforgeeks.org/data-structures/ 
+4 Vlabs.iitb.ac.in 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+Course Title 
+Data Structures 
+Laboratory 
+Course 
+No 
+21CS2304 
+Specialization 
+Structure 
+Course/ 
+Branch 
+CSE 
+L 
+T 
+P 
+C 
+Offered for 
+3rd Sem 
+0 
+0 
+4 
+2 
+Faculty 
+E & T 
+Status 
+BSC HSC ESC PCC 
+Prof. 
+Elective 
+Open 
+Elective 
+Minor 
+(Hons) 
+Pre-requisite 
+Y 
+N 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+Project/ 
+Seminar 
+Internship 
+Mandatory 
+- 
+- 
+- 
+- 
+For Office Use Only 
+Date of 
+Submission 
+Type 
+New 
+Modification 
+Merging 
+To take effect 
+from 
+Date of 
+approval by 
+Board of 
+Study 
+Date of 
+approval 
+by 
+Academic 
+Council 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Sr 
+No 
+Name of 
+Course 
+Teaching Scheme 
+Evaluation Scheme 
+Credits 
+Theory Hours/week 
+Tutorial Hours/week 
+Practical Hours/week 
+Total 
+Theory 
+Practical 
+Total Marks 
+Theory 
+Practical 
+Ex 
+Internal 
+Internal 
+External 
+Continuous 
+Evaluation 
+Term Work 
+Viva/ Practical Exam 
+ESS 
+Attendance 
+Assignment 
+Mid Sem -I 
+Mid Sem -II 
+Attendance 
+Lab work 
+Report 
+Writing
+Performance 
+ 
+1 
+Data 
+Structures 
+Laboratory 
+0 
+0 
+4 
+4 
+- 
+- 
+- 
+- 
+- 
+5 
+5 
+5 
+5 
+30 
+50 
+0 
+2 
+
+===== PAGE 7 =====
+ 
+ 
+List of Experiments 
+Name of Laboratory: Data Structures Laboratory 
+List of practical/ Experiments 
+Sr 
+No 
+Objective 
+Performance 
+Study 
+Self -Study 
+1 
+Implement a program to insert, delete and search an element from 
+array. 
+YES 
+- 
+- 
+2 
+Introduction to pointers. Call by Value and Call by reference 
+YES 
+- 
+- 
+3 
+Implement a program for stack that performs following operations 
+using array. 
+a. PUSH 
+b. POP 
+c. PEEP 
+d. CHANGE 
+e. DISPLAY 
+YES 
+- 
+- 
+4 
+Implement a program to convert infix notation to postfix notation using 
+stack 
+YES 
+- 
+- 
+5 
+Write a program to implement SIMPLE QUEUE and CIRCULAR 
+QUEUE using arrays that performs following operations: 
+a. INSERT 
+b. DELETE 
+c. DISPLAY 
+YES 
+- 
+- 
+6 
+Write a menu driven program to implement following operations on 
+the singly linked list. 
+a. Insert a node at the front of the linked list. 
+b. Insert a node at the end of the linked list. 
+c. Insert a node such that linked list is in ascending order 
+d. Delete a first node of the linked list. 
+e. Delete a node before specified position. 
+f. Delete a node after specified position. 
+YES 
+- 
+- 
+7 
+Write a program to implement following operations on the doubly 
+linked list. 
+a. Insert a node at the front of the linked list. 
+b. Insert a node at the end of the linked list. 
+c. Delete a last node of the linked list. 
+d. Delete a node before specified position 
+YES 
+- 
+- 
+
+===== PAGE 8 =====
+ 
+8 
+Write a program to implement following operations on the circular 
+linked list. 
+a. Insert a node at the end of the linked list. 
+b. Insert a node before specified position. 
+c. Delete a first node of the linked list. 
+d. Delete a node after specified position. 
+YES 
+- 
+- 
+9 
+Write a program which create binary search tree and implement tree 
+traversing methods in order, preorder and post-order traversal. 
+YES 
+- 
+- 
+10 
+Write a program to implement Following sorting algorithm 
+a. Bubble 
+b. Merge 
+Quick 
+YES 
+- 
+- 
+11 
+Write a program to implement Binary search algorithm. 
+YES 
+- 
+- 
+12 
+OEP 
+YES 
+- 
+- 
+ 

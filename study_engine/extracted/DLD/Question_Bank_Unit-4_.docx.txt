@@ -1,0 +1,30 @@
+SOURCE: SEM3/DLD/Question Bank Unit-4 .docx.pdf
+
+===== PAGE 1 =====
+ 
+Digital Logic Design 
+B.Tech CSE / CE - 3rd Sem 
+Question Bank: Module 4 
+ 
+Sr. 
+No. 
+Module : 4 
+1 
+Explain S-R clocked flip flop. 
+2 
+Implement T flip flop using JK flip flop 
+3 
+What is race around condition in JK flip flop. 
+4 
+Explain SR flip-flop using characteristic table & characteristic equation. 
+5 
+Write a brief note on race around condition and its solution. Draw 
+&explain the logic diagram of master-slave JK flip-flop. 
+6 
+Design D FF using SR FF. Write truth table of D FF. 
+7 
+Explain Counters. 
+ 
+
+===== PAGE 2 =====
+ 

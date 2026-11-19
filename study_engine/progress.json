@@ -1,0 +1,420 @@
+{
+  "student": {
+    "name": "Rudra",
+    "program": "B.Tech CSE",
+    "semester": 3,
+    "university": "KPGU Vadodara (KSET)",
+    "level": "from scratch",
+    "daily_hours": null,
+    "exam_type": "(ask) End-semester theory 70 marks"
+  },
+  "subjects": {
+    "DBMS": {
+      "name": "Database Management Systems (25B1PC301)",
+      "exam_date": null,
+      "units": {
+        "1": {
+          "title": "Overview & Architecture of Database Systems",
+          "weight": 8,
+          "status": "not_started",
+          "confidence": 0,
+          "frequency": 3,
+          "scores": [],
+          "weak_topics": [],
+          "next_revision": null,
+          "rev_step": 0
+        },
+        "2": {
+          "title": "Relational Algebra & Relational Model",
+          "weight": 16,
+          "status": "not_started",
+          "confidence": 0,
+          "frequency": 3,
+          "scores": [],
+          "weak_topics": [],
+          "next_revision": null,
+          "rev_step": 0
+        },
+        "3": {
+          "title": "Entity Relationship Model",
+          "weight": 7,
+          "status": "not_started",
+          "confidence": 0,
+          "frequency": 3,
+          "scores": [],
+          "weak_topics": [],
+          "next_revision": null,
+          "rev_step": 0
+        },
+        "4": {
+          "title": "SQL Concepts",
+          "weight": 8,
+          "status": "not_started",
+          "confidence": 0,
+          "frequency": 4,
+          "scores": [],
+          "weak_topics": [],
+          "next_revision": null,
+          "rev_step": 0
+        },
+        "5": {
+          "title": "Relational Database Design (FD & Normalization)",
+          "weight": 13,
+          "status": "not_started",
+          "confidence": 0,
+          "frequency": 4,
+          "scores": [],
+          "weak_topics": [],
+          "next_revision": null,
+          "rev_step": 0
+        },
+        "6": {
+          "title": "Transaction Management",
+          "weight": 16,
+          "status": "not_started",
+          "confidence": 0,
+          "frequency": 4,
+          "scores": [],
+          "weak_topics": [],
+          "next_revision": null,
+          "rev_step": 0
+        },
+        "7": {
+          "title": "Query Processing & Optimization",
+          "weight": 11,
+          "status": "not_started",
+          "confidence": 0,
+          "frequency": 2,
+          "scores": [],
+          "weak_topics": [],
+          "next_revision": null,
+          "rev_step": 0
+        },
+        "8": {
+          "title": "Storage & Indexing",
+          "weight": 7,
+          "status": "not_started",
+          "confidence": 0,
+          "frequency": 1,
+          "scores": [],
+          "weak_topics": [],
+          "next_revision": null,
+          "rev_step": 0
+        },
+        "9": {
+          "title": "Database Security",
+          "weight": 7,
+          "status": "not_started",
+          "confidence": 0,
+          "frequency": 3,
+          "scores": [],
+          "weak_topics": [],
+          "next_revision": null,
+          "rev_step": 0
+        },
+        "10": {
+          "title": "PL/SQL Concepts",
+          "weight": 7,
+          "status": "not_started",
+          "confidence": 0,
+          "frequency": 3,
+          "scores": [],
+          "weak_topics": [],
+          "next_revision": null,
+          "rev_step": 0
+        }
+      }
+    },
+    "DLD": {
+      "name": "Digital Logic Design",
+      "exam_date": null,
+      "units": {
+        "1": {
+          "title": "Number Systems & Logic Gates",
+          "weight": 15,
+          "status": "not_started",
+          "confidence": 0,
+          "frequency": 3,
+          "scores": [],
+          "weak_topics": [],
+          "next_revision": null,
+          "rev_step": 0
+        },
+        "2": {
+          "title": "Boolean Function Simplification (K-map)",
+          "weight": 20,
+          "status": "not_started",
+          "confidence": 0,
+          "frequency": 2,
+          "scores": [],
+          "weak_topics": [],
+          "next_revision": null,
+          "rev_step": 0
+        },
+        "3": {
+          "title": "Combinational Logic Circuits",
+          "weight": 15,
+          "status": "not_started",
+          "confidence": 0,
+          "frequency": 5,
+          "scores": [],
+          "weak_topics": [],
+          "next_revision": null,
+          "rev_step": 0
+        },
+        "4": {
+          "title": "Sequential Logic Circuits (Flip-flops)",
+          "weight": 20,
+          "status": "not_started",
+          "confidence": 0,
+          "frequency": 4,
+          "scores": [],
+          "weak_topics": [],
+          "next_revision": null,
+          "rev_step": 0
+        },
+        "5": {
+          "title": "Registers & Counters",
+          "weight": 15,
+          "status": "not_started",
+          "confidence": 0,
+          "frequency": 5,
+          "scores": [],
+          "weak_topics": [],
+          "next_revision": null,
+          "rev_step": 0
+        },
+        "6": {
+          "title": "A/D & D/A Conversion",
+          "weight": 15,
+          "status": "not_started",
+          "confidence": 0,
+          "frequency": 1,
+          "scores": [],
+          "weak_topics": [],
+          "next_revision": null,
+          "rev_step": 0
+        }
+      }
+    },
+    "DS": {
+      "name": "Data Structures (25B1PC303)",
+      "exam_date": null,
+      "units": {
+        "1": {
+          "title": "Introduction to Data Structures & Complexity",
+          "weight": null,
+          "status": "not_started",
+          "confidence": 0,
+          "frequency": 4,
+          "scores": [],
+          "weak_topics": [],
+          "next_revision": null,
+          "rev_step": 0
+        },
+        "2": {
+          "title": "Arrays, Stack & Queue",
+          "weight": null,
+          "status": "not_started",
+          "confidence": 0,
+          "frequency": 4,
+          "scores": [],
+          "weak_topics": [],
+          "next_revision": null,
+          "rev_step": 0
+        },
+        "3": {
+          "title": "Linked List",
+          "weight": null,
+          "status": "not_started",
+          "confidence": 0,
+          "frequency": 4,
+          "scores": [],
+          "weak_topics": [],
+          "next_revision": null,
+          "rev_step": 0
+        },
+        "4": {
+          "title": "Tree (BST, AVL, B/B+ Tree)",
+          "weight": null,
+          "status": "not_started",
+          "confidence": 0,
+          "frequency": 3,
+          "scores": [],
+          "weak_topics": [],
+          "next_revision": null,
+          "rev_step": 0
+        },
+        "5": {
+          "title": "Sorting & Searching",
+          "weight": null,
+          "status": "not_started",
+          "confidence": 0,
+          "frequency": 2,
+          "scores": [],
+          "weak_topics": [],
+          "next_revision": null,
+          "rev_step": 0
+        },
+        "6": {
+          "title": "Graphs / Hashing & File Structures (confirm syllabus)",
+          "weight": null,
+          "status": "not_started",
+          "confidence": 0,
+          "frequency": 1,
+          "scores": [],
+          "weak_topics": [],
+          "next_revision": null,
+          "rev_step": 0
+        }
+      }
+    },
+    "MATHS3": {
+      "name": "Maths-III — Probability & Statistics (25B1BS301)",
+      "exam_date": null,
+      "units": {
+        "1": {
+          "title": "Basic Probability",
+          "weight": 27,
+          "status": "not_started",
+          "confidence": 0,
+          "frequency": 4,
+          "scores": [],
+          "weak_topics": [],
+          "next_revision": null,
+          "rev_step": 0
+        },
+        "2": {
+          "title": "Continuous Probability Distributions",
+          "weight": 13,
+          "status": "not_started",
+          "confidence": 0,
+          "frequency": 3,
+          "scores": [],
+          "weak_topics": [],
+          "next_revision": null,
+          "rev_step": 0
+        },
+        "3": {
+          "title": "Bivariate Distributions",
+          "weight": 13,
+          "status": "not_started",
+          "confidence": 0,
+          "frequency": 4,
+          "scores": [],
+          "weak_topics": [],
+          "next_revision": null,
+          "rev_step": 0
+        },
+        "4": {
+          "title": "Basic Statistics (central tendency, distributions, correlation & regression)",
+          "weight": 18,
+          "status": "not_started",
+          "confidence": 0,
+          "frequency": 4,
+          "scores": [],
+          "weak_topics": [],
+          "next_revision": null,
+          "rev_step": 0
+        },
+        "5": {
+          "title": "Applied Statistics (curve fitting, large-sample tests)",
+          "weight": 18,
+          "status": "not_started",
+          "confidence": 0,
+          "frequency": 2,
+          "scores": [],
+          "weak_topics": [],
+          "next_revision": null,
+          "rev_step": 0
+        },
+        "6": {
+          "title": "Small Samples (t, F, Chi-square)",
+          "weight": 11,
+          "status": "not_started",
+          "confidence": 0,
+          "frequency": 1,
+          "scores": [],
+          "weak_topics": [],
+          "next_revision": null,
+          "rev_step": 0
+        }
+      }
+    },
+    "PP": {
+      "name": "Python Programming (25B1PC308)",
+      "exam_date": null,
+      "units": {
+        "1": {
+          "title": "Introduction to Python",
+          "weight": 15,
+          "status": "not_started",
+          "confidence": 0,
+          "frequency": 3,
+          "scores": [],
+          "weak_topics": [],
+          "next_revision": null,
+          "rev_step": 0
+        },
+        "2": {
+          "title": "Control Structures",
+          "weight": 15,
+          "status": "not_started",
+          "confidence": 0,
+          "frequency": 3,
+          "scores": [],
+          "weak_topics": [],
+          "next_revision": null,
+          "rev_step": 0
+        },
+        "3": {
+          "title": "Functions & Modules",
+          "weight": 15,
+          "status": "not_started",
+          "confidence": 0,
+          "frequency": 3,
+          "scores": [],
+          "weak_topics": [],
+          "next_revision": null,
+          "rev_step": 0
+        },
+        "4": {
+          "title": "Python Data Structures",
+          "weight": 20,
+          "status": "not_started",
+          "confidence": 0,
+          "frequency": 4,
+          "scores": [],
+          "weak_topics": [],
+          "next_revision": null,
+          "rev_step": 0
+        },
+        "5": {
+          "title": "File Handling, Exceptions & Testing",
+          "weight": 15,
+          "status": "not_started",
+          "confidence": 0,
+          "frequency": 4,
+          "scores": [],
+          "weak_topics": [],
+          "next_revision": null,
+          "rev_step": 0
+        },
+        "6": {
+          "title": "Libraries (NumPy, Pandas, Matplotlib) & OOP, Tkinter",
+          "weight": 20,
+          "status": "not_started",
+          "confidence": 0,
+          "frequency": 4,
+          "scores": [],
+          "weak_topics": [],
+          "next_revision": null,
+          "rev_step": 0
+        }
+      }
+    }
+  },
+  "sessions": [
+    "2026-11-19: Mentor system created; all material analysed."
+  ]
+}

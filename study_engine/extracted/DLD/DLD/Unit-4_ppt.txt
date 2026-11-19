@@ -1,0 +1,797 @@
+SOURCE: SEM3/DLD/DLD!/Unit-4 ppt.pdf
+
+===== PAGE 1 =====
+UNIT 4
+ SEQUENTIAL LOGIC
+CIRCUITS
+1
+
+===== PAGE 2 =====
+SEQUENTIAL LOGIC CIRCUITS
+Sequential logic
+circuit consistsof
+a
+combinational
+circuit
+with  storage elements connected as a feedback to combinationalcircuit
+•
+output depends on the sequence of inputs (past and present)
+•
+stores information (state) from past inputs
+SEQUENTIAL LOGIC CIRCUITS
+Figure 1: Sequential logic circuits
+2
+
+===== PAGE 3 =====
+SEQUENTIAL LOGIC CIRCUITS
+• Output depends on
+– Input
+– Previous state of the circuit
+• Flip-flop: 
+basic 
+memory  element
+• State table: output for all 
+combinations of input and 
+previous states(Truth Table)
+3
+
+===== PAGE 4 =====
+SEQUENTIAL LOGIC CIRCUITS
+4
+1.
+Sequential circuit receives the binary informationfrom  
+external inputs and with the present state of the 
+storage  elements together determine the binary value 
+of the  outputs.
+2.
+The output in a sequential circuit are a function of not 
+only the inputs, but also the present state of the 
+storage  elements.
+3.
+The next state of the storage elements is also afunction 
+of external inputs and the present state.
+4.
+There are two main types of sequential circuits
+1. synchronous sequential circuits
+2. asynchronous sequential circuits
+
+===== PAGE 5 =====
+Synchronous sequential circuits
+It is a system whose behaviour can be
+defined from the knowledge of its 
+signals  at discrete instants of time
+Asynchronous sequential circuits
+It depends upon the input signals at any  
+instant of time and the order in which 
+the  input changes
+5
+SEQUENTIAL LOGIC CIRCUITS
+
+===== PAGE 6 =====
+Combinational vs. Sequential
+COMBINATIONAL LOGIC CIRCUIT
+Combinational logic  circuit
+consistsof
+input
+variables,
+logic
+gates  and output variables. The logic gate accepts signals 
+from the inputs
+and generates signals to the outputs.
+n input  
+variables
+6
+m output  
+variables
+For n input variables there are 2n possible combinations of binary input 
+variables
+
+===== PAGE 7 =====
+SEQUENTIAL LOGIC CIRCUITS
+Sequential logic
+circuit consistsof
+a
+combinational
+circuit
+with  storage elements connected as a feedback to combinational 
+circuit
+•
+output depends on the sequence of inputs (past and present)
+•
+stores information (state) from past inputs
+Combinational vs. Sequential
+Figure 1: Sequential logic circuits
+7
+
+===== PAGE 8 =====
+Combinational vs. Sequential
+8
+Combinational Circuit
+always gives the same output for a given set of 
+inputs  ex: adder always generates sum and carry,  
+regardless of previous inputs
+Sequential Circuit
+stores information
+output depends on stored information (state) plus 
+input  so a given input might produce different outputs,  
+depending on the stored information
+example: ticket counter
+advances when you push the 
+button  output depends on previous state
+useful for building ―memoryǁ elements and ―state 
+machinesǁ
+
+===== PAGE 9 =====
+Combinational vs. Sequential
+9
+
+===== PAGE 10 =====
+LATCHE
+S
+10
+STORAGE ELEMENTS
+Storage elements in a digital circuit can maintain a binary state
+indefinitely, until directed by an input signal to switch states. The
+major difference among various storage elements are the number of 
+input they posses and the manner in which the inputs affect the 
+binary state.There are two types of storage elements
+1.
+Latches
+2.
+Flipflops
+Storage elements that operate with signal level are referred as latch
+and those controlled by a clock transition are referred as flipflops.
+
+===== PAGE 11 =====
+LATCHES
+11
+1. LATCHES:
+A latch has a feedback path, so information can be retained by the device.  
+Therefore latches can be memory devices, and can store one bit of data 
+for  as long as the device is powered. As the name suggests, latches are 
+used to  "latch onto" information and hold in place. Latches are very 
+similar
+to flip-flops, but are not synchronous devices, and do not operate on 
+clock  edges as flip-flops do. Latch is a level sensitive device. Latch is a  
+monostable multivibrator
+2. FLIPFLOPS:
+A flip-flop is a circuit that has two stable states and can be used to store state 
+information. A flip-flop is a bistable multivibrator. The circuit can be made to 
+change state by signals applied to one or more control inputs and will have one 
+or two outputs. It is the basic storage element in sequential logic. Flip-flops and 
+latches are fundamental building blocks of digital electronics systems used in 
+computers, communications, and many other types of systems. Flipflop is a 
+edge sensitive device.
+
+===== PAGE 12 =====
+FLIPFLOPS:RS FLIPFLOP
+12
+Flip flops
+A flip flop is an electronic circuit with two stable states that can be used to store
+binary data. The stored data can be changed by applying varying inputs. Flip-flops 
+and latches are fundamental building blocks of digital electronics systems used in 
+computers, communications, and many other types of systems. Flip-flops and 
+latches are used as data storage elements. There are 4 types of flipflops
+1.
+RS flip flop
+2.
+Jk flip flop
+3.
+D flip flop
+4.
+T flip flop
+Applications of Flip-Flops
+These are the various types of flip-flops being used in digital electronic circuits 
+and  the applications like Counters, Frequency Dividers, Shift Registers, Storage  
+Registers
+
+===== PAGE 13 =====
+FLIPFLOPS:RS FLIPFLOP
+EDGE-TRIGGERED
+FLIP FLOPS
+Characteristics
+- State transition occurs at the rising edge 
+or
+falling edge of the clock pulse
+Latches
+respond to the input only during these periods
+Edge-triggered Flip Flops (positive)
+respond to the input only at this time
+13
+
+===== PAGE 14 =====
+FLIP 
+FLOPS
+
+===== PAGE 15 =====
+FLIPFLOPS:RS FLIPFLOP
+SR Flip-Flop
+The SR flip-flop, also known as a SR Latch, can be considered as one of the most basic  
+sequential logic circuit possible. This simple flip-flop is basically a one-bit memory 
+bistable  device that has two inputs, one which will ―SETǁ the device (meaning the output 
+= ―1ǁ),  and is labelled S and one which will ―RESETǁ the device (meaning the output = 
+―0ǁ),  labelled R.The reset input resets the flip-flop back to its original state with an output 
+Q that  will be either at a logic level ―1ǁ or logic ―0ǁ depending upon this set/reset 
+condition.
+A basic NAND gate SR flip-flop circuit provides feedback from both of its outputs back 
+to  its opposing inputs and is commonly used in memory circuits to store a single data bit.
+Then the SR flip-flop actually has three inputs, Set, Reset and its current output Q relating
+to it’s current state or history.
+Truth Table for this Set-Reset  
+Function
+15
+
+===== PAGE 16 =====
+FLIPFLOPS:JK FLIPFLOP
+16
+JK Flip flop
+The JK Flip-flop is similar to the SR Flip-flop but there is no change in state 
+when  the J and K inputs are both LOW. The basic S-R NAND flip-flop circuit 
+has many  advantages and uses in sequential logic circuits but it suffers from 
+two basic  switching problems.
+1. the Set = 0 and Reset = 0 condition (S = R = 0) must always be avoided
+2.if Set or Reset change state while the enable (EN) input is high the correct  
+latching action may not occur
+Then to overcome these two fundamental design problems with the SR flip-flop
+design, the JK flip Flop was developed by the scientist name Jack Kirby.
+The JK flip flop is basically a gated SR flip-flop with the addition of a clock 
+input  circuitry that prevents the illegal or invalid output condition that can occur 
+when  both inputs S and R are equal to logic level ―1ǁ. Due to this additional 
+clocked  input, a JK flip-flop has four possible input combinations, ―logic 1ǁ, 
+―logic 0ǁ, ―no  changeǁ and ―toggleǁ. The symbol for a JK flip flop is similar 
+to that of an SR  Bistable Latch as seen in the previous tutorial except for the 
+addition of a clock  input.
+
+===== PAGE 17 =====
+FLIPFLOPS:JK FLIPFLOP
+❖Both the S and the R inputs of the previous SR bistable have now been replaced by two inputs
+called the J and K inputs, respectively after its inventor Jack Kilby. Then thisequates
+to: J = S and K = R.
+❖The two 2-input AND gates of the gated SR bistable have now been replaced by two 3-
+input NAND gates with the third input of each gate connected to the outputs at Q and Q. This cross
+coupling of the SR flip-flop allows the previously invalid condition of S = ―1ǁ and R = ―1ǁ state to be
+used to produce a ―toggle actionǁ as the two inputs are now interlocked.
+❖If the circuit is now ―SETǁ the J input is inhibited by the ―0ǁ status of Q through the
+lower NAND gate. If the circuit is ―RESETǁ the K input is inhibited by the ―0ǁ status of Q through
+the upper NAND gate. As Q and Q are always different we can use them to control the input. When  
+both inputs J and K are equal to logic ―1ǁ, the JK flip flop toggles as shown in the following truth  
+table.
+17
+
+===== PAGE 18 =====
+FLIPFLOPS:JK FLIPFLOP
+The Truth Table for the JK 
+Function
+Then the JK flip-flop is basically an SR flip 
+flop  with feedback which enables only one of 
+its two  input terminals, either SET or RESET 
+to be  active at any one time thereby 
+eliminating the  invalid condition seen 
+previously in the SR flip  flop circuit. Also 
+when both the J and
+the K inputs are at logic level ―1ǁ at the same  
+time, and the clock input is pulsed ―HIGHǁ, the  
+circuit will ―toggleǁ from its SET state to a  
+RESET state, or visa-versa. This results in the 
+JK  flip flop acting more like a T-type toggle 
+flip-flop  when both terminals are―HIGHǁ.
+18
+
+===== PAGE 19 =====
+FLIPFLOPS:T FLIPFLOP
+T FLIP FLOP
+We can construct a T flip flop by any of the following methods. Connecting the output feedback 
+to the input, in SR flip flop. Connecting the XOR of T input and Q PREVIOUS output to the 
+Data input, in D flip flop. Hard – wiring the J and K inputs together and connecting it to T input, 
+in JK flip – flop.
+19
+
+===== PAGE 20 =====
+FLIPFLOPS:T FLIPFLOP
+Working
+T flip – flop is an edge triggered device i.e. the low to high or high to low transitions 
+on a clock signal of narrow triggers that is provided as input will cause the change in 
+output state of flip – flop. T flip – flop is an edge triggered device.
+Truth Table of T flip – flop
+20
+
+===== PAGE 21 =====
+FLIPFLOPS:T FLIPFLOP
+21
+❖If the output Q = 0, then the upper NAND is in enable state and lower NAND gate is in  
+disable condition. This allows the trigger to pass the S inputs to make the flip – flop in 
+SET  state i.e. Q = 1.
+❖If the output Q = 1, then the upper NAND is in disable state and lower NAND gate is in  
+enable condition. This allows the trigger to pass the R inputs to make the flip – flop in 
+RESET  state i.e. Q =0.
+In simple terms, the operation of the T flip – flop is
+When the T input is low, then the next sate of the T flip flop is same as the present state.
+T = 0 and present state = 0 then the next state = 0
+T = 1 and present state = 1 then the next state = 1
+When the T input is high and during the positive transition of the clock signal, the next stateof  
+the T flip – flop is the inverse of present state.
+T = 1 and present state = 0 then the next state = 
+1  T = 1 and present state = 1 then the next state 
+= 0
+Applications
+Frequency Division Circuits.
+2 – Bit Parallel Load Registers.
+
+===== PAGE 22 =====
+FLIPFLOPS:D FLIPFLOP
+22
+D FLIP FLOP
+The D-type flip-flop is a modified Set-Reset flip-flop with the addition of an inverter to prevent
+the S and R inputs from being at the same logic level
+One of the main disadvantages of the basic SR NAND Gate Bistable circuit is that the
+indeterminate input condition of SET = ―0ǁ and RESET = ―0ǁ isforbidden.
+This state will force both outputs to be at logic ―1ǁ, over-riding the feedback latching action 
+and  whichever input goes to logic level ―1ǁ first will lose control, while the other input still at 
+logic
+―0ǁ controls the resulting state of the latch.
+But in order to prevent this from happening an inverter can be connected between the ―SETǁ 
+and  the ―RESETǁ inputs to produce another type of flip flop circuit known as a Data Latch, 
+Delay  flip flop, D-type Bistable, D-type Flip Flop or just simply a D Flip Flop as it is more 
+generally  called.
+The D Flip Flop is by far the most important of the clocked flip-flops as it ensures that ensures  
+that inputs S and R are never equal to one at the same time. The D-type flip flop are 
+constructed  from a gated SR flip-flop with an inverter added between the S and the R inputs to 
+allow for a  single D (data) input.
+Then this single data input, labelled ―Dǁ and is used in place of the ―Setǁ signal, and the 
+inverter  is used to generate the complementary ―Resetǁ input thereby making a level-sensitive 
+D-type  flip-flop from a level-sensitive SR-latch as now S = D and R = not D as shown.
+
+===== PAGE 23 =====
+FLIPFLOPS:D FLIPFLOP
+D-type Flip-Flop Circuit
+23
+We remember that a simple SR flip-flop requires two inputs, one to ―SETǁ the output and 
+one
+to ―RESETǁ the output. By connecting an inverter (NOT gate) to the SR flip-flop we can
+―SETǁ and ―RESETǁ the flip-flop using just one input as now the two input signals are  
+complements of each other. This complement avoids the ambiguity inherent in the SR 
+latch
+when both inputs are LOW, since that state is no longer possible. Thus this single input is  
+called the ―DATAǁ input. If this data input is held HIGH the flip flop would be ―SETǁ 
+and  when it is LOW the flip flop would change and become ―RESETǁ. However, this 
+would be  rather pointless since the output of the flip flop would always change on every 
+pulse applied  to this data input.
+
+===== PAGE 24 =====
+FLIPFLOPS:D FLIPFLOP
+To avoid this an additional input called the ―CLOCKǁ or ―ENABLEǁ input is used to isolate 
+the  data input from the flip flop’s latching circuitry after the desired data has been stored. The 
+effect  is that D input condition is only copied to the output Q when the clock input is active. 
+This then  forms the basis of another sequential device called a D Flip Flop.
+The ―D flip flopǁ will store and output whatever logic level is applied to its data terminal so 
+long  as the clock input is HIGH. Once the clock input goes LOW the ―setǁ and ―resetǁ inputs 
+of the  flip-flop are both held at logic level ―1ǁ so it will not change state and store whatever 
+data was  present on its output before the clock transition occurred. In other words the output is 
+―latchedǁat  either logic ―0ǁ or logic ―1ǁ.
+Truth Table for the D-type Flip Flop
+Note that: ↓ and ↑ indicates direction of 
+clock pulse as it is assumed D-type flip 
+flops are edge triggered
+24
+
+===== PAGE 25 =====
+FLIPFLOPS:EXCITATION 
+FUNCTIONS
+25
+In electronics design, an excitation table shows the minimum inputs that are necessary to generate a  
+particular next state (in other words, to "excite" it to the next state) when the current state is known.  
+They are similar to truth tables and state tables, but rearrange the data so that the current state and next  
+state are next to each other on the left-hand side of the table, and the inputs needed to make that state  
+change happen.
+All flip-flops can be divided into four basic types: SR, JK, D and T. They differ in the number 
+of  inputs and in the response invoked by different value of inputsignals.
+The characteristic table in the third column of Table 1 defines the state of each flip-flop as a function of 
+its inputs and previous state. Q refers to the present state and Q(next) refers to the next state after the 
+occurrence of the clock pulse. The characteristic table for the RS flip-flop shows that the next state is 
+equal to the present state when both inputs S and R are equal to 0. When R=1, the next clock pulse 
+clears the flip-flop. When S=1, the flip-flop output Q is set to 1. The equation mark (?) for the next state 
+when S and R are both equal to 1 designates an indeterminate next state.
+The characteristic table for the JK flip-flop is the same as that of the RS when J and K are replaced by S 
+and R respectively, except for the indeterminate case. When both J and K are equal to 1, the next state is 
+equal to the complement of the present state, that is, Q(next) = Q'.
+The next state of the D flip-flop is completely dependent on the input D and independent of the present 
+state.
+The next state for the T flip-flop is the same as the present state Q if T=0 and complemented if T=1.
+
+===== PAGE 26 =====
+SR Flip 
+flop
+FLIPFLOPS:EXCITATION 
+FUNCTIONS
+FLIP-FLOPSYMBOL
+CHARACTERISTIC 
+TABLE
+CHARACTERISTIC 
+EQUATION
+EXCITATION 
+TABLE
+26
+
+===== PAGE 27 =====
+JK Flip flop
+FLIPFLOPS:EXCITATION 
+FUNCTIONS
+FLIP-FLOPSYMBOL
+CHARACTERISTIC 
+TABLE
+CHARACTERISTIC 
+EQUATION
+EXCITATION 
+TABLE
+27
+
+===== PAGE 28 =====
+D Flip flop
+FLIPFLOPS:EXCITATION 
+FUNCTIONS
+FLIP-FLOPSYMBOL
+CHARACTERISTIC 
+TABLE
+CHARACTERISTIC 
+EQUATION
+EXCITATION 
+TABLE
+28
+
+===== PAGE 29 =====
+T Flip 
+flop
+FLIPFLOPS:EXCITATION 
+FUNCTIONS
+FLIP-FLOPSYMBOL
+CHARACTERISTIC 
+TABLE
+CHARACTERISTIC 
+EQUATION
+EXCITATION 
+TABLE
+29
+
+===== PAGE 30 =====
+STATE MACHINES
+State Machine
+Another type of sequential circuit
+Combines combinational logic with storage
+―Remembersǁ state, and changes output (and state) based on inputs and current 
+state
+State
+The state of a system is a snapshot of all the relevant elements of the system at the moment the
+snapshot is taken.
+Examples:
+The state of a basketball game can be represented by the scoreboard.
+Number of points, time remaining, possession, etc.
+The state of a tic-tac-toe game can be represented by the placement of X’s and O’s on the 
+board.
+30
+
+===== PAGE 31 =====
+STATE MACHINES
+STATE TABLES AND STATE DIAGRAMS
+In this model the effect of all previous inputs on the outputs is represented by a state of the 
+circuit. Thus, the output of the circuit at any time depends upon its current state and the 
+input. These also determine the next state of the circuit. The relationship that exists among 
+the inputs, outputs, present states and next states can be specified by either the state table or 
+the state diagram.
+State Table
+The state table representation of a sequential circuit consists of three sections labeled present 
+state, next state and output. The present state designates the state of flip-flops before the 
+occurrence of a clock pulse. The next state shows the states of flip-flops after the clock 
+pulse, and the output section lists the value of the output variables during the present state.
+31
+
+===== PAGE 32 =====
+STATE MACHINES
+State Diagram
+In addition to graphical symbols, tables or equations, flip-flops can also be represented 
+graphically by a state diagram. In this diagram, a state is represented by a circle, and the 
+transition between states is indicated by directed lines (or arcs) connecting the circles.
+The binary number inside each circle identifies the state the 
+circle represents. The directed lines are labelled with two binary 
+numbers separated by a slash (/). The input value that causes the 
+state transition is labelled first. The number after the slash 
+symbol / gives the value of the output. For example, the directed 
+line from state 00 to 01 is labelled 1/0, meaning that, if the 
+sequential circuit is in a present state and the input is 1, then the 
+next state is 01 and the output is 0. If it is in a present state 00 
+and the input is 0, it will remain in that state. A directed line 
+connecting a circle with itself indicates that no change of state 
+occurs. The state diagram provides exactly the same information 
+as the state table and is obtained directly from the state table.
+State Diagram
+32
+
+===== PAGE 33 =====
+Example:
+Consider a sequential circuit
+STATE MACHINES
+The behavior of the circuit is determined by 
+the
+following Boolean expressions:
+33
+Z = x*Q1
+D1 = x' + Q1
+D2 = x*Q2' + x'*Q1'
+These equations can be used to form the state table. Suppose the present state (i.e. Q1Q2) = 00  
+and input x = 0. Under these conditions, we get Z = 0, D1 = 1, and D2 = 1. Thus the next state  
+of the circuit D1D2 = 11, and this will be the present state after the clock pulse has been  
+applied. The output of the circuit corresponding to the present state Q1Q2 = 00 and x = 1 is Z 
+=
+0. This data is entered into the state table as shown in Table 2.
+
+===== PAGE 34 =====
+State table for the sequential 
+circuit
+STATE MACHINES
+The state diagram for the sequential circuit
+34
+
+===== PAGE 35 =====
+state diagrams of the four types of 
+flip-flops
+STATE 
+MACHINES
+
+===== PAGE 36 =====
+STATE REDUCTION
+State Reduction
+Any design process must consider the problem of minimising the cost of the final circuit. The
+two most obvious cost reductions are reductions in the number of flip-flops and the number of 
+gates.
+The number of states in a sequential circuit is closely related to the complexity of the resulting 
+circuit. It is therefore desirable to know when two or more states are equivalent in all aspects. 
+The process of eliminating the equivalent or redundant states from a state table/diagram is 
+known as state reduction.
+Example: Let us consider the state table of a sequentialcircuit
+State 
+table
+36
+
+===== PAGE 37 =====
+STATE REDUCTION
+It can be seen from the table that the present state A and F both have the same next states, B 
+(when x=0) and C (when x=1). They also produce the same output 1 (when x=0) and 0 (when 
+x=1). Therefore states A and F are equivalent. Thus one of the states, A or F can be removed 
+from the state table. For example, if we remove row F from the table and replace all F's by 
+A's in the columns, the state table is modified
+State F removed
+It is apparent that states B and E are equivalent. Removing E and replacing E's by B's results
+in the reduce table
+37
+
+===== PAGE 38 =====
+STATE REDUCTION
+Reduced state table
+The removal of equivalent states has reduced the number of states in the circuit from six to 
+four. Two states are considered to be equivalent if and only if for every input sequence the 
+circuit produces the same output sequence irrespective of which one of the two states is the 
+starting state.
+38
+
+===== PAGE 39 =====
+STATE ASSIGNMENT
+39
+STATEASSIGNMENT
+Each circuit state given in a state table has to be assigned a unique value, which 
+represents  combinations of flip – flop output states.
+➢A circuit having 2 internal states requires one flip – flop in its implementation
+➢A circuit having 3 or 4 internal states requires two flip – flops in its implementation
+➢A circuit having 5→ 8 internal states requires three flip – flops in its implementation etc.
+It should be noted that although assignments are arbitrary, one assignment might be more
+economical than another.
+Consider the state table shown below for a circuit having two input pulses x1, x2 and a level  
+output Z.
+Since the circuit has four internal states then two flip-flops are required. Let the two flip-flop 
+outputs be represented by variables y1 and y2, which can have combinations of values y1y2 = 
+00, 01, 11, 10. The state table can then be translated into a state table with secondary 
+assignments as shown. Note that this is just one of many possible assignments (in fact there are 
+24)
+
+===== PAGE 40 =====
+STATE ASSIGNMENT
+Example of state assignment
+With y1y2 =0 (i.e. in state 1), if x1 is applied then y1y2must change to 01 (i.e. state 2). That is, 
+the flip/flop generating y1 must not disturbed, but the y2generating flip-flop requires an input 
+such that the circuit settles in state 2, (for example a SET input if using SR flip-flops).
+40
+
+===== PAGE 41 =====
+SYNCHRONOUS AND ASYNCHRONOUS SEQUENTIAL 
+CIRCUITS
+41
+synchronous sequential circuits a clock signal consisting of
+pulses, controls the
+state variables which are represented by flip-flops. they are said to operate in
+pulse mode.
+asynchronous circuits state changes are not triggered by clock pulses. they depend on
+the values of the input and feedback variables.
+two conditions for proper operation:
+1.-inputs to the circuit must change one at a time and must remain constant until the 
+circuit reaches stable state.
+2.-feedback variables should change also one at a time. when all internal signals stop 
+changing, then the circuit is said to have reached stable state when the inputs 
+satisfy condition 1 above, then the circuit is said to operate in fundamental mode.
+Analysis of Clocked Sequential Circuits
+The analysis of a sequential circuit consists of obtaining a table or a diagram for 
+the time sequence of inputs, outputs, and internal states. It is also possible to write 
+Boolean expressions that describe the behavior of the sequential circuit. These 
+expressions must include the necessary time sequence, either directly or  indirectly.
+
+===== PAGE 42 =====
+SYNCHRONOUS AND ASYNCHRONOUS SEQUENTIAL CIRCUITS
+State Equations
+The behavior of a clocked sequential circuit can be described algebraically by means of 
+state equations. A state equation specifies the next state as a function of the present state and 
+inputs. Consider the sequential circuit shown in Fig. 5-15. It consists of two D flip-flops A  and 
+B, an input x and an output y.
+State equation
+A(t+1) = A(t) x(t) + B(t) x(t)
+B(t+1) = A`(t) x(t)
+42
+A state equation is an algebraic expression that specifies the condition for a flip-flop state 
+transition. The left side of the equation with (t+1) denotes the next state of the flip-flop one 
+clock edge later. The right side of the equation is Boolean expression that specifies the 
+present state and input conditions that make the next state equal to 1.
+Y(t) = (A(t) + B(t)) x(t)`
+
+===== PAGE 43 =====
+SYNCHRONOUS AND ASYNCHRONOUS SEQUENTIAL 
+CIRCUITS
+State Table
+The time sequence of inputs, outputs, and flip-flop states can be enumerated in a state 
+table
+(sometimes called transition table).
+State 
+Diagram
+1/0 : means input =1
+output=0
+The information available in a state table can be represented graphically in the form of a state
+diagram. In this type of diagram, a state is represented by a circle, and the transitions between
+states are indicated by directed lines connecting the circles.
+43
+
+===== PAGE 44 =====
+SYNCHRONOUS AND ASYNCHRONOUS SEQUENTIAL 
+CIRCUITS
+Flip-Flop Input Equations
+The part of the combinational circuit that generates external outputs is descirbed 
+algebraically by a set of Boolean functions called output equations. The part of  the 
+circuit that generates the inputs to flip-flops is described algebraically by a set  of 
+Boolean functions called flip-flop input equations. The sequential circuit of  Fig. 5-15 
+consists of two D flip-flops A and B, an input x, and an output y. The  logic diagram of 
+the circuit can be expressed algebraically with two flip-flop  input equations and an 
+output equation:
+DA = Ax + Bx,DB = A`x and y = (A + B)x`
+Analysis with D Flip-Flop
+The circuit we want to analyze is described by the input equation
+The DA symbol implies a D flip-flop with output A. The x and y variables are the inputs to the 
+circuit. No output equations are given, so the output is implied to come from the output of the 
+flip-flop.
+44
+
+===== PAGE 45 =====
+SYNCHRONOUS AND ASYNCHRONOUS SEQUENTIAL 
+CIRCUITS
+The binary numbers under A
+y are listed from 000 through 111 as shown in  
+Fig. 5-17(b). The next state values are obtained from the state equation
+The state diagram consists of two circles-one for each state as shown in Fig. 5-17(c)
+45
+
+===== PAGE 46 =====
+SYNCHRONOUS AND ASYNCHRONOUS SEQUENTIAL 
+CIRCUITS
+46
+ASYNCHRONOUS SEQUENTIAL CIRCUIT
+Analysis of asynchronous circuits
+Procedure:
+– Cut all feedback paths and insert a delay element at each point where cut was made
+– Input  to  the delay element  is  the  next  state  variable yi
+while the output is the
+present value yi .
+– Derive the next-sate and output expressions from the circuit
+– Derive the excitation table
+– Derive the flow table
+– Derive a state-diagram from the flow table
+– Asynchronous circuits don’t use clock pulses
+• State transitions by changes in inputs
+– Storage Elements:
+• Clock less storage elements or Delay elements
+– In many cases, as combinational feedback
+• Normally much harder to design
+
+===== PAGE 47 =====
+SYNCHRONOUS AND ASYNCHRONOUS SEQUENTIAL 
+CIRCUITS
+yi = Yi in steady state (but may be different during transition) Simultaneous change  in 
+two (or more) inputs is prohibited. The time between two changes must be less
+than the time of stability.
+Analysis
+47
+
+===== PAGE 48 =====
+SYNCHRONOUS AND ASYNCHRONOUS SEQUENTIAL 
+CIRCUITS
+3.Draw a map by using rows: yi’s, columns: inputs, entries: 
+Yi’s
+4.To have a stable state, Y must be = y (circled)
+(Transition Table) Y1 Y2
+At y1y2x = 000, if x: 0   1
+then Y1Y2: 00   01
+then y1y2 = 01 (2nd row):stable
+48
+
+===== PAGE 49 =====
+SYNCHRONOUS AND ASYNCHRONOUS SEQUENTIAL 
+CIRCUITS
+In general, if an input takes the circuit to an unstable state, yi’s change untila stable
+State Table As 
+synchronous
+state is found.
+General state of circuit:
+y1y2x:
+There are 4 stable states:
+000, 011, 110, 101
+and 4 unstable states.
+Flow Table
+As 
+Transition 
+Table 
+ 
+(but 
+with 
+symbolic  states):
+SYNTHESIS OF ASYNCHROUNOUS CIRCUITS
+This topic is not covered in this course. it belongs to a more advanced logic design course.This it 
+is very important in todays digital systems design because clocks are so fast that they present 
+propagation delays making subsystems to operate out of synchronization.
+Techniques for synthesis of asynchronous circuits include
+The hoffman or classic synthesis approach
+Handshaking signaling for two subsystems to communicate asynchronously
+49
+
+===== PAGE 50 =====
+SHIFT REGISTERS AND 
+COUNTERS
+COUNTERS
+Two of the most common types of shift register counters are introduced here: the Ring counter  
+and the Johnson counter. They are basically shift registers with the serial outputs connected  
+back to the serial inputs in order to produce particular sequences. These registers are classified  
+as counters because they exhibit a specified sequence of states.
+Ring Counters
+A ring counter is basically a circulating shift register in which the output of the most significant 
+stage is fed back to the input of the least significant stage. The following is a 4-bit ring counter 
+constructed from D flip-flops. The output of each stage is shifted into the next stage on the 
+positive edge of a clock pulse. If the CLEAR signal is high, all the flip-flops except the first one 
+FF0 are reset to 0. FF0 is preset to 1 instead.
+50
+
+===== PAGE 51 =====
+SHIFT REGISTERS AND 
+COUNTERS
+Since the count sequence has 4 distinct states, the counter can be considered as a mod-4  
+counter. Only 4 of the maximum 16 states are used, making ring counters very inefficient in  
+terms of state usage. But the major advantage of a ring counter over a binary counter is that it  
+is self-decoding. No extra decoding circuit is needed to determine what state the counter is 
+in.
+51
+
+===== PAGE 52 =====
+SHIFT REGISTERS AND 
+COUNTERS
+Johnson Counters
+Johnson counters are a variation of standard ring counters, with the inverted output of the last  
+stage fed back to the input of the first stage. They are also known as twisted ring counters. An n-  
+stage Johnson counter yields a count sequence of length 2n, so it may be considered to be a 
+mod-  2n counter. The circuit above shows a 4-bit Johnson counter. The state sequence for the 
+counter  is given in the table as well as the animation on the left.
+Again, the apparent disadvantage of this counter is that the maximum available states are not
+fully utilized. Only eight of the sixteen states are being used.
+Beware that for both the Ring and the Johnson counter must initially be forced into a valid 
+state in the count sequence because they operate on a subset of the available number of states. 
+Otherwise, the ideal sequence will not be followed.
+52

@@ -1,0 +1,942 @@
+SOURCE: SEM3/Python_Programing/PP_MODULE6.pdf
+
+===== PAGE 1 =====
+ Unit:6: Python Libraries and Object-Oriented 
+Programming 
+ 
+1. Introduction to Python Libraries 
+ 
+What is a Python library? 
+ 
+A Python library is a collection of pre-written code, functions, and 
+modules that can be used to perform specific tasks without writing 
+everything from scratch. 
+ 
+Advantages of Python libraries: 
+● Save development time. 
+● Reduce code complexity. 
+● Improve code reusability. 
+● Provide specialized tools for data analysis, visualization, and 
+application development. 
+ 
+Common Python libraries 
+Library 
+Purpose 
+NumPy 
+Numerical calculations and arrays 
+Pandas 
+Data manipulation and analysis 
+Matplotlib 
+Graphs and data visualization 
+Tkinter 
+Graphical User Interface (GUI) 
+Math 
+Mathematical operations 
+Random 
+Generating random values 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+Importing libraries 
+ 
+python 
+import math 
+ 
+print(math.sqrt(25))   # 5.0 
+ 
+print(math.factorial(5))  # 120 
+ 
+Importing a specific function: 
+ 
+python 
+from math import sqrt 
+ 
+ 
+print(sqrt(36))  # 6.0 
+ 
+Using an alias: 
+ 
+python 
+import numpy as np 
+import pandas as pd 
+ 
+import matplotlib.pyplot as plt 
+ 
+Remember: import is used to access the functionality of a module or 
+library. 
+ 
+2. NumPy Arrays 
+ 
+What is NumPy? 
+ 
+NumPy stands for Numerical Python. It is a library used for fast 
+numerical computation and working with multidimensional arrays. 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+2.1 Creating NumPy arrays 
+ 
+First, import NumPy: 
+ 
+python 
+import numpy as np 
+ 
+a = np.array([10, 20, 30, 40]) 
+ 
+print(a) 
+ 
+Output: 
+ 
+text 
+ 
+[10 20 30 40] 
+ 
+Creating a two-dimensional array: 
+ 
+python 
+b = np.array([[1, 2, 3], 
+              [4, 5, 6]]) 
+ 
+ 
+print(b) 
+ 
+Output: 
+ 
+text 
+
+===== PAGE 4 =====
+[[1 2 3] 
+ 
+ [4 5 6]] 
+ 
+2.2 Important NumPy functions 
+Function 
+/ 
+Attribute 
+Purpose 
+Example 
+np.array() 
+Creates an array 
+np.array([1, 2]) 
+np.zeros() 
+Creates an array of zeros 
+np.zeros(3) 
+np.ones() 
+Creates an array of ones 
+np.ones(4) 
+np.arange() 
+Creates 
+a 
+range 
+of 
+values 
+np.arange(1, 5) 
+np.reshape() 
+Changes array shape 
+a.reshape(2, 2) 
+np.sum() 
+Calculates sum 
+np.sum(a) 
+np.mean() 
+Calculates average 
+np.mean(a) 
+np.max() 
+Finds maximum 
+np.max(a) 
+np.min() 
+Finds minimum 
+np.min(a) 
+ 
+2.3 Array properties 
+ 
+python 
+import numpy as np 
+
+===== PAGE 5 =====
+ 
+a = np.array([[1, 2, 3], 
+              [4, 5, 6]]) 
+ 
+print(a.ndim)   # 2 
+print(a.shape)  # (2, 3) 
+print(a.size)   # 6 
+ 
+print(a.dtype)  # Data type of elements 
+● ndim: Number of dimensions. 
+● shape: Number of rows and columns. 
+● size: Total number of elements. 
+● dtype: Data type of elements. 
+ 
+2.4 Array operations 
+ 
+python 
+import numpy as np 
+ 
+a = np.array([1, 2, 3]) 
+b = np.array([4, 5, 6]) 
+ 
+print(a + b)  # [5 7 9] 
+print(a * b)  # [4 10 18] 
+ 
+print(a * 2)  # [2 4 6] 
+ 
+NumPy performs element-wise operations on arrays of compatible 
+shapes. 
+ 
+2.5 Indexing and slicing 
+ 
+python 
+a = np.array([10, 20, 30, 40, 50]) 
+ 
+print(a[0])    # 10 
+print(a[-1])   # 50 
+
+===== PAGE 6 =====
+ 
+print(a[1:4])  # [20 30 40] 
+ 
+Exam tip: Python array indexing starts from 0, and the ending index 
+in a slice is excluded. 
+ 
+3. Basic Pandas Operations 
+ 
+What is Pandas? 
+ 
+Pandas is a Python library used for data analysis, cleaning, filtering, 
+and manipulation. It is particularly useful for tabular data. 
+ 
+ 
+ 
+3.1 Main Pandas data structures 
+● Series: A one-dimensional labeled data structure. 
+● DataFrame: A two-dimensional labeled table with rows and 
+columns. 
+ 
+Example: 
+
+===== PAGE 7 =====
+ 
+python 
+import pandas as pd 
+ 
+s = pd.Series([10, 20, 30]) 
+ 
+print(s) 
+ 
+Creating a DataFrame: 
+ 
+python 
+data = { 
+    "Name": ["Amit", "Neha", "Ravi"], 
+    "Marks": [85, 92, 78] 
+} 
+ 
+df = pd.DataFrame(data) 
+ 
+print(df) 
+ 
+Output: 
+ 
+text 
+  Name  Marks 
+0  Amit     85 
+1  Neha     92 
+ 
+2  Ravi     78 
+ 
+3.2 Reading and saving data 
+ 
+python 
+df = pd.read_csv("students.csv") 
+ 
+df.to_csv("output.csv", index=False) 
+● read_csv() reads data from a CSV file. 
+● to_csv() saves a DataFrame to a CSV file. 
+● index=False prevents row indexes from being written as a 
+separate column. 
+ 
+3.3 Basic DataFrame operations 
+ 
+Using the DataFrame df created above: 
+
+===== PAGE 8 =====
+Operation 
+Code 
+Purpose 
+Display first rows 
+df.head() 
+Shows first five rows by 
+default 
+Display last rows 
+df.tail() 
+Shows last five rows by 
+default 
+View dimensions 
+df.shape 
+Returns rows and columns 
+View 
+column 
+names 
+df.columns 
+Lists column labels 
+View data types 
+df.dtypes 
+Shows data types 
+Summary statistics 
+df.describe() 
+Summarizes 
+numeric 
+columns 
+Select a column 
+df["Name"] 
+Returns a Series 
+Select 
+rows 
+by 
+label 
+df.loc[0] 
+Selects a row by label 
+Select 
+rows 
+by 
+position 
+df.iloc[0] 
+Selects the first row by 
+position 
+ 
+3.4 Filtering data 
+ 
+python 
+
+===== PAGE 9 =====
+passed = df[df["Marks"] >= 80] 
+ 
+print(passed) 
+ 
+This selects students who scored 80 marks or more. 
+ 
+3.5 Adding and deleting columns 
+ 
+python 
+ 
+df["Result"] = ["Pass", "Pass", "Pass"] 
+ 
+To delete a column: 
+ 
+python 
+ 
+df = df.drop(columns=["Result"]) 
+ 
+3.6 Handling missing values 
+ 
+python 
+df.isnull()             # Checks missing values 
+df.isnull().sum()       # Counts missing values 
+df.dropna()             # Removes rows with missing values 
+ 
+df.fillna(0)            # Replaces missing values with 0 
+ 
+Remember: dropna() and fillna() return modified results by default; 
+use the returned DataFrame or the appropriate assignment to retain 
+the changes. 
+ 
+4. Data Visualization Using Matplotlib 
+ 
+What is Matplotlib? 
+ 
+Matplotlib is a Python library used to represent data graphically. Its 
+pyplot module provides simple functions for creating charts. 
+
+===== PAGE 10 =====
+ 
+ 
+ 
+Import the library: 
+ 
+python 
+ 
+import matplotlib.pyplot as plt 
+ 
+4.1 Line graph 
+ 
+A line graph shows trends or changes over time. 
+ 
+python 
+import matplotlib.pyplot as plt 
+ 
+
+===== PAGE 11 =====
+x = [1, 2, 3, 4] 
+y = [10, 20, 15, 30] 
+ 
+plt.plot(x, y, marker="o") 
+plt.xlabel("Days") 
+plt.ylabel("Sales") 
+plt.title("Daily Sales") 
+plt.grid(True) 
+ 
+plt.show() 
+ 
+4.2 Bar chart 
+ 
+A bar chart compares values among categories. 
+ 
+python 
+names = ["Amit", "Neha", "Ravi"] 
+marks = [80, 90, 75] 
+ 
+plt.bar(names, marks, color="skyblue") 
+plt.xlabel("Students") 
+plt.ylabel("Marks") 
+plt.title("Student Marks") 
+ 
+plt.show() 
+ 
+4.3 Pie chart 
+ 
+A pie chart displays proportions of a whole. 
+ 
+python 
+labels = ["Python", "Java", "C++"] 
+values = [50, 30, 20] 
+ 
+plt.pie(values, labels=labels, autopct="%1.1f%%") 
+plt.title("Programming Languages") 
+ 
+plt.show() 
+ 
+4.4 Scatter plot 
+
+===== PAGE 12 =====
+ 
+A scatter plot shows the relationship between two numerical 
+variables. 
+ 
+python 
+x = [1, 2, 3, 4, 5] 
+y = [2, 4, 5, 4, 7] 
+ 
+plt.scatter(x, y, color="red") 
+plt.xlabel("Study Hours") 
+plt.ylabel("Marks") 
+plt.title("Study Hours vs Marks") 
+ 
+plt.show() 
+ 
+4.5 Important Matplotlib functions 
+Function 
+Use 
+plt.plot() 
+Line graph 
+plt.bar() 
+Bar chart 
+plt.pie() 
+Pie chart 
+plt.scatter() 
+Scatter plot 
+plt.hist() 
+Histogram 
+plt.xlabel() 
+Labels the x-axis 
+plt.ylabel() 
+Labels the y-axis 
+
+===== PAGE 13 =====
+plt.title() 
+Adds a title 
+plt.legend() 
+Displays a legend 
+plt.show() 
+Displays the graph 
+ 
+Exam tip: A histogram displays the frequency distribution of 
+numerical data, while a bar chart generally compares separate 
+categories. 
+ 
+5. Object-Oriented Programming (OOP) 
+ 
+5.1 Definition 
+ 
+Object-Oriented Programming is a programming approach that 
+organizes code using classes and objects. It helps make programs 
+reusable, modular, and easier to maintain. 
+ 
+5.2 Class and object 
+● Class: A blueprint or template used to create objects. 
+● Object: An instance of a class containing data and behavior. 
+ 
+Example: 
+ 
+python 
+class Student: 
+    def display(self): 
+        print("Hello, Student!") 
+ 
+s1 = Student() 
+ 
+s1.display() 
+ 
+Output: 
+ 
+text 
+ 
+Hello, Student! 
+ 
+Here, Student is the class and s1 is an object. 
+
+===== PAGE 14 =====
+ 
+5.3 Constructor 
+ 
+A constructor initializes an object's attributes when an object is 
+created. In Python, __init__() is commonly used for this purpose. 
+ 
+python 
+class Student: 
+    def __init__(self, name, marks): 
+        self.name = name 
+        self.marks = marks 
+ 
+    def display(self): 
+        print(self.name, self.marks) 
+ 
+s1 = Student("Amit", 85) 
+ 
+s1.display() 
+ 
+Output: 
+ 
+text 
+ 
+Amit 85 
+ 
+Important terms: 
+● __init__(): Initialization method. 
+● self: Refers to the current instance of the class. 
+● self.name: An instance attribute. 
+● Student(...): Creates an object and initializes its attributes. 
+ 
+5.4 Types of variables in a class 
+ 
+python 
+class Student: 
+    school = "ABC School"  # Class variable 
+ 
+    def __init__(self, name): 
+ 
+        self.name = name   # Instance variable 
+● Class variable: Shared by instances unless overridden. 
+
+===== PAGE 15 =====
+● Instance variable: Belongs to an individual object. 
+ 
+5.5 Four major OOP concepts 
+ 
+ 
+ 
+1. Encapsulation 
+ 
+Combining data and methods within a class and controlling access 
+to internal details. 
+ 
+Example: A bank account class that provides methods for deposits 
+and withdrawals. 
+
+===== PAGE 16 =====
+ 
+ 
+ 
+2. Abstraction 
+ 
+Hiding unnecessary implementation details and exposing only the 
+essential features. 
+ 
+Example: Driving a car without knowing the internal workings of 
+its engine. 
+
+===== PAGE 17 =====
+ 
+ 
+ 
+3. Inheritance 
+ 
+Creating a new class from an existing class to reuse or extend its 
+features. 
+ 
+Example: A Dog class inherits common features from an Animal 
+class. 
+
+===== PAGE 18 =====
+ 
+ 
+ 
+4. Polymorphism 
+ 
+The same interface or method name can produce different behavior 
+depending on the object. 
+ 
+Example: Different animal objects implement sound() differently. 
+ 
+5.6 Inheritance 
+ 
+Inheritance allows a child class to reuse and extend a parent class. 
+ 
+python 
+class Animal: 
+    def eat(self): 
+        print("Animal eats") 
+
+===== PAGE 19 =====
+ 
+class Dog(Animal): 
+    def bark(self): 
+        print("Dog barks") 
+ 
+d = Dog() 
+d.eat() 
+ 
+d.bark() 
+ 
+Output: 
+ 
+text 
+Animal eats 
+ 
+Dog barks 
+ 
+Types of inheritance: 
+● Single inheritance: One child inherits from one parent. 
+● Multiple inheritance: One child inherits from multiple parents. 
+● Multilevel inheritance: A class inherits from a derived class. 
+● Hierarchical inheritance: Multiple child classes inherit from 
+one parent. 
+● Hybrid inheritance: A combination of inheritance types. 
+ 
+5.7 Method overriding and polymorphism 
+ 
+Method overriding occurs when a child class provides its own 
+implementation of a method inherited from the parent class. 
+ 
+python 
+class Animal: 
+    def sound(self): 
+        print("Animal makes a sound") 
+ 
+class Dog(Animal): 
+    def sound(self): 
+        print("Dog barks") 
+
+===== PAGE 20 =====
+ 
+class Cat(Animal): 
+    def sound(self): 
+        print("Cat meows") 
+ 
+for animal in [Dog(), Cat()]: 
+ 
+    animal.sound() 
+ 
+Output: 
+ 
+text 
+Dog barks 
+ 
+Cat meows 
+ 
+The same method, sound(), behaves differently for different objects. 
+This is an example of runtime polymorphism. 
+ 
+5.8 Method overloading in Python 
+ 
+Traditional method overloading means defining multiple methods 
+with the same name but different parameter lists. Python does not 
+support this form of overloading directly in the same way as 
+languages such as Java. 
+ 
+Similar behavior can be achieved with default arguments: 
+ 
+python 
+class Calculator: 
+    def add(self, a, b=0, c=0): 
+        return a + b + c 
+ 
+obj = Calculator() 
+ 
+print(obj.add(5))       # 5 
+print(obj.add(5, 3))    # 8 
+ 
+print(obj.add(5, 3, 2)) # 10 
+ 
+6. Basic GUI Programming Using Tkinter 
+
+===== PAGE 21 =====
+ 
+6.1 What is Tkinter? 
+ 
+Tkinter is Python's standard interface to the Tk GUI toolkit. It is 
+used to create desktop applications with windows, buttons, labels, 
+text fields, and other graphical elements. 
+ 
+ 
+
+===== PAGE 22 =====
+ 
+ 
+ 
+ 
+ 
+6.2 Important Tkinter widgets 
+Widget 
+Purpose 
+Tk() 
+Creates the main application window 
+
+===== PAGE 23 =====
+Label 
+Displays text or images 
+Button 
+Creates a clickable button 
+Entry 
+Accepts a single-line text input 
+Text 
+Accepts multiline text 
+Checkbutton 
+Allows a checkbox selection 
+Radiobutton 
+Allows a choice among options 
+Frame 
+Groups related widgets 
+ 
+6.3 Geometry managers 
+ 
+Tkinter provides three main geometry managers: 
+● pack(): Arranges widgets in blocks. 
+● grid(): Arranges widgets in rows and columns. 
+● place(): Positions widgets using coordinates. 
+ 
+6.4 Basic Tkinter window 
+ 
+python 
+import tkinter as tk 
+ 
+root = tk.Tk() 
+root.title("My First App") 
+root.geometry("300x200") 
+ 
+label = tk.Label(root, text="Welcome to Python!") 
+
+===== PAGE 24 =====
+label.pack(pady=20) 
+ 
+button = tk.Button(root, text="Click Me") 
+button.pack() 
+ 
+ 
+root.mainloop() 
+ 
+Explanation: 
+● tk.Tk() creates the main window. 
+● title() sets the window title. 
+● geometry() sets the initial window dimensions. 
+● Label() creates a text label. 
+● Button() creates a clickable button. 
+● pack() places widgets in the window. 
+● mainloop() starts the GUI event loop. 
+ 
+6.5 Tkinter button event handling 
+ 
+A button can call a function when clicked. 
+ 
+python 
+import tkinter as tk 
+ 
+def greet(): 
+    label.config(text="Hello, Welcome!") 
+ 
+root = tk.Tk() 
+root.title("Greeting App") 
+ 
+label = tk.Label(root, text="Click the button") 
+label.pack(pady=10) 
+ 
+button = tk.Button(root, text="Greet", command=greet) 
+button.pack() 
+
+===== PAGE 25 =====
+ 
+ 
+root.mainloop() 
+ 
+Here, command=greet connects the button to the function. Do not 
+write command=greet() because that would call the function 
+immediately during widget creation. 
+ 
+7. Simple Applications Using Tkinter 
+ 
+Application 1: Addition calculator 
+ 
+This program accepts two numbers and displays their sum. 
+ 
+python 
+ 
+import tkinter as tk 
+ 
+def add_numbers(): 
+    try: 
+        a = float(entry1.get()) 
+        b = float(entry2.get()) 
+        result.config(text=f"Sum = {a + b:g}") 
+    except ValueError: 
+        result.config(text="Enter valid numbers") 
+ 
+root = tk.Tk() 
+root.title("Addition Calculator") 
+root.geometry("300x220") 
+ 
+tk.Label(root, text="First number").pack() 
+entry1 = tk.Entry(root) 
+entry1.pack() 
+ 
+tk.Label(root, text="Second number").pack() 
+entry2 = tk.Entry(root) 
+
+===== PAGE 26 =====
+entry2.pack() 
+ 
+tk.Button(root, text="Add", command=add_numbers).pack(pady=10) 
+ 
+result = tk.Label(root, text="Sum = ") 
+result.pack() 
+ 
+root.mainloop() 
+ 
+ 
+ 
+Working: 
+● Entry.get() reads the entered text. 
+● float() converts the input into a number. 
+● The add_numbers() function calculates the sum. 
+● config() updates the result label. 
+● try-except handles invalid numerical input. 
+ 
+Application 2: Greeting application 
+ 
+python 
+import tkinter as tk 
+ 
+def greet(): 
+    name = entry.get().strip() 
+    if name: 
+        message.config(text=f"Hello, {name}!") 
+    else: 
+        message.config(text="Please enter your name") 
+ 
+root = tk.Tk() 
+root.title("Greeting Application") 
+ 
+tk.Label(root, text="Enter your name:").pack() 
+
+===== PAGE 27 =====
+entry = tk.Entry(root) 
+entry.pack() 
+ 
+tk.Button(root, text="Greet", command=greet).pack() 
+message = tk.Label(root, text="") 
+message.pack(pady=10) 
+ 
+ 
+root.mainloop() 
+ 
+Application 3: Change label text 
+ 
+python 
+import tkinter as tk 
+ 
+def change_text(): 
+    label.config(text="Text changed successfully!") 
+ 
+root = tk.Tk() 
+root.title("Text Changer") 
+ 
+label = tk.Label(root, text="Original Text") 
+label.pack(pady=10) 
+ 
+tk.Button(root, text="Change Text", 
+          command=change_text).pack() 
+ 
+ 
+root.mainloop() 
+ 
+8. Quick Revision: Important Differences 
+ 
+NumPy vs Pandas 
+NumPy 
+Pandas 
+
+===== PAGE 28 =====
+Mainly 
+used 
+for 
+numerical 
+computing 
+Mainly 
+used 
+for 
+data 
+analysis 
+Uses arrays 
+Uses Series and DataFrames 
+Supports multidimensional arrays 
+Supports labeled tabular 
+data 
+Example: np.array() 
+Example: pd.DataFrame() 
+ 
+Class vs Object 
+Class 
+Object 
+Blueprint or template 
+Instance of a class 
+Defines 
+attributes 
+and 
+methods 
+Uses the defined attributes and 
+methods 
+Example: Student 
+Example: s1 = Student() 
+ 
+Inheritance vs Polymorphism 
+Inheritance 
+Polymorphism 
+Reuses and extends 
+existing 
+class 
+features 
+Allows different objects to behave 
+differently through a common interface 
+
+===== PAGE 29 =====
+Uses 
+parent-child 
+relationships 
+Often demonstrated through method 
+overriding 
+Example: 
+Dog(Animal) 
+Example: Dog.sound() and Cat.sound() 
+ 
+Matplotlib vs Tkinter 
+Matplotlib 
+Tkinter 
+Creates charts and graphs 
+Creates graphical desktop interfaces 
+Used for data visualization 
+Used for GUI applications 
+Example: plt.plot() 
+Example: tk.Button() 
+ 

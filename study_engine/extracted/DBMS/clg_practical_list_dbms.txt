@@ -1,0 +1,474 @@
+SOURCE: SEM3/DBMS/clg_practical_list_dbms.pdf
+
+===== PAGE 1 =====
+Babaria Institute of Technology  
+       Computer Engineering 
+ 
+Database Management Systems - 3130703 
+Practical List 
+ 
+ 
+ 
+ 
+Practical 
+No. 
+Practical Name 
+1 
+Introduction to SQL.Features of SQL.Rules for SQL. 
+2 
+Explain Components of SQL. 
+3 
+To study DDL-create and DML-insert commands. 
+(i) Create tables according to the following definition. 
+CREATE TABLE DEPOSIT (ACTNO VARCHAR2(5) ,CNAME VARCHAR2(18) , BNAME 
+VARCHAR2(18) , AMOUNT NUMBER(8,2) ,ADATE DATE); 
+CREATE TABLE BRANCH(BNAME VARCHAR2(18),CITY VARCHAR2(18)); 
+CREATE TABLE CUSTOMERS(CNAME VARCHAR2(19) ,CITY VARCHAR2(18)); 
+CREATE TABLE BORROW(LOANNO VARCHAR2(5), CNAME VARCHAR2(18), BNAME 
+VARCHAR2(18), AMOUNT NUMBER (8,2)); 
+(ii) Insert the data as shown below. 
+DEPOSIT 
+BORROW 
+LOANNO 
+CNAME 
+BNAME 
+AMOUNT 
+201 
+ANIL 
+VRCE 
+1000.00 
+206 
+MEHUL 
+AJNI 
+5000.00 
+311 
+SUNIL 
+DHARAMPETH 
+3000.00 
+321 
+MADHURI 
+ANDHERI 
+2000.00 
+375 
+PRMOD 
+VIRAR 
+8000.00 
+ACTNO 
+CNAME 
+BNAME 
+AMOUNT 
+ADATE 
+100 
+ANIL 
+VRCE 
+1000.00 
+1-MAR-95 
+101 
+SUNIL 
+AJNI 
+5000.00 
+4-JAN-96 
+102 
+MEHUL 
+KAROLBAGH 
+3500.00 
+17-NOV-95 
+104 
+MADHURI 
+CHANDI 
+1200.00 
+17-DEC-95 
+105 
+PRMOD 
+M.G.ROAD 
+3000.00 
+27-MAR-96 
+106 
+SANDIP 
+ANDHERI 
+2000.00 
+31-MAR-96 
+107 
+SHIVANI 
+VIRAR 
+1000.00 
+5-SEP-95 
+108 
+KRANTI 
+NEHRU PLACE 
+5000.00 
+2-JUL-95 
+109 
+MINU 
+POWAI 
+7000.00 
+10-AUG-95 
+
+===== PAGE 2 =====
+481 
+KRANTI 
+NEHRU PLACE 
+3000.00 
+BRANCH 
+CUSTOMERS 
+From the above given tables perform the following queries: 
+1 
+Describe deposit, branch. 
+2 
+Describe borrow, customers. 
+3 
+List all data from table DEPOSIT. 
+4 
+List all data from table BORROW. 
+5 
+List all data from table CUSTOMERS. 
+6 
+List all data from table BRANCH. 
+7 
+Give account no and amount of depositors. 
+ 
+VRCE 
+NAGPUR 
+AJNI 
+NAGPUR 
+KAROLBAGH 
+DELHI 
+CHANDI 
+DELHI 
+DHARAMPETH 
+NAGPUR 
+M.G.ROAD 
+BANGLORE 
+ANDHERI 
+BOMBAY 
+VIRAR 
+BOMBAY 
+NEHRU PLACE 
+DELHI 
+POWAI 
+BOMBAY 
+ANIL 
+CALCUTTA 
+SUNIL 
+DELHI 
+MEHUL 
+BARODA 
+MANDAR 
+PATNA 
+MADHURI 
+NAGPUR 
+PRAMOD 
+NAGPUR 
+SANDIP 
+SURAT 
+SHIVANI 
+BOMBAY 
+KRANTI 
+BOMBAY 
+NAREN 
+BOMBAY 
+
+===== PAGE 3 =====
+8 
+Give name of depositors having amount greater than 4000. 
+9 
+Give name of customers who opened account after date '1-12-96'. 
+ 
+ 
+4 
+Create the below given table and insert the data accordingly. 
+(i) Create Table Job (job_id, job_title, min_sal, max_sal) 
+ 
+ 
+ 
+COLUMN NAME 
+DATA TYPE 
+job_id 
+Varchar2(15) 
+job_title 
+Varchar2(30) 
+min_sal 
+Number(7,2) 
+max_sal 
+Number(7,2) 
+ 
+(ii) Create table Employee (emp_no, emp_name, emp_sal, emp_comm, dept_no) 
+ 
+ 
+COLUMN NAME 
+DATA TYPE 
+emp_no 
+Number(3) 
+emp_name 
+Varchar2(30) 
+emp_sal 
+Number(8,2) 
+emp_comm 
+Number(6,1) 
+dept_no 
+Number(3) 
+ 
+(iii) Create table deposit(a_no,cname,bname,amount,a_date). 
+ 
+COLUMN NAME 
+DATA TYPE 
+a_no 
+Varchar2(5) 
+Cname 
+Varchar2(15) 
+bname 
+Varchar2(10) 
+amount 
+Number(7,2) 
+a_date 
+Date 
+(iv) Create table borrow(loanno,cname,bname,amount). 
+ 
+COLUMN NAME 
+DATA TYPE 
+loanno 
+Varchar2(5) 
+cname 
+Varchar2(15) 
+bname 
+Varchar2(10) 
+amount 
+Varchar2(7,2) 
+
+===== PAGE 4 =====
+(V)Insert following values in the table Employee. 
+(vi) Insert following values in the table job. 
+(vi) Insert following values in the table Deposit 
+Perform following queries 
+1. Retrieve all data from employee, jobs and deposit. 
+2. Give details of account no. and deposited rupees of customers having account 
+opened between dates 01-01-06 and 25-07-06. 
+3. Display all jobs with minimum salary is greater than 4000. 
+ 
+emp_n emp_name emp_sal emp_comm dept _no 
+101 
+Smith 
+800 
+20 
+102 
+Snehal 
+1600 
+300 
+25 
+103 
+Adama 
+1100 
+0 
+20 
+104 
+Aman 
+3000 
+15 
+105 
+Anita 
+5000 
+50,000 
+10 
+106 
+Sneha 
+2450 
+24,500 
+10 
+107 
+Anamika 
+2975 
+30 
+job_id 
+job_name 
+min_sal 
+max_sal 
+IT_PROG 
+Programmer 
+4000 
+10000 
+MK_MGR 
+Marketing manager 
+9000 
+15000 
+FI_MGR 
+Finance manager 
+8200 
+12000 
+FI_ACC 
+Account 
+4200 
+9000 
+LEC 
+Lecturer 
+6000 
+17000 
+COMP_OP 
+Computer Operator 
+1500 
+3000 
+A_no 
+cname 
+Bname 
+Amount 
+date 
+101 
+Anil 
+andheri 
+7000 
+01-jan-06 
+102 
+sunil 
+virar 
+5000 
+15-jul-06 
+103 
+jay 
+villeparle 
+6500 
+12-mar-06 
+104 
+vijay 
+andheri 
+8000 
+17-sep-06 
+
+===== PAGE 5 =====
+4. Display name and salary of employee whose department no is 20. Give alias name 
+to name of employee. 
+5. Display employee no,name and department details of those employee whose 
+6. department lies in(10,20) 
+To study various options of LIKE predicate 
+1. Display all employee whose name start with ‘A’ and third character is ‘ ‘a’. 
+2. Display name, number and salary of those employees whose name is 5 characters 
+long and first three characters are ‘Ani’. 
+3. Display the non-null values of employees and also employee name second 
+character should be ‘n’ and string should be 5 character long. 
+4. Display the null values of employee and also employee name’s third character should be 
+‘a’. 
+5. What will be output if you are giving LIKE predicate as ‘%\_%’ ESCAPE ‘\’ 
+5 
+To Perform various data manipulation commands, aggregate functions and 
+Sorting concept on all created tables. 
+1. List total deposit from deposit. 
+2. List total loan from karolbagh branch 
+3. Give maximum loan from branch vrce. 
+4. Count total number of customers 
+5. Count total number of customer’s cities. 
+6. Create table supplier from employee with all the columns. 
+7. Create table sup1 from employee with first two columns. 
+8. Create table sup2 from employee with no data 
+9. Insert the data into sup2 from employee whose second character should be ‘n’ and 
+string should be 5 characters long in employee name field. 
+10. Delete all the rows from sup1. 
+11. Delete the detail of supplier whose sup_no is 103. 
+12. Rename the table sup2. 
+13. Destroy table sup1 with all the data. 
+14. Update the value dept_no to 10 where second character of emp. name is ‘m’. 
+
+===== PAGE 6 =====
+15. Update the value of employee name whose employee number is 103. 
+6 
+To study Single-row functions. 
+1. Write a query to display the current date. Label the column Date 
+2. For each employee, display the employee number, job, salary, and salary increased 
+by 15% and expressed as a whole number. Label the column New Salary 
+3. Modify your query no 4.(2) to add a column that subtracts the old salary from the new 
+salary. Label the column Increase 
+4. Write a query that displays the employee’s names with the first letter capitalized and 
+all other letters lowercase, and the length of the names, for all employees whose 
+name starts with J, A, or M. Give each column an appropriate label. Sort the results 
+by the 
+a. employees’ last names. 
+5. Write a query that produces the following for each employee: <employee last name> 
+earns <salary> monthly 
+6. Display the name, hire date, number of months employed and day of the week on 
+which the employee has started. Order the results by the day of the week starting 
+with Monday. 
+7. Display the hiredate of emp in a format that appears as Seventh of June 1994 
+12:00:00 AM. 
+8. Write a query to calculate the annual compensation of all employees (sal+comm.). 
+7 
+ 
+Displaying data from Multiple Tables (join) 
+1. Give details of customers ANIL. 
+2. Give name of customer who are borrowers and depositors and having living city 
+nagpur 
+3. Give city as their city name of customers having same living branch. 
+4. Write a query to display the last name, department number, and department 
+name for all employees. 
+5. Create a unique listing of all jobs that are in department 30. Include the location of 
+the department in the output 
+6. Write a query to display the employee name, department number, and department 
+name for all employees who work in NEW YORK. 
+7. Display the employee last name and employee number along with their manager’s 
+last name and manager number. Label the columns Employee, Emp#, Manager, 
+and Mgr#, respectively. 
+8. Create a query to display the name and hire date of any employee hired after 
+employee SCOTT. 
+
+===== PAGE 7 =====
+8 
+To apply the concept of Aggregating Data using Group functions. 
+1. List total deposit of customer having account date after 1-jan-96. 
+2. List total deposit of customers living in city Nagpur. 
+3. List maximum deposit of customers living in bombay. 
+4. Display the highest, lowest, sum, and average salary of all employees. Label the 
+columns Maximum, Minimum, Sum, and Average, respectively. Round your results to 
+the nearest whole number. 
+5. Write a query that displays the difference between the highest and lowest salaries. 
+Label the column DIFFERENCE. 
+6. Create a query that will display the total number of employees and, of that total, 
+the number of employees hired in 1995, 1996, 1997, and 1998 
+7. Find the average salaries for each department without displaying the 
+respective department numbers. 
+8. Write a query to display the total salary being paid to each job title, within 
+each department. 
+9. Find the average salaries > 2000 for each department without displaying the 
+respective department numbers. 
+10. Display the job and total salary for each job with a total salary amount exceeding 
+3000, in which excludes president and sorts the list by the total salary. 
+11. List the branches having sum of deposit more than 5000 and located in city bombay. 
+9 
+To solve queries using the concept of sub query. 
+1. Write a query to display the last name and hire date of any employee in the same 
+department as SCOTT. Exclude SCOTT 
+2. Give name of customers who are depositors having same branch city of mr. sunil. 
+3. Give deposit details and loan details of customer in same city where pramod is living. 
+4. Create a query to display the employee numbers and last names of all employees 
+who earn more than the average salary. Sort the results in ascending order of 
+salary. 
+5. Give names of depositors having same living city as mr. anil and having deposit 
+amount greater than 2000 
+6. Display the last name and salary of every employee who reports to ford. 
+7. Display the department number, name, and job for every employee in the 
+Accounting department. 
+8. List the name of branch having highest number of depositors. 
+9. Give the name of cities where in which the maximum numbers of branches are 
+
+===== PAGE 8 =====
+located. 
+10. Give name of customers living in same city where maximum depositors are located. 
+10 
+Manipulating Data 
+1. Give 10% interest to all depositors. 
+2. Give 10% interest to all depositors having branch vrce 
+3. Give 10% interest to all depositors living in nagpur and having branch city bombay. 
+4. Write a query which changes the department number of all employees with empno 
+7788’s job to employee 7844’current department number. 
+5. Transfer 10 Rs from account of anil to sunil if both are having same branch. 
+6. Give 100 Rs more to all depositors if they are maximum depositors in their respective 
+branch. 
+7. Delete depositors of branches having number of customers between 1 to 3. 
+8. Delete deposit of vijay. 
+9. Delete borrower of branches having average loan less than 1000. 
+11 
+Explain PL/SQL with Example. 
+12 
+To apply the concept of security and privileges. 
+13 
+To study Transaction control commands 
+14 
+Write a Trigger. 
+15 
+Write a Cursor. 
+ 

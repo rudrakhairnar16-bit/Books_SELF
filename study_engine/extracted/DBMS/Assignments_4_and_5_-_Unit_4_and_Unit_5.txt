@@ -1,0 +1,50 @@
+SOURCE: SEM3/DBMS/Assignments 4 and 5 - Unit 4 and Unit 5.pdf
+
+===== PAGE 1 =====
+Krishna School of Emerging Technology and Applied Research 
+Department of Computer Science and Engineering 
+Module:5 
+Assignment:5 
+ 
+ 
+1. Define functional dependencies and explain the concept of domain and data 
+dependency in relational databases. 
+2. Discuss Armstrong's axioms and their role in deriving functional dependencies. 
+3. Explain the various normal forms (1NF, 2NF, 3NF, and BCNF) with examples. 
+4. Explain the concept of dependency preservation and lossless decomposition in 
+database design. 
+5. Given a set of attributes and functional dependencies, find the closure of 
+attributes and functional dependencies. 
+6. Discuss trivial and nontrivial dependencies with examples. Explain how these 
+dependencies affect database normalization. 
+7. Perform normalization on a given database schema and convert it to 3NF or 
+BCNF. 
+
+===== PAGE 2 =====
+Krishna School of Emerging Technology and Applied Research 
+Department of Computer Science and Engineering 
+Module:4 
+Assignment:4 
+Issue Date: 23/09/2026 
+Submission Date: 05/10/2026 
+ 
+ 
+ 
+1. Write SQL queries to demonstrate the use of DDL, DML, and DCL commands. 
+Include examples of creating, altering, and dropping tables. 
+2. Create SQL queries to define constraints, including primary key, foreign key, 
+unique, not null, and check constraints. 
+3. Explain the use of aggregate functions in SQL (e.g., SUM, AVG, COUNT) and 
+provide examples. 
+4. Write SQL queries using built-in functions for numeric, date, and string 
+operations. 
+5. Create SQL queries involving set operations (UNION, INTERSECT, 
+EXCEPT). Explain the differences between them. 
+6. Write complex SQL queries using subqueries, correlated subqueries, and set 
+operators. 
+7. Write SQL queries to demonstrate the use of transaction control commands like 
+COMMIT, ROLLBACK, and SAVEPOINT. 
+
+===== PAGE 3 =====
+ 
+ 

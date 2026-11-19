@@ -1,0 +1,547 @@
+SOURCE: SEM3/DS/UNIT-2.pdf
+
+===== PAGE 1 =====
+UNIT:3
+Stack & Queue
+1
+
+===== PAGE 2 =====
+SYLLABUS
+1.
+Linear and Non-Linear Data Structures
+2. Stack : Array representation of Stack, PUSH POP Operations  
+on Stack, Implementation of Stack, Application of Stack, 
+Infix,  Prefix and Postfix Forms of Expressions, Recursive 
+Functions  (factorial, greatest common divisor, Fibonacci 
+series)
+3. Queue: Array representation of Queue, Operations on Queue,  
+Implementation of Queue, Limitation of Single Queue
+4.
+Concepts of Circular Queue
+5.
+Application of queue
+6.
+Difference circular queue and simple queue
+2
+
+===== PAGE 3 =====
+3.1 LINEAR AND NON-LINEAR DATA  
+STRUCTURES
+❖Linear Data Structure:
+❖In the linear data structure processing of data items is 
+possible  in linear fashion.
+❖Data are processed one by one sequentially.
+❖Examples of the linear data structure are:
+❖(A) Array
+(B) Stack (C) Queue(D) Linked List
+❖Non Linear data structure:
+❖In the Non linier data structure processing of data items is not
+possible in linier fashion.
+❖Examples of the non linier data structure are:
+❖(A)Tree (B) Graph
+3
+
+===== PAGE 4 =====
+3.2 
+STACK
+❖A stack is a linear OR non-primitive list in which insertion 
+and  deletion operations are performed at only one end of the 
+list.
+❖A stack is Last in First out (LIFO) Structure.
+❖A stack is a linear data structure in which elements are 
+added  and remove from one end, called top of stack.
+❖For example of stack is, consider a stack of plates on the  
+counter in cafeteria, during the time of dinner, customer take  
+plates from top of the stack and waiter puts the washed plates  
+on the top of the stack. So new plates are put on the top and old  
+one yet bottom.
+❖Another example is Railway Shunting System.
+4
+
+===== PAGE 5 =====
+ARRAY REPRESENTATION OF STACK
+1.Verticaly Representation of stack
+5
+
+===== PAGE 6 =====
+❖The operation in a stack is representation by using vector  
+consisting of number of elements.
+❖A
+pointer top keeps of
+the top elements ,when stack is 
+empty  to phas a value 0.
+❖Every time a new element is added at top,top is incremented
+by one.
+❖When
+an element is deleted from a top,top is decremented 
+by  one.
+2.Horizontal Representation of stack
+6
+
+===== PAGE 7 =====
+IMPLEMENTATION OF STACK
+7
+❖Implementationof Stack:
+❖A stack is a list and list can be implemented 
+by  two ways:
+1.
+Pointer(linked List/ Dynamic Implementation)
+2.
+Array(Static Implementation)
+
+===== PAGE 8 =====
+OPERATIONS ON STACK
+1. Push Operation:
+❖The operations that add an element to the top  of 
+the stack is called PUSH operation. It is  used to 
+insert an element into the stack.
+2. Pop Operation:
+❖
+The operation that delete top element from  
+the top of stack is called POP. it is used to  delete 
+an element from stack
+8
+
+===== PAGE 9 =====
+PUSH POP OPERATIONS ON STACK
+1. PUSH Operation
+❖In push operation, we can add elements to the top of the 
+stack,  so before push operation, user must check the stack, it 
+should  not be a full.
+❖If stack is already full and when we try to add the elements 
+then  error occurs. It is called “Stack Over Flow” error.
+❖Algorithm: PUSH(S, TOP, VAL)
+❖This algorithm insert an element X to the top of the stack.
+❖The Stack is represented by vector S which contains N elements.
+❖TOP is a pointer which points to the top element of the Stack.
+9
+
+===== PAGE 10 =====
+Step-1: [Check for stack overflow]
+If (TOP >= N) then
+Write (‘Stack Overflow’)
+Return
+Step-2: [Increment TOP]
+TOP = TOP + 1
+Step-3: [Insert Element]
+S [TOP] = VAL
+Step-4: [Finished]
+Return
+10
+
+===== PAGE 11 =====
+2. POP Operation
+11
+❖In POP operation, we can delete or remove an elements from 
+top of the stack, so before pop operation, user must check the 
+stack, stack should not be a empty.
+❖
+❖If the stack is empty, and we try to pop an element, then error
+occur. It is called “Stack under Flow” error.
+❖Algorithm: POP(S, TOP)
+❖This algorithm removes an element from the Top of the Stack.
+❖The Stack is represented by vector S which contains N
+elements.
+❖TOP is a pointer which points to the top element of the Stack.
+
+===== PAGE 12 =====
+Step-1: [Check for the Underflow on the Stack]
+If TOP = 0 then
+Write (‘STACK UNDERFLOW’)
+Exit
+Step-2:[Decrement Pointer]
+TOP = TOP - 1
+STEP-3:[Return former top element of the
+stack]
+Return(S [TOP + 1])
+12
+
+===== PAGE 13 =====
+INFIX, PREFIX AND POSTFIX FORMS OF
+EXPRESSIONS
+❖There are basically three types of polish notation:
+❖Infix (B) Prefix (C) Postfix
+❖When the operator(+) exists between two operands(A & B) then  
+it is known as Infix notation.(e.g. A+B)
+❖When the operator(+) are written before their operands(A & B)
+then it is known as Prefix notation(Polish notation). (e.g. +AB)
+❖When the operator(+) are written after their operands(A & B)  
+then it is known as Postfix notation(Reverse polish notation).  
+(e.g. AB+).
+❖Stack is widely used to convert infix notation into prefix 
+or  postfix notation.
+13
+
+===== PAGE 14 =====
+Rules for converting infix notation to prefix/ postfix
+❖The operations with heights precedence are converted first 
+and  then after a portion of the expression have been 
+converted to  postfix.
+❖It is to be treated as single operand.
+❖Take only two operands at a time to convert in a postfix 
+from  like
+A+B🡪 AB+
+❖Always, convert the parenthesis first
+❖Convert postfix exponentiation second if there are more 
+than  one exponentiation in sequence then take order from 
+right to  left.
+❖Convert in to postfix as multiplication and division 
+operator,  left to right.
+❖Convert in postfix as addition and subtraction left to right.
+14
+
+===== PAGE 15 =====
+❖Convert infix into Prefix expression.
+1.
+(A + B) * C
+= (+ A B) * C
+= * (+ A B) C
+= * + A B C
+2.  (A + B ) * (C + D)
+= (+ A B) * (+ C D)
+=*(+ A B) (+ C D)
+=* + AB + CD
+3. (A-B)+C*A+B
+=-AB+C*A+B
+=-AB+*CA+B
+=+-AB*CA+B
+=++-AB*CAB
+4. (B*C/D)/(D/C+E)
+=(*BC/D)/(D/C+E)
+=(/*BCD)/(D/C+E)
+=(/*BCD)/(/DC+E)
+=(/*BCD)/(+/DCE)
+=//*BCD+/DCE
+5. A*B/(C+D-E)
+=A*B/(+CD-E)
+=A*B/(-+CDE)
+=*AB/-+CDE
+=/*AB-+CDE
+15
+
+===== PAGE 16 =====
+🡪Convert infix into Prefix expression.
+1.
+A * B / C +D
+= [AB*]/C+D
+= [AB*C/] +D
+=AB*C/D+
+2.
+C*B*A/D
+= [CB*]*A/D
+= [CB*A*]/D
+=CB*A*D/
+3.
+(A-B)+C*A+B
+= [AB-] +C*A+B
+= [AB-] + [CA*] +B
+= [AB-CA*+] +B
+=AB-CA*+B+
+4.
+A*B/(C+D-E)
+=A*B/([CD+]-E)
+=A*B/[CD+E-]
+=[AB*]/[CD+E-]
+=AB*CD+E-/
+5.
+(B*C/D)/(D/C+E)
+= ([BC*]/D)/(DC/+E)
+= [BC*D/]/[DC/E+]
+=BC*D/DC/E+/
+6.
+A*B+C*D+E*F
+=[AB*]+C*D+E*F
+=[AB*]+[CD*]+E*F
+=[AB*]+[CD*]+[EF*]
+=[AB*CD*+]+[EF*]
+=AB*CD*+EF*+
+16
+
+===== PAGE 17 =====
+APPLICATION OF STACK
+❖There are three main application of stack:
+(1) Recursion:
+❖Recursion means function call itself.
+❖It is the technique of defining a process in terms of itself.
+❖Stack is widely used in recursion because of its Last in First out  
+Property.
+❖In terms of C language the function calling itself is known  as 
+recursion.
+(2)Evaluate polish notation:
+❖The process of writing the operators of an expression  
+either before their operands or after operands are
+called the polish notation.
+17
+
+===== PAGE 18 =====
+❖There are basically three types of polish notation:
+❖Infix (B) Prefix (C) Postfix
+(3) Stack Machine:
+❖Stack Machines are also used to evaluate polish notations.
+❖Two example of the stack machine are PDP-11 and B5000. 
+These machines are well suited for stacking local variables 
+and parameter that arise in the function call.
+❖Stack machines provides faster execution of polish notation.
+18
+
+===== PAGE 19 =====
+RECURSIVE FUNCTIONS (FACTORIAL, GREATEST  
+COMMON DIVISOR, FIBONACCI SERIES)
+❖Recursion means a function call itself.
+❖Example: The factorial function can be recursively defined as,
+❖Here, FACTORIAL(N) is defined in terms of 
+FACTORIAL(N-1)  which is again defined in terms of 
+FACTORIAL(N-2) and this  process continue until 
+FACTORIAL(0) is reached.
+❖The value of FACTORIAL(0) is defined as 1.
+19
+
+===== PAGE 20 =====
+❖To Generate the Fibonacci number using  
+recursion:
+❖A fibonacci series is,
+0
+1
+1
+2
+3
+5
+8 ………………. N
+❖
+If we consider F0 = 0 and F1 = 1 then F2 = F0 + F1 = 0 + 1
+= 1, similar F3 = F2 + F1 = 1 + 1 = 2, and F4 = F3 + F2 = 2
++ 1 = 3 and so on.
+❖It is clear that each succeeding(next) term is the sum of two  
+preceding(previous) terms, doing this procedure until i  
+becomes less then the value of n.
+20
+
+===== PAGE 21 =====
+3.3 QUEUE
+❖A queue is a linear list in which insertion is performed at one  
+end called rear end and deletion is performed at another end 
+of  the list called front end.
+❖The information in such a list is proceeds in the same order as 
+it  was received.
+❖Since insertion is performed at one end and deletion is  
+performed at another end the element which is inserted first is  
+first to delete. So it is also known as First in First out (FIFO)  
+or First Come First Serve (FCFS) data structure.
+21
+
+===== PAGE 22 =====
+ARRAY REPRESENTATION OF QUEUE
+❖A queue has two pointer, from pointer and rear pointer  
+which are pointing to front and rear element of the  
+queue.
+22
+
+===== PAGE 23 =====
+OPERATIONS ON QUEUE
+1. QINSERT (Q, Front, Rear, N, Val)
+❖This function insert an element into the queue
+❖The Queue is represented by vector Q which contains N  
+elements.
+❖Front is a pointer which points to the front end
+❖Rear is a pointer which points to the rear end
+❖
+Y is the element to be inserted.
+❖
+25
+
+===== PAGE 24 =====
+STEP-1: [Check Overflow error?]
+IF REAR = MAX-1
+Write OVERFLOW
+Goto step 4
+Step-2: [Is front pointer properly set?]
+IF FRONT = -1 and REAR = -1
+SET FRONT = REAR = 0
+ELSE
+SET REAR = REAR + 1
+[END OF IF]
+Step-3: [Insert element]
+SET QUEUE[REAR] = NUM
+Step-4:[Finished]
+Exit
+24
+
+===== PAGE 25 =====
+2. Algorithm to delete an element from the queue
+25
+❖
+QDELETE (Q, Front, Rear)
+❖The Queue is represented by vector Q which contains N  
+elements.
+❖Front is a pointer which points to the front end
+❖Rear is a pointer which points to the rear end
+
+===== PAGE 26 =====
+Step 1: IF FRONT = -1 OR FRONT > REAR
+            Write "UNDERFLOW"
+            Go to Step 6
+        [END OF IF]
+Step 2: SET ITEM = QUEUE[FRONT]
+Step 3: IF FRONT = REAR
+            SET FRONT = -1
+            SET REAR = -1
+        ELSE
+            SET FRONT = FRONT + 1
+        [END OF IF]
+Step 4: Write ITEM
+Step 5: EXIT
+26
+
+===== PAGE 27 =====
+LIMITATION OF SINGLE QUEUE
+❖Disadvantage of simple queue is that even if we have a free  
+memory space in a queue we cannot use that free memory  
+space to insert element.
+❖For example consider following operations:
+❖As shown in figure we insert three elements 5, 10, 15 in  
+simple queue. After that we delete 5 and 10 as shown in figure.  
+Now even we have a free memory space we cannot use that  
+memory space. So simple queue results in wastage of memory  
+space. This problem can be solved by using circular queue.
+❖For example consider the following operations:
+29
+
+===== PAGE 28 =====
+❖As shown in 1st figure, we insert eight elements 10,  
+20,30,40,50,60,70,80 in simple queue. After that we delete  10, 
+20 and 30 as shown in 2nd figure. Now we have a free  memory 
+space in circular queue and we can use that memory  space by 
+incrementing rear pointer by 1(rear=0).
+28
+
+===== PAGE 29 =====
+3.4 CONCEPTS OF CIRCULAR QUEUE
+❖A circular queue is a queue in which elements are  arranged 
+such that the first element in the queue follows  the last 
+element in the queue.
+❖The arrangement of circular queue is shown in figure  
+below:
+29
+
+===== PAGE 30 =====
+🡪Here in the circular queue the first element q[0]  follows the 
+last element q[n-1].
+🡪Disadvantage of simple queue is that even if  we have a 
+free memory space in a queue we  cannot use that free 
+memory space to insert  element.
+30
+
+===== PAGE 31 =====
+3.5 APPLICATION OF QUEUE
+❖A queue is the natural data structure for a system to serve 
+its  incoming requests. Most of the process scheduling or 
+disk  scheduling algorithms in operating systems use 
+queues.
+❖Computer hardware like a processor or a network card also  
+maintain buffers in the form of queues for incoming resource  
+requests. A stack-like data structure causes starvation of the 
+first  requests, and is not applicable in such cases.
+❖A mailbox or port to save messages to communicate 
+between  two users or processes in a system is essentially a 
+queue-like  structure.
+❖Queue is widely used in Simulation.
+31
+
+===== PAGE 32 =====
+Inserting an element in a circular queue
+Step 1: IF (FRONT = 0 AND REAR = MAX-1)
+           OR (FRONT = REAR + 1)
+        THEN
+           Write "OVERFLOW"
+           Go to Step 8
+        [END OF IF]
+Step 2: IF FRONT = -1
+        THEN
+           SET FRONT = 0
+           SET REAR = 0
+        ELSE IF REAR = MAX-1
+        THEN
+           SET REAR = 0
+        ELSE
+           SET REAR = REAR + 1
+        [END OF IF]
+Step 3: SET QUEUE[REAR] = ITEM
+Step 4: EXIT
+
+===== PAGE 33 =====
+Algorithm to delete an element from a circular queue
+Step 1: IF FRONT = -1
+           Write "UNDERFLOW"
+           Go to Step 7
+        [END OF IF]
+Step 2: SET ITEM = QUEUE[FRONT]
+Step 3: IF FRONT = REAR
+           SET FRONT = -1 ,            SET REAR = -1
+        ELSE IF FRONT = MAX - 1
+           SET FRONT = 0
+        ELSE
+           SET FRONT = FRONT + 1
+        [END OF IF]
+Step 4: Write ITEM
+Step 5: EXIT
+
+===== PAGE 34 =====
+3.6 DIFFERENCE OF CIRCULAR QUEUE AND  
+SIMPLE QUEUE
+Simple Queue
+Circular Queue
+The last element of the queue
+does not follow the first element.
+The last element in the queue
+follow the first element.
+Problem of Overflow in a simple  
+queue is frequently occurs.
+Problem of Overflow in a circular  
+queue infrequently occurs.
+There is wastage of Memory
+space.
+There is no wastage of Memory
+space.
+Example of Simple queue
+Example of Circular queue
+34
+
+===== PAGE 35 =====
+COMPARISON OF LIFO AND FIFO
+LIFO
+FIFO
+(1)In LIFO the insertion
+and
+deletion
+operation are  
+performed at only one end.
+(1)In FIFO
+the insertion
+and
+deletion
+operation are
+performed  at two different ends.
+(2) In LIFO the element which  
+is inserted last is first to delete.
+(2) In FIFO the element which is  
+inserted first is first to delete.
+(3)LIFO require only
+one  
+pointer called TOP
+(3)FIFO
+requires
+two
+pointers  called front and rear.
+(4)Example: piles
+of trays
+in  cafeteria
+(4)Example: students
+at  
+registration counter
+(5) In LIFO there is no wastage  
+of memory space.
+(5) In FIFO even if we have free  
+memory
+space sometimes we
+35
+h

@@ -1,0 +1,88 @@
+SOURCE: SEM3/Python_Programing/Assignment unit 3_PP.pdf
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+ 
+Module No – 3 
+Given Date – 29/08/2026 
+Submission Date -17/09/2026 
+Python Programming 
+Assignment No – 3 
+ 
+ 
+Q.No.  
+CO BT Level 
+1 
+What is a function in Python? Explain the need, advantages, syntax, definition, 
+and calling of a function with a suitable example. 
+CO2 L2 – 
+Understand 
+2 
+Explain the different types of arguments in Python functions. Discuss 
+positional, keyword, default, and variable-length arguments with suitable 
+examples. 
+CO2 L2 – 
+Understand 
+3 
+Differentiate between positional, keyword, and default arguments in Python. 
+Write suitable programs to demonstrate each type. 
+CO2 L3 – Apply 
+4 
+Explain *args and **kwargs in Python. Discuss their purpose and demonstrate 
+their use with suitable examples. 
+CO2 L3 – Apply 
+5 
+Explain return values in Python functions. Develop a Python program that 
+uses a function to perform an operation and return the result. 
+CO2 L3 – Apply 
+6 
+What is a recursive function? Explain the concept and working of recursion 
+with a suitable example. Discuss its advantages and limitations. 
+CO2 L2 – 
+Understand 
+7 
+Write and explain a Python program using a recursive function to calculate the 
+factorial of a given number. 
+CO2 L3 – Apply 
+8 
+Write a recursive Python program to generate the Fibonacci sequence and 
+analyze the recursive function calls. 
+CO2 L4 – Analyze 
+9 
+What is a lambda function in Python? Explain its syntax, characteristics, 
+advantages, and limitations with suitable examples. 
+CO2 L2 – 
+Understand 
+10 
+Explain the use of lambda functions with map(), filter(), and reduce() with 
+suitable Python programs. 
+CO2 L3 – Apply 
+11 
+What is a module in Python? Explain the purpose and advantages of modules. 
+Describe how to create and use a user-defined module with an example. 
+CO2 L2 – 
+Understand 
+12 
+Explain the different ways of importing modules in Python, such as import, 
+from...import, from...import *, and import...as, with suitable examples. 
+CO2 L3 – Apply 
+13 
+What is a package in Python? Explain the difference between a module and a 
+package. Describe the structure of a Python package with an example. 
+CO2 L2 – 
+Understand 
+14 
+Explain the use of Python modules such as math, random, and datetime. 
+Demonstrate suitable functions from each module through Python programs. CO2 L3 – Apply 
+15 
+Develop a Python application that integrates functions, recursion, lambda 
+functions, modules, and packages. Explain how each concept is implemented 
+in the application. 
+CO2 L6 – Create 
+
+===== PAGE 2 =====
+ 

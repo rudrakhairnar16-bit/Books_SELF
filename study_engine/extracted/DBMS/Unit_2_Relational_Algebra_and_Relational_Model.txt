@@ -1,0 +1,3545 @@
+SOURCE: SEM3/DBMS/Unit 2 Relational Algebra and Relational Model.pdf
+
+===== PAGE 1 =====
+Unit-2
+Relational Query Languages
+
+===== PAGE 2 =====
+✓
+Outline
+• Structure of Relational Databases
+• Key
+• Relational Algebra
+• Fundamental Operators and Syntax
+▪Selection
+▪Projection
+▪Cross Product OR Cartesian Product
+▪Joins
+▪Set Operators
+▪Division
+▪Rename
+▪Aggregate Functions
+• Open Source and Commercial DBMS
+
+===== PAGE 3 =====
+Relational Algebra Operations
+
+===== PAGE 4 =====
+Relational Algebra Operations
+Operator
+Description
+Selection
+Display particular rows/records/tuples from a relation
+Projection
+Display particular columns from a relation
+Cross Product
+Multiply each tuples of both relations
+Joins
+Combine data or records from two or more tables
+1.
+Natural Join / Inner Join
+2.
+Outer Join
+1. Left Outer Join2. Right Outer Join
+3. Full Outer Join
+Set Operators
+Combine the results of two queries into a single result.
+1. Union
+2. Intersection
+3. Minus / Set-difference
+Division
+Divides one relation by another
+Rename
+Rename a column or a table
+
+===== PAGE 5 =====
+Relational Algebra Operations 
+Selection Operator
+Section - 3.1
+
+===== PAGE 6 =====
+Selection Operator
+RollN
+Exampl 
+e
+Display the detail of students belongs to “CE” 
+Branch.
+Studen
+t
+Branc 
+h
+SPI
+o
+Name
+101
+Raju
+CE
+8
+102
+Mitesh
+ME
+9
+103
+Nilesh
+CI
+9
+104
+Meet
+CE
+9
+□Symbol: σ (Sigma)
+□Notation: σ COnditiOn (Relation)
+□Operation: Selects tuples from a relation that satisfy a given condition.
+□Operators: =, <>, <, >, <=, >=, Λ (AND), V (OR)
+σ
+Branch=‘CE’
+(Student)
+Answe 
+r
+Output
+RollN 
+o
+Name
+Branc 
+h
+SPI
+101
+Raju
+CE
+8
+104
+Meet
+CE
+9
+
+===== PAGE 7 =====
+Selection Operator [σ condition (Relation)]
+RollN
+Studen
+t
+o
+Name
+Branc 
+h
+SP
+I
+101
+Raju
+CE
+8
+102
+Mitesh
+ME
+9
+103
+Nilesh
+CI
+9
+104
+Meet
+CE
+9
+Exampl 
+e
+Display the detail of students belongs to “CE” Branch and having SPI more than 
+8.
+Answe 
+r
+RollN
+o
+Name
+Branc 
+h
+SPI
+104
+Meet
+CE
+9
+Output
+σ
+BranCh=‘CE’ Λ SPI>8 
+(Student)
+
+===== PAGE 8 =====
+Selection Operator [σ condition (Relation)]
+RollN
+Studen
+t
+o
+Name
+Branc 
+h
+SP
+I
+101
+Raju
+CE
+8
+102
+Mitesh
+ME
+9
+103
+Nilesh
+CI
+9
+104
+Meet
+CE
+9
+Exampl 
+e
+Display the detail of students belongs to either “CI” or “ME” 
+Branch.
+Answe 
+r
+RollN
+o
+Name
+Branc 
+h
+SPI
+102
+Mitesh
+ME
+9
+103
+Nilesh
+CI
+9
+Output
+σ
+BranCh=‘CI’ V 
+BranCh=‘
+E’ (Student)
+
+===== PAGE 9 =====
+Selection Operator [σ condition (Relation)]
+RollN
+Studen
+t
+o
+Name
+Branc 
+h
+SP
+I
+101
+Raju
+CE
+8
+102
+Mitesh
+ME
+9
+103
+Nilesh
+CI
+9
+104
+Meet
+CE
+9
+Exampl 
+e
+Display the detail of students whose SPI between 7 and 
+9.
+Answe 
+r
+RollN
+o
+Name
+Branc 
+h
+SPI
+101
+RajuCE
+8
+Output
+σ
+SPI>7 Λ SPI<9 
+(Student)
+
+===== PAGE 10 =====
+Exercise
+RollN
+25000 and belongs to “HR” Dept.
+EmpI
+□Write down the relational algebra for the student table.
+□
+Display the detail of students whose RollNo is less than 104.
+□
+Display the detail of students having SPI more than 8.
+□
+Display the detail of students belongs to “CE” Branch having SPI less 
+than 8.
+□
+Display the detail of students belongs to either “CE” or “ME” Branch.
+□
+Display the detail of students whose SPI between 6 and 9.
+Studen
+t
+Branc 
+h
+SPI
+o
+Name
+101
+Raj
+CE
+6
+102
+Meet
+ME
+8
+103
+Harsh
+EE
+7
+104
+Punit
+CE
+9
+□Write down the relational algebra for the employee table.
+□
+Display the detail of all employee.
+□
+Display the detail of employee whose Salary more than 10000.
+□
+Display the detail of employee belongs to “HR” Dept having Salary 
+more than 20000.
+□
+Display the detail of employee belongs to either “HR” or “Admin” 
+Dept.
+□
+Display the detail of employee whose Salary between 10000 and
+Employe
+e
+Dept
+Salary
+D
+Name
+101
+Nilesh
+Sales
+10000
+102
+Mayur
+HR
+25000
+103
+Hardik
+HR
+15000
+104
+Ajay
+Admin 20000
+
+===== PAGE 11 =====
+Relational Algebra Operations 
+Projection Operator
+Section - 3.2
+
+===== PAGE 12 =====
+Projection Operator
+□Symbol: ∏ (Pi)
+□Notation: ∏ attribute set (Relation)
+□Operation: Selects specified attributes of a relation.
+□It removes duplicate tuples (records) from the result.
+RollN
+Studen
+t
+Branc 
+h
+SPI
+o
+Name
+101
+Raju
+CE
+8
+102
+Mitesh
+ME
+9
+103
+Nilesh
+CI
+9
+104
+Meet
+CE
+9
+Exampl 
+e
+Display RollNo, Name and Branch of all 
+students.
+Answe 
+r
+∏ 
+ROllNO, Name, BranCh
+(Student)
+Output
+RollN 
+o
+Name
+Branc 
+h
+101
+Raju
+CE
+102
+Mitesh
+ME
+103
+Nilesh
+CI
+104
+Meet
+CE
+
+===== PAGE 13 =====
+Exercise
+RollN
+EmpI
+□Write down the relational algebra for the student table.
+□
+Display RollNo, Name and SPI of all students.
+□
+Display Name and SPI of all students.
+□
+Display the Name of all students.
+□
+Display the Name of all branches.
+Studen
+t
+Branc 
+h
+SPI
+o
+Name
+101
+Raj
+CE
+6
+102
+Meet
+ME
+8
+103
+Harsh
+EE
+7
+104
+Punit
+CE
+9
+□Write down the relational algebra for the employee table.
+□
+Display EmpID with Name of all employee.
+□
+Display Name and Salary of all employee.
+□
+Display the Name of all employee.
+□
+Display the Name of all departments.
+Employe
+e
+Dept
+Salary
+D
+Name
+101
+Nilesh
+Sales
+10000
+102
+Mayur
+HR
+25000
+103
+Hardik
+HR
+15000
+104
+Ajay
+Admin 20000
+
+===== PAGE 14 =====
+Combined Projection & Selection Operation
+RollN
+Studen
+t
+o
+Name
+Branc 
+h
+SPI
+101
+Raju
+CE
+8
+102
+Mitesh
+ME
+9
+103
+Nilesh
+CI
+9
+104
+Meet
+CE
+7
+Exampl 
+e
+Display RollNo, Name & Branch of “ME” Branch 
+students.
+Step-1 σ
+BranCh
+=‘
+E’ (Student)
+Answe 
+r
+∏ 
+ROllNO, Name, BranCh 
+(σ
+BranCh=‘
+E’
+(Student))
+RollN
+o
+Name
+Branc 
+h
+102
+Mitesh
+ME
+Output-
+2
+RollN
+Output-
+1
+Branc 
+h
+SPI
+o
+Name
+102
+Mitesh
+ME
+9
+
+===== PAGE 15 =====
+Combined Projection & Selection Operation
+RollN
+t
+o
+Name
+Branc 
+h
+SPI
+101
+Raju
+CE
+8
+102
+Mitesh
+ME
+9
+103
+Nilesh
+CI
+9
+104
+Meet
+CE
+7
+Exampl Display Name, Branch and SPI of students whose SPI is more than
+e
+8.
+Studen
+Step-1 σSPI>8 (Student)
+Answe 
+r
+∏ 
+Name, BranCh, SPI 
+(σ
+SPI>8 (Student))
+Name
+ranc
+B
+h
+SPI
+Mitesh
+ME
+9
+Nilesh
+CI
+9
+Output-
+2
+RollN
+Output-
+1
+Branc 
+h
+SPI
+o
+Name
+102
+Mitesh
+ME
+9
+103
+Nilesh
+CI
+9
+
+===== PAGE 16 =====
+Combined Projection & Selection Operation
+RollN
+t
+o
+Name
+Branc 
+h
+SPI
+101
+Raju
+CE
+8
+102
+Mitesh
+ME
+9
+103
+Nilesh
+CI
+9
+104
+Meet
+CE
+7
+Exampl Display Name, Branch and SPI of students who belongs to “CE” Branch and SPI is more
+e
+than 7.
+Studen
+Step-1 σ
+BranCh=‘CE’ Λ SPI>7 
+(Student)
+Answe 
+r
+∏ 
+Name, BranCh, SPI (σ
+BranCh=‘CE’ Λ 
+SPI>7
+(Student))
+ranc
+B
+h
+SPI
+RajuCE
+8
+Output-
+2
+Name
+RollN
+Output-
+1
+Branc 
+h
+SPI
+o
+Name
+101
+Raju
+CE
+8
+
+===== PAGE 17 =====
+Combined Projection & Selection Operation
+RollN
+t
+o
+Name
+Branc 
+h
+SPI
+101
+Raju
+CE
+8
+102
+Mitesh
+ME
+9
+103
+Nilesh
+CI
+9
+104
+Meet
+CE
+7
+Exampl Display Name of students along with their Branch who belong to either “ME” Branch or “CI”
+e
+Branch.
+Studen
+Step-1 σ
+BranCh
+=‘
+E’ V BranCh=‘CI’ 
+(Student)
+Answe 
+r
+∏ 
+Name, BranCh 
+(σ
+BranCh=‘
+E’ V BranCh=‘CI’ 
+(Student))
+ranc
+B
+h
+Mitesh
+ME Nilesh
+CI
+Output-
+2
+Name
+RollN
+Output-
+1
+Branc 
+h
+SPI
+o
+Name
+102
+Mitesh
+ME
+9
+103
+Nilesh
+CI
+9
+
+===== PAGE 18 =====
+Exercise
+RollN
+EmpI
+□Write down the relational algebra for the student table.
+□
+Display  Rollno,  Name  and  SPI  of  all  students  belongs  to  “CE” 
+Branch.
+□
+List the Name of students with their Branch whose SPI is more than 8 
+and belongs to “CE” Branch.
+□
+List  the  Name  of  students  along  with  their  Branch  and  SPI  who 
+belongs to either “CE” or “ME” Branch and having SPI more than 8.
+□
+Display the Name of students with their Branch name whose SPI
+Studen
+t
+Branc 
+h
+SPI
+o
+Name
+101
+Raj
+CE
+6
+102
+Meet
+ME
+8
+103
+Harsh
+EE
+7
+104
+Punit
+CE
+9
+□Writbeedtwoewenn7thanedre9.lational algebra for the employee 
+table.
+□
+Display the Name of employee belong to “HR” Dept and having 
+salary more than 20000.
+□
+Display the Name of all “Admin” and “HR” Dept’s employee.
+□
+List the Name of employee with their Salary who belongs to “HR” or 
+“Admin” Dept having salary more than 15000.
+□
+Display the Name of employee along with their Dept name whose 
+Employe
+e
+Dept
+Salary
+D
+Name
+101
+Nilesh
+Sales
+10000
+102
+Mayur
+HR
+25000
+103
+Hardik
+HR
+15000
+104
+Ajay
+Admin 20000
+
+===== PAGE 19 =====
+Relational Algebra Operations
+Cartesian Product / Cross Product
+
+===== PAGE 20 =====
+Cartesian Product / Cross Product
+□Symbol: X (Cross)
+□Notation: RelatiOn-1 (R1) X RelatiOn-2 (R2) OR Algebra-1 X Algebra-2
+□Operation: It will multiply each tuples of Relation-1 to each tuples of Relation-2.
+□
+Attributes of Resultant Relation = Attributes of R1 + Attributes of R2
+□
+Tuples of Resultant Relation = Tuples of R1 * Tuples of R2
+RNo Name
+Branc 
+h
+101
+Raju
+CE
+Studen
+t
+Exampl 
+e
+Perform Cross Product between Student and 
+Result.
+Answe 
+r
+(Student) X
+(Result)
+Output
+Student.RN 
+o
+Name
+Branc 
+h
+Result.RN 
+o
+SP 
+I
+101
+Raju
+CE
+101
+8
+101
+Raju
+CE
+102
+9
+102
+Mitesh
+ME
+101
+8
+102
+Mitesh
+ME
+102
+9
+Result
+RNo SPI
+101
+8
+102
+9
+102Mitesh
+ME
+If both relations have some attribute with the same name, it can be 
+distinguished by combing relation-name.attribute-name.
+
+===== PAGE 21 =====
+Cartesian Product / Cross Product Example
+Answe 
+r
+∏ 
+RNO, Name, BranCh (Student) X ∏ 
+RNO, 
+SPI, BL
+(Result)
+Student.RN
+o
+Name
+Branc
+h
+Result.RN
+o
+SPI
+B
+L
+101
+Raju
+CE
+101
+8
+1
+101
+Raju
+CE
+103
+9
+0
+102
+Mitesh
+ME
+101
+8
+1
+102
+Mitesh
+ME
+103
+9
+0
+Output
+Exampl
+Perform Cross Product between 
+Student
+e
+Result.
+Studen Result
+t
+Branc
+B
+RNo
+Name
+h
+Sem RNoSPI L
+and
+Ran 
+k
+101
+Raju
+CE
+3
+101
+8
+1
+2
+102
+Mitesh
+ME
+5
+103
+9
+0
+1
+Consider only selected attributes
+• Student – RNo, Name and 
+Branch
+• Result – RNo, SPI and BL
+
+===== PAGE 22 =====
+Cartesian Product / Cross Product Example
+Branc 
+h
+101
+Raju
+CE
+102
+Mitesh ME
+103
+Om
+104
+Dhara CE 5
+t
+RNoName
+Exampl Perform Cross Product between Student and
+e
+Result.
+Answe 
+r
+σ
+BranCh=‘CE’ Λ Sem=3 (Student) X σ
+SPI>7 Λ 
+BL<1
+(Result)
+Student.RN
+o
+Name
+Branc
+h
+Sem
+Result.RN
+o
+SPI
+B
+L
+Ran
+k
+101
+Raju
+CE
+3
+103
+9
+0
+1
+103
+OM
+CE
+3
+103
+9
+0
+1
+Output
+B
+Ran
+L
+k
+SemRNoSPI
+3
+101 8
+1
+2
+5
+103 9
+0
+1
+CE 3
+105 7
+2
+3
+Studen
+Result
+Consider only selected tuples
+• Student – Branch=‘CE’ and 
+Sem=3
+• Result – SPI>7 and BL<1
+
+===== PAGE 23 =====
+Relational Algebra Operations 
+Natural Join / Inner Join
+Section - 3.4
+
+===== PAGE 24 =====
+Natural Join / Inner Join
+□Symbol:
+□Notation: RelatiOn-1 (R1) RelatiOn-2 (R2) OR Algebra-1 Algebra-2
+□Operation: Natural join will retrieve consistent data from multiple relations.
+□
+It combines records from different relations that satisfy a given condition.
+Steps Description
+Steps performed in Natural 
+Join
+Step – 1
+It performs Cartesian Product
+Step – 2
+Then it deletes inconsistent tuples
+Step – 3
+Then it removes an attribute from duplicate attributes
+
+===== PAGE 25 =====
+Natural Join / Inner Join Example
+Branc 
+h
+Studen
+t
+RNoName
+101
+Raju
+CE
+102
+Mitesh ME
+Exampl Perform Natural Join between Student and Result.
+e
+Answe 
+r
+(Student) 
+(Result)
+Branc SP 
+RNo
+Name
+h
+I
+101 RajuCE
+8
+Output
+Result
+RNo SPI
+101
+8
+103
+9
+Steps performed in Natural
+Student.RN
+Branc
+Result.RN
+I
+o
+Name
+h
+o
+SP
+101
+Raju
+CE
+101
+8
+101
+Raju
+CE
+103
+9
+102
+Mitesh
+ME
+101
+8
+102
+Mitesh
+ME
+103
+9
+Join
+Step:1 Perform Cross
+Product
+Student.RN
+Branc
+Re
+Bran
+c
+Step:2 Removes inconsistent
+tuples
+Name
+su lt.RN
+SPI
+o
+h
+o
+101
+Raju
+CE
+101
+8
+Step:3 Removes an attribute from
+duplicate
+RNo Name
+h
+SPI
+101
+Raju
+CE
+8
+To perform a Natural Join there must be one common 
+attribute (column) between two relations.
+
+===== PAGE 26 =====
+Natural Join / Inner Join Example
+B
+Answe 
+r
+(Branch) 
+(Faculty)
+BI 
+D
+Bname HOD FI 
+D
+FNam 
+e
+1
+CE
+Shah
+101
+Raj
+2
+ME
+Patel
+103
+Meet
+Output
+FN
+Exampl e
+Perform Natural Join between Branch and 
+Faculty.
+Branc
+Facult
+h
+Na
+m
+HOD
+y
+am
+BI 
+D
+BID
+e
+FID e
+1
+CE
+Shah
+101
+Raj
+1
+2
+ME
+Patel
+103
+Meet
+2
+To perform a Natural Join there must be one common attribute 
+(column) between two relations.
+
+===== PAGE 27 =====
+Write down relational algebra for the following tables/relations
+□Relations
+□
+Student (Rno, Sname, Address, City, Mobile)
+□
+Department (Did, Dname)
+□
+Academic (Rno, Did, SPI, CPI, Backlog)
+□
+Guide (Rno, PName, Fid)
+□
+Faculty (Fid, Fname, Subject, Did, Salary)
+Exampl 
+e
+List the name of students with their department name and SPI of all student belong to “CE”
+department.
+Answe 
+r
+∏ 
+Sname, Dname, 
+S
+P
+I
+(Department
+(σDname=‘CE’ (Student 
+Academic)))
+Exampl 
+e
+Display the name of students with their project name whose guide is “A. J.
+Shah”.
+Answe 
+r
+∏Sname, 
+Pna
+m
+e
+(σFname=‘A.J.Shah’ (Student (Guide
+Faculty)))
+
+===== PAGE 28 =====
+Exercise: Write down relational algebra for the following 
+tables/relations
+□Relations
+□
+Student (Rno, Sname, Address, City, Mobile)
+□
+Department (Did, Dname)
+□
+Academic (Rno, Did, SPI, CPI, Backlog)
+□
+Guide (Rno, PName, Fid)
+□
+Faculty (Fid, Fname, Subject, Did, Salary)
+□List the name of students with their department name having backlog 0.
+□List the name of faculties with their department name and salary having salary more than 25000 and 
+belongs to “CE” department.
+□List the name of all faculties of “CE” and “ME” department whose salary is more than 50000.
+□Display the students name with their project name of all “CE” department’s students whose guide is 
+“Z.Z. Patel”.
+□Display the name of faculties with their department name who belongs to “CE” department and tough 
+“CPU” subject having salary more than 25000.
+□List the name of students with their department name doing project “Hackathon” under guide “I. I. 
+
+===== PAGE 29 =====
+Relational Algebra Operations 
+Outer Join
+
+===== PAGE 30 =====
+Outer Join
+□In natural join some records are missing, if we want that missing records than we have to
+use outer join.
+Sr. Outer Join
+mbo
+Sy
+l
+1
+Left Outer Join
+Three types of Outer 
+Join
+2
+Right Outer Join
+3
+Full Outer Join
+To perform a Outer Join there must be one common attribute 
+(column) between two relations.
+
+===== PAGE 31 =====
+Left Outer Join
+□Symbol:
+□Notation: RelatiOn-1 (R1) RelatiOn-2 (R2) OR Algebra-1 Algebra-2
+□Operation:
+□
+Display all the tuples of the left relation even through there is no matching tuple in the right relation.
+□
+For such kind of tuples having no matching, the attributes of right relation will be padded with NULL in 
+resultant relation.
+RollN
+Exampl 
+e
+Perform Left Outer Join between Student and 
+Result.
+Studen
+Result
+t
+Branc 
+h
+RollN 
+o
+SPI
+o
+Name
+101
+Raj
+CE
+101
+8
+102
+Meet
+ME
+103
+9
+Answe 
+r
+(Student) 
+(Result)
+Output
+RollN 
+o
+Name
+Branc 
+h
+SPI
+101
+Raj
+CE
+8
+102
+Meet
+ME
+NUL 
+L
+Exercise What is the output of (Result) 
+(Student).
+
+===== PAGE 32 =====
+Left Outer Join Example
+RollN
+Exampl 
+e
+Perform Left Outer Join between Student and Result. (Display RollNo, Name and 
+SPI)
+Studen
+Result
+t
+Branc 
+h
+RollN 
+o
+SPI
+B 
+L
+o
+Name
+101
+Raj
+CE
+101
+8
+1
+102
+Meet
+ME
+103
+9
+0
+Answe 
+r
+∏ 
+ROllNO, Name, 
+S
+P
+I
+Output
+RollN 
+o
+Name
+SPI
+101
+Raj
+8
+102
+Meet
+NUL 
+L
+((Student)
+(Result))
+
+===== PAGE 33 =====
+Right Outer Join
+□Symbol:
+□Notation: RelatiOn-1 (R1) RelatiOn-2 (R2) OR Algebra-1 Algebra-2
+□Operation:
+□
+Display all the tuples of right relation even through there is no matching tuple in the left relation.
+□
+For such kind of tuples having no matching, the attributes of left relation will be padded with NULL in 
+resultant relation.
+RollN
+Exampl 
+e
+Perform Right Outer Join between Student and 
+Result.
+Studen
+Result
+t
+Branc 
+h
+RollN 
+o
+SPI
+o
+Name
+101
+Raj
+CE
+101
+8
+102
+Meet
+ME
+103
+9
+Answe 
+r
+(Student) 
+(Result)
+Output
+RollN 
+o
+Name
+Branc 
+h
+SPI
+101
+Raj
+CE
+8
+103
+NULL
+NULL
+9
+Exercise What is the output of (Result) 
+(Student).
+
+===== PAGE 34 =====
+Right Outer Join Example
+RollN
+Exampl 
+e
+Perform Right Outer Join between Student and Result. (Display RollNo, Name and 
+SPI)
+Studen
+Result
+t
+Branc 
+h
+RollN 
+o
+SPI
+B 
+L
+o
+Name
+101
+Raj
+CE
+101
+8
+1
+102
+Meet
+ME
+103
+9
+0
+Answe 
+r
+∏ 
+ROllNO, Name, 
+S
+P
+I
+Output
+RollN 
+o
+Name
+SPI
+101
+Raj
+8
+103
+NULL
+9
+((Student)
+(Result))
+
+===== PAGE 35 =====
+Full Outer Join
+□Symbol:
+□Notation: RelatiOn-1 (R1) RelatiOn-2 (R2) OR Algebra-1 Algebra-2
+□Operation:
+□
+Display all the tuples of both of the relations. It also pads null values whenever required. (Left outer join
++ Right outer join)
+□
+For such kind of tuples having no matching, it will be padded with NULL in resultant relation.
+RollN
+Exampl 
+e
+Perform Full Outer Join between Student and 
+Result.
+Studen
+Result
+t
+Branc 
+h
+RollN 
+o
+SPI
+o
+Name
+101
+Raj
+CE
+101
+8
+102
+Meet
+ME
+103
+9
+Answe 
+r
+(Student) 
+(Result)
+Output
+RollN 
+o
+Name
+Branc 
+h
+SPI
+101
+Raj
+CE
+8
+102
+Meet
+ME
+NUL 
+L
+103
+NULL
+NULL
+9
+Exercise What is the output of (Result) 
+(Student).
+
+===== PAGE 36 =====
+Full Outer Join Example
+RollN
+Exampl 
+e
+Perform Full Outer Join between Student and Result. (Display RollNo, Name and 
+SPI)
+Studen
+Result
+t
+Branc 
+h
+RollN 
+o
+SPI
+B 
+L
+o
+Name
+101
+Raj
+CE
+101
+8
+1
+102
+Meet
+ME
+103
+9
+0
+Answe 
+r
+∏ 
+ROllNO, Name, 
+S
+P
+I
+Output
+RollN 
+o
+Name
+SPI
+101
+Raj
+8
+102
+Meet
+NUL 
+L
+103
+NULL
+9
+((Student)
+(Result))
+
+===== PAGE 37 =====
+Relational Algebra Operations 
+Set Operators
+
+===== PAGE 38 =====
+Set Operators
+□Set operators combine the results of two or more queries into a single result.
+Sr. Set Operator
+mbo
+Sy
+l
+1
+Union
+U
+Three types of Set 
+Operators
+2
+Intersect / Intersection
+∩
+3
+Minus / Set difference
+−
+•
+Both
+queries should have same (equal) number of 
+columns
+Condition 
+s
+Set operators will take two or more queries as input, which must be 
+union-compatible.
+• Corresponding attributes should have the same data type or 
+domain
+
+===== PAGE 39 =====
+Conditions to perform Set Operators
+RNoN
+Studen
+t
+am
+e
+Dept
+SPI
+101
+Raj
+CE
+8
+102
+Meet
+ME
+9
+103
+Jay
+CE
+9
+FId N
+Facult
+y
+am
+e
+Dept
+101
+Patel
+CE
+102
+Shah
+ME
+103
+Dave
+ME
+RNoN
+Studen
+t
+am
+e
+Dept
+101
+Raj
+CE
+102
+Meet
+ME
+103
+Jay
+CE
+Faculty
+FId
+Name
+Dept
+101
+Patel
+CE
+102
+Shah
+ME
+103
+Dave
+ME
+Conditions-
+1
+Both queries should have same (equal) number of
+columns.
+RNoN ame Dept
+SPI
+101
+Raj
+CE
+8
+102
+Meet
+ME
+9
+103
+Jay
+CE
+9
+Studen
+t
+Faculty
+FId
+Name
+Dept
+Sub
+101
+Patel
+CE
+DS
+102
+Shah
+ME
+DBM 
+S
+103
+Dave
+ME
+DF
+RNoN
+Studen
+t
+am
+e
+Dept
+SPI
+101
+Raj
+CE
+8
+102
+Meet
+ME
+9
+103
+Jay
+CE
+9
+Faculty
+FId
+Name
+Dept
+Ex 
+p
+101
+Patel
+CE
+5
+102
+Shah
+ME
+3
+103
+Dave
+ME
+4
+Conditions-
+2
+Corresponding attributes should have the same data type.
+
+===== PAGE 40 =====
+Set Operators [Exercise]
+Exercise Check whether following tables are compatible or 
+not:
+•
+A: (First_name(char), Last_name(char), Date_of_Birth(date))
+•
+B: (FName(char), LName(char), PhoneNumber(number))
+Χ
+(Not compatible) Both tables have 3 attributes but third attributes datatype is different.
+•
+A: (First_name(char), Last_name(char), Date_of_Birth(date))
+•
+B: (FName(char), LName(char), DOB(date))
+✔
+(Compatible) Both tables have 3 attributes and of same data type.
+•
+Person (PersonID, Name, Address, Hobby)
+•
+Professor (ProfessorID, Name, OfficeAddress, Salary)
+•
+(Not compatible) Both tables have 4 attributes but forth attributes datatype is different.
+•
+(Compatible) Both tables have 2 attributes and of same data type.
+∏ 
+Name, Address 
+(Person)
+∏ 
+Name, OffiCeAddress 
+(Professor)
+&
+
+===== PAGE 41 =====
+Union Operator
+Nam
+e
+Exampl
+Custome
+r
+Raju
+Suresh
+Meet
+□Symbol: U
+□Notation: RelatiOn-1 (R1) U
+RelatiOn-2 (R2) OR Algebra-1 U Algebra-2
+□Operation:
+□
+It displays all the tuples/records belonging to the first relation (left relation) or the second relation (right 
+relation) or both.
+□
+It also eliminates duplicate tuples (tuples present in both relations appear once).
+Perform Union between Customer and
+e
+Employee.
+r
+Answe
+(Customer) U
+(Employee)
+Output
+Name
+Manoj
+Meet
+Raju
+Suresh
+Nam
+e
+Employe
+e
+Meet
+Suresh
+Manoj
+Exercise Is there any difference in the output if we swap the tables in Union operator. (Employee) U 
+(Customer).
+
+===== PAGE 42 =====
+Intersect/ Intersection Operator
+□Symbol: ∩
+□Notation: RelatiOn-1 (R1) ∩
+RelatiOn-2 (R2) OR Algebra-1 ∩ 
+Algebra-2
+□Operation:
+□
+It displays all the tuples/records belonging to both relations. OR
+□
+It displays all the tuples/records which are common from both relations.
+Nam
+e
+Exampl
+Custome
+r
+Raju
+Suresh
+Meet
+e
+Perform Intersection between Customer and
+Employee.
+Answe 
+r
+(Customer) ∩
+(Employee)
+Name
+Meet
+Suresh
+Output
+Nam
+e
+Employe
+e
+Meet
+Suresh
+Manoj
+Exercise Is there any difference in the output if we swap the tables in Intersection. (Employee) ∩ 
+(Customer).
+
+===== PAGE 43 =====
+Minus/ Set difference Operator
+□Symbol: −
+□Notation: RelatiOn-1 (R1) −
+RelatiOn-2 (R2) OR Algebra-1 − Algebra-2
+□Operation:
+□
+It displays all the tuples/records belonging to the first relation (left relation) but not in the second relation 
+(right relation).
+Nam
+e
+Exampl
+Custome
+r
+Raju
+Suresh
+Meet
+e
+Perform Set difference between Customer and
+Employee.
+Answe 
+r
+(Customer) − 
+(Employee)
+Name
+Raju
+Output
+Nam
+e
+Employe
+e
+Meet
+Suresh
+Manoj
+Exercise Is there any difference in the output if we swap the tables in Set difference. (Employee) − 
+(Customer).
+
+===== PAGE 44 =====
+Union Operators Example
+ID
+Name
+Balance
+1
+Raju
+10000
+2
+Suresh
+20000
+Custome
+r
+Exampl 
+e
+Display Name of person who are either employee or
+customer.
+r
+Answe
+Output
+Name
+Manoj
+Raju
+Suresh
+ID
+Name
+Employe
+e
+Dept
+Salary
+2
+Suresh
+CE
+8000
+3
+Manoj
+ME
+9000
+∏ Name (Customer) U ∏ Name
+(Employee)
+
+===== PAGE 45 =====
+Intersect/ Intersection Operators Example
+ID
+Name
+Balance
+1
+Raju
+10000
+2
+Suresh
+20000
+Custome
+r
+Exampl 
+e
+Display Name of person who are employee as well as
+customer.
+r
+Answe
+Output
+Name
+Suresh
+ID
+Name
+Employe
+e
+Dept
+Salary
+2
+Suresh
+CE
+8000
+3
+Manoj
+ME
+9000
+∏ Name (Customer) ∩ ∏ Name
+(Employee)
+
+===== PAGE 46 =====
+Minus/ Set difference Operators Example
+ID
+Name
+Balance
+1
+Raju
+10000
+2
+Suresh
+20000
+Custome
+r
+Exampl 
+e
+Display Name of person who are employee but not customer.
+Answe 
+r
+Name
+Manoj
+Output
+ID
+Name
+Employe
+e
+Dept
+Salary
+2
+Suresh
+CE
+8000
+3
+Manoj
+ME
+9000
+∏ Name (Employee) − ∏ Name
+(Customer)
+
+===== PAGE 47 =====
+Minus/ Set difference Operators Example
+ID
+Name
+Balance
+1
+Raju
+10000
+2
+Suresh
+20000
+Custome
+r
+Exampl 
+e
+Display Name of person who are customer but not
+employee.
+r
+Answe
+Output
+Name
+Raju
+ID
+Name
+Employe
+e
+Dept
+Salary
+2
+Suresh
+CE
+8000
+3
+Manoj
+ME
+9000
+∏ Name (Customer) − ∏ Name
+(Employee)
+
+===== PAGE 48 =====
+Set Operators [Exercise]
+Exercise What is the output of following relational algebra for the below mentioned 
+tables:
+ID
+Name
+Custome 
+r
+Balance
+1
+Raju
+10000
+2
+Suresh
+20000
+ID
+Name
+Employe 
+e
+Dept
+Salary
+2
+Suresh
+CE
+8000
+3
+Manoj
+ME
+9000
+∏ 
+ID, Name (Customer) U ∏ 
+ID, Name
+(Employee)
+∏ 
+ID, Name, BalanCe (Customer) U ∏ 
+ID, Name, 
+Salary
+(Employee)
+∏ 
+ID, Name (Customer) ∩ ∏ 
+ID, Name
+(Employee)
+Algebra-
+1
+Algebra-
+2
+Algebra-
+3
+Algebra-
+4
+∏ 
+ID, Name, BalanCe (Customer) ∩ ∏ 
+ID, Name, 
+Salary
+(Employee)
+
+===== PAGE 49 =====
+Set Operators [Exercise]
+Exercise What is the output of following relational algebra for the below mentioned 
+tables:
+ID
+Name
+Custome 
+r
+Balance
+1
+Raju
+10000
+2
+Suresh
+20000
+ID
+Name
+Employe 
+e
+Dept
+Salary
+2
+Suresh
+CE
+8000
+3
+Manoj
+ME
+9000
+Algebra-
+1
+Algebra-
+2
+Algebra-
+3
+Algebra-
+4
+∏ 
+ID, Name (Customer) − ∏ 
+ID, Name
+(Employee)
+∏ 
+ID, Name, BalanCe (Customer) − ∏ 
+ID, Name, 
+Salary
+(Employee)
+∏ 
+ID, Name (Employee) − ∏ 
+ID, Name
+(Customer)
+∏ 
+ID, Name, BalanCe (Employee) − ∏ 
+ID, Name, 
+Salary
+(C
+t
+)
+
+===== PAGE 50 =====
+Relational Algebra Operations
+Division Operator
+
+===== PAGE 51 =====
+Division Operator
+□Symbol: ÷ (Division)
+□Notation: RelatiOn1 (R1) ÷ RelatiOn2 (R2) OR Algebra1 ÷ Algebra2
+□Condition:
+□
+Attributes of relation2/algebra2 must be a proper subset of attributes of relation1/algebra1.
+□Operation:
+□
+The output of the division operator will have attributes = 
+All attributes of relation1 – All attributes of relation2
+□
+The output of the division operator will have tuples =
+Tuples in relation1, which are associated with the all tuples of relation2.
+
+===== PAGE 52 =====
+Division Operator Example
+Exampl 
+e
+Perform Division operation between Student and 
+Subject.
+Student
+Subject
+Name
+Subject
+Subject
+Raj
+DBMS
+DBMS
+Raj
+DS
+DS
+Meet
+DS
+DF
+Meet
+DF
+Rohit
+DBMS
+Rohit
+DS
+Rohit
+DF
+Suresh
+DBMS
+Suresh
+DF
+Suresh
+DS
+Answe 
+r
+Name
+Rohit
+Suresh
+Output
+(Student) ÷ (Subject)
+
+===== PAGE 53 =====
+Division Operator Example
+A
+Sno
+PNo
+S1
+P1
+S1
+P2
+S1
+P3
+S1
+P4
+S2
+P1
+S2
+P2
+S3
+P2
+S4
+P2
+S4
+P4
+S5
+P4
+Algebr 
+a
+(A) ÷
+(B1)
+Output
+SNo
+S1
+S2
+S3
+S4
+B1
+PNo
+P2
+Algebr 
+a
+(A) ÷
+(B2)
+Output
+SNo
+S1
+S4
+B2
+PNo
+P2
+P4
+Algebr 
+a
+(A) ÷
+(B3)
+SNo
+S1
+Output
+B3
+PNo
+P1
+P2
+P4
+Algebr 
+a
+(A) ÷
+(B4)
+SNo
+Output
+B4
+PNo
+P2
+P5
+
+===== PAGE 54 =====
+Division Operator Example
+102
+Meet
+iPhone
+102
+Meet
+Android
+103
+Rohit
+Android
+104
+Suresh
+.NET
+104
+Suresh
+iPhone
+104
+Suresh
+Android
+RNo Name
+Technolog
+y
+TI
+D
+Technolog
+y
+101
+Raj
+.NET
+1
+.NET
+101
+Raj
+PHP
+2
+PHP
+102
+Meet
+.NET
+3
+Android
+102
+Meet
+PHP
+4
+iPhone
+Exampl List the name of students doing a project in all technologies.
+e
+Student Project
+Answe 
+r
+Name
+Meet
+Output
+∏ 
+Name, TeChnOlOgy (Student) ÷ ∏ 
+TeChnOlOgy
+(Project)
+
+===== PAGE 55 =====
+Relational Algebra Operations
+Rename Operator
+
+===== PAGE 56 =====
+Rename Operator
+□Symbol: ρ (Rho)
+□Notation: ρA (X1,X2….XN) (Relation)
+□Operation:
+□
+The rename operation is used to rename the output relation.
+□
+The result of rename operator are also relations with new name.
+□
+The original relation name can not be changed when we perform rename operation on any relation.
+□How to use:
+□
+ρ x (E)
+Returns a relation E under a new name X.
+□
+ρ 
+A1, A2. …,An (E)
+Returns a relation E with the attributes renamed to A1, A2, …., An.
+ρ 
+x(A1, A2. …,An) (E)
+Returns a relation E under a new name X with the attributes renamed to A1, A2, …., An.
+□
+
+===== PAGE 57 =====
+Rename Operator Example
+RN
+o
+Name
+CP 
+I
+101 Raj 8
+102 Meet
+9
+7
+Studen
+t
+103 Jay
+Algebr 
+a
+ρPersON (Student)
+Person
+CP 
+I
+7
+Studen
+t
+Rno Name
+101
+Raj
+8
+102
+Meet
+9
+103 Jay
+Algebr 
+a
+ρ
+(ROllNO, StudeNtName, SPI) 
+(Student)
+RollN
+Studen
+RN
+o
+Name
+CP 
+I
+t
+o
+StudentNam 
+e
+SP
+I
+101
+Raj
+8
+101
+Raj
+8
+102
+Meet
+9
+102
+Meet
+9
+103
+Jay
+7
+103
+Jay
+7
+Exampl 
+e
+Rename 
+table
+Exampl
+e
+Rename attributes
+
+===== PAGE 58 =====
+Rename Operator Example
+CP 
+I
+7
+Studen
+t
+Rno Name
+101
+Raj
+8
+102
+Meet
+9
+103 Jay
+Algebr 
+a
+ρ
+PersON (ROllNO, StudeNtName) (∏ 
+RNO, Name 
+(Student))
+RollN
+o
+StudentNam 
+e
+101
+Raj
+102
+Meet
+103
+Jay
+Person
+Exampl 
+e
+Rename table and attributes both
+CP 
+I
+7
+t
+Rno Name
+101
+Raj
+8
+102
+Meet
+9
+103 Jay
+Algebr 
+a
+ρ
+StudeNtName / Name (Student)
+Stu
+e
+dentNamCP
+I
+101 Raj
+8
+102 Meet
+9
+103 Jay
+7
+Studen
+t 
+Rno
+Exampl
+e
+Studen
+Rename particular attributes
+
+===== PAGE 59 =====
+Rename Operator Example
+Rno Name
+CP 
+I
+101
+Raj
+8
+102
+Meet
+9
+103
+Jay
+7
+Studen
+t
+Step-2 σA.CPI<B.CPI (ρA (Student) X ρB
+(Student))
+2
+Exampl 
+e
+Find out maximum CPI from student 
+table.
+Output-
+A.Rn
+o
+A.Name A.CP 
+I
+B.Rn
+o
+B.Name B.CP 
+I
+101
+Raj
+8
+102
+Meet
+9
+103
+Jay
+7
+101
+Raj
+8
+103
+Jay
+7
+102
+Meet
+9
+Step-1
+A.R
+n
+Output-
+1
+A.CP 
+I
+B.Rn
+o
+B.Name B.CP 
+I
+o
+A.Name
+101
+Raj
+8
+101
+Raj
+8
+101
+Raj
+8
+102
+Meet
+9
+101
+Raj
+8
+103
+Jay
+7
+102
+Meet
+9
+101
+Raj
+8
+102
+Meet
+9
+102
+Meet
+9
+102
+Meet
+9
+103
+Jay
+7
+103
+Jay
+7
+101
+Raj
+8
+103
+Jay
+7
+102
+Meet
+9
+103
+Jay
+7
+103
+Jay
+7
+ρA (Student) X ρB
+(Student)
+
+===== PAGE 60 =====
+Rename Operator Example
+Rno Name
+CP 
+I
+101
+Raj
+8
+102
+Meet
+9
+103
+Jay
+7
+Studen
+t
+Step-2 σA.CPI<B.CPI (ρA (Student) X ρB
+(Student))
+2
+Exampl 
+e
+Find out maximum CPI from student
+table.
+Output-
+A.Rn
+o
+A.Name A.CP 
+I
+B.Rn
+o
+B.Name B.CP 
+I
+101
+Raj
+8
+102
+Meet
+9
+103
+Jay
+7
+101
+Raj
+8
+103
+Jay
+7
+102
+Meet
+9
+Step-3 ∏ A.CPI (σA.CPI<B.CPI (ρA (Student) X ρB
+(Student)))
+3
+Output-
+A.CPI
+8
+7
+
+===== PAGE 61 =====
+Rename Operator Example
+Studen
+t
+CP 
+I
+Rno Name
+101
+Raj
+8
+102
+Meet
+9
+103
+Jay
+7
+Exampl 
+e
+Find out maximum CPI from student
+table.
+Step-3 ∏ A.CPI (σA.CPI<B.CPI (ρA (Student) X ρB
+(Student)))
+3
+Output-
+A.CPI
+8
+7
+Step-4
+CPI
+A.CPI
+∏(Student) − ∏(σ
+A.CPI<B.CPI
+A
+(ρ (Student) X ρ
+B
+))
+(Student)
+t
+Studen
+CPI
+8
+9
+7
+3
+Output-
+A.CPI
+8
+7
+−
+=
+Output
+CPI
+9
+
+===== PAGE 62 =====
+Relational Algebra Operations
+Aggregate Functions
+
+===== PAGE 63 =====
+Aggregate Functions
+□Symbol: g or G
+□Notation: g 
+fuNCtiON-Name(COlumN), fuNCtiON-Name(COlumN), …, fuNCtiON-Name(COlumN) 
+(Relation)
+□Operation:
+□
+It takes a more than one value as input and returns a single value as output (result).
+□Aggregate functions are:
+□
+Sum (It returns the sum (addition) of the values of a column.)
+□
+Max (It returns the maximum value for a column.)
+□
+Min (It returns the minimum value for a column.)
+□
+Avg (It returns the average of the values for a column.)
+□
+Count (It returns total number of values in a given column.)
+
+===== PAGE 64 =====
+Aggregate Functions Example
+Studen
+t
+Branc 
+h
+Semester
+CP 
+I
+Rno
+Name
+101
+Ramesh
+CE
+3
+9
+102
+Mahesh
+EC
+3
+8
+103
+Suresh
+ME
+4
+7
+104
+Amit
+EE
+4
+8
+105
+Anita
+CE
+4
+8
+106
+Reeta
+ME
+3
+7
+107
+Rohit
+EE
+4
+9
+108
+Chetan
+CE
+3
+8
+109
+Rakesh
+CE
+4
+9
+Exampl 
+e
+Find out sum of CPI of all
+students.
+Answe
+r
+g sum(CP
+I)
+(Student)
+Output
+sum
+73
+CPI.
+Find out maximum & minimum
+g 
+max(CPI), miN(CPI) (Student)
+Output
+max
+min
+9
+7
+Exampl 
+e 
+Answe 
+r
+Exampl 
+e
+Count the number of students.
+Answe
+g COuNt(RNO) (Student)
+Output
+count
+9
+r
+Exampl 
+e
+Find out average of CPI of all
+students.
+Answe
+r
+g avg(CPI) 
+(Student)
+Output
+avg
+8.11
+
+===== PAGE 65 =====
+Relational Algebra [Exercise]
+□Write down relational algebras for the following table:
+▪Employee (person-name, street, city)
+▪Works (person-name, company-name, salary)
+▪Company (company-name, city)
+▪Managers (person-name, manager-name)
+□
+Find the names of all employees who work for “TCS”.
+□
+Find the names and cities of residence of all employees who work for “Infosys”.
+□
+Find the names, street and city of residence of all employees who work for “ITC” and earn more than
+$10,000 per annum.
+□
+Find the names of all employees in this database who live in the same city as the company for which they 
+work.
+□
+Find the names of all employees working in “TCS” who earn more than 25000 and less than 40000.
+□
+Find the name of employee whose manager is “Ajay Patel” and salary is more than 50000.
+□
+Display the name of employee with street, city, company name, salary and manager name staying in 
+“Rajkot” and working in “Ahmedabad”.
+□
+Find maximum, minimum and average salary of all employee.
+□
+Find out the total number of employee.
+
+===== PAGE 66 =====
+Open Source and 
+Commercial DBMS
+
+===== PAGE 67 =====
+Open Source and Commercial DBMS
+community.
+community.
+Open Source
+Commercial DBMS
+DBMS, which is available in the market at free 
+of cost.
+DBMS, which is available in the market at a 
+certain price.
+The code of open source DBMS product can 
+be viewed,
+shared or modified
+by the
+The code of commercial DBMS product can 
+not
+be view,
+share
+or modifyby the
+There are chances of malfunctioning with code 
+as source code is open.
+The security is high and code is not accessible 
+to unauthorized person.
+Examples: MySQL, MongoDB, SQLite etc
+Examples: Microsoft SQL Server, IBM Db2 
+etc
+
+===== PAGE 68 =====
+Types of Relational calculus
+
+===== PAGE 69 =====
+
+===== PAGE 70 =====
+1. Tuple Relational Calculus (TRC)
+• It is a non-procedural query language which is based on finding a number of tuple variables 
+also known as range variable for which predicate holds true.
+• It describes the desired information without giving a specific procedure for obtaining that 
+information. The tuple relational calculus is specified to select the tuples in a relation. In 
+TRC, filtering variable uses the tuples of a relation.
+• The result of the relation can have one or more tuples.
+
+===== PAGE 71 =====
+Notation:
+A Query in the tuple relational calculus is expressed as following notation;
+{T | P (T)}
+or {T | Condition (T)}
+Where:
+T is the resulting tuples
+P(T) is the condition used to fetch T.
+
+===== PAGE 72 =====
+For example:
+{ T.name | Author(T) AND T.article = 'database' }
+Output:
+• This query selects the tuples from the AUTHOR relation. It returns a tuple with 'name' from
+Author who has written an article on 'database'.
+• TRC (tuple relation calculus) can be quantified. In TRC, we can use Existential (∃) and 
+Universal Quantifiers (∀).
+For example:
+{ R| ∃T ∈ Authors(T.article='database' AND R.name=T.name)}
+Output:
+• This query will yield the same result as the previous one.
+
+===== PAGE 73 =====
+2. Domain Relational Calculus (DRC)
+• The second form of relation is known as Domain relational calculus. In domain relational 
+calculus, filtering variable uses the domain of attributes.
+• Domain  relational  calculus  uses  the  same  operators  as  tuple  calculus.  It  uses  logical 
+connectives ∧ (and), ∨ (or) and ┓ (not).
+• It uses Existential (∃) and Universal Quantifiers (∀) to bind the variable. The QBE or 
+Query by example is a query language related to domain relational calculus.
+
+===== PAGE 74 =====
+Notation:
+{ a1, a2, a3, ..., an | P (a1, a2, a3, ... ,an)}
+Where:
+a1, a2 are attributes
+P stands for formula built by inner attributes
+For example:
+{< article, page, subject > |  ∈ javatpoint ∧ subject = 'database'}
+Output:
+• This query will yield the article, page, and subject from the relational javatpoint, where the
+subject is a database.
+
+===== PAGE 75 =====
+Structure of 
+Relational Databases
+
+===== PAGE 76 =====
+Structure of Relational Databases
+RollN
+Studen
+t
+Branc 
+h
+Semester
+SPI
+o
+Name
+101
+Raju
+CE
+3
+8
+102
+Mitesh
+CI
+3
+7
+103
+Mayur
+CE
+3
+6
+104
+Nilesh
+EE
+3
+9
+105
+Hitesh
+CI
+3
+7
+106
+Tarun
+ME
+3
+8
+107
+Suresh
+Degree =
+CE
+No of col
+3
+umns (5)
+9
+Rows or 
+Tuples or 
+Records (7)
+Columns (5)
+Cardinality = No of tuples
+(7)
+Domain is a set of all possible unique values for a specific 
+column.
+Domain of Branch attribute is (CE, CI, ME, EE)
+Attributes: 
+Title of column
+Table (Relation): A database object that holds a 
+collection of data for a specific topic.
+Table consist of rows and columns.
+Column (Attribute): The vertical component of a 
+table. A column has a name and a particular data 
+type; e.g. varchar, decimal, integer, datetime etc.
+Record (Tuple): The horizontal component of a 
+table, consisting of a sequence of values, one for 
+each column of the table. It is also known as row.
+A database consists of a collection of tables 
+(relations), each having a unique name.
+
+===== PAGE 77 =====
+Key
+
+===== PAGE 78 =====
+Super Key
+□A super key is a set of one or more attributes whose values uniquely identifies each record
+within a relation (table).
+EnrollNo
+RollN 
+o
+Branc 
+h
+Sem
+SPI
+Name
+B 
+L
+190540107001
+101
+CE
+3
+8
+Raju
+0
+190540107002
+102
+CE
+3
+7
+Mitesh
+1
+190540106001
+101
+CI
+3
+6
+Mayur
+2
+190540106002
+102
+CI
+3
+9
+Nilesh
+0
+180540107001
+101
+CE
+5
+7
+Hitesh
+1
+180540106001
+101
+CI
+5
+8
+Tarun
+0
+180540106002
+102
+CI
+5
+9
+Suresh
+0
+Super Key 
+EnrollNo
+Super Key 
+(RollNo, Branch, 
+Sem)
+Super Key 
+(SPI, Name, 
+BL)
+
+===== PAGE 79 =====
+Candidate Key
+□A candidate key is a subset of a super key.
+□A candidate key is a single attribute or the least combination of attributes that uniquely 
+identifies each record in the table.
+□A candidate key is a super key for which no proper subset is a super key.
+□Every candidate key is a super key but every super key is not a candidate key.
+EnrollNo
+RollN 
+o
+Branc 
+h
+Sem
+SPI
+Name
+B 
+L
+190540107001
+101
+CE
+3
+8
+Raju
+0
+180540107002
+101
+CE
+5
+7
+Mitesh
+1
+190540106001
+101
+CI
+3
+6
+Mayur
+2
+180540106002
+101
+CI
+5
+9
+Nilesh
+0
+Candidate 
+Key 
+EnrollNo
+Candidate Key 
+(RollNo, Branch, 
+Sem)
+
+===== PAGE 80 =====
+Primary Key
+□A primary key is a candidate key that is chosen by database designer to identify tuples 
+uniquely in a relation (table).
+EnrollNo
+RollN 
+o
+Branc 
+h
+Sem
+SPI
+Name
+B 
+L
+190540107001
+101
+CE
+3
+8
+Raju
+0
+180540107002
+101
+CE
+5
+7
+Mitesh
+1
+190540106001
+101
+CI
+3
+6
+Mayur
+2
+180540106002
+101
+CI
+5
+9
+Nilesh
+0
+Candidate 
+Key 
+EnrollNo
+Candidate Key 
+(RollNo, Branch, 
+Sem)
+Primary 
+Key
+
+===== PAGE 81 =====
+Alternate Key
+□An alternate key is a candidate key that is not chosen by database designer to identify 
+tuples uniquely in a relation.
+EnrollNo
+RollN 
+o
+Branc 
+h
+Sem
+SPI
+Name
+B 
+L
+190540107001
+101
+CE
+3
+8
+Raju
+0
+180540107002
+101
+CE
+5
+7
+Mitesh
+1
+190540106001
+101
+CI
+3
+6
+Mayur
+2
+180540106002
+101
+CI
+5
+9
+Nilesh
+0
+Candidate 
+Key 
+EnrollNo
+Candidate Key 
+(RollNo, Branch, 
+Sem)
+Primary 
+Key
+Alternate 
+Key
+
+===== PAGE 82 =====
+Primary Key rules
+□A primary key may have one or more attributes.
+□There is only one primary key in the relation (table).
+□A primary key attribute value cannot be NULL.
+□Generally, the value of a primary key attribute does not change.
+
+===== PAGE 83 =====
+Foreign Key
+□A foreign key is used to link two relations (tables).
+□A foreign key is an attribute or collection of attributes in one table that refers to the 
+primary key in another table.
+□A table containing the foreign key is called the child table, and the table containing the 
+primary key is called the parent table.
+Studen
+t
+Name
+Branc 
+h
+Sem
+EnrollNo
+190540107001
+Raju
+CE
+3
+190540107002
+Mitesh
+CE
+3
+190540107003
+Nilesh
+CE
+3
+190540107004
+Meet
+CE
+3
+Project
+ProjectI 
+D
+Title
+EnrollNo
+101
+Bank
+190540107001
+102
+College
+190540107002
+103
+School
+190540107003
+104
+Hospital
+190540107001
+Parent 
+Table
+Child 
+Table
+
+===== PAGE 84 =====
+Questions asked
+1.
+Define Super key, Primary key, Candidate key and Alternate key.
+2.
+Explain following Relational Algebra Operation with example.
+I.
+Selection
+II.
+Projection
+III.
+Cross Product
+IV.
+Joins (Inner Join, Outer Joins)
+V.
+Rename
+VI.
+Division
+VII.
+Set operators
+3.
+Explain different aggregate functions with example.
+
+===== PAGE 85 =====
+Questions asked [Relational Algebra]
+4.
+Consider the following relational database, where the primary keys are underlined. Give an 
+expression in the relational algebra to express each of the following queries
+▪employee (ssn, name, dno, salary, hobby, gender)
+▪department (dno, dname, budget, location, mgrssn)
+▪works_on (ssn, pno)
+▪project (pno, pname, budget, location, goal)
+II.
+List all pairs of employee names and the project numbers they work on.
+III.
+List out department number, department name and department budget.
+IV.
+List all projects that Raj Yadav works on by project name.
+V.
+List the names of employees who supervise themselves.
+
+===== PAGE 86 =====
+Questions asked [Relational Algebra]
+5.
+Consider the following relational database, where the primary keys are underlined. Give an 
+expression in the relational algebra to express each of the following queries
+▪course (course-id, title, dept_name, credits)
+▪instructor (id, name, dept_name, salary)
+▪section (course-id, sec-id, semester, year, building, room_no, time_slot_id)
+▪teaches (id, course-id, sec-id, semester, year)
+II.
+Find the name of all instructors in the physics department.
+III.
+Find all the courses taught in the fall 2009 semester but not in Spring semester.
+IV.
+Find the names of all instructors in the Comp. Sci. department together with the course titles of all the 
+courses that the instructors teach.
+V.
+Find the average salary in each department.
+
+===== PAGE 87 =====
+Questions asked [Relational Algebra]
+6.
+Consider the following relations and write an relational algebra:
+▪EMP (empno, ename, jobtitle, managerno, hiredate, sal, commission, deptno)
+▪DEPT (deptno, dname, location)
+II.
+Find the Employees working in the department number10, 20, 30 only.
+III.
+Find Employees whose names start with letter A or letter a.
+IV.
+Find Employees along with their department name.
+V.
+Find the Employees who are working in Smith's department
+VI.
+Find the Employees who get salary more than Allen’s salary.
+VII.
+Display employees who are getting maximum salary in each department.
+VIII.
+Find list of employees whose hire date is on or before 1-April-18.
+7. Consider the relational database given below and give an expression in the relational algebra:
+▪Employee (person-name, street, city) , Works (person-name, company-name, salary)
+▪Company (company-name, city) , Manages (person-name, manager-name)
+III.
+II.
+Find the names of all employees in this database who live in the same city as the company for which they 
+work.
+Find the names, street address, and cities of residence of all employees who work for HCL and earn more 
+than $10,000 per annum.
+
+===== PAGE 88 =====
+Questions asked [Relational Algebra]
+8.
+The relational database schema is given below and write the relational algebra expressions for the given 
+queries.
+▪employee (person-name, street, city)
+▪works (person-name, company-name, salary)
+▪company (company-name, city)
+▪manages (person-name, manager-name)
+I.
+Find the names of all employees who work for First Bank Corporation.
+II.
+Find the names and cities of residence of all employees who work for First Bank Corporation.
+III.
+Find  the  names,  street  address,  and  cities  of  residence  of  all  employees  who  work  for  First  Bank 
+Corporation and earn more than $10,000 per annum.
+IV.
+Find the names of all employees in this database who do not work for First Bank Corporation.
+
+===== PAGE 89 =====
+Thank You

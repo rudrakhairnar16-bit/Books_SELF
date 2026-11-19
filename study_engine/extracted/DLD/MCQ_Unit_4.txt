@@ -1,0 +1,204 @@
+SOURCE: SEM3/DLD/MCQ_Unit 4.pdf
+
+===== PAGE 1 =====
+Unit 4 MCQ 
+ 
+1.  The ______ circuits do not use any memory. 
+(a) Combinational (b) Sequential (c) Hybrid  (d)Flip Flop 
+      Ans. (a) Combinational 
+ 
+2. Which flip-flop has no invalid state? 
+a) SR Flip-Flop 
+b) D Flip-Flop 
+c) JK Flip-Flop 
+d) T Flip-Flop 
+Ans: c) JK Flip-Flop 
+3. In an SR flip-flop, the condition S = 1 and R = 1 is called:  
+      a) Set state 
+      b) Reset state 
+      c) Hold state 
+      d) Invalid state 
+Ans: d) Invalid state 
+4. The characteristic equation of a D flip-flop is:  
+       a) Q(n+1) = D 
+       b) Q(n+1) = T ⊕ Q(n) 
+      c) Q(n+1) = JQ' + K'Q 
+      d) Q(n+1) = Q(n) 
+Ans: a) Q(n+1) = D 
+5. A T flip-flop is obtained by connecting the inputs of which flip-flop together? 
+     a) SR 
+     b) D 
+     c) JK 
+     d) Master-Slave 
+     Ans: c) JK 
+5. Which flip-flop is commonly used in counters?  
+          a) D Flip-Flop 
+          b) T Flip-Flop 
+          c) SR Flip-Flop 
+          d) Master-Slave SR 
+          Ans: b) T Flip-Flop 
+6.  When J = K = 1 in a JK flip-flop, the output will:  
+    a) Set 
+    b) Reset 
+    c) Toggle 
+
+===== PAGE 2 =====
+    d) Remain unchanged 
+    Ans: c) Toggle 
+ 
+7. How many stable states does a flip-flop have?  
+ 
+  a) 1 
+  b) 2 
+  c) 3 
+  d) 4 
+  Ans: b) 2 
+ 
+8. Which flip-flop is known as a delay flip-flop?  
+   a) JK 
+   b) SR 
+   c) D 
+   d) T 
+   Answer: c) D 
+ 
+9. The race-around condition occurs in:  
+   a) SR Flip-Flop 
+   b) D Flip-Flop 
+   c) JK Flip-Flop 
+   d) T Flip-Flop 
+   Ans: c) JK Flip-Flop 
+ 
+10.  Race-around condition can be eliminated by using:  
+   a) D Flip-Flop 
+   b) Master-Slave JK Flip-Flop 
+   c) SR Latch 
+   d) Encoder 
+   Ans: b) Master-Slave JK Flip-Flop 
+ 
+11. The characteristic equation of JK flip-flop is:  
+   a) Q(n+1)=D 
+   b) Q(n+1)=JQ' + K'Q 
+   c) Q(n+1)=T⊕Q 
+   d) Q(n+1)=Q 
+   Ans. b) Q(n+1)=JQ' + K'Q 
+ 
+12. Flip-flops are used in:  
+   a) Combinational circuits only 
+   b) Sequential circuits only 
+   c) Analog circuits 
+   d) Power circuits 
+   Ans:(b) Sequential circuits only 
+ 
+
+===== PAGE 3 =====
+13.  Which input combination causes no change in a JK flip-flop?  
+   (a) J=0, K=0 
+   (b) J=0, K=1 
+   (c) J=1, K=0 
+  (d) J=1, K=1 
+   Ans: (a) J=0, K=0 
+14. The characteristic equation of T flip-flop is: 
+    (a) Q(n+1)=D 
+    (b) Q(n+1)=JQ'+K'Q 
+    (c) Q(n+1)=T⊕Q(n) 
+    (d) Q(n+1)=0 
+    Ans: (c) Q(n+1)=T⊕Q(n) 
+ 
+15. A flip-flop stores how many bits of information?  
+    (a) 8 bits 
+    (b) 4 bits 
+    (c) 2 bits 
+    (d) 1 bit 
+    Ans: (d) 1 bit 
+ 
+16. ______ circuit needs a memory element.  
+(a) Sequential (b) Combinational (c) Hybrid   (d) Complex  
+ Ans. (a) Sequential 
+17. The data stored by the memory element at any given instant of time is called as the 
+______ state of the sequential circuit.  
+(a) Next (b) Present (c) Lost   (d) Previous 
+ Ans. (b) Present 
+18. Clock is a ______ signal. 
+   (a)Rectangular  (b) Square (c) Zig zag    (d) Irregular 
+  Ans.: Rectangular 
+19. ______ is also known as the basic digital memory circuit.  
+(a) Flip-flop (b) Register (c) Gate    (d) Clock 
+        Ans. (a) Flip-flop 
+20. Latch is a bistable element with ______ stable states.  
+(a) One (b) Two (c) Three 
+        Ans. (b) Two 
+21.  The condition S = R = 1 is called as ______ condition.  
+(a) Race (b) Stable (c) Set   (d) Bistable 
+                Ans. (a) Race 
+22.  ______ is the simple gated S-R latch with a NAND inverter connected between  
+           Its S-R inputs.  
+
+===== PAGE 4 =====
+(a) D latch (b) JK latch (c) JK MS Latch  (d) T Latch 
+          Ans. (a) D latch 
+23. Latches and flip-flops both are basically the ______ elements.  
+(a) Unstable (b) Bistable (c) Quasi stable   (d) Quadrilateral  
+ Ans.: (b) Bistable 
+24.  The edge triggered flip-flops are also called as ______ flip-flops.  
+  Ans. Clocked 
+25. For edge triggered flip-flops, it is necessary to apply the clock signal in the form 
+of sharp positive and negative ______.  
+ Ans.: Spikes 
+26. The cross coupled inverter is also called as a ______.  
+(a) Latch (b) Flip Flop (c) Counter (d) Register  
+ Ans. Latch 
+27. The circuit that responds to the level of the input signal is called as ______ circuit.   
+(a) Level triggered (b) Edge triggered (c) Pulse triggered  
+ Ans. (a) Level triggered 
+28. The output of a negative edge triggered FF changes in response to ______. 
+ Ans. The negative edge of the clock signal 
+29. To convert a JK FF into a T FF, the inputs J = K = ______.  
+(a) 1 (b) 0 (c) High impedance  
+Ans. (a) 1 
+30.  The race around condition continues to exist even in the master slave JK FF.  
+       Ans. False 
+31. A T-FF divides the clock frequency by ______. 
+(a) 1 (b) 2 (c) 4   (d) 3 
+             Ans.(b) 2 
+32. The duty cycle of the output of a T-FF is ______.  
+(a) 0% (b) 50% (c) 100% (d) 20%          
+ Ans. (b) 50% 
+33. The preset and clear inputs of a FF are called as ______ inputs.  
+         Ans.: Asynchronous or direct 
+34. The PR and CLR inputs have ______ priority than the other inputs.  
+(a) Higher (b) Lower (c) Equal  (d) Medium 
+ Ans. (a) Higher 
+35. To divide the clock frequency by 8 we need to use ______ T-flip flops. 
+(a) Two (b) Three (c) Four (d) One 
+        Ans. (b) Three 
+36. Flip flop is a ______ type circuit.  
+
+===== PAGE 5 =====
+(a) Combinational (b) Sequential (c) Hybrid  (d) Complex 
+ 
+        Ans. (b) Sequential 
+37. FF can store ______ bits.  
+(a) 1 (b) 2 (c) 3   (d) 4 
+Ans. (a) 1 
+38. Number of flip flops needed to divide the input frequency by 32 is ______.  
+(a) 2 (b) 4 (c) 5    (d) 3 
+       Ans. (c) 5 
+39. SR flip-flops do not allow the inputs as S = ______ and R = ______.  
+        Ans. (1, 1) 
+40. Race hazard problem occurs when ______.  
+         Ans. J = K = 1 
+41. In J-K flip flop the output is ______ if both inputs J = K = 1.  
+Ans. Unpredictable 
+42. To overcome race around condition ______ type of flip flop is used.  
+(a) Master-slave (b) Edge triggered (c) Level triggered (d) Pulse triggered 
+       Ans. (a) Master-slave 
+43. When an inverter is placed between two inputs of an S-R flip-flop, the resulting flip-
+flop is ______.  
+(a) D (b) T (c) JK   (d) J-K Master Slave 
+       Ans. (b) T 
+44. Which type of flip flop is used to provide delay in the circuit?  
+(a) S-R (b) D (c) JK (d) T 
+ Ans. (b) D 
+45. In master slave JK flip flop PR and CLR are kept ______ when inactive. 
+(a) High (b) Low (c) Low High (d) High Low 
+             Ans. (b) Low 

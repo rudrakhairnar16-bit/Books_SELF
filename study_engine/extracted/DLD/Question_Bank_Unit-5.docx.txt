@@ -1,0 +1,25 @@
+SOURCE: SEM3/DLD/Question Bank Unit-5.docx.pdf
+
+===== PAGE 1 =====
+ 
+Digital Logic Design 
+B.Tech CSE / CE - 3rd Sem 
+Question Bank: Module 5 
+ 
+Sr. 
+No. 
+Module : 5 
+1 
+Explain the working of SISO shift register. 
+2 
+Write a short note on Johnson counter. 
+3 
+Explain the working of 4 bit binary ripple counter. 
+4 
+Design a 4-bit synchronous down counter using T flip-flops. 
+5 
+Draw & explain in brief the logic diagram of 4-bit bidirectional shift 
+register with parallel load. 
+6 
+Design a 4-bit ripple up counter using JK flip-flops. 
+ 

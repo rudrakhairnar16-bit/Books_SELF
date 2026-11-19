@@ -1,0 +1,825 @@
+SOURCE: SEM3/Python_Programing/Python-Module 5.pdf
+
+===== PAGE 1 =====
+1 | P a g e 
+ 
+Python Programming 
+Module -4  
+ 
+File Handling in Python 
+ 
+File handling in Python is a powerful and versatile tool that can be used to perform a wide range of operations. 
+However, it is important to carefully consider the advantages and disadvantages of file handling when writing 
+Python programs, to ensure that the code is secure, reliable, and performs well. 
+Python File Handling 
+ 
+Python supports file handling and allows users to handle files i.e., to read and write files, along with many other 
+file handling options, to operate on files. The concept of file handling has stretched over various other languages, 
+but the implementation is either complicated or lengthy, like other concepts of Python, this concept here is also 
+easy and short. Python treats files differently as text or binary and this is important. Each line of code includes 
+a sequence of characters, and they form a text file. Each line of a file is terminated with a special character, 
+called the EOL or End of Line characters like comma {,} or newline character. It ends the current line and tells 
+the interpreter a new one has begun. Let’s start with the reading and writing files. 
+ 
+Advantages of File Handling in Python 
+Versatility: File handling in Python allows you to perform a wide range of operations, such as creating, reading, 
+writing, appending, renaming, and deleting files. 
+Flexibility: File handling in Python is highly flexible, as it allows you to work with different file types (e.g. text 
+files, binary files, CSV files, etc.), and to perform different operations on files (e.g. read, write, append, etc.). 
+User–friendly: Python provides a user-friendly interface for file handling, making it easy to create, read, and 
+manipulate files. 
+Cross-platform: Python file-handling functions work across different platforms (e.g. Windows, Mac, Linux), 
+allowing for seamless integration and compatibility. 
+Disadvantages of File Handling in Python 
+Error-prone: File handling operations in Python can be prone to errors, especially if the code is not carefully 
+written or if there are issues with the file system (e.g. file permissions, file locks, etc.). 
+Security risks: File handling in Python can also pose security risks, especially if the program accepts user input 
+that can be used to access or modify sensitive files on the system. 
+Complexity: File handling in Python can be complex, especially when working with more advanced file formats 
+or operations. Careful attention must be paid to the code to ensure that files are handled properly and securely. 
+Performance: File handling operations in Python can be slower than other programming languages, especially 
+when dealing with large files or performing complex operations. 
+ 
+For this article, we will consider the following “geeks.txt” file as an example. 
+Hello world 
+GeeksforGeeks 
+123 456 
+ 
+Python File Open 
+Before performing any operation on the file like reading or writing, first, we have to open that file. For this, we 
+should use Python’s inbuilt function open() but at the time of opening, we have to specify the mode, which 
+represents the purpose of the opening file. 
+
+===== PAGE 2 =====
+2 | P a g e 
+ 
+f = open(filename, mode) 
+ 
+Where the following mode is supported: 
+• r: open an existing file for a read operation. 
+• "x" - Create - will create a file, returns an error if the file exist 
+• w: open an existing file for a write operation. If the file already contains some data, then it will be 
+overridden but if the file is not present then it creates the file as well. 
+• a: open an existing file for append operation. It won’t override existing data. 
+• r+: To read and write data into the file. The previous data in the file will be overridden. w+: To write 
+and read data. It will override existing data. 
+• a+: To append and read data from the file. It won’t override existing data. 
+Working in Read mode 
+There is more than one way to How to read from a file in Python. Let us see how we can read the content of a 
+file in read mode. 
+ 
+Example 1: The open command will open the Python file in the read mode and the for loop will print each line 
+present in the file. 
+ 
+# a file named "geek", will be opened with the reading mode. 
+file = open('geek.txt', 'r') 
+ 
+# This will print every line one by one in the file for each in file: 
+print (each) 
+ 
+Output: 
+Hello world GeeksforGeeks 123 456 
+ 
+Example 2: In this example, we will extract a string that contains all characters in the Python file then we can 
+use file.read(). 
+ 
+# Python code to illustrate read() mode 
+file = open("geeks.txt", "r") 
+print (file.read()) 
+Output: 
+Hello world GeeksforGeeks 123 456 
+Example 3: In this example, we will see how we can read a file using the with statement in Python. 
+# Python code to illustrate with() 
+with open("geeks.txt") as file: 
+data = file.read() 
+print(data) 
+ 
+Output: 
+Hello world GeeksforGeeks 123 456 
+ 
+Example 4: Another way to read a file is to call a certain number of characters like in the following code the 
+interpreter will read the first five characters of stored data and return it as a string: 
+ 
+# Python code to illustrate read() mode character wise 
+file = open("geeks.txt", "r") 
+
+===== PAGE 3 =====
+3 | P a g e 
+ 
+print (file.read(5)) 
+ 
+Output: 
+Hello 
+ 
+Example 5: We can also split lines while reading files in Python. The split() function splits the variable when 
+space is encountered. You can also split using any characters as you wish. 
+ 
+# Python code to illustrate split() function 
+with open("geeks.txt", "r") as file: 
+data = file.readlines() 
+for line in data: 
+word = line.split() 
+print (word) 
+ 
+Output: 
+['Hello', 'world'] ['GeeksforGeeks'] ['123', '456'] 
+Creating a File using the write() Function 
+Just like reading a file in Python, there are a number of ways to Writing to file in Python. Let us see how we 
+can write the content of a file using the write() function in Python. 
+ 
+Working in Write Mode 
+Let’s see how to create a file and how the write mode works. 
+ 
+Example 1: In this example, we will see how the write mode and the write() function is used to write in a file. 
+The close() command terminates all the resources in use and frees the system of this particular program. 
+ 
+# Python code to create a file 
+file = open('geek.txt','w') 
+file.write("This is the write command") 
+file.write("It allows us to write in a particular file") 
+file.close() 
+ 
+Output: 
+This is the write command. It allows us to write in a particular file 
+Example 2: We can also use the written statement along with the with() function. 
+# Python code to illustrate with() alongwith write() 
+with open("file.txt", "w") as f: 
+f.write("Hello World!!!") 
+ 
+Output: 
+Hello World!!! 
+ 
+Working of Append Mode 
+Let us see how the append mode works. 
+ 
+Example: For this example, we will use the Python file created in the previous example. # Python code to 
+illustrate append() mode 
+file = open('geek.txt', 'a') 
+file.write("This will add this line") 
+file.close() 
+
+===== PAGE 4 =====
+4 | P a g e 
+ 
+Note: You can only remove empty folders. 
+Output: 
+This is the write command. It allows us to write in a particular fileThis will add this line 
+ 
+There are also various other commands in Python file handling that are used to handle 
+various tasks: rstrip(): This function strips each line of a file off spaces from the right-hand 
+side. 
+lstrip(): This function strips each line of a file off spaces from the left-hand side. 
+ 
+Delete a File 
+ 
+To delete a file, you must import the OS module, and run its os.remove() function: 
+Example 
+Remove the file "demofile.txt": 
+ 
+ 
+import os 
+os.remove("demofi
+le.txt") 
+ 
+ 
+Check if File exist: 
+ 
+To avoid getting an error, you might want to check if the file exists before you try to delete it: 
+Example 
+Check if file exists, then delete it: 
+import os 
+if os.path.exists("demofile.txt"): 
+os.remove("demofile.txt") 
+else: 
+print("The file does not exist") 
+ 
+ 
+Delete Folder 
+ 
+To delete an entire folder, use the os.rmdir() method: 
+Example 
+Remove the folder "myfolder": 
+ 
+import os os.rmdir("myfolder") 
+ 
+Text Files 
+A text file stores data in human-readable characters. 
+Examples: 
+.txt 
+.csv 
+.py 
+.html 
+
+===== PAGE 5 =====
+5 | P a g e 
+ 
+Example 
+with open("message.txt", "w") as file: 
+    file.write("Welcome to Python!") 
+Reading: 
+with open("message.txt", "r") as file: 
+    print(file.read()) 
+ 
+7. Binary Files 
+Binary files store data in binary format and are generally not directly human-readable. 
+Examples: 
+• 
+Images  
+• 
+Audio  
+• 
+Video  
+• 
+PDF files  
+• 
+Executable files  
+Binary files are opened using b mode. 
+Example 
+with open("photo.jpg", "rb") as file: 
+    data = file.read() 
+Here: 
+rb = Read Binary 
+wb = Write Binary 
+Copying a Binary File 
+with open("photo.jpg", "rb") as source: 
+    data = source.read() 
+ 
+with open("copy.jpg", "wb") as destination: 
+    destination.write(data) 
+ 
+ 
+EXCEPTION HANDLING IN PYTHON 
+ 
+Introduction 
+When a Python program encounters an error, it normally stops the execution of the remaining code. 
+Errors in Python can be classified as syntax errors or exceptions. 
+Exception handling allows a program to handle runtime errors gracefully without terminating 
+abruptly. 
+ 
+What is an Exception? 
+An exception is an event that occurs during the execution of a program and disrupts the normal flow of 
+instructions. 
+When Python encounters a situation it cannot handle, it raises an exception. An 
+exception is an object that contains information about the error. 
+A Python program can: 
+• Handle the exception, or 
+• 
+Terminate execution 
+ 
+Exceptions vs Syntax 
+Errors Syntax Errors 
+• 
+Occur when Python grammar rules are violated 
+
+===== PAGE 6 =====
+6 | P a g e 
+ 
+• 
+Detected before execution 
+• 
+Example: missing brackets, incorrect indentation 
+string = "Python Exceptions" 
+for s in string: 
+if (s != 'o' 
+: 
+print(s) 
+ 
+Exceptions 
+• 
+Occur during execution 
+• 
+Code is syntactically correct 
+• 
+Example: NameError, 
+ZeroDivisionError print(x) # 
+NameError 
+ 
+Handling Exceptions Using try–except 
+ 
+Try and Except Statement - Catching Exceptions 
+ 
+In Python, we catch exceptions and handle them using try and except code blocks. The try clause 
+contains the code that can raise an exception, while the except clause contains the code lines that handle 
+the exception. Let's see if we can access the index from the array, which is more than the array's 
+length, and handle the resulting exception 
+
+===== PAGE 7 =====
+7 | P a g e 
+ 
+Theory 
+• 
+Code that may cause an exception is placed inside the try block 
+• 
+The except block handles the exception 
+• 
+Prevents program termination 
+a = ["Python", "Exceptions", "try and except"] 
+ 
+try: 
+for i in range(4): 
+print(i, a[i]) 
+except: 
+print("Index out of range") 
+ 
+Raising an Exception (raise) 
+If a condition does not meet our criteria but is correct according to the Python interpreter, we can 
+intentionally raise an exception using the raise keyword. We can use a customized exception in 
+conjunction with the statement. 
+If we wish to use raise to generate an exception when a given condition happens, we may do so as 
+follows: 
+ 
+If a condition is logically incorrect but syntactically valid, we can manually raise an exception using 
+the raise keyword. 
+num = [3, 4, 5, 7] 
+ 
+if len(num) > 3: 
+raise Exception("List length must be less than or equal to 3") 
+ 
+Assertions in Python 
+ 
+An assertion is a debugging aid used to test a condition. 
+• 
+If the condition is True, execution continues 
+• 
+If False, an AssertionError is 
+raised Assertions are commonly used: 
+• 
+At the beginning of functions (input validation) 
+• 
+At the end of functions (output validation) 
+ 
+Syntax 
+assert expression, message 
+Example 
+def square_root(number): 
+assert number >= 0, "Give a positive integer" 
+return number ** 0.5 
+ 
+print(square_root(36)) 
+
+===== PAGE 8 =====
+8 | P a g e 
+ 
+try–except–else Clause 
+ 
+Python also supports the else clause, which should come after every except clause, in the try, and 
+except blocks. Only when the try clause fails to throw an exception the Python interpreter goes on to 
+the else block. 
+Here is an instance of a try clause with an else clause. 
+ 
+The else block executes only if no exception occurs in the try block. 
+def reciprocal(num): 
+try: 
+result = 1 / num except 
+ZeroDivisionError: 
+print("Cannot divide by zero") 
+else: 
+print(result) 
+ 
+reciprocal(4) 
+reciprocal(0) 
+ 
+finally Keyword 
+ 
+The finally keyword is available in Python, and it is always used after the try-except block. The 
+finally code block is always executed after the try block has terminated normally or after the try block 
+has terminated for some other reason. 
+ 
+The finally block is always executed, regardless of whether an exception occurs or not. 
+Used for cleanup operations like closing files or releasing resources. 
+try: 
+div = 4 // 0 
+except ZeroDivisionError: 
+print("Attempting to divide by zero") 
+finally: 
+print("This block always executes") 
+ 
+User-Defined Exceptions 
+Python allows creation of custom exceptions by inheriting from built-in exception classes. 
+ 
+By inheriting classes from the typical built-in exceptions, Python also lets us design our customized 
+exceptions. 
+Here is an illustration of a RuntimeError. In this case, a class that derives from RuntimeError is produced. 
+Once an exception is detected, we can use this to display additional detailed information. 
+We raise a user-defined exception in the try block and then handle the exception in the except block. 
+An example of the class EmptyError is created using the variable var. 
+
+===== PAGE 9 =====
+9 | P a g e 
+ 
+class EmptyError(RuntimeError): 
+def  init (self, argument): 
+self.arguments = argument 
+ 
+try: 
+raise EmptyError("The variable is empty") 
+except EmptyError as e: 
+print(e.arguments) 
+ 
+ 
+Python Exceptions List 
+ 
+Here is the complete list of Python in-built exceptions. 
+ 
+Sr.No. 
+Name of the 
+Exception 
+Description of the Exception 
+1 
+Exception 
+All exceptions of Python have a base class. 
+2 
+StopIteration 
+If the next() method returns null for an iterator, this 
+exception is raised. 
+3 
+SystemExit 
+The sys.exit() procedure raises this value. 
+4 
+StandardError 
+Excluding the StopIteration and SystemExit, this is the 
+base class for all Python built-in exceptions. 
+5 
+ArithmeticError 
+All mathematical computation errors belong to this base 
+class. 
+6 
+OverflowError 
+This exception is raised when a computation surpasses the 
+numeric data type's maximum limit. 
+7 
+FloatingPointError 
+If a floating-point operation fails, this exception is 
+raised. 
+8 
+ZeroDivisionError 
+For all numeric data types, its value is raised whenever a 
+number is attempted to be divided by zero. 
+9 
+AssertionError 
+If the Assert statement fails, this exception is raised. 
+10 
+AttributeError 
+This exception is raised if a variable reference or assigning 
+a value fails. 
+11 
+EOFError 
+When the endpoint of the file is approached, and the 
+interpreter didn't get any input value by raw_input() or 
+input() functions, this exception is raised. 
+
+===== PAGE 10 =====
+10 | P a g e 
+ 
+12 
+ImportError 
+This exception is raised if using the import keyword to 
+import a module fails. 
+13 
+KeyboardInterrupt 
+If the user interrupts the execution of a program, generally 
+by hitting Ctrl+C, this exception is raised. 
+14 
+LookupError 
+LookupErrorBase is the base class for all search errors. 
+15 
+IndexError 
+This exception is raised when the index attempted to be 
+accessed is not found. 
+16 
+KeyError 
+When the given key is not found in the dictionary to be 
+found in, this exception is raised. 
+17 
+NameError 
+This exception is raised when a variable isn't located in 
+either local or global namespace. 
+18 
+UnboundLocalError 
+This exception is raised when we try to access a local 
+variable inside a function, and the variable has not been 
+assigned any value. 
+19 
+EnvironmentError 
+All exceptions that arise beyond the Python 
+environment have this base class. 
+20 
+IOError 
+If an input or output action fails, like when using the 
+print command or the open() function to access a file 
+that does not exist, this exception is raised. 
+22 
+SyntaxError 
+This exception is raised whenever a syntax error occurs in 
+our program. 
+23 
+IndentationError 
+This exception was raised when we made an improper 
+indentation. 
+24 
+SystemExit 
+This exception is raised when the sys.exit() method is 
+used to terminate the Python interpreter. The parser 
+exits if the situation is not addressed within the code. 
+25 
+TypeError 
+This exception is raised whenever a data type-
+incompatible action or function is tried to be executed. 
+26 
+ValueError 
+This exception is raised if the parameters for a built-in 
+method for a particular data type are of the correct type but 
+have been given the wrong values. 
+27 
+RuntimeError 
+This exception is raised when an error that occurred during 
+the program's execution cannot be classified. 
+28 
+NotImplementedError 
+If an abstract function that the user must define in an 
+inherited class is not defined, this exception is raised. 
+
+===== PAGE 11 =====
+11 | P a g e 
+ 
+Summary 
+• 
+Exceptions occur during program execution 
+• 
+try block contains risky code 
+• 
+except block handles exceptions 
+• 
+else executes if no exception occurs 
+• 
+finally always executes 
+• 
+raise is used to trigger exceptions manually 
+• 
+Assertions help detect logical errors early 
+• 
+Custom exceptions improve program clarity 
+ 
+General Syntax 
+try: 
+# risky code 
+except: 
+# handle exception 
+else: 
+# executes if no exception 
+finally: 
+# always executes 
+ 
+Introduction to Software Testing 
+Software testing is the process of checking whether a program works correctly and produces the expected output. 
+Example 
+Suppose we have: 
+def add(a, b): 
+    return a + b 
+We can test it using: 
+result = add(10, 20) 
+ 
+if result == 30: 
+    print("Test Passed") 
+else: 
+    print("Test Failed") 
+Output: 
+Test Passed 
+ 
+ 
+DEBUGGING in Python 
+Debugging is the process of identifying, analyzing, and fixing errors (bugs) in 
+a program to ensure correct execution. In Python, debugging involves locating 
+syntax, logical, and runtime errors using various techniques and tools. 
+Debugging is the process of identifying, analyzing, and fixing errors (bugs) in 
+a program to ensure correct execution. 
+Python debugging helps detect syntax errors, runtime errors, and logical 
+errors using systematic methods and tools. 
+ 
+Types of Errors in Python 
+1. Syntax Errors – Violations of Python grammar (detected before execution) 
+
+===== PAGE 12 =====
+12 | P a g e 
+ 
+2. Runtime Errors – Errors that occur while the program is running 
+3. Logical Errors – Program runs but produces incorrect output 
+ 
+ 
+Debugging Process 
+Step 1: Reproduce the Error 
+• 
+Ensure you can consistently reproduce the issue before debugging. 
+Step 2: Identify the Error 
+• 
+Read error messages carefully. 
+• 
+Use print() or logging to check variable values. 
+Step 3: Isolate the Issue 
+• 
+Narrow down where the issue occurs. 
+• 
+Use a debugger (pdb, breakpoint(), or an IDE debugger). 
+Step 4: Fix the Issue 
+• 
+Modify the code to fix the error. 
+• 
+Test the fix with different inputs. 
+Step 5: Verify and Optimize 
+• 
+Ensure the fix doesn’t introduce new bugs. 
+• 
+Optimize the code if necessary. 
+ 
+ 
+Debugging is the process of identifying and fixing errors (bugs) in your code. Python 
+provides several ways to debug programs efficiently. 
+ 
+2. Print Statements (Basic Debugging) 
+ 
+Using print() to check variable values at different 
+points. 
+def add(a, b): 
+print(f"a: {a}, b: {b}") # Debugging print return a+b 
+print(add(5, "3")) # TypeError (mixing int and str) 
+\ z‘’ Drawback: It can be time-consuming in large programs. 
+ 
+3. Using assert (Assertions) 
+Assertions help catch logical 
+errors early. def 
+divide(x, y): 
+assert y != 0, "Denominator cannot be 
+zero!" return x / y 
+ 
+print(divide(10, 0)) # AssertionError 
+\ z’‘ Tip: Disable assertions in production using python -O script.py. 
+ 
+4.  Using logging for Debugging 
+The logging module provides better control than 
+print(). 
+import logging 
+
+===== PAGE 13 =====
+13 | P a g e 
+ 
+logging.basicConfig(level=logging.DEBUG) 
+ 
+def multiply(a, b): 
+logging.debug(f"Multiplying {a} and 
+{b}") return a * b 
+print(multiply(2, 3)) 
+\ z‘’ Tip: Use different levels (DEBUG, INFO, WARNING, ERROR, CRITICAL). 
+ 
+5. Using pdb (Python Debugger) 
+Python's built-in debugger (pdb) allows step-by-step execution. 
+import pdb 
+def buggy_function(x): 
+pdb.set_trace() # Start debugger here y 
+= x + 2 
+return y 
+buggy_functio 
+n(5) 
+Commands in pdb: 
+• 
+n (next): Execute next line 
+
+===== PAGE 14 =====
+14 | P a g e 
+ 
+• 
+s (step): Step into function 
+• 
+c (continue): Run until next breakpoint 
+• 
+p variable: Print variable value 
+• 
+q (quit): Exit debugger 
+ 
+ 
+6. Using breakpoint() (Python 3.7+) 
+A modern alternative to 
+pdb.set_trace(). def 
+test(): 
+x = 5 
+breakpoint() # Debugger starts 
+here print(x * 2) 
+ 
+test() 
+ 
+ 
+7. Debugging in an IDE (PyCharm, VS Code) 
+Most modern IDEs offer built-in debugging tools with: 
+⬛ 
+Breakpoints - Pause execution at a specific line 
+⬛ 
+Step Over/Into - Navigate through code 
+⬛ 
+Variable Inspection - Check values live 
+ 
+8.  Using traceback to Analyze Errors 
+The traceback module helps print detailed error reports. 
+import traceback 
+try: 
+1 / 0 
+except Exception: 
+print(traceback.format_exc()) # Prints detailed error traceback 
+ 
+Conclusion 
+• 
+Use print() for quick debugging 
+• 
+Use logging for better visibility 
+• 
+Use pdb/breakpoint() for interactive debugging 
+• 
+Use an IDE for a graphical debugging experience 
+• 
+Debugging Best Practices 
+• Read and Understand Error Messages 
+
+===== PAGE 15 =====
+15 | P a g e 
+ 
+• Use a Systematic Approach (One Change at a Time) 
+• Keep Code Modular and Readable 
+• Write Test Cases to Catch Bugs Early 
+• Use Version Control (Git) to Track Changes 
+ 
+Testing 
+1. What is Testing? 
+Testing is the process of verifying that a program works as expected and identifying errors 
+(bugs). 
+Objectives of Testing: 
+• 
+Ensure correctness of output 
+• 
+Detect bugs early 
+• 
+Improve code quality 
+• 
+Reduce future maintenance cost 
+ 
+2. 
+ Types of Testing in Python 
+2.1 Manual Testing 
+• 
+Program is tested by manually running the code 
+• 
+Output is compared with expected results 
+• 
+Simple but time-consuming and error-prone 
+Example: 
+def add(a, b): 
+return a + b 
+print(add(2, 3)) # Expected output: 5 
+2.2 Testing Using assert 
+Statement Example 1: 
+Correct Test 
+assert sum([2, 3, 5]) == 10, "Should be 10" 
+✔ Test Passed (no output) 
+Example 2: Incorrect Test 
+assert sum([1, 3, 5]) == 10, "Should be 10" 
++ Output: 
+AssertionError: Should be 10 
+⚠ Limitation of assert: 
+• 
+Stops execution at first failure 
+• 
+Not suitable for large test suites 
+ 
+2.3 Unit Testing 
+• 
+Tests individual units (functions, methods, classes) 
+• 
+Done by developers 
+• 
+Helps identify exact location of bugs 
+Example: 
+import unittest 
+ 
+def add(a, b): 
+return a + b 
+ 
+class TestAdd(unittest.TestCase): 
+
+===== PAGE 16 =====
+16 | P a g e 
+ 
+def test_add(self): 
+self.assertEqual(add(2, 3), 5) 
+ 
+unittest.main() 
+
+===== PAGE 17 =====
+17 | P a g e 
+ 
+
+===== PAGE 18 =====
+18 | P a g e 
+ 
+ 
+
+===== PAGE 19 =====
+19 | P a g e 
+ 
+ 

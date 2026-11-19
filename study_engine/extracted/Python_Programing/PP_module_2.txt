@@ -1,0 +1,595 @@
+SOURCE: SEM3/Python_Programing/PP module 2.pdf
+
+===== PAGE 1 =====
+Module 2: Control Structures in Python 
+(Conditional Statements, Loops, break, continue, pass, 
+Pattern Programs & Problem Solving) 
+1. Introduction to Control Structures 
+Control structures determine the flow of execution of a program. Normally, Python executes 
+statements one after another (top to bottom). Sometimes we need to: 
+●​ Make decisions 
+●​ Repeat a task 
+●​ Skip certain statements 
+●​ Stop execution 
+Python provides Control Structures to perform these tasks. 
+There are two major types: 
+1.​ Decision Making (Conditional Statements) 
+2.​ Looping (Iteration) 
+2. Conditional Statements 
+Conditional statements allow a program to make decisions based on a condition. 
+Python uses the following keywords: 
+●​ if 
+●​ else 
+●​ elif 
+A condition always evaluates to either: 
+●​ True 
+●​ False 
+
+===== PAGE 2 =====
+A. if Statement 
+The if statement executes a block of code only when the condition is True. 
+Syntax 
+if condition: 
+    statement1 
+    statement2 
+ 
+Notice the colon (:) after the condition and the indentation. 
+Example 1 
+age = 20 
+ 
+if age >= 18: 
+    print("Eligible for Voting") 
+ 
+Output: 
+Eligible for Voting 
+ 
+Example 2 
+marks = 85 
+ 
+if marks >= 35: 
+    print("Pass") 
+ 
+Output: 
+Pass 
+Flow Diagram 
+Condition? 
+   | 
+ True 
+   | 
+ Execute Statements 
+
+===== PAGE 3 =====
+B. if-else Statement 
+When one condition has two possible outcomes. 
+Syntax 
+if condition: 
+    statements 
+else: 
+    statements 
+ 
+Example 
+number = 10 
+ 
+if number % 2 == 0: 
+    print("Even Number") 
+else: 
+    print("Odd Number") 
+ 
+Output: 
+Even Number 
+ 
+Example 
+temperature = 30 
+ 
+if temperature > 35: 
+    print("Very Hot") 
+else: 
+    print("Pleasant Weather") 
+ 
+Output: 
+Pleasant Weather 
+ 
+Flow Diagram 
+       Condition 
+
+===== PAGE 4 =====
+        /      \ 
+     True     False 
+      |          | 
+ Execute      Execute 
+  If Block   Else Block 
+ 
+C. Nested if Statement 
+A Nested if means an if statement inside another if statement. 
+Useful when multiple conditions must be checked. 
+Syntax 
+if condition1: 
+    if condition2: 
+        statements 
+ 
+Example 
+age = 22 
+citizen = True 
+ 
+if age >= 18: 
+    if citizen: 
+        print("Eligible to Vote") 
+ 
+Output: 
+Eligible to Vote 
+ 
+Example 
+marks = 85 
+ 
+if marks >= 35: 
+ 
+    if marks >= 75: 
+        print("Distinction") 
+ 
+
+===== PAGE 5 =====
+    else: 
+        print("Pass") 
+ 
+Output: 
+Distinction 
+ 
+D. if-elif-else Statement  
+Used when multiple conditions are available. 
+Syntax 
+if condition1: 
+    statements 
+ 
+elif condition2: 
+    statements 
+ 
+elif condition3: 
+    statements 
+ 
+else: 
+    statements 
+ 
+Example 
+marks = 82 
+ 
+if marks >= 90: 
+    print("Grade A+") 
+ 
+elif marks >= 75: 
+    print("Grade A") 
+ 
+elif marks >= 60: 
+    print("Grade B") 
+ 
+else: 
+    print("Grade C") 
+
+===== PAGE 6 =====
+ 
+Output: 
+Grade A 
+ 
+3. Looping Constructs 
+Loops execute a block of code repeatedly. 
+Python provides: 
+●​ for loop 
+●​ while loop 
+A. for Loop 
+The for loop is used when the number of iterations is known. 
+Syntax 
+for variable in sequence: 
+    statements 
+ 
+Sequence can be: 
+●​ List 
+●​ Tuple 
+●​ String 
+●​ Range 
+Example 1 
+for i in range(5): 
+    print(i) 
+ 
+Output: 
+0 
+1 
+
+===== PAGE 7 =====
+2 
+3 
+4 
+ 
+Example 2 
+for letter in "Python": 
+    print(letter) 
+ 
+Output: 
+P 
+y 
+t 
+h 
+o 
+n 
+ 
+Example 3 
+fruits = ["Apple", "Mango", "Banana"] 
+ 
+for fruit in fruits: 
+    print(fruit) 
+ 
+Output: 
+Apple 
+Mango 
+Banana 
+ 
+range() Function 
+Very commonly used with for. 
+Syntax 
+range(start, stop, step) 
+ 
+
+===== PAGE 8 =====
+Example 
+for i in range(1,11): 
+    print(i) 
+ 
+Output: 
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+8 
+9 
+10 
+ 
+Reverse Counting 
+for i in range(10,0,-1): 
+    print(i) 
+ 
+Output: 
+10 
+9 
+8 
+... 
+1 
+ 
+B. while Loop 
+Used when the number of iterations is not known. 
+The loop executes until the condition becomes False. 
+Syntax 
+while condition: 
+
+===== PAGE 9 =====
+    statements 
+ 
+Example 
+i = 1 
+ 
+while i <= 5: 
+    print(i) 
+    i += 1 
+ 
+Output: 
+1 
+2 
+3 
+4 
+5 
+ 
+Example 
+count = 5 
+ 
+while count > 0: 
+    print(count) 
+    count -= 1 
+ 
+Output: 
+5 
+4 
+3 
+2 
+1 
+ 
+Difference between for and while 
+for Loop 
+while Loop 
+
+===== PAGE 10 =====
+Used when iterations are 
+known 
+Used when iterations are 
+unknown 
+Simpler 
+Requires manual update 
+Uses range() 
+Uses condition 
+4. break Statement 
+The break statement immediately terminates the loop. 
+Syntax 
+for variable in sequence: 
+ 
+    if condition: 
+        break 
+ 
+Example 
+for i in range(1,11): 
+ 
+    if i == 6: 
+        break 
+ 
+    print(i) 
+ 
+Output: 
+1 
+2 
+3 
+4 
+5 
+ 
+Example 
+while True: 
+ 
+    name = input("Enter name:") 
+ 
+
+===== PAGE 11 =====
+    if name == "exit": 
+        break 
+ 
+    print(name) 
+ 
+5. continue Statement 
+The continue statement skips the current iteration and moves to the next iteration. 
+Example 
+for i in range(1,6): 
+ 
+    if i == 3: 
+        continue 
+ 
+    print(i) 
+ 
+Output: 
+1 
+2 
+4 
+5 
+ 
+Example 
+for letter in "PYTHON": 
+ 
+    if letter == "H": 
+        continue 
+ 
+    print(letter) 
+ 
+Output: 
+P 
+Y 
+T 
+O 
+
+===== PAGE 12 =====
+N 
+ 
+6. pass Statement 
+The pass statement does nothing. 
+It is used as a placeholder when the code will be written later. 
+Example 
+for i in range(5): 
+ 
+    if i == 2: 
+        pass 
+ 
+    print(i) 
+ 
+Output: 
+0 
+1 
+2 
+3 
+4 
+ 
+Example 
+if True: 
+    pass 
+ 
+No output. 
+ 
+ 
+
+===== PAGE 13 =====
+Difference among break, continue and 
+pass 
+Statemen
+t 
+Meaning 
+break 
+Stops the loop completely 
+continue 
+Skips current iteration 
+pass 
+Does nothing (placeholder) 
+7. Pattern Programs 
+Pattern programs help students understand: 
+●​ Nested loops 
+●​ Logic building 
+●​ Iteration 
+Pattern 1 
+for i in range(5): 
+    print("*") 
+ 
+Output: 
+* 
+* 
+* 
+* 
+* 
+ 
+Pattern 2 
+for i in range(5): 
+    print("* " * 5) 
+ 
+Output: 
+
+===== PAGE 14 =====
+* * * * * 
+* * * * * 
+* * * * * 
+* * * * * 
+* * * * * 
+ 
+Pattern 3 
+for i in range(1,6): 
+    print("*" * i) 
+ 
+Output: 
+* 
+** 
+*** 
+**** 
+***** 
+ 
+Pattern 4 
+for i in range(5,0,-1): 
+    print("*" * i) 
+ 
+Output: 
+***** 
+**** 
+*** 
+** 
+* 
+ 
+Pattern 5 
+for i in range(1,6): 
+ 
+    for j in range(1,i+1): 
+        print(j,end=" ") 
+ 
+    print() 
+
+===== PAGE 15 =====
+ 
+Output: 
+1 
+1 2 
+1 2 3 
+1 2 3 4 
+1 2 3 4 5 
+ 
+Pattern 6 
+for i in range(1,6): 
+    print(str(i) * i) 
+ 
+Output: 
+1 
+22 
+333 
+4444 
+55555 
+ 
+8. Problem Solving Using Control 
+Structures 
+Example 1: Largest of Two Numbers 
+a = int(input("Enter first number: ")) 
+b = int(input("Enter second number: ")) 
+ 
+if a > b: 
+    print("Largest =", a) 
+else: 
+    print("Largest =", b) 
+ 
+Example 2: Check Leap Year 
+
+===== PAGE 16 =====
+year = int(input("Enter year: ")) 
+ 
+if (year % 400 == 0) or (year % 4 == 0 and year % 100 != 0): 
+    print("Leap Year") 
+else: 
+    print("Not Leap Year") 
+ 
+Example 3: Sum of First 10 Numbers 
+sum = 0 
+ 
+for i in range(1,11): 
+    sum += i 
+ 
+print(sum) 
+ 
+Output: 
+55 
+ 
+Example 4: Multiplication Table 
+num = int(input("Enter number: ")) 
+ 
+for i in range(1,11): 
+    print(num, "x", i, "=", num * i) 
+ 
+Example 5: Factorial 
+num = 5 
+fact = 1 
+ 
+for i in range(1, num + 1): 
+    fact *= i 
+ 
+print("Factorial =", fact) 
+ 
+Output: 
+Factorial = 120 
+
+===== PAGE 17 =====
+ 
+Example 6: Prime Number Check 
+num = int(input("Enter a number: ")) 
+ 
+if num <= 1: 
+    print("Not Prime") 
+else: 
+    for i in range(2, int(num ** 0.5) + 1): 
+        if num % i == 0: 
+            print("Not Prime") 
+            break 
+    else: 
+        print("Prime") 
+ 
+Summary 
+Topic 
+Purpose 
+if 
+Execute code when a condition is true 
+if-else 
+Choose between two alternatives 
+nested if 
+Check multiple dependent conditions 
+elif 
+Handle multiple conditions 
+for 
+Repeat code for a known number of iterations 
+while 
+Repeat code while a condition remains true 
+break 
+Exit the loop immediately 
+continue 
+Skip the current iteration and continue with the next 
+pass 
+Placeholder that performs no action 
+Pattern 
+Programs 
+Practice nested loops and logical thinking 
+Problem Solving 
+Apply control structures to real programming tasks 
+
+===== PAGE 18 =====
+What to use when :  
+●​ Indentation is mandatory in Python; it defines the scope of blocks such as if, for, 
+and while. 
+●​ Choose a for loop when the number of iterations is known, and a while loop when 
+repetition depends on a condition. 
+●​ Use break to terminate a loop early, continue to skip the rest of the current iteration, 
+and pass as a placeholder when a statement is syntactically required. 
+●​ Begin solving programming problems by writing the algorithm or flow of logic before 
+translating it into Python code. 
+ 

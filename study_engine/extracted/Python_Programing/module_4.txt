@@ -1,0 +1,1417 @@
+SOURCE: SEM3/Python_Programing/module 4.pdf
+
+===== PAGE 1 =====
+Module 4 
+Python Data Structures: Lists, tuples, sets, dictionaries, operations on data structures, list comprehension and 
+applications of data structures. give me details with example 
+Python Data Structures 
+Data structures are used to store and organize multiple values in Python. The most commonly used 
+data structures are: 
+1. List  
+2. Tuple  
+3. Set  
+4. Dictionary  
+ 
+1. List 
+A list is an ordered and mutable collection of elements. Mutable means we can change, add, or 
+remove elements after creating the list. 
+Syntax 
+list_name = [element1, element2, element3] 
+Example 
+fruits = ["Apple", "Banana", "Mango", "Orange"] 
+ 
+print(fruits) 
+print(fruits[0]) 
+Output: 
+['Apple', 'Banana', 'Mango', 'Orange'] 
+Apple 
+Important List Operations 
+Adding an element 
+fruits.append("Grapes") 
+print(fruits) 
+Inserting an element 
+fruits.insert(1, "Papaya") 
+print(fruits) 
+Removing an element 
+fruits.remove("Banana") 
+print(fruits) 
+Finding length 
+
+===== PAGE 2 =====
+print(len(fruits)) 
+Slicing 
+numbers = [10, 20, 30, 40, 50] 
+ 
+print(numbers[1:4]) 
+Output: 
+[20, 30, 40] 
+List Example 
+marks = [75, 82, 65, 90, 88] 
+ 
+print("Marks:", marks) 
+print("Highest:", max(marks)) 
+print("Lowest:", min(marks)) 
+print("Total:", sum(marks)) 
+print("Number of subjects:", len(marks)) 
+ 
+1. Lists 
+ 
+Definition: Lists are mutable ordered collections of elements. 
+ 
+Key Properties: 
+o Mutable: Can be modified after creation (add, remove, or change elements). 
+o Heterogeneous: Can contain elements of different types. 
+o Indexable and Iterable. 
+ 
+Common Operations: 
+o Adding: .append(), .extend(), .insert() 
+o Removing: .remove(), .pop() 
+o Sorting: .sort(), sorted() 
+o Example: 
+o fruits = ["apple", "banana", "cherry"] 
+o fruits.append("date") 
+print(fruits) # ["apple", "banana", "cherry", "date"] 
+ 
+ 
+List is one of the built-in data types in Python. A Python list is a sequence of comma separated items, 
+enclosed in square brackets [ ]. The items in a Python list need not be of the same data type. 
+Following are some examples of Python lists 
+list1 = ["Rohan", "Physics", 21, 69.75] 
+list2 = [1, 2, 3, 4, 5] 
+list3 = ["a", "b", "c", "d"] 
+list4 = [25.50, True, -55, 1+2j] 
+list3 = [True, False, False] 
+list1 = ["abc", 34, True, 40, "male"] #A list with strings, integers and boolean values 
+thislist = ["apple", "banana", "cherry"] 
+print(thislist) 
+ 
+
+===== PAGE 3 =====
+#Using the list() constructor to make a List 
+thislist 
+= 
+list(("apple", "banana", "cherry")) # 
+note 
+the 
+double 
+round-brackets 
+print(thislist) 
+ 
+type() 
+From Python's perspective, lists are defined as objects with the data type 'list': 
+<class 'list'> 
+Example 
+What is the data type of a list? 
+mylist = ["apple", "banana", "cherry"] 
+print(type(mylist)) 
+ 
+List is an ordered collection of items. Each item in a list has a unique position index, starting from 0. 
+A list in Python is similar to an array in C, C++ or Java. However, the major difference is that in 
+C/C++/Java, the array elements must be of same type. On the other hand, Python lists may have 
+objects of different data types. 
+
+===== PAGE 4 =====
+A Python list is mutable. Any item from the list can be accessed using its index, and can be modified. 
+One or more objects from the list can be removed or added. A list may have same item at more than 
+one index positions. 
+ 
+Ordered 
+When we say that lists are ordered, it means that the items have a defined order, and that order will 
+not change. 
+If you add new items to a list, the new items will be placed at the end of the list. 
+Note: There are some list methods that will change the order, but in general: the order of the items 
+will not change. 
+ 
+Changeable 
+The list is changeable, meaning that we can change, add, and remove items in a list after it has been 
+created. 
+Allow Duplicates 
+Since lists are indexed, lists can have items with the same value: 
+Example 
+Lists allow duplicate values: 
+thislist = ["apple", "banana", "cherry", "apple", "cherry"] 
+print(thislist) 
+ 
+List Length 
+To determine how many items a list has, use the len() function: 
+Example - Print the number of items in the list: 
+thislist = ["apple", "banana", "cherry"] 
+print(len(thislist)) 
+ 
+Access List Items 
+List items are indexed and you can access them by referring to the index number 
+Example - Print the second item of the list: 
+thislist = ["apple", "banana", "cherry"] 
+print(thislist[1]) 
+print(thislist[-1]) 
+#Negative indexing means start from the end -1 refers to the last item, -2 refers to the second #last 
+item etc. 
+ 
+Range of Indexes 
+
+===== PAGE 5 =====
+You can specify a range of indexes by specifying where to start and where to end the range. 
+When specifying a range, the return value will be a new list with the specified items. 
+Return the third, fourth, and fifth item: 
+thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"] 
+print(thislist[2:5]) 
+thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"] 
+print(thislist[:4]) #returns the items from the beginning to, but NOT including, "kiwi" 
+print(thislist[2:]) #returns the items from "cherry" to the end 
+print(thislist[-4:-1]) #returns the items from "orange" (-4) to, but NOT including "mango" (-1) 
+
+===== PAGE 6 =====
+List Items - Data Types 
+List items can be of any data type: 
+Example 
+String, int and boolean data types: 
+list1 = ["apple", "banana", "cherry"] 
+list2 = [1, 5, 7, 9, 3] 
+list3 = [True, False, False] 
+The list() Constructor 
+It is also possible to use the list() constructor when creating a new list. 
+Example 
+Using the list() constructor to make a List: 
+thislist = list(("apple", "banana", "cherry")) # note the double round-brackets 
+print(thislist) 
+ 
+ 
+Check if Item Exists 
+To determine if a specified item is present in a list use the in keyword: 
+Example - Check if "apple" is present in the list: 
+thislist = ["apple", "banana", "cherry"] 
+if "apple" in thislist: 
+print("Yes, 'apple' is in the fruits list") 
+ 
+Change Item Value 
+To change the value of a specific item, refer to the index number: 
+Example - Change the second item: 
+thislist = ["apple", "banana", "cherry"] 
+thislist[1] = "blackcurrant" 
+print(thislist) 
+ 
+Change a Range of Item Values 
+To change the value of items within a specific range, define a list with the new values, and refer to the 
+range of index numbers where you want to insert the new values: 
+Example 
+Change the values "banana" and "cherry" with the values "blackcurrant" and "watermelon": 
+thislist = ["apple", "banana", "cherry", "orange", "kiwi", "mango"] 
+thislist[1:3] = ["blackcurrant", "watermelon"] 
+print(thislist) 
+ 
+If you insert more items than you replace, the new items will be inserted where you specified, and 
+
+===== PAGE 7 =====
+the remaining items will move accordingly: 
+ 
+Example - Change the second value by replacing it with two new values: 
+thislist = ["apple", "banana", "cherry"] 
+thislist[1:2] = ["blackcurrant", "watermelon"] 
+print(thislist) 
+
+===== PAGE 8 =====
+Note: The length of the list will change when the number of items inserted does not match the 
+number of items replaced. 
+If you insert less items than you replace, the new items will be inserted where you specified, and the 
+remaining items will move accordingly: 
+Example - Change the second and third value by replacing it with one value: 
+thislist = ["apple", "banana", "cherry"] 
+thislist[1:3] = ["watermelon"] 
+print(thislist) 
+ 
+2. Tuple 
+A tuple is an ordered collection of elements that is immutable. 
+Once a tuple is created, we cannot change its elements. 
+Syntax 
+tuple_name = (element1, element2, element3) 
+Example 
+colors = ("Red", "Green", "Blue") 
+ 
+print(colors) 
+print(colors[0]) 
+Output: 
+('Red', 'Green', 'Blue') 
+Red 
+Tuple Operations 
+numbers = (10, 20, 30, 20, 40) 
+ 
+print(len(numbers)) 
+print(numbers.count(20)) 
+print(numbers.index(30)) 
+Output: 
+5 
+2 
+2 
+Tuple Example 
+student = ("Priya", 21, "CSE") 
+ 
+print("Name:", student[0]) 
+print("Age:", student[1]) 
+print("Branch:", student[2]) 
+ 
+2. TUPLES 
+ 
+Definition: Tuples are immutable ordered collections of elements. 
+
+===== PAGE 9 =====
+ 
+Key Properties: 
+o Immutable: Cannot be changed after creation. 
+o Heterogeneous: Can contain elements of different types. 
+o Indexable and Iterable. 
+ 
+Usage: 
+o Ideal for fixed collections of data. 
+ 
+Tuple is one of the built-in data types in Python. A Python tuple is a sequence of comma separated 
+items, enclosed in parentheses (). The items in a Python tuple need not be of same data type. 
+Following are some examples of Python tuples − 
+tup1 = ("Rohan", "Physics", 21, 69.75) 
+tup2 = (1, 2, 3, 4, 5) 
+tup3 = ("a", "b", "c", "d") 
+tup4 = (25.50, True, -55, 1+2j) 
+ 
+Empty Tuple - The empty tuple is written as two parentheses containing nothing − tup1 = (); 
+To write a tuple containing a single value you have to include a comma, even though there is only 
+one value − tup1 = (50,); 
+Eg – Creating Tuples various methods 
+# Creating an empty Tuple 
+tup = () 
+print(tup) 
+ 
+# Using String 
+tup = ('Hello', 'For') 
+print(tup) 
+
+===== PAGE 10 =====
+# Using List 
+li = [1, 2, 4, 5, 6] 
+print(tuple(li)) 
+ 
+# Using Built-in Function 
+tup = tuple('Hi') #tuple() constructor to make a tuple. 
+print(tup) 
+ 
+Following are the points to be noted − 
+ 
+In Python, tuple is a sequence data type. It is an ordered collection of items. Each item in the 
+tuple has a unique position index, starting from 0. 
+ 
+In C/C++/Java array, the array elements must be of same type. On the other hand, Python tuple 
+may have objects of different data types. 
+ 
+Python tuple and list both are sequences. One major difference between the two is, Python 
+list is mutable, whereas tuple is immutable. Although any item from the tuple can be accessed 
+using its index, and cannot be modified, removed or added. 
+Accessing Values in Tuples 
+To access values in tuple, use the square brackets for slicing along with the index or indices to obtain 
+value available at that index. 
+For example – 
+tup1 = ('physics', 'chemistry', 1997, 2000); 
+tup2 = (1, 2, 3, 4, 5, 6, 7 ); 
+print ("tup1[0]: ", tup1[0]); //output - tup1[0]: physics 
+print ("tup2[1:5]: ", tup2[1:5]); //output - tup2[1:5]: [2, 3, 4, 5] 
+ 
+# Creating a Tuple with Mixed Datatype 
+tup = (5, 'Welcome', 7, 'Geeks') 
+print(tup) 
+ 
+#creating a tuple 
+thistuple = ("apple",) 
+print(type(thistuple)) 
+ 
+#NOT a tuple 
+thistuple = ("apple") 
+print(type(thistuple)) 
+ 
+ 
+# Creating a Tuple with nested tuples 
+tup1 = (0, 1, 2, 3) 
+tup2 = ('python', 'hi') 
+tup3 = (tup1, tup2) 
+print(tup3) 
+ 
+# Creating a Tuple with repetition 
+tup1 = ('hello',) * 3 
+print(tup1) 
+
+===== PAGE 11 =====
+# Creating a Tuple with the use of loop 
+tup = ('python') 
+n = 5 
+for i in range(int(n)): 
+tup = (tup,) 
+print(tup) 
+ 
+# Accessing Tuple with Indexing 
+tup = tuple("Hello”) 
+print(tup[0]) #Output = H 
+ 
+# Accessing a range of elements using slicing 
+print(tup[1:4]) #output - ('e', 'l', 'l') 
+print(tup[:3]) #output - ('H', 'e', 'l') 
+ 
+# Tuple unpacking 
+tup = ("Hi", "Hello", "Python") 
+ 
+# This line unpack values of Tuple1 
+a, b, c = tup 
+print(a) #OUTPUT - Hi 
+print(b) #output - Hello 
+print(c) #Output – Python 
+ 
+thistuple = ("apple", "banana", "cherry") 
+print(thistuple[1]) 
+print(thistuple[-1]) 
+thistuple1 = ("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango") 
+print(thistuple1[2:5]) #Note: The search will start at index 2 (included) and end at index 5 (not 
+included). 
+print(thistuple1[:4]) #output start with beginning bt not including item on index 4 
+print(thistuple1[2:]) #start with index 2 to end 
+print(thistuple1[-4:-1]) #returns the items from index -4 (included) to index -1 (excluded) 
+ 
+Check if Item Exists 
+To determine if a specified item is present in a tuple use the in keyword: 
+Eg, 
+thistuple = ("apple", "banana", "cherry") 
+if "apple" in thistuple: 
+print("Yes, 'apple' is in the fruits tuple") 
+ 
+Updating Tuples 
+Tuples are immutable which means you cannot update or change the values of tuple elements. You 
+are able to take portions of existing tuples to create new tuples as the following example 
+demonstrates − 
+tup1 = (12, 34.56); 
+
+===== PAGE 12 =====
+tup2 = ('abc', 'xyz'); 
+# Following action is not valid for tuples 
+# tup1[0] = 100; 
+
+===== PAGE 13 =====
+# So let's create a new tuple as follows 
+#tuple concatination 
+tup3 = tup1 + tup2; 
+print (tup3); //output - (12, 34.56, 'abc', 'xyz') 
+ 
+But there is a workaround. You can convert the tuple into a list, change the list, and convert the list 
+back into a tuple. 
+Example - Convert the tuple into a list to be able to change it: 
+x = ("apple", "banana", "cherry") 
+y = list(x) 
+y[1] = "kiwi" 
+x = tuple(y) 
+ 
+print(x) 
+ 
+Add Items 
+Since tuples are immutable, they do not have a built-in append() method, but there are other ways to 
+add items to a tuple. 
+1. Convert into a list: Just like the workaround for changing a tuple, you can convert it into a list, add 
+your item(s), and convert it back into a tuple. 
+Example - Convert the tuple into a list, add "orange", and convert it back into a tuple: 
+thistuple = ("apple", "banana", "cherry") 
+y = list(thistuple) 
+y.append("orange") 
+thistuple = tuple(y) 
+ 
+2. Add tuple to a tuple. You are allowed to add tuples to tuples, so if you want to add one item, (or 
+many), create a new tuple with the item(s), and add it to the existing tuple: 
+Example - Create a new tuple with the value "orange", and add that tuple: 
+thistuple = ("apple", "banana", "cherry") 
+y = ("orange",) 
+thistuple += y 
+ 
+print(thistuple) 
+ 
+Remove Items 
+Note: You cannot remove items in a tuple. 
+Tuples are unchangeable, so you cannot remove items from it, but you can use the same workaround 
+as we used for changing and adding tuple items: 
+ 
+Example - Convert the tuple into a list, remove "apple", and convert it back into a tuple: 
+thistuple = ("apple", "banana", "cherry") 
+y = list(thistuple) 
+y.remove("apple") 
+
+===== PAGE 14 =====
+thistuple = tuple(y) 
+ 
+Or you can delete the tuple completely: 
+Example - The del keyword can delete the tuple completely: 
+thistuple = ("apple", "banana", "cherry") 
+del thistuple 
+print(thistuple) #this will raise an error because the tuple no longer exists 
+ 
+Delete Tuple Elements 
+Removing individual tuple elements is not possible. There is, of course, nothing wrong with putting 
+together another tuple with the undesired elements discarded. 
+To explicitly remove an entire tuple, just use the del statement. For example − 
+tup = ('physics', 'chemistry', 1997, 2000); 
+print (tup); 
+del tup; 
+print ("After deleting tup : "); 
+print (tup); 
+ 
+This produces the following result. Note an exception raised, this is because after del tup tuple does 
+not exist any more − 
+('physics', 'chemistry', 1997, 2000) 
+After deleting tup : 
+Traceback (most recent call last): 
+File "test.py", line 9, in <module> 
+print (tup); 
+NameError: name 'tup' is not defined 
+ 
+ 
+ 
+ 
+Python - Unpack Tuples 
+Unpacking a Tuple 
+When we create a tuple, we normally assign values to it. This is called "packing" a tuple: 
+Example 
+Packing a tuple: 
+fruits = ("apple", "banana", "cherry") 
+But, in Python, we are also allowed to extract the values back into variables. This is called "unpacking": 
+Example 
+Unpacking a tuple: 
+fruits = ("apple", "banana", "cherry") 
+(green, yellow, red) = fruits 
+print(green) 
+print(yellow) 
+
+===== PAGE 15 =====
+print(red) 
+
+===== PAGE 16 =====
+Note: The number of variables must match the number of values in the tuple, if not, you must use an 
+asterisk to collect the remaining values as a list. 
+ 
+Using Asterisk* 
+If the number of variables is less than the number of values, you can add an * to the variable name 
+and the values will be assigned to the variable as a list: 
+Example - Assign the rest of the values as a list called "red": 
+fruits = ("apple", "banana", "cherry", "strawberry", "raspberry") 
+(green, yellow, *red) = fruits 
+print(green) 
+print(yellow) 
+print(red) 
+ 
+If the asterisk is added to another variable name than the last, Python will assign values to the variable 
+until the number of values left matches the number of variables left. 
+ 
+ 
+ 
+Example - Add a list of values the "tropic" variable: 
+fruits = ("apple", "mango", "papaya", "pineapple", "cherry") 
+(green, *tropic, red) = fruits 
+print(green) 
+print(tropic) 
+print(red) 
+ 
+Python - Loop Tuples 
+Loop Through a Tuple 
+You can loop through the tuple items by using a for loop. 
+Example - Iterate through the items and print the values: 
+thistuple = ("apple", "banana", "cherry") 
+for x in thistuple: 
+print(x) 
+ 
+Loop Through the Index Numbers 
+You can also loop through the tuple items by referring to their index number. 
+Use the range() and len() functions to create a suitable iterable. 
+Example - Print all items by referring to their index number: 
+thistuple = ("apple", "banana", "cherry") 
+
+===== PAGE 17 =====
+for i in range(len(thistuple)): 
+print(thistuple[i]) 
+ 
+Using a While Loop 
+You can loop through the tuple items by using a while loop. 
+
+===== PAGE 18 =====
+Use the len() function to determine the length of the tuple, then start at 0 and loop your way through 
+the tuple items by referring to their indexes. 
+Remember to increase the index by 1 after each iteration. 
+Example - Print all items, using a while loop to go through all the index numbers: 
+thistuple = ("apple", "banana", "cherry") 
+i = 0 
+while i < len(thistuple): 
+print(thistuple[i]) 
+i = i + 1 
+Python Tuple Operations 
+In Python, Tuple is a sequence. Hence, we can concatenate two tuples with + operator and 
+concatenate multiple copies of a tuple with "*" operator. The membership operators "in" and "not in" 
+work with tuple object. 
+Python Expression 
+Results 
+Description 
+(1, 2, 3) + (4, 5, 6) 
+(1, 2, 3, 4, 5, 6) 
+Concatenation 
+('Hi!',) * 4 
+('Hi!', 'Hi!', 'Hi!', 'Hi!') 
+Repetition 
+3 in (1, 2, 3) 
+True 
+Membership 
+Even if there is only one object in a tuple, you must give a comma after it. Otherwise, it is treated 
+as a string. 
+ 
+Indexing, Slicing, and Matrixes 
+Because tuples are sequences, indexing and slicing work the same way for tuples as they do for strings. 
+Assuming following input − 
+L = ('spam', 'Spam', 'SPAM!') 
+Python Expression 
+Results 
+Description 
+L[2] 
+'SPAM!' 
+Offsets start at zero 
+L[-2] 
+'Spam' 
+Negative: count from the right 
+L[1:] 
+['Spam', 'SPAM!'] 
+Slicing fetches sections 
+ 
+ 
+Slicing of Tuple 
+Slicing a tuple means creating a new tuple from a subset of elements of the original tuple. The slicing 
+syntax is tuple[start:stop:step]. 
+Note- Negative Increment values can also be used to reverse the sequence of Tuples. 
+
+===== PAGE 19 =====
+ 
+Eg 
+# Slicing of a Tuple with Numbers 
+tup = tuple('GEEKSFORGEEKS') 
+ 
+# Removing First element 
+print(tup[1:]) 
+ 
+# Reversing the Tuple 
+print(tup[::-1]) 
+ 
+# Printing elements of a Range 
+print(tup[4:9]) 
+ 
+Tuple Built-In Methods 
+Tuples support only a few methods due to their immutable nature. The two most commonly used 
+methods are count() and index() 
+ 
+Built-in-Method Description 
+index( ) 
+Find in the tuple and returns the index of the given value where it’s available 
+count( ) 
+Returns the frequency of occurrence of a specified value 
+ 
+ 
+ 
+Example 
+Return the number of times the value 5 appears in the tuple: 
+thistuple = (1, 3, 7, 8, 7, 5, 4, 6, 8, 5) 
+x = thistuple.count(5) 
+print(x) 
+x = thistuple.index(8) 
+ 
+
+===== PAGE 20 =====
+print(x) 
+
+===== PAGE 21 =====
+Tuple Built-In Functions 
+Built-in Function Description 
+all() 
+Returns true if all element are true or if tuple is empty 
+any() 
+return true if any element of the tuple is true. if tuple is empty, return false 
+len() 
+Returns length of the tuple or size of the tuple Eg- print(len(tuple)) 
+enumerate() 
+Returns enumerate object of tuple 
+max() 
+return maximum element of given tuple 
+min() 
+return minimum element of given tuple 
+sum() 
+Sums up the numbers in the tuple 
+sorted() 
+input elements in the tuple and return a new sorted list 
+tuple() 
+Convert an iterable to a tuple. 
+Tuples VS Lists 
+Similarities 
+Differences 
+Functions that can be used for both 
+lists and tuples: 
+len(), max(), min(), sum(), any(), all(), 
+sorted() 
+Methods that cannot be used for tuples: 
+append(), insert(), remove(), pop(), clear(), 
+sort(), reverse() 
+Methods that can be used for both 
+lists and tuples: 
+count(), Index() 
+we generally use ‘tuples’ for heterogeneous 
+(different) 
+data 
+types 
+and 
+‘lists’ 
+for 
+homogeneous (similar) data types. 
+Tuples can be stored in lists. 
+Iterating through a ‘tuple’ is faster than in a ‘list’. 
+Lists can be stored in tuples. 
+‘Lists’ 
+are 
+mutable whereas 
+‘tuples’ 
+are 
+immutable. 
+Both ‘tuples’ and ‘lists’ can be 
+nested. 
+Tuples that contain immutable elements can be 
+used as a key for a dictionary. 
+
+===== PAGE 22 =====
+ 
+3. Set 
+A set is an unordered collection of unique elements. 
+Sets automatically remove duplicate values. 
+Syntax 
+set_name = {element1, element2, element3} 
+Example 
+numbers = {10, 20, 30, 20, 40, 10} 
+ 
+print(numbers) 
+Output may be: 
+{10, 20, 30, 40} 
+Notice that 10 and 20 appear only once. 
+Adding an Element 
+numbers.add(50) 
+print(numbers) 
+Removing an Element 
+numbers.remove(20) 
+print(numbers) 
+Set Operations 
+Sets are very useful for mathematical operations. 
+Union 
+Combines elements from both sets. 
+A = {1, 2, 3} 
+B = {3, 4, 5} 
+ 
+print(A.union(B)) 
+Output: 
+{1, 2, 3, 4, 5} 
+Intersection 
+Returns common elements. 
+print(A.intersection(B)) 
+
+===== PAGE 23 =====
+Output: 
+{3} 
+Difference 
+Returns elements present in A but not in B. 
+print(A.difference(B)) 
+Output: 
+{1, 2} 
+Set Example 
+python_students = {"Amit", "Rahul", "Priya"} 
+java_students = {"Priya", "Neha", "Rahul"} 
+ 
+print("Students in both courses:", 
+      python_students.intersection(java_students)) 
+ 
+print("All students:", 
+      python_students.union(java_students)) 
+ 
+4. Dictionary 
+A dictionary stores data in key-value pairs. 
+Syntax 
+dictionary_name = { 
+    "key1": "value1", 
+    "key2": "value2" 
+} 
+Example 
+student = { 
+    "name": "Priya", 
+    "age": 21, 
+    "branch": "CSE", 
+    "marks": 85 
+} 
+ 
+print(student) 
+print(student["name"]) 
+print(student["marks"]) 
+Output: 
+{'name': 'Priya', 'age': 21, 'branch': 'CSE', 'marks': 85} 
+Priya 
+85 
+Adding a New Key-Value Pair 
+student["city"] = "Vadodara" 
+print(student) 
+
+===== PAGE 24 =====
+Updating a Value 
+student["marks"] = 90 
+print(student) 
+Removing an Element 
+student.pop("age") 
+print(student) 
+Dictionary Functions 
+student = { 
+    "name": "Priya", 
+    "age": 21, 
+    "marks": 90 
+} 
+ 
+print(student.keys()) 
+print(student.values()) 
+print(student.items()) 
+Dictionary Example 
+student = { 
+    "name": "Rahul", 
+    "roll_no": 101, 
+    "marks": 85 
+} 
+ 
+for key, value in student.items(): 
+    print(key, ":", value) 
+Output: 
+name : Rahul 
+roll_no : 101 
+marks : 85 
+ 
+ 
+ 
+1. Dictionaries 
+ 
+Definition: Dictionaries are mutable collections of key-value pairs. 
+ 
+Key Properties: 
+o Keys must be immutable and unique. 
+o Values can be mutable or immutable. 
+o Indexable using keys, not positions. 
+ 
+Common Methods: 
+o Adding/Updating: dict[key] = value 
+o Removing: .pop(), del 
+o Accessing: .get() 
+o Example: 
+o student = {"name": "John", "age": 21} 
+o student["grade"] = "A" 
+print(student) # {"name": "John", "age": 21, "grade": "A"} 
+ 
+Dictionaries are used to store data values in key:value pairs. 
+
+===== PAGE 25 =====
+A dictionary is a collection which is ordered*, changeable and do not allow duplicates. 
+As of Python version 3.7, dictionaries are ordered. In Python 3.6 and earlier, dictionaries 
+are unordered. 
+Dictionaries are written with curly brackets, and have keys and values: 
+Example - Create and print a dictionary: 
+thisdict = { 
+"brand": "Ford", 
+"model": "Mustang", 
+"year": 1964 
+} 
+print(thisdict) 
+ 
+Dictionary Items 
+Dictionary items are ordered, changeable, and do not allow duplicates. 
+Dictionary items are presented in key:value pairs, and can be referred to by using the key name. 
+Example - Print the "brand" value of the dictionary 
+thisdict = { 
+"brand": "Ford", 
+
+===== PAGE 26 =====
+"model": "Mustang", 
+"year": 1964 
+} 
+print(thisdict["brand"]) 
+ 
+Ordered or Unordered? 
+As of Python version 3.7, dictionaries are ordered. In Python 3.6 and earlier, dictionaries 
+are unordered. 
+When we say that dictionaries are ordered, it means that the items have a defined order, and that 
+order will not change. 
+Unordered means that the items do not have a defined order, you cannot refer to an item by using an 
+index. 
+ 
+Changeable 
+Dictionaries are changeable, meaning that we can change, add or remove items after the dictionary 
+has been created. 
+ 
+Duplicates Not Allowed 
+Dictionaries cannot have two items with the same key: 
+Example - Duplicate values will overwrite existing values: 
+thisdict = { 
+"brand": "Ford", 
+"model": "Mustang", 
+"year": 1964, 
+"year": 2020 
+} 
+print(thisdict) 
+ 
+Dictionary Length 
+To determine how many items a dictionary has, use the len() function: 
+Example - Print the number of items in the dictionary: 
+print(len(thisdict)) 
+ 
+Dictionary Items - Data Types 
+The values in dictionary items can be of any data type: 
+Example - String, int, boolean, and list data types: 
+thisdict = { 
+"brand": "Ford", 
+
+===== PAGE 27 =====
+"electric": False, 
+"year": 1964, 
+"colors": ["red", "white", "blue"] 
+} 
+ 
+type() 
+From Python's perspective, dictionaries are defined as objects with the data type 'dict': 
+<class 'dict'> 
+
+===== PAGE 28 =====
+Example - Print the data type of a dictionary: 
+thisdict = { 
+"brand": "Ford", 
+"model": "Mustang", 
+"year": 1964 
+} 
+print(type(thisdict)) 
+ 
+The dict() Constructor 
+It is also possible to use the dict() constructor to make a dictionary. 
+Example - Using the dict() method to make a dictionary: 
+thisdict = dict(name = "John", age = 36, country = "Norway") 
+print(thisdict) 
+ 
+Accessing Items 
+You can access the items of a dictionary by referring to its key name, inside square brackets: 
+Example 
+Get the value of the "model" key: 
+thisdict = { 
+"brand": "Ford", 
+"model": "Mustang", 
+"year": 1964 
+} 
+x = thisdict["model"] 
+ 
+There is also a method called get() that will give you the same result: 
+Example - Get the value of the "model" key: 
+x = thisdict.get("model") 
+ 
+Get Keys 
+The keys() method will return a list of all the keys in the dictionary. 
+Example - Get a list of the keys: 
+x = thisdict.keys() 
+The list of the keys is a view of the dictionary, meaning that any changes done to the dictionary will 
+be reflected in the keys list. 
+Example - Add a new item to the original dictionary, and see that the keys list gets updated as well: 
+car = { 
+"brand": "Ford", 
+"model": "Mustang", 
+"year": 1964 
+} 
+
+===== PAGE 29 =====
+ 
+x = car.keys() 
+ 
+print(x) #before the change 
+
+===== PAGE 30 =====
+car["color"] = "white" 
+print(x) #after the change 
+Get Values 
+The values() method will return a list of all the values in the dictionary. 
+Example - Get a list of the values: 
+x = thisdict.values() 
+ 
+The list of the values is a view of the dictionary, meaning that any changes done to the 
+dictionary will be reflected in the values list. 
+Example - Make a change in the original dictionary, and see that the values list gets updated as 
+well: 
+car = { 
+"brand": "Ford", 
+"model": "Mustang", 
+"year": 1964 
+} 
+ 
+x = car.values() 
+ 
+print(x) #before the change 
+car["year"] = 2020 
+print(x) #after the change 
+Example - Add a new item to the original dictionary, and see that the values list gets updated as well: 
+car = { 
+"brand": "Ford", 
+"model": "Mustang", 
+"year": 1964 
+} 
+ 
+x = car.values() 
+ 
+print(x) #before the change 
+car["color"] = "red" 
+print(x) #after the change 
+Get Items 
+The items() method will return each item in a dictionary, as tuples in a list. 
+Example - Get a list of the key:value pairs 
+
+===== PAGE 31 =====
+x = thisdict.items() 
+The returned list is a view of the items of the dictionary, meaning that any changes done to the 
+dictionary will be reflected in the items list. 
+
+===== PAGE 32 =====
+Example - Make a change in the original dictionary, and see that the items list gets updated as 
+well: 
+car = { 
+"brand": "Ford", 
+"model": "Mustang", 
+"year": 1964 
+} 
+x = car.items() 
+print(x) #before the change 
+car["year"] = 2020 
+print(x) #after the change 
+Example - Add a new item to the original dictionary, and see that the items list gets updated as 
+well: 
+car = { 
+"brand": "Ford", 
+"model": "Mustang", 
+"year": 1964 
+} 
+ 
+x = car.items() 
+ 
+print(x) #before the change 
+car["color"] = "red" 
+print(x) #after the change 
+Check if Key Exists 
+To determine if a specified key is present in a dictionary use the in keyword: 
+Example - Check if "model" is present in the dictionary: 
+thisdict = { 
+"brand": "Ford", 
+"model": "Mustang", 
+"year": 1964 
+} 
+if "model" in thisdict: 
+print("Yes, 'model' is one of the keys in the thisdict dictionary") 
+ 
+Change Values 
+You can change the value of a specific item by referring to its key name: 
+Example - Change the "year" to 2018: 
+thisdict = { 
+
+===== PAGE 33 =====
+"brand": "Ford", 
+"model": "Mustang", 
+"year": 1964 
+
+===== PAGE 34 =====
+} 
+thisdict["year"] = 2018 
+ 
+Update Dictionary 
+The update() method will update the dictionary with the items from the given argument. 
+The argument must be a dictionary, or an iterable object with key:value pairs. 
+Example - Update the "year" of the car by using the update() method: 
+thisdict = { 
+"brand": "Ford", 
+"model": "Mustang", 
+"year": 1964 
+} 
+thisdict.update({"year": 2020}) 
+ 
+Adding Items 
+Adding an item to the dictionary is done by using a new index key and assigning a value to it: 
+Example - 
+thisdict = { 
+"brand": "Ford", 
+"model": "Mustang", 
+"year": 1964 
+} 
+thisdict["color"] = "red" 
+print(thisdict) 
+ 
+Update Dictionary 
+The update() method will update the dictionary with the items from a given argument. If the 
+item does not exist, the item will be added. 
+The argument must be a dictionary, or an iterable object with key:value pairs. 
+Example - Add a color item to the dictionary by using the update() method: 
+thisdict = { 
+"brand": "Ford", 
+"model": "Mustang", 
+"year": 1964 
+} 
+thisdict.update({"color": "red"}) 
+ 
+Removing Items 
+There are several methods to remove items from a dictionary: 
+
+===== PAGE 35 =====
+Example - The pop() method removes the item with the specified key name: 
+thisdict = { 
+"brand": "Ford", 
+"model": "Mustang", 
+"year": 1964 
+} 
+
+===== PAGE 36 =====
+thisdict.pop("model") 
+print(thisdict) 
+ 
+Example - The popitem() method removes the last inserted item (in versions before 3.7, a random 
+item is removed instead): 
+thisdict = { 
+"brand": "Ford", 
+"model": "Mustang", 
+"year": 1964 
+} 
+thisdict.popitem() 
+print(thisdict) 
+ 
+Example - The del keyword removes the item with the specified key name: 
+thisdict = { 
+"brand": "Ford", 
+"model": "Mustang", 
+"year": 1964 
+} 
+del thisdict["model"] 
+print(thisdict) 
+ 
+Example - The del keyword can also delete the dictionary completely: 
+thisdict = { 
+"brand": "Ford", 
+"model": "Mustang", 
+"year": 1964 
+} 
+del thisdict 
+print(thisdict) #this will cause an error because "thisdict" no longer exists. 
+ 
+Example - The clear() method empties the dictionary: 
+thisdict = { 
+"brand": "Ford", 
+"model": "Mustang", 
+"year": 1964 
+} 
+thisdict.clear() 
+print(thisdict) 
+Loop Through a Dictionary 
+You can loop through a dictionary by using a for loop. 
+When looping through a dictionary, the return value are the keys of the dictionary, but there are 
+methods to return the values as well. 
+Example - Print all key names in the dictionary, one by one: 
+for x in thisdict: 
+
+===== PAGE 37 =====
+print(x) 
+Example - Print all values in the dictionary, one by one: 
+
+===== PAGE 38 =====
+for x in thisdict: 
+print(thisdict[x]) 
+Example - You can also use the values() method to return values of a dictionary: 
+for x in thisdict.values(): 
+print(x) 
+Example - You can use the keys() method to return the keys of a dictionary: 
+for x in thisdict.keys(): 
+print(x) 
+Example - Loop through both keys and values, by using the items() method: 
+for x, y in thisdict.items(): 
+print(x, y) 
+ 
+Copy a Dictionary 
+You cannot copy a dictionary simply by typing dict2 = dict1, because: dict2 will only be 
+a reference to dict1, and changes made in dict1 will automatically also be made in dict2. 
+There are ways to make a copy, one way is to use the built-in Dictionary method copy(). 
+Example - Make a copy of a dictionary with the copy() method: 
+thisdict = { 
+"brand": "Ford", 
+"model": "Mustang", 
+"year": 1964 
+} 
+mydict = thisdict.copy() 
+print(mydict) 
+ 
+Another way to make a copy is to use the built-in function dict(). 
+Example - Make a copy of a dictionary with the dict() function: 
+thisdict = { 
+"brand": "Ford", 
+"model": "Mustang", 
+"year": 1964 
+} 
+mydict = dict(thisdict) 
+print(mydict) 
+ 
+Nested Dictionaries 
+A dictionary can contain dictionaries, this is called nested dictionaries. 
+Example - Create a dictionary that contain three dictionaries: 
+myfamily = { 
+"child1" : { 
+"name" : "Emil", 
+"year" : 2004 
+}, 
+"child2" : { 
+
+===== PAGE 39 =====
+"name" : "Tobias", 
+"year" : 2007 
+}, 
+
+===== PAGE 40 =====
+"child3" : { 
+"name" : "Linus", 
+"year" : 2011 
+} 
+} 
+ 
+Or, if you want to add three dictionaries into a new dictionary: 
+Example - Create three dictionaries, then create one dictionary that will contain the other three 
+dictionaries: 
+child1 = { 
+"name" : "Emil", 
+"year" : 2004 
+} 
+child2 = { 
+"name" : "Tobias", 
+"year" : 2007 
+} 
+child3 = { 
+"name" : "Linus", 
+"year" : 2011 
+} 
+ 
+myfamily = { 
+"child1" : child1, 
+"child2" : child2, 
+"child3" : child3 
+} 
+ 
+Access Items in Nested Dictionaries 
+To access items from a nested dictionary, you use the name of the dictionaries, starting with the outer 
+dictionary: 
+Example - Print the name of child 2: 
+print(myfamily["child2"]["name"]) 
+ 
+Loop Through Nested Dictionaries 
+You can loop through a dictionary by using the items() method like this: 
+Example - Loop through the keys and values of all nested dictionaries: 
+for x, obj in myfamily.items(): 
+print(x) 
+ 
+for y in obj: 
+print(y + ':', obj[y]) 
+
+===== PAGE 41 =====
+ 
+Dictionary Methods 
+Python has a set of built-in methods that you can use on dictionaries. 
+
+===== PAGE 42 =====
+Method 
+Description 
+clear() 
+Removes all the elements from the dictionary 
+copy() 
+Returns a copy of the dictionary 
+fromkeys() 
+Returns a dictionary with the specified keys and value 
+get() 
+Returns the value of the specified key 
+items() 
+Returns a list containing a tuple for each key value pair 
+keys() 
+Returns a list containing the dictionary's keys 
+pop() 
+Removes the element with the specified key 
+popitem() 
+Removes the last inserted key-value pair 
+setdefault() 
+Returns the value of the specified key. If the key does not exist: insert 
+key, with the specified value 
+update() 
+Updates the dictionary with the specified key-value pairs 
+values() 
+Returns a list of all the values in the dictionary 
+ 
+ 
+5. Operations on Data Structures 
+Python provides several common operations. 
+len() 
+Finds the number of elements. 
+numbers = [10, 20, 30, 40] 
+ 
+print(len(numbers)) 
+Output: 
+4 
+in Operator 
+Checks whether an element exists. 
+numbers = [10, 20, 30] 
+
+===== PAGE 43 =====
+ 
+print(20 in numbers) 
+print(50 in numbers) 
+Output: 
+True 
+False 
++ Operator 
+Lists and tuples can be concatenated. 
+A = [1, 2, 3] 
+B = [4, 5, 6] 
+ 
+print(A + B) 
+Output: 
+[1, 2, 3, 4, 5, 6] 
+* Operator 
+Repeats a sequence. 
+A = [1, 2] 
+ 
+print(A * 3) 
+Output: 
+[1, 2, 1, 2, 1, 2] 
+min(), max(), sum() 
+numbers = [10, 20, 30, 40] 
+ 
+print(min(numbers)) 
+print(max(numbers)) 
+print(sum(numbers)) 
+Output: 
+10 
+40 
+100 
+ 
+6. List Comprehension 
+
+===== PAGE 44 =====
+List comprehension is a short and convenient way to create a new list from an existing 
+sequence. 
+Normal Method 
+numbers = [1, 2, 3, 4, 5] 
+ 
+squares = [] 
+ 
+for n in numbers: 
+    squares.append(n * n) 
+ 
+print(squares) 
+Output: 
+[1, 4, 9, 16, 25] 
+Using List Comprehension 
+The same program can be written as: 
+numbers = [1, 2, 3, 4, 5] 
+ 
+squares = [n * n for n in numbers] 
+ 
+print(squares) 
+Output: 
+[1, 4, 9, 16, 25] 
+Basic Syntax 
+[expression for item in iterable] 
+For example: 
+squares = [x * x for x in range(1, 6)] 
+ 
+List Comprehension with Condition 
+We can also use an if condition. 
+Example: Even Numbers 
+numbers = [1, 2, 3, 4, 5, 6, 7, 8] 
+ 
+even = [x for x in numbers if x % 2 == 0] 
+ 
+print(even) 
+
+===== PAGE 45 =====
+Output: 
+[2, 4, 6, 8] 
+Example: Numbers Greater Than 50 
+marks = [35, 67, 82, 45, 90, 55] 
+ 
+result = [m for m in marks if m > 50] 
+ 
+print(result) 
+Output: 
+[67, 82, 90, 55] 
+ 
+7. Applications of Data Structures 
+Different data structures are useful for different situations. 
+Data Structure 
+Main Application 
+List 
+Storing ordered and changeable data 
+Tuple 
+Storing fixed data 
+Set 
+Removing duplicates and set operations 
+Dictionary 
+Storing key-value information 
+List Comprehension Quickly creating lists 
+Real-Life Examples 
+List: 
+students = ["Amit", "Priya", "Rahul", "Neha"] 
+Used to store a collection of student names. 
+Tuple: 
+coordinates = (23.02, 72.57) 
+Used for fixed values such as coordinates. 
+Set: 
+unique_subjects = {"Python", "Java", "Python", "DBMS"} 
+Useful when only unique subjects are required. 
+Dictionary: 
+
+===== PAGE 46 =====
+student = { 
+    "roll_no": 101, 
+    "name": "Priya", 
+    "marks": 88 
+} 
+Useful for representing structured information about a student. 
+ 
+8. Combined Example 
+Here is a simple program demonstrating all four data structures: 
+# List 
+students = ["Amit", "Priya", "Rahul", "Neha"] 
+print("List:", students) 
+ 
+# Tuple 
+subjects = ("Python", "DBMS", "Java") 
+print("Tuple:", subjects) 
+ 
+# Set 
+courses = {"Python", "Java", "Python", "DBMS"} 
+print("Set:", courses) 
+ 
+# Dictionary 
+student = { 
+    "name": "Priya", 
+    "roll_no": 101, 
+    "marks": 88 
+} 
+print("Dictionary:", student) 
+ 
+# List comprehension 
+marks = [45, 67, 82, 90, 35] 
+passed = [m for m in marks if m >= 40] 
+ 
+print("Passed marks:", passed) 
+Expected Output 
+List: ['Amit', 'Priya', 'Rahul', 'Neha'] 
+Tuple: ('Python', 'DBMS', 'Java') 
+Set: {'Python', 'Java', 'DBMS'} 
+Dictionary: {'name': 'Priya', 'roll_no': 101, 'marks': 88} 
+Passed marks: [45, 67, 82, 90] 
+Quick Revision 
+List → [ ] → Ordered + Changeable 
+Tuple → ( ) → Ordered + Unchangeable 
+Set → { } → Unique elements 
+
+===== PAGE 47 =====
+Dictionary → {key: value} → Key-value pairs 
+List Comprehension → Short method to create lists 
+ 

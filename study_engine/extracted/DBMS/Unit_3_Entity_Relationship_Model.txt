@@ -1,0 +1,1153 @@
+SOURCE: SEM3/DBMS/Unit 3 Entity Relationship Model.pdf
+
+===== PAGE 1 =====
+Unit-3
+Entity Relationship Model
+
+===== PAGE 2 =====
+BASIC CONCEPT OF E-R DIAGRAM
+Section - 1
+
+===== PAGE 3 =====
+Basic concepts
+□What is Database Design?
+□
+Database Design is a collection of processes that facilitate the designing, development, implementation 
+and maintenance of enterprise database management systems.
+□What is E-R diagram?
+□
+E-R diagram: (Entity-Relationship diagram)
+□
+It is graphical (pictorial) representation of database.
+□
+It uses different types of symbols to represent different objects of database.
+
+===== PAGE 4 =====
+Entity
+□An entity is a person, a place or an object.
+□An entity is represented by a rectangle which contains the name of an entity.
+□Entities of a college database are:
+□
+Student
+□
+Professor/Faculty
+□
+Course
+□
+Department
+□
+Result
+□
+Class
+□
+Subject
+Entity Name
+Symbol
+Student
+Faculty
+Course
+Exercise
+Exercise
+Write down the different entities of bank 
+database.
+Write down the different entities of hospital 
+database.
+
+===== PAGE 5 =====
+Entity Set
+□It is a set (group) of entities of same type.
+□Examples:
+□
+All persons having an account in a bank
+□
+All the students studying in a college
+□
+All the professors working in a college
+□
+Set of all accounts in a bank
+
+===== PAGE 6 =====
+Attributes
+□Attribute is properties or details about an entity.
+□An attribute is represented by an oval containing name of an attribute.
+□Attributes of Student are:
+□
+Roll No
+□
+Student Name
+□
+Branch
+□
+Semester
+□
+Address
+□
+Mobile No
+□
+Age
+□
+SPI
+□
+Backlogs
+Symbol
+Attribute 
+Name
+Student
+RollNo
+Name
+Exercise
+Exercise
+Write down the different attributes of Faculty 
+entity.
+Write down the different attributes of Account 
+entity.
+
+===== PAGE 7 =====
+Relationship
+□Relationship is an association (connection) between several entities.
+□It should be placed between two entities and a line connecting it to an entity.
+□A relationship is represented by a diamond containing relationship's name.
+Relationship 
+Name
+Symbol
+Student
+Book
+Issue
+
+===== PAGE 8 =====
+E-R Diagram of a Library System
+Student
+Book
+Issue
+RollNo
+Name
+Branch
+Sem
+BookNo
+Name
+Author
+Price
+Primary Key
+Primary Key
+Entities
+Attribute 
+s
+Relationship
+Each and every entity must have one primary key attribute.
+Relationship between 2 entities is called binary 
+relationship.
+
+===== PAGE 9 =====
+Ternary Relationship
+Faculty
+Student
+Guide
+FacID
+Name
+Branch
+Technology
+RollNo
+Name
+Branch
+Sem
+Project
+ProjectID
+Project Name
+Relationship between 3 entities is called ternary 
+relationship.
+
+===== PAGE 10 =====
+Exercise
+□Draw an E-R diagram of following pair of entities
+□
+Customer & Account
+□
+Customer & Loan
+□
+Doctor & Patient
+□
+Student & Project
+□
+Student & Teacher
+▪Note: Take four attributes per entity with one primary key attribute.
+Keep proper relationship between two entities.
+
+===== PAGE 11 =====
+TYPES OF ATTRIBUTES
+Section - 2
+
+===== PAGE 12 =====
+Types of Attributes
+Simple Attribute
+Composite Attribute
+Cannot be divided into subparts
+Can be divided into subparts
+E.g. RollNo, CPI
+E.g. Name
+(first name, middle name, last name)
+Address
+(street, road, city)
+Symbol
+Roll No
+Symbol
+First name
+Name
+Middle name
+Last name
+
+===== PAGE 13 =====
+Types of Attributes
+Single-valued Attribute
+Multi-valued Attribute
+Has single value
+Has multiple (more than one) value
+E.g. RollNo, CPI
+E.g. PhoneNo
+(person may have multiple phone nos)
+EmailID
+(person may have multiple emails)
+Symbol
+Roll No
+Symbol
+Phone No
+
+===== PAGE 14 =====
+Types of Attributes
+Stored Attribute
+Derived Attribute
+It’s value is stored manually in database
+It’s value is derived or calculated from 
+other attributes
+E.g. Birthdate
+E.g. Age
+(can be calculated using current date and 
+birthdate)
+Symbol
+Birthdate
+Symbol
+Age
+
+===== PAGE 15 =====
+Entity with all types of Attributes
+Student
+RollNo
+Name
+Phone No
+Birth Date
+First Name
+Last Name
+Middle 
+Name
+Address
+Age
+Apartment
+Area
+Street
+Composite
+Composite
+Single 
+SVimal
+pulee
+Multiple 
+Value
+Stored
+Derived
+
+===== PAGE 16 =====
+Exercise
+□Draw an E-R diagram of Banking Management System.
+□Draw an E-R diagram of Hospital Management System.
+□Draw an E-R diagram of College Management System.
+□
+Take only 2 entities
+□
+Keep proper relationship between two entities
+□
+Use all types of attributes
+
+===== PAGE 17 =====
+Descriptive Attribute
+Student
+Book
+Issue
+RollNo
+Name
+Branch
+Sem
+BookNo
+Name
+Author
+Price
+Issue 
+Date
+□Attributes of the relationship is called descriptive attribute.
+Descriptive 
+Attribute
+
+===== PAGE 18 =====
+Role
+□Roles are indicated by labeling the lines that connect diamonds (relationship) to rectangles 
+(entity).
+□The labels “Coordinator” and “Head” are called roles; they specify Faculty entities interact 
+with whom via Reports_To relationship set.
+□Role labels are optional, and are used to clarify semantics (meaning) of the relationship.
+Faculty
+Reports_
+T
+o
+EmpID
+Name
+Branch
+Experience
+Head
+Coordinator
+
+===== PAGE 19 =====
+Recursive Relationship Set
+□The same entity participates in a relationship set more than once then it is called recursive 
+relationship set.
+Faculty
+Department
+Works
+Post
+FacID
+DeptIDFName
+DName
+Prof.
+Prof.
+Recursive 
+Relationship 
+Set
+Prof./
+HOD
+FName
+Post
+Ajay
+Professor
+Haresh
+Professor
+Ramesh
+HOD
+DName
+Computer
+Civil
+Mechanical
+
+===== PAGE 20 =====
+MAPPING CARDINALITY
+Section - 3
+
+===== PAGE 21 =====
+Mapping Cardinality (Cardinality Constraints)
+□It represents the number of entities of another entity set which are connected to an entity
+using a relationship set.
+□It is most useful in describing binary relationship sets.
+□For a binary relationship set the mapping cardinality must be one of the following types:
+□
+One to One
+□
+One to Many
+□
+Many to One
+□
+Many to Many
+
+===== PAGE 22 =====
+One-to-One relationship (1 – 1)
+□An entity in A is associated with only one entity in B and an entity in B is associated with 
+only one entity in A.
+□Example: A customer is connected with only one loan using the relationship borrower and a
+loan is connected with only one customer using borrower.
+A1
+A2
+B1
+B2
+A
+B
+customer
+loan
+borrow
+C1
+C2
+L1
+L2
+C3
+L3
+
+===== PAGE 23 =====
+One-to-Many relationship (1 – N)
+□An entity in A is associated with more than one entities in B and an entity in B is associated 
+with only one entity in A.
+A1
+A2
+B1
+B2
+A
+B
+customer
+loan
+borrow
+C1
+C2
+L1
+L2
+C3
+L3
+L4
+□Example: A loan is connected with only one customer using borrower and a customer is 
+connected with more than one loans using borrower.
+
+===== PAGE 24 =====
+Many-to-One relationship (N – 1)
+□An entity in A is associated with only one entity in B and an entity in B is associated with 
+more than one entities in A.
+A1
+A2
+B1
+B2
+A
+B
+customer
+loan
+borrow
+C1
+C2
+L1
+L2
+C3
+L3
+C4
+□Example: A loan is connected with more than one customer using borrower and a customer 
+is connected with only one loan using borrower.
+
+===== PAGE 25 =====
+Many-to-Many relationship (N – N)
+□An entity in A is associated with more than one entities in B and an entity in B is associated 
+with more than one entities in A.
+A1
+A2
+B1
+B2
+A
+B
+customer
+loan
+borrow
+C1
+C2
+L1
+L2
+C3
+L3
+C4L4
+□Example: A customer is connected with more than one loan using borrower and a loan is 
+connected with more than one customer using borrower.
+
+===== PAGE 26 =====
+Mapping Cardinality (Cardinality Constraints) [Exercise]
+□Draw an E-R diagram and specify which type of mapping cardinality will be there in the 
+following examples:
+□
+Each customer has only one account in the bank and each account is held by only one customer. [single 
+account]
+□
+Each customer has only one account in the bank but an account can be held by more than one customer. 
+[joint account]
+□
+A customer may have more than one account in the bank but each account is held by only one customer. 
+[multiple accounts]
+□
+A customer may have more than one account in the bank and each account is held by more than one 
+customer. [join account as well as multiple accounts]
+□
+A student can work in more than one project and a project can be done by more than one student.
+□
+A student can issue more than one book but a book is issued to only one student.
+□
+A subject is taught by more than one faculty and a faculty can teach more than one subject.
+
+===== PAGE 27 =====
+PARTICIPATION CONSTRAINTS
+Section - 4
+
+===== PAGE 28 =====
+Total participation
+• every entity in the entity set participates in at least 
+one relationship in the relationship set.
+• indicated by double line
+Partial participation
+• some entities in the entity set may not participate 
+in any relationship in the relationship set.
+• indicated by single line
+Participation Constraints
+□It specifies the participation of an entity set in a relationship set.
+□There are two types participation constraints
+□
+Total participation
+□
+Partial participation
+customer
+loan
+borrow
+C1
+C2
+L1
+L2
+C3
+Each customer has 
+maximum one loan
+
+===== PAGE 29 =====
+WEAK ENTITY SET
+Section - 5
+
+===== PAGE 30 =====
+Weak Entity Set
+loan
+payment
+loan-no
+amount
+payment-no
+□An entity set that does not have a primary key is called weak entity set.
+Payment-date
+L_P
+Payment-amount
+Strong Entity 
+Set
+Weak Entity 
+Set
+Weak Entity 
+Relationship
+• Weak entity set is indicated by double rectangle.
+• Weak entity relationship set is indicated by double 
+diamond.
+
+===== PAGE 31 =====
+Weak Entity Set
+□The existence of a weak entity set depends on the existence of a strong entity set.
+□The discriminator (partial key) of a weak entity set is the set of attributes that distinguishes 
+all the entities of a weak entity set.
+□The primary key of a weak entity set is created by combining the primary key of the strong 
+entity set on which the weak entity set is existence dependent and the weak entity set’s 
+discriminator.
+□We underline the discriminator attribute of a weak entity set with a dashed line.
+□Payment entity has payment-no which is discriminator.
+□Loan entity has loan-no as primary key.
+□So primary key for payment is (loan-no, payment-no).
+
+===== PAGE 32 =====
+SUPERCLASS V/S SUBCLASS
+Section - 6
+
+===== PAGE 33 =====
+Superclass v/s Subclass
+Super Class
+Sub Class
+A superclass is an entity from which another 
+entities can be derived.
+A subclass is an entity that is derived from 
+another entity.
+E.g,
+an entity account has two subsets 
+saving_account and 
+current_account So an account is 
+superclass.
+E.g,
+saving_account and current_account 
+entities are derived from entity account.
+So saving_account and current_account are 
+subclass.
+Account
+Saving_Account
+Current_Account
+Super Class
+Sub Class
+
+===== PAGE 34 =====
+GENERALIZATION V/S SPECIALIZATION
+Section - 7
+
+===== PAGE 35 =====
+Generalization v/s Specialization
+Generalization
+Specialization
+It extracts the common features of multiple 
+entities to form a new entity.
+It splits an entity to form multiple new 
+entities that inherit some feature of the
+splitting entity.
+Student
+Faculty
+Name
+Address
+SPI
+Name
+Address
+Salary
+Person
+Name
+Address
+ISA
+Bottom-up
+approach
+Student
+Faculty
+Person
+Name
+Address
+SPI
+Salary
+SPI
+Salary
+ISA
+Top-down
+approach
+
+===== PAGE 36 =====
+Generalization v/s Specialization
+Generalization
+Specialization
+The process of creation of group from various 
+entities is called generalization.
+The process of creation of sub-groups within 
+an entity is called specialization.
+It is Bottom-up approach.
+It is Top-down approach.
+The process of taking the union of two or 
+more lower level entity sets to produce a 
+higher level entity set.
+The process of taking a sub set of higher level 
+entity set to form a lower level entity set.
+It starts from the number of entity sets and 
+creates high level entity set using some 
+common features.
+It starts from a single entity set and creates 
+different low level entity sets using some 
+different features.
+
+===== PAGE 37 =====
+Generalization & Specialization example
+Employee
+Customer
+Person
+Name
+Address
+PID
+City
+Salary
+Balance
+ISA
+Full Time
+Part Time
+Days 
+Worked
+Hour 
+Worked
+ISA
+
+===== PAGE 38 =====
+Exercise
+□Give the examples of Generalization/Specialization in the following E-R diagram:
+□
+Hospital Management System.
+□
+College Management System.
+□
+Bank Management System.
+□
+Insurance Company.
+
+===== PAGE 39 =====
+CONSTRAINTS ON
+SPECIALIZATION AND GENERALIZATION
+Section - 8
+
+===== PAGE 40 =====
+Constraints on Specialization and Generalization
+Constraints
+Disjoint
+Participation
+Disjoint
+Non-disjoint 
+(Overlapping)
+Total 
+(Mandatory)
+Partial 
+(Optional)
+
+===== PAGE 41 =====
+Disjoint Constraint
+□It describes relationship between members of the superclass and subclass and indicates 
+whether member of a superclass can be a member of one, or more than one subclass.
+□Types of disjoint constraints
+□
+Disjoint Constraint
+□
+Non-disjoint (Overlapping) Constraint
+
+===== PAGE 42 =====
+Disjoint Constraint
+□It specifies that the entity of a super class can belong to only one lower-level entity set (sub 
+class).
+□Specified by ‘d’ or by writing disjoint near to the ISA triangle.
+Cricketer 
+(Super class)
+Batsman 
+(Sub class)
+Bowler 
+(Sub class)
+All the players are associated with only one sub class either (Batsman or 
+Bowler).
+Employee
+(Super class)
+Full-time
+(Sub class)
+Part-time
+(Sub class)
+ISA
+Disjoint
+
+===== PAGE 43 =====
+Non-disjoint (Overlapping) Constraint
+□It specifies that an entity of a super class can belong to more than one lower-level entity
+set (sub class).
+□Specified by ‘o’ or by writing overlapping near to the ISA triangle.
+Cricketer 
+(Super class)
+Batsman 
+(Sub class)
+Bowler 
+(Sub class)
+One player (Yuvraj singh) is associated with more than one sub 
+class.
+Employee
+(Super class)
+Faculty
+(Sub class)
+Head
+(Sub class)
+ISA
+Non-disjoin
+t
+
+===== PAGE 44 =====
+Constraints on Specialization and Generalization
+Constraints
+Disjoint
+Participation
+Disjoint
+Non-disjoint 
+(Overlapping)
+Total 
+(Mandatory)
+Partial 
+(Optional)
+
+===== PAGE 45 =====
+Participation (Completeness) Constraint
+□It determines whether every member of super class must participate as a member of 
+subclass or not.
+□Types of participation (Completeness) Constraint
+□
+Total (Mandatory) participation
+□
+Partial (Optional) participation
+
+===== PAGE 46 =====
+Total (Mandatory) Participation
+□Total participation specifies that every entity in the superclass must be a member of some 
+subclass in the specialization.
+□Specified by a double line in E-R diagram.
+Cricketer 
+(Super class)
+Batsman 
+(Sub class)
+Bowler 
+(Sub class)
+All the players are associated with minimum one sub class either (Batsman or 
+Bowler).
+Employee
+(Super class)
+Professor
+(Sub class)
+Head
+(Sub class)
+ISA
+
+===== PAGE 47 =====
+Partial (Optional) Participation
+□Partial participation specifies that every entity in the super class does not belong to any of 
+the subclass of specialization.
+□Specified by a single line in E-R diagram.
+Cricketer 
+(Super class)
+Batsman 
+(Sub class)
+Bowler 
+(Sub class)
+Employee
+(Super class)
+Professor
+(Sub class)
+Head
+(Sub class)
+ISA
+Not associated with 
+any sub class
+
+===== PAGE 48 =====
+AGGREGATION IN E-R DIAGRAM
+Section - 9
+
+===== PAGE 49 =====
+Limitation of E-R diagram
+□In E-R model we cannot express relationships between two relationships.
+Relation
+Relation
+Relation
+Relation
+Entity 1
+Entity 2
+
+===== PAGE 50 =====
+Limitation of E-R diagram
+Employee
+Department
+Works
+Borrow
+Loan
+Can not connect two relationship
+Borrow
+Loan
+Customer
+Customer
+Company
+Process of creating an entity by combining various components 
+of E-R diagram is called aggregation.
+
+===== PAGE 51 =====
+E-R DIAGRAM OF
+HOSPITAL MANAGEMENT SYSTEM
+Section - 10
+
+===== PAGE 52 =====
+E-R diagram of Hospital Management System
+Patient
+Hospital
+Admitted
+PatID
+Name
+HosID
+Name
+Has
+Medical Record
+MRID
+Has
+Doctor
+DrID
+Treats
+Dr Name
+Report Name
+ISA
+Indoor
+Outdoor
+IPDID
+OPDID
+RoomNo
+Charge
+
+===== PAGE 53 =====
+REDUCE THE E-R DIAGRAM 
+TO DATABASE SCHEMA
+Section - 11
+
+===== PAGE 54 =====
+Reduce the E-R diagram to database schema
+□An entity of an ER diagram is turned into a table.
+□Each attribute (except multi-valued attribute) turns 
+into a column (attribute) in the table.
+□Table name can be same as entity name.
+□Key attribute of the entity is the primary key of the 
+table which is usually underlined.
+□It  is  highly  recommended  that  every  table  should 
+start  with  its  primary  key  attribute  conventionally 
+named as TablenameID.
+Person
+PersonID
+Name
+Address
+City
+PhoneNo
+Person (PersonID, Name, Address, City)
+Step 1: Reduce Entities and Simple Attributes:
+
+===== PAGE 55 =====
+Reduce the E-R diagram to database schema
+□Multi-value attribute is turned into a new table.
+□Add  the  primary  key  column  into  multi-value 
+attribute’s table.
+□Add the primary key column of the parent entity’s 
+table as a foreign key within the new (multi-value 
+attribute’s) table.
+□Then make a 1:N relationship between the Person 
+table and PhoneNo table.
+Step 2: Reduce Multi-valued Attributes:
+Person
+PersonID
+PhoneNo
+Having
+PhoneNo (T2)
+Person (T1)
+PhoneNo (PhoneID, PersonID, PhoneNo)
+Foreign Key
+
+===== PAGE 56 =====
+Reduce the E-R diagram to database schema
+□Convert both
+entities
+in to table
+with
+proper attribute.
+□Place the primary key of any one table in to the
+another table as a foreign key.
+□Place the primary key of the Wife table WifeID in the 
+table Persons as Foreign key.
+OR
+□Place the primary key of the Person table PersonID in 
+the table Wife as Foreign key.
+Step 3: Reduce 1:1 Mapping Cardinality:
+Wife
+WifeID
+WName
+Person
+Having
+PersonID PName
+Person (PersonID, PName) 
+Wife (WifeID, Wname, PersonID)
+Wife (WifeID, Wname) 
+Person (PersonID, Pname, WifeID)
+
+===== PAGE 57 =====
+Reduce the E-R diagram to database schema
+□Convert  both  entities  in  to  table  with  proper 
+attribute.
+□Place the primary key of table having 1 mapping in 
+to the another table having many cardinality as a 
+Foreign key.
+□Place the primary key of the Person table PersonID in 
+the table House as Foreign key.
+Step 4: Reduce 1:N Mapping Cardinality:
+House
+HouseID
+HName
+Person
+Having
+PersonID
+PName
+Person (PersonID, PName) 
+House (HouseID, Hname, PersonID)
+
+===== PAGE 58 =====
+Reduce the E-R diagram to database schema
+□Convert both
+entities
+in to table
+with
+proper attribute.
+□Create a separate table for relationship.
+□Place the primary key of both entities table into the
+relationship’s table as foreign key.
+□Place the primary key of the Customer table CID and 
+Account table Ano in the table Has_Acct as Foreign 
+key.
+Step 5: Reduce N:N Mapping Cardinality:
+Account
+ActNo
+Balance
+Customer
+Has_Acct
+CID CName
+Customer (CID, CName) 
+Account (ActNo, Balance)
+Has_Acct (HasAcctID, CID, ActNo)
+
+===== PAGE 59 =====
+Summery of Symbols used in E-R diagram
+Customer
+Entity
+EmpID
+Primary Key 
+Attribute
+Payment
+Weak Entity
+Total 
+Participation
+Name 
+Attribute
+Age
+Derived 
+Attribute
+Hold 
+Relationship
+PhoneNo
+Multi Valued 
+Attribute
+Issue
+Weak Entity 
+Relationship
+ISA
+Specialization/ 
+Generalization
+R
+E
+Role 
+Indicator
+R
+E
+PymtID
+Discriminating 
+Attribute
+Role
+Name
+
+===== PAGE 60 =====
+Summery of Symbols used in E-R diagram
+One to One
+R
+E
+E
+One to Many
+R
+E
+E
+Many to One
+R
+E
+E
+Many to Many
+R
+E
+E
+ISA
+Total 
+Specialization/ 
+Generalization
+ISA
+Disjoint 
+Specialization/ 
+Generalization
+Disjoint
+ISA
+Overlapping 
+Specialization/ 
+Generalization
+Overlappin
+g
+ISA
+Partial 
+Specialization/ 
+Generalization
+
+===== PAGE 61 =====
+INTEGRITY CONSTRAINTS
+Section - 13
+
+===== PAGE 62 =====
+Integrity Constraints
+□Integrity constraints are a set of rules. It is used to maintain the quality of information.
+□Integrity constraints ensure that the data insertion, updating, and other processes have to 
+be performed in such a way that data integrity is not affected.
+□Thus, integrity constraint is used to guard against accidental damage to the database.
+□Various Integrity Constraints are:
+□
+Check
+□
+Not null
+□
+Unique
+□
+Primary key
+□
+Foreign key
+
+===== PAGE 63 =====
+Integrity Constraints
+□Check
+□
+This constraint defines a business rule on a column. All the rows in that column must satisfy this rule.
+□
+Limits the data values of variables to a specific set, range, or list of values.
+□
+The constraint can be applied for a single column or a group of columns.
+□
+E.g. value of SPI should be between 0 to 10.
+□Not null
+□
+This constraint ensures all rows in the table contain a definite value for the column which is specified as 
+not null. Which means a null value is not allowed.
+□
+E.g. name column should have some value.
+□Unique
+□
+This constraint ensures that a column or a group of columns in each row have a distinct (unique) value.
+□
+A column(s) can have a null value but the values cannot be duplicated.
+□
+E.g. enrollmentno column should have unique value.
+
+===== PAGE 64 =====
+Integrity Constraints
+DeptID Dept_Nam 
+e
+HOD
+1
+Computer
+Doshi
+2
+IT
+Vyash
+RollNo
+Student_Nam 
+e
+DeptID
+101
+Raj Patel
+1
+102
+Meet Shah
+2
+□Primary key
+□
+This constraint defines a column or combination of columns which uniquely identifies each row in the 
+table.
+□
+Primary key = Unique key + Not null
+□
+E.g. enrollmentno column should have unique value as well as can’t be null.
+□Foreign key (referential integrity constraint)
+□
+A referential integrity constraint (foreign key) is specified between two tables.
+□
+In the referential integrity constraints, if a foreign key column in table 1 refers to the primary key column 
+of table 2, then every value of the foreign key column in table 1 must be null or be available in primary 
+key column of table 2.
+Foreign Key
+
+===== PAGE 65 =====
+Questions asked
+1.
+Write a note on mapping cardinality in E-R diagram.
+2.
+Explain the difference between a weak and a strong entity set.
+3.
+Explain the difference between generalization and specialization. OR Explain specialization 
+and generalization concept in E-R diagram with suitable example.
+4.
+Write a note on constraints on specialization and generalization.
+5.
+Explain aggregation in E-R diagram with example.
+6.
+What do you mean by integrity constraints? Discuss various integrity constraints.
+
+===== PAGE 66 =====
+Thank You

@@ -1,0 +1,252 @@
+SOURCE: SEM3/DBMS/Unit 9 Database Security.pdf
+
+===== PAGE 1 =====
+Module:9
+Database Security
+
+===== PAGE 2 =====
+Topics to be covered:
+•Authentication
+•Authorization and access control
+•DAC, MAC and RBAC models
+•Intrusion detection
+•SQL injection
+
+===== PAGE 3 =====
+Database Security
+•Database Confidentiality, Integrity, and Availability
+•(CIA components)
+•C: Protecting the information from disclosure to unauthorized parties
+•
+Data encryption, SSL, permissions, access control
+•I: Protecting information from being tampered by unauthorized parties
+•
+Message hash, sign
+•A: Ensuring that authorized parties are able to access the information when 
+needed
+•
+DDOS – back up
+•
+
+===== PAGE 4 =====
+Confidentiality
+Flaws of data Confidentiality
+•
+Data is stored in an unsecured manner
+•
+Lack of compliance with Corporate Data Privacy Policy
+•
+Transfer of unsecured data to various vendors
+•
+Lack of control of data usage and access
+•
+Leak of personally identifiable data and health 
+data, etc.
+
+===== PAGE 5 =====
+Data Encryption
+•Data encryption for Confidentiality
+•Only authorized users can read the data with granted keys.
+•Encryption prevents  unauthorized users  from reading encrypted data 
+and prevents data leakage
+•Popular Encryption algorithms: Data Encryption Standards (DES) and 
+Advanced Encryption Standards (AES).
+
+===== PAGE 6 =====
+Permission and Access Controls
+•Enforce User Access Controls (UAC) that define user/group access 
+control privileges and permission to specific database, tables, columns 
+and associated operations
+•Once  the  database  is  installed,  the  password  to  database  must  be 
+secured and not compromised. Periodic password checks and 
+modified are recommended
+•Least privilege policy
+•Locking user accounts if that are not in use and removing accounts if 
+never used anymore
+
+===== PAGE 7 =====
+Threats to Database Security
+1.
+Granted  excessive  privileges  and  permissions,  and  privilege  and 
+permission abuse on database
+2.
+Unauthorized privilege exploitation by hackers
+3.
+SQL injection by hackers
+4.
+Weak audit
+5.
+Weak authentication
+6.
+Database rootkits
+7.
+Exposure of backup data
+
+===== PAGE 8 =====
+Database Security Protection
+•Impose database security policies and regulations
+•Database security practices
+•Access control
+•Auditing
+•Authentication
+•Encryption
+•Integrity controls
+•Application design security
+•Replication/synchronization and backups
+•Intrusion detection for Database rootkits, malicious code injection
+
+===== PAGE 9 =====
+Authentication
+•A SQLite database is convenient for storing mobile data on smartphone 
+but is not well protected.
+•SQLite is not a multi-user database, which means that anyone who has 
+direct access to the file can read the database content.
+•SQLite must be permitted by the file access control mechanism first. 
+Authentication  can  be  added  to  the  DBMS:  the  user  or  application 
+provides  its identity; and  the  database  authenticates the validity of 
+the user or application.  Only legitimate users or application can access 
+the data in the database, e.g. created, queried, modified, inserted, 
+deleted, 
+modified.
+
+===== PAGE 10 =====
+DAC and MAC Access Control
+•Discretionary Access Control (DAC) enforces security by means of user 
+identifiers(uid) and group identifiers (gid); only the owner of the data (i.e., 
+the Content Provider) holds the r/w permissions on the file.
+•Mandatory Access Control (MAC)  is based on clearance, i.e., security labels 
+(secret,  top  secret,  confidential,  etc.).  Data  objects  are  given  a 
+security 
+classification, and the user will be denied access if his clearance is 
+lower than the classification of the object.
+•SQLite is single user database  (whoever has direct access to the file can read 
+the data), the use of DAC alone is not adequate and enough.
+
+===== PAGE 11 =====
+Data Encryption
+There are two data encryption schema for SQLite
+1.
+Strong Encryption of  DB on the DBMS level, i.e. perform  encryption 
+or decryption while DB reading/ writing where the encryption function is 
+embedded into the DBMS, and the encryption and decryption process 
+is transparent to users.
+2.
+Encrypt DB on application layer, where encryption or decryption can be 
+operated on some fields of the records(fields)
+3.
+SQLChiper is an extension of SQLite which provide data encryption 
+based on user password.
+
+===== PAGE 12 =====
+RBAC (Role-Based Access Control) Models in 
+DBMS
+•RBAC  (Role-Based  Access  Control)  is  a  widely  used  method  of 
+restricting  system  access  to  authorized  users  based  on  their 
+roles 
+within an organization.
+•In a Database  Management System (DBMS),  RBAC is a  security 
+model  that  helps  manage  and  enforce  access  control  policies.  In 
+RBAC, users are assigned roles, and roles are associated with 
+specific 
+permissions.
+•This allows administrators to control what data users can access and 
+what actions they can perform on the data, depending on the role 
+assigned to them.
+
+===== PAGE 13 =====
+Key concepts of RBAC
+•Roles
+□Employee
+□Applications
+•Users
+□Admin
+□HR manager
+•Permissions
+□SELECT
+□INSERT
+□UPDATE
+□DELETE
+•Constraints
+
+===== PAGE 14 =====
+Advantages of RBAC in DBMS
+•Simplified  Access  Control:  RBAC  reduces  complexity  by  assigning 
+permissions based on roles rather than individual users, making it easier to 
+manage large numbers of users.
+•Security:  By  enforcing  least  privilege,  where  users  are  granted  only  the 
+minimum permissions necessary for their roles, RBAC minimizes the risk of 
+unauthorized access.
+•Scalability: It’s easier to manage security as organizations grow. Roles can be 
+quickly modified, and new users can be assigned appropriate roles without 
+
+===== PAGE 15 =====
+Disadvantages of RBAC in DBMS
+•Role Explosion: In very large organizations with diverse responsibilities, 
+the number of roles may become very large, leading to complexity in role 
+management.
+•Lack  of  Fine-Grained  Control:  RBAC  is  less  flexible  when  very 
+specific permissions need to be assigned at a detailed level (e.g., certain 
+users needing access to very specific data objects rather than whole sets).
+•Potential for
+Mismanagement:
+Misassigning
+users to roles with
+excessive permissions can lead to security vulnerabilities.
+
+===== PAGE 16 =====
+Intrusion Detection in DBMS
+•Intrusion Detection:
+•in the context of databases refers to the process of identifying and monitoring 
+unauthorized or suspicious activities within a database system. The goal is to 
+detect  any  potential  security  breaches,  malicious  actions,  or  abnormal 
+behaviors that could compromise the integrity, confidentiality, and availability 
+of the data stored in the database.
+□Sensitive Data Protection
+□Preventing Malicious Attacks:
+□Compliance and Auditing.
+□Early Detection of Security Incidents
+
+===== PAGE 17 =====
+SQL injection
+•SQL Injection is one of the most common and dangerous types of database security 
+vulnerabilities. It occurs when an attacker is able to manipulate a SQL query by 
+injecting malicious SQL code into the input fields of an application.
+•This  allows  the  attacker  to  gain  unauthorized  access  to  the  database,  retrieve 
+sensitive data, modify records, or execute harmful operations such as deleting tables 
+or altering data.
+•SQL  Injection  exploits  the  way  SQL  queries  are  structured  and  executed  in  a 
+Database Management System (DBMS), particularly when user inputs are directly 
+included in SQL queries without proper validation or sanitization.
+
+===== PAGE 18 =====
+How SQL Injection Works
+•SQL Injection typically works by exploiting improper handling of user inputs 
+in web applications or software that interact with databases. For example, if a 
+website or application allows a user to log in by submitting a username and 
+password, a vulnerable system might create an SQL query like this:
+•SELECT * FROM users WHERE username = 'user_input' AND password = 
+'user_input';
+
+===== PAGE 19 =====
+Types of SQL injection
+•Classic SQL Injection (In-band SQLi)
+•Blind SQL Injection
+•Union-Based SQL Injection
+•Out-of-Band SQL Injection
+•Stored Procedure Injection
+
+===== PAGE 20 =====
+SQL injection by passing the user input to SQL statement, SQL injection may take place.
+Query("SELECT * FROM usertable WHERE _id='"+m_id+"'",null );
+Injected
+input strings may look like the followings
+• 1’ or ‘1’ = ‘1
+• 1’ or username not null –
+□Defense: Using parameterized binding with “?”
+□Input validation and filtering
+
+===== PAGE 21 =====
+Select * from users WHERE username=‘admin’—’AND password=“”
+
+===== PAGE 22 =====
+Thank You

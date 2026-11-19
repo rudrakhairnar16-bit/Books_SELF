@@ -1,0 +1,1090 @@
+SOURCE: SEM3/DS/Practical_Data_Structure_1_to_11.pdf
+
+===== PAGE 1 =====
+DATA STRUCTURES LABORATORY | PRACTICAL MANUAL (1-11)
+Data Structures C Implementation Manual — Page 
+Data Structures Laboratory
+Complete Practical Solutions (Practicals 1 to 11) — Clean C Programs & Sample Outputs
+―――――――――――――――――――――――――――――――――――――――――――――――――――――――
+Practical 1: Array Operations (Insert, Delete, Search)
+#include <stdio.h>
+// Function to display array elements
+void displayArray(int arr[], int n) {
+    printf("Current Array Elements: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+// Function to insert element at a specific index
+int insertElement(int arr[], int *n, int pos, int val) {
+    if (pos < 0 || pos > *n) {
+        printf("Invalid position for insertion!\n");
+        return 0;
+    }
+    for (int i = *n; i > pos; i--) {
+        arr[i] = arr[i - 1];
+    }
+    arr[pos] = val;
+    (*n)++;
+    return 1;
+}
+// Function to delete element from a specific index
+int deleteElement(int arr[], int *n, int pos) {
+    if (pos < 0 || pos >= *n) {
+        printf("Invalid position for deletion!\n");
+        return 0;
+    }
+    int deletedVal = arr[pos];
+    for (int i = pos; i < *n - 1; i++) {
+        arr[i] = arr[i + 1];
+    }
+    (*n)--;
+    return deletedVal;
+}
+// Function to perform linear search
+int searchElement(int arr[], int n, int key) {
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == key) {
+            return i; // Return index where key is found
+        }
+    }
+    return -1; // Return -1 if not found
+}
+
+===== PAGE 2 =====
+DATA STRUCTURES LABORATORY | PRACTICAL MANUAL (1-11)
+Data Structures C Implementation Manual — Page 
+int main() {
+    int arr[100] = {10, 20, 30, 40, 50};
+    int n = 5;
+    printf("=== PRACTICAL 1: ARRAY OPERATIONS ===\n\n");
+    displayArray(arr, n);
+    // 1. Insertion
+    printf("\n--- Inserting 25 at index 2 ---\n");
+    insertElement(arr, &n, 2, 25);
+    displayArray(arr, n);
+    // 2. Deletion
+    printf("\n--- Deleting element at index 3 ---\n");
+    int deleted = deleteElement(arr, &n, 3);
+    printf("Deleted element: %d\n", deleted);
+    displayArray(arr, n);
+    // 3. Searching
+    printf("\n--- Searching for element 25 ---\n");
+    int searchVal = 25;
+    int index = searchElement(arr, n, searchVal);
+    if (index != -1) {
+        printf("Element %d found at index %d\n", searchVal, index);
+    } else {
+        printf("Element %d not found in array.\n", searchVal);
+    }
+    return 0;
+}
+SAMPLE CONSOLE OUTPUT:
+=== PRACTICAL 1: ARRAY OPERATIONS ===
+Current Array Elements: 10 20 30 40 50 
+--- Inserting 25 at index 2 ---
+Current Array Elements: 10 20 25 30 40 50 
+--- Deleting element at index 3 ---
+Deleted element: 30
+Current Array Elements: 10 20 25 40 50 
+--- Searching for element 25 ---
+Element 25 found at index 2
+Practical 2: Pointers (Call by Value & Call by Reference)
+#include <stdio.h>
+// Call by Value: passes copies of variables
+void swapByValue(int a, int b) {
+    int temp = a;
+
+===== PAGE 3 =====
+DATA STRUCTURES LABORATORY | PRACTICAL MANUAL (1-11)
+Data Structures C Implementation Manual — Page 
+    a = b;
+    b = temp;
+    printf("Inside swapByValue: a = %d, b = %d\n", a, b);
+}
+// Call by Reference: passes memory addresses using pointers
+void swapByReference(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+    printf("Inside swapByReference: *a = %d, *b = %d\n", *a, *b);
+}
+int main() {
+    int num1 = 15, num2 = 45;
+    printf("=== PRACTICAL 2: POINTERS (CALL BY VALUE & REFERENCE) ===\n\n");
+    printf("Original Values: num1 = %d, num2 = %d\n", num1, num2);
+    // 1. Demonstrating Call by Value
+    printf("\n--- Demonstrating Call by Value ---\n");
+    swapByValue(num1, num2);
+    printf("After swapByValue in main: num1 = %d, num2 = %d (Unchanged)\n", num1, num2);
+    // 2. Demonstrating Call by Reference
+    printf("\n--- Demonstrating Call by Reference ---\n");
+    swapByReference(&num1, &num2);
+    printf("After swapByReference in main: num1 = %d, num2 = %d (Swapped!)\n", num1, num2);
+    return 0;
+}
+SAMPLE CONSOLE OUTPUT:
+=== PRACTICAL 2: POINTERS (CALL BY VALUE & REFERENCE) ===
+Original Values: num1 = 15, num2 = 45
+--- Demonstrating Call by Value ---
+Inside swapByValue: a = 45, b = 15
+After swapByValue in main: num1 = 15, num2 = 45 (Unchanged)
+--- Demonstrating Call by Reference ---
+Inside swapByReference: *a = 45, *b = 15
+After swapByReference in main: num1 = 45, num2 = 15 (Swapped!)
+Practical 3: Array Stack (PUSH, POP, PEEP, CHANGE, DISPLAY)
+#include <stdio.h>
+#define MAX 5
+int stack[MAX];
+int top = -1;
+
+===== PAGE 4 =====
+DATA STRUCTURES LABORATORY | PRACTICAL MANUAL (1-11)
+Data Structures C Implementation Manual — Page 
+// Push operation
+void push(int val) {
+    if (top >= MAX - 1) {
+        printf("Stack Overflow! Cannot push %d\n", val);
+        return;
+    }
+    top++;
+    stack[top] = val;
+    printf("Pushed %d onto stack.\n", val);
+}
+// Pop operation
+int pop() {
+    if (top == -1) {
+        printf("Stack Underflow! Stack is empty.\n");
+        return -1;
+    }
+    int val = stack[top];
+    top--;
+    return val;
+}
+// Peep operation: Returns element at i-th position from top
+int peep(int i) {
+    if (top - i + 1 < 0) {
+        printf("Invalid position for peep!\n");
+        return -1;
+    }
+    return stack[top - i + 1];
+}
+// Change operation: Changes element at i-th position from top
+void change(int i, int newVal) {
+    if (top - i + 1 < 0) {
+        printf("Invalid position for change!\n");
+        return;
+    }
+    stack[top - i + 1] = newVal;
+    printf("Changed element at position %d from top to %d\n", i, newVal);
+}
+// Display stack elements
+void display() {
+    if (top == -1) {
+        printf("Stack is empty.\n");
+        return;
+    }
+    printf("Stack Elements (Top -> Bottom): ");
+    for (int i = top; i >= 0; i--) {
+        printf("%d ", stack[i]);
+    }
+    printf("\n");
+}
+int main() {
+    printf("=== PRACTICAL 3: STACK USING ARRAY ===\n\n");
+    push(10);
+    push(20);
+
+===== PAGE 5 =====
+DATA STRUCTURES LABORATORY | PRACTICAL MANUAL (1-11)
+Data Structures C Implementation Manual — Page 
+    push(30);
+    push(40);
+    display();
+    printf("\nPeep (1st element from top): %d\n", peep(1));
+    printf("Peep (3rd element from top): %d\n", peep(3));
+    printf("\n--- Updating Stack ---\n");
+    change(2, 99); // Change 2nd element from top
+    display();
+    printf("\n--- Popping Elements ---\n");
+    printf("Popped: %d\n", pop());
+    printf("Popped: %d\n", pop());
+    display();
+    return 0;
+}
+SAMPLE CONSOLE OUTPUT:
+=== PRACTICAL 3: STACK USING ARRAY ===
+Pushed 10 onto stack.
+Pushed 20 onto stack.
+Pushed 30 onto stack.
+Pushed 40 onto stack.
+Stack Elements (Top -> Bottom): 40 30 20 10 
+Peep (1st element from top): 40
+Peep (3rd element from top): 20
+--- Updating Stack ---
+Changed element at position 2 from top to 99
+Stack Elements (Top -> Bottom): 40 99 20 10 
+--- Popping Elements ---
+Popped: 40
+Popped: 99
+Stack Elements (Top -> Bottom): 20 10
+Practical 4: Infix Notation to Postfix Notation using Stack
+#include <stdio.h>
+#include <ctype.h>
+#define MAX 100
+char stack[MAX];
+int top = -1;
+void pushChar(char ch) {
+    if (top < MAX - 1) {
+        stack[++top] = ch;
+
+===== PAGE 6 =====
+DATA STRUCTURES LABORATORY | PRACTICAL MANUAL (1-11)
+Data Structures C Implementation Manual — Page 
+    }
+}
+char popChar() {
+    if (top >= 0) {
+        return stack[top--];
+    }
+    return '\0';
+}
+char peekChar() {
+    if (top >= 0) {
+        return stack[top];
+    }
+    return '\0';
+}
+// Function to return operator precedence
+int precedence(char ch) {
+    switch (ch) {
+        case '^': return 3;
+        case '*':
+        case '/': return 2;
+        case '+':
+        case '-': return 1;
+        default:  return 0;
+    }
+}
+// Function to convert Infix to Postfix
+void infixToPostfix(char *infix, char *postfix) {
+    int i = 0, j = 0;
+    char symbol;
+    while ((symbol = infix[i++]) != '\0') {
+        if (isalnum(symbol)) {
+            postfix[j++] = symbol;
+        } else if (symbol == '(') {
+            pushChar(symbol);
+        } else if (symbol == ')') {
+            while (top >= 0 && peekChar() != '(') {
+                postfix[j++] = popChar();
+            }
+            popChar(); // Pop '('
+        } else { // Operator encountered
+            while (top >= 0 && precedence(peekChar()) >= precedence(symbol)) {
+                postfix[j++] = popChar();
+            }
+            pushChar(symbol);
+        }
+    }
+    // Pop remaining operators in stack
+    while (top >= 0) {
+        postfix[j++] = popChar();
+    }
+    postfix[j] = '\0';
+}
+
+===== PAGE 7 =====
+DATA STRUCTURES LABORATORY | PRACTICAL MANUAL (1-11)
+Data Structures C Implementation Manual — Page 
+int main() {
+    char infix1[] = "(A+B)*(C-D)/E";
+    char postfix1[MAX];
+    char infix2[] = "A+B*C-D/E";
+    char postfix2[MAX];
+    printf("=== PRACTICAL 4: INFIX TO POSTFIX CONVERSION ===\n\n");
+    infixToPostfix(infix1, postfix1);
+    printf("Infix Expression 1 : %s\n", infix1);
+    printf("Postfix Expression 1: %s\n\n", postfix1);
+    infixToPostfix(infix2, postfix2);
+    printf("Infix Expression 2 : %s\n", infix2);
+    printf("Postfix Expression 2: %s\n", postfix2);
+    return 0;
+}
+SAMPLE CONSOLE OUTPUT:
+=== PRACTICAL 4: INFIX TO POSTFIX CONVERSION ===
+Infix Expression 1 : (A+B)*(C-D)/E
+Postfix Expression 1: AB+CD-*E/
+Infix Expression 2 : A+B*C-D/E
+Postfix Expression 2: ABC*+DE/-
+Practical 5: Simple Queue and Circular Queue using Arrays
+#include <stdio.h>
+#define MAX 5
+// --- SIMPLE QUEUE IMPLEMENTATION ---
+int sQueue[MAX];
+int sFront = -1, sRear = -1;
+void insertSimple(int val) {
+    if (sRear == MAX - 1) {
+        printf("Simple Queue Overflow!\n");
+        return;
+    }
+    if (sFront == -1) sFront = 0;
+    sRear++;
+    sQueue[sRear] = val;
+    printf("Simple Queue: Inserted %d\n", val);
+}
+void deleteSimple() {
+    if (sFront == -1 || sFront > sRear) {
+        printf("Simple Queue Underflow!\n");
+        return;
+
+===== PAGE 8 =====
+DATA STRUCTURES LABORATORY | PRACTICAL MANUAL (1-11)
+Data Structures C Implementation Manual — Page 
+    }
+    printf("Simple Queue: Deleted %d\n", sQueue[sFront]);
+    sFront++;
+}
+void displaySimple() {
+    if (sFront == -1 || sFront > sRear) {
+        printf("Simple Queue is empty.\n");
+        return;
+    }
+    printf("Simple Queue Elements: ");
+    for (int i = sFront; i <= sRear; i++) printf("%d ", sQueue[i]);
+    printf("\n");
+}
+// --- CIRCULAR QUEUE IMPLEMENTATION ---
+int cQueue[MAX];
+int cFront = -1, cRear = -1;
+void insertCircular(int val) {
+    if ((cFront == 0 && cRear == MAX - 1) || (cRear + 1 == cFront)) {
+        printf("Circular Queue Overflow!\n");
+        return;
+    }
+    if (cFront == -1) {
+        cFront = 0;
+        cRear = 0;
+    } else if (cRear == MAX - 1) {
+        cRear = 0;
+    } else {
+        cRear++;
+    }
+    cQueue[cRear] = val;
+    printf("Circular Queue: Inserted %d\n", val);
+}
+void deleteCircular() {
+    if (cFront == -1) {
+        printf("Circular Queue Underflow!\n");
+        return;
+    }
+    printf("Circular Queue: Deleted %d\n", cQueue[cFront]);
+    if (cFront == cRear) {
+        cFront = -1;
+        cRear = -1;
+    } else if (cFront == MAX - 1) {
+        cFront = 0;
+    } else {
+        cFront++;
+    }
+}
+void displayCircular() {
+    if (cFront == -1) {
+        printf("Circular Queue is empty.\n");
+        return;
+    }
+    printf("Circular Queue Elements: ");
+    int i = cFront;
+    while (1) {
+
+===== PAGE 9 =====
+DATA STRUCTURES LABORATORY | PRACTICAL MANUAL (1-11)
+Data Structures C Implementation Manual — Page 
+        printf("%d ", cQueue[i]);
+        if (i == cRear) break;
+        i = (i + 1) % MAX;
+    }
+    printf("\n");
+}
+int main() {
+    printf("=== PRACTICAL 5: SIMPLE QUEUE & CIRCULAR QUEUE ===\n\n");
+    printf("--- Simple Queue Operations ---\n");
+    insertSimple(10);
+    insertSimple(20);
+    insertSimple(30);
+    displaySimple();
+    deleteSimple();
+    displaySimple();
+    printf("\n--- Circular Queue Operations ---\n");
+    insertCircular(100);
+    insertCircular(200);
+    insertCircular(300);
+    insertCircular(400);
+    insertCircular(500);
+    displayCircular();
+    deleteCircular();
+    deleteCircular();
+    displayCircular();
+    printf("Inserting into freed space (wrap-around):\n");
+    insertCircular(600);
+    displayCircular();
+    return 0;
+}
+SAMPLE CONSOLE OUTPUT:
+=== PRACTICAL 5: SIMPLE QUEUE & CIRCULAR QUEUE ===
+--- Simple Queue Operations ---
+Simple Queue: Inserted 10
+Simple Queue: Inserted 20
+Simple Queue: Inserted 30
+Simple Queue Elements: 10 20 30 
+Simple Queue: Deleted 10
+Simple Queue Elements: 20 30 
+--- Circular Queue Operations ---
+Circular Queue: Inserted 100
+Circular Queue: Inserted 200
+Circular Queue: Inserted 300
+Circular Queue: Inserted 400
+Circular Queue: Inserted 500
+Circular Queue Elements: 100 200 300 400 500 
+Circular Queue: Deleted 100
+
+===== PAGE 10 =====
+DATA STRUCTURES LABORATORY | PRACTICAL MANUAL (1-11)
+Data Structures C Implementation Manual — Page 
+Circular Queue: Deleted 200
+Circular Queue Elements: 300 400 500 
+Inserting into freed space (wrap-around):
+Circular Queue: Inserted 600
+Circular Queue Elements: 300 400 500 600
+Practical 6: Singly Linked List Operations
+#include <stdio.h>
+#include <stdlib.h>
+struct Node {
+    int data;
+    struct Node *next;
+};
+// Insert node at the front
+struct Node* insertFront(struct Node *head, int val) {
+    struct Node *newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = val;
+    newNode->next = head;
+    return newNode;
+}
+// Insert node at the end
+struct Node* insertEnd(struct Node *head, int val) {
+    struct Node *newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = val;
+    newNode->next = NULL;
+    if (head == NULL) return newNode;
+    struct Node *temp = head;
+    while (temp->next != NULL) {
+        temp = temp->next;
+    }
+    temp->next = newNode;
+    return head;
+}
+// Insert in ascending order (sorted insert)
+struct Node* insertAscending(struct Node *head, int val) {
+    struct Node *newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = val;
+    if (head == NULL || head->data >= val) {
+        newNode->next = head;
+        return newNode;
+    }
+    struct Node *curr = head;
+    while (curr->next != NULL && curr->next->data < val) {
+        curr = curr->next;
+    }
+    newNode->next = curr->next;
+    curr->next = newNode;
+
+===== PAGE 11 =====
+DATA STRUCTURES LABORATORY | PRACTICAL MANUAL (1-11)
+Data Structures C Implementation Manual — Page 
+    return head;
+}
+// Delete first node
+struct Node* deleteFirst(struct Node *head) {
+    if (head == NULL) return NULL;
+    struct Node *temp = head;
+    head = head->next;
+    free(temp);
+    return head;
+}
+// Delete node before a specified position (1-based index)
+struct Node* deleteBeforePos(struct Node *head, int pos) {
+    if (head == NULL || pos <= 2) return head;
+    if (pos == 3) { // Deleting 1st node (before 3rd)
+        return deleteFirst(head);
+    }
+    struct Node *temp = head;
+    for (int i = 1; i < pos - 2 && temp->next != NULL; i++) {
+        temp = temp->next;
+    }
+    if (temp->next != NULL) {
+        struct Node *toDelete = temp->next;
+        temp->next = toDelete->next;
+        free(toDelete);
+    }
+    return head;
+}
+// Delete node after a specified position
+struct Node* deleteAfterPos(struct Node *head, int pos) {
+    if (head == NULL) return head;
+    struct Node *temp = head;
+    for (int i = 1; i < pos && temp != NULL; i++) {
+        temp = temp->next;
+    }
+    if (temp != NULL && temp->next != NULL) {
+        struct Node *toDelete = temp->next;
+        temp->next = toDelete->next;
+        free(toDelete);
+    }
+    return head;
+}
+// Display list
+void display(struct Node *head) {
+    if (head == NULL) {
+        printf("List is empty.\n");
+        return;
+    }
+    struct Node *temp = head;
+    while (temp != NULL) {
+        printf("%d -> ", temp->data);
+        temp = temp->next;
+    }
+
+===== PAGE 12 =====
+DATA STRUCTURES LABORATORY | PRACTICAL MANUAL (1-11)
+Data Structures C Implementation Manual — Page 
+    printf("NULL\n");
+}
+int main() {
+    struct Node *head = NULL;
+    printf("=== PRACTICAL 6: SINGLY LINKED LIST ===\n\n");
+    printf("1. Insert Front (10, 20):\n");
+    head = insertFront(head, 20);
+    head = insertFront(head, 10);
+    display(head);
+    printf("\n2. Insert End (40, 50):\n");
+    head = insertEnd(head, 40);
+    head = insertEnd(head, 50);
+    display(head);
+    printf("\n3. Insert Ascending (30):\n");
+    head = insertAscending(head, 30);
+    display(head);
+    printf("\n4. Delete First Node:\n");
+    head = deleteFirst(head);
+    display(head);
+    printf("\n5. Delete node after position 2:\n");
+    head = deleteAfterPos(head, 2);
+    display(head);
+    return 0;
+}
+SAMPLE CONSOLE OUTPUT:
+=== PRACTICAL 6: SINGLY LINKED LIST ===
+1. Insert Front (10, 20):
+10 -> 20 -> NULL
+2. Insert End (40, 50):
+10 -> 20 -> 40 -> 50 -> NULL
+3. Insert Ascending (30):
+10 -> 20 -> 30 -> 40 -> 50 -> NULL
+4. Delete First Node:
+20 -> 30 -> 40 -> 50 -> NULL
+5. Delete node after position 2:
+20 -> 30 -> 50 -> NULL
+Practical 7: Doubly Linked List Operations
+
+===== PAGE 13 =====
+DATA STRUCTURES LABORATORY | PRACTICAL MANUAL (1-11)
+Data Structures C Implementation Manual — Page 
+#include <stdio.h>
+#include <stdlib.h>
+struct Node {
+    int data;
+    struct Node *prev;
+    struct Node *next;
+};
+// Insert at front
+struct Node* insertFront(struct Node *head, int val) {
+    struct Node *newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = val;
+    newNode->prev = NULL;
+    newNode->next = head;
+    if (head != NULL) {
+        head->prev = newNode;
+    }
+    return newNode;
+}
+// Insert at end
+struct Node* insertEnd(struct Node *head, int val) {
+    struct Node *newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = val;
+    newNode->next = NULL;
+    if (head == NULL) {
+        newNode->prev = NULL;
+        return newNode;
+    }
+    struct Node *temp = head;
+    while (temp->next != NULL) {
+        temp = temp->next;
+    }
+    temp->next = newNode;
+    newNode->prev = temp;
+    return head;
+}
+// Delete last node
+struct Node* deleteLast(struct Node *head) {
+    if (head == NULL) return NULL;
+    if (head->next == NULL) {
+        free(head);
+        return NULL;
+    }
+    struct Node *temp = head;
+    while (temp->next != NULL) {
+        temp = temp->next;
+    }
+    temp->prev->next = NULL;
+    free(temp);
+    return head;
+}
+
+===== PAGE 14 =====
+DATA STRUCTURES LABORATORY | PRACTICAL MANUAL (1-11)
+Data Structures C Implementation Manual — Page 
+// Delete node before a specified position
+struct Node* deleteBeforePos(struct Node *head, int pos) {
+    if (head == NULL || pos <= 2) return head;
+    struct Node *temp = head;
+    for (int i = 1; i < pos - 1 && temp != NULL; i++) {
+        temp = temp->next;
+    }
+    if (temp != NULL && temp->prev != NULL) {
+        struct Node *toDelete = temp->prev;
+        if (toDelete->prev != NULL) {
+            toDelete->prev->next = temp;
+        } else {
+            head = temp; // Deleting head node
+        }
+        temp->prev = toDelete->prev;
+        free(toDelete);
+    }
+    return head;
+}
+// Display list
+void display(struct Node *head) {
+    if (head == NULL) {
+        printf("Doubly Linked List is empty.\n");
+        return;
+    }
+    struct Node *temp = head;
+    printf("Forward:  NULL <- ");
+    while (temp != NULL) {
+        printf("%d <-> ", temp->data);
+        if (temp->next == NULL) break;
+        temp = temp->next;
+    }
+    printf("NULL\n");
+}
+int main() {
+    struct Node *head = NULL;
+    printf("=== PRACTICAL 7: DOUBLY LINKED LIST ===\n\n");
+    printf("1. Insert Front (20, 10):\n");
+    head = insertFront(head, 20);
+    head = insertFront(head, 10);
+    display(head);
+    printf("\n2. Insert End (30, 40, 50):\n");
+    head = insertEnd(head, 30);
+    head = insertEnd(head, 40);
+    head = insertEnd(head, 50);
+    display(head);
+    printf("\n3. Delete Last Node:\n");
+    head = deleteLast(head);
+    display(head);
+    printf("\n4. Delete node before position 3 (deletes position 2):\n");
+    head = deleteBeforePos(head, 3);
+
+===== PAGE 15 =====
+DATA STRUCTURES LABORATORY | PRACTICAL MANUAL (1-11)
+Data Structures C Implementation Manual — Page 
+    display(head);
+    return 0;
+}
+SAMPLE CONSOLE OUTPUT:
+=== PRACTICAL 7: DOUBLY LINKED LIST ===
+1. Insert Front (20, 10):
+Forward:  NULL <- 10 <-> 20 <-> NULL
+2. Insert End (30, 40, 50):
+Forward:  NULL <- 10 <-> 20 <-> 30 <-> 40 <-> 50 <-> NULL
+3. Delete Last Node:
+Forward:  NULL <- 10 <-> 20 <-> 30 <-> 40 <-> NULL
+4. Delete node before position 3 (deletes position 2):
+Forward:  NULL <- 10 <-> 30 <-> 40 <-> NULL
+Practical 8: Circular Linked List Operations
+#include <stdio.h>
+#include <stdlib.h>
+struct Node {
+    int data;
+    struct Node *next;
+};
+// Insert at end
+struct Node* insertEnd(struct Node *tail, int val) {
+    struct Node *newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = val;
+    if (tail == NULL) {
+        newNode->next = newNode;
+        return newNode;
+    }
+    newNode->next = tail->next;
+    tail->next = newNode;
+    return newNode; // New node becomes tail
+}
+// Insert before a specified position
+struct Node* insertBeforePos(struct Node *tail, int pos, int val) {
+    if (tail == NULL) return NULL;
+    struct Node *newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = val;
+    struct Node *curr = tail->next; // Head
+
+===== PAGE 16 =====
+DATA STRUCTURES LABORATORY | PRACTICAL MANUAL (1-11)
+Data Structures C Implementation Manual — Page 
+    struct Node *prev = tail;
+    for (int i = 1; i < pos && curr != tail; i++) {
+        prev = curr;
+        curr = curr->next;
+    }
+    newNode->next = curr;
+    prev->next = newNode;
+    return tail;
+}
+// Delete first node
+struct Node* deleteFirst(struct Node *tail) {
+    if (tail == NULL) return NULL;
+    struct Node *head = tail->next;
+    if (head == tail) { // Only 1 node
+        free(head);
+        return NULL;
+    }
+    tail->next = head->next;
+    free(head);
+    return tail;
+}
+// Delete node after specified position
+struct Node* deleteAfterPos(struct Node *tail, int pos) {
+    if (tail == NULL) return NULL;
+    struct Node *curr = tail->next;
+    for (int i = 1; i < pos && curr != tail; i++) {
+        curr = curr->next;
+    }
+    struct Node *toDelete = curr->next;
+    if (toDelete == tail) {
+        tail = curr; // Tail moves back
+    }
+    curr->next = toDelete->next;
+    free(toDelete);
+    return tail;
+}
+// Display circular list
+void display(struct Node *tail) {
+    if (tail == NULL) {
+        printf("Circular List is empty.\n");
+        return;
+    }
+    struct Node *head = tail->next;
+    struct Node *temp = head;
+    printf("Circular List: ");
+    do {
+        printf("%d -> ", temp->data);
+        temp = temp->next;
+    } while (temp != head);
+    printf("(head %d)\n", head->data);
+
+===== PAGE 17 =====
+DATA STRUCTURES LABORATORY | PRACTICAL MANUAL (1-11)
+Data Structures C Implementation Manual — Page 
+}
+int main() {
+    struct Node *tail = NULL;
+    printf("=== PRACTICAL 8: CIRCULAR LINKED LIST ===\n\n");
+    printf("1. Insert End (10, 20, 30, 40):\n");
+    tail = insertEnd(tail, 10);
+    tail = insertEnd(tail, 20);
+    tail = insertEnd(tail, 30);
+    tail = insertEnd(tail, 40);
+    display(tail);
+    printf("\n2. Insert 25 before position 3:\n");
+    tail = insertBeforePos(tail, 3, 25);
+    display(tail);
+    printf("\n3. Delete First Node:\n");
+    tail = deleteFirst(tail);
+    display(tail);
+    printf("\n4. Delete node after position 2:\n");
+    tail = deleteAfterPos(tail, 2);
+    display(tail);
+    return 0;
+}
+SAMPLE CONSOLE OUTPUT:
+=== PRACTICAL 8: CIRCULAR LINKED LIST ===
+1. Insert End (10, 20, 30, 40):
+Circular List: 10 -> 20 -> 30 -> 40 -> (head 10)
+2. Insert 25 before position 3:
+Circular List: 10 -> 20 -> 25 -> 30 -> 40 -> (head 10)
+3. Delete First Node:
+Circular List: 20 -> 25 -> 30 -> 40 -> (head 20)
+4. Delete node after position 2:
+Circular List: 20 -> 25 -> 40 -> (head 20)
+Practical 9: Binary Search Tree & Traversals
+#include <stdio.h>
+#include <stdlib.h>
+struct Node {
+    int data;
+    struct Node *left;
+    struct Node *right;
+
+===== PAGE 18 =====
+DATA STRUCTURES LABORATORY | PRACTICAL MANUAL (1-11)
+Data Structures C Implementation Manual — Page 
+};
+// Create a new node
+struct Node* createNode(int key) {
+    struct Node *newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = key;
+    newNode->left = NULL;
+    newNode->right = NULL;
+    return newNode;
+}
+// Insert a node into BST
+struct Node* insert(struct Node *root, int key) {
+    if (root == NULL) return createNode(key);
+    if (key < root->data) {
+        root->left = insert(root->left, key);
+    } else if (key > root->data) {
+        root->right = insert(root->right, key);
+    }
+    return root;
+}
+// In-order Traversal (Left, Root, Right)
+void inorder(struct Node *root) {
+    if (root != NULL) {
+        inorder(root->left);
+        printf("%d ", root->data);
+        inorder(root->right);
+    }
+}
+// Pre-order Traversal (Root, Left, Right)
+void preorder(struct Node *root) {
+    if (root != NULL) {
+        printf("%d ", root->data);
+        preorder(root->left);
+        preorder(root->right);
+    }
+}
+// Post-order Traversal (Left, Right, Root)
+void postorder(struct Node *root) {
+    if (root != NULL) {
+        postorder(root->left);
+        postorder(root->right);
+        printf("%d ", root->data);
+    }
+}
+int main() {
+    struct Node *root = NULL;
+    printf("=== PRACTICAL 9: BINARY SEARCH TREE & TRAVERSALS ===\n\n");
+    // Inserting elements into BST
+    int keys[] = {50, 30, 70, 20, 40, 60, 80};
+    int n = sizeof(keys) / sizeof(keys[0]);
+
+===== PAGE 19 =====
+DATA STRUCTURES LABORATORY | PRACTICAL MANUAL (1-11)
+Data Structures C Implementation Manual — Page 
+    printf("Building BST with elements: 50, 30, 70, 20, 40, 60, 80\n\n");
+    for (int i = 0; i < n; i++) {
+        root = insert(root, keys[i]);
+    }
+    printf("1. In-order Traversal  (Sorted Order) : ");
+    inorder(root);
+    printf("\n");
+    printf("2. Pre-order Traversal (Root First)    : ");
+    preorder(root);
+    printf("\n");
+    printf("3. Post-order Traversal (Children First) : ");
+    postorder(root);
+    printf("\n");
+    return 0;
+}
+SAMPLE CONSOLE OUTPUT:
+=== PRACTICAL 9: BINARY SEARCH TREE & TRAVERSALS ===
+Building BST with elements: 50, 30, 70, 20, 40, 60, 80
+1. In-order Traversal  (Sorted Order) : 20 30 40 50 60 70 80 
+2. Pre-order Traversal (Root First)    : 50 30 20 40 70 60 80 
+3. Post-order Traversal (Children First) : 20 40 30 60 80 70 50
+Practical 10: Sorting Algorithms (Bubble, Merge, Quick Sort)
+#include <stdio.h>
+void printArray(int arr[], int n) {
+    for (int i = 0; i < n; i++) printf("%d ", arr[i]);
+    printf("\n");
+}
+// 1. Bubble Sort
+void bubbleSort(int arr[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+}
+// 2. Merge Sort Helper
+void merge(int arr[], int l, int m, int r) {
+
+===== PAGE 20 =====
+DATA STRUCTURES LABORATORY | PRACTICAL MANUAL (1-11)
+Data Structures C Implementation Manual — Page 
+    int n1 = m - l + 1;
+    int n2 = r - m;
+    int L[n1], R[n2];
+    for (int i = 0; i < n1; i++) L[i] = arr[l + i];
+    for (int j = 0; j < n2; j++) R[j] = arr[m + 1 + j];
+    int i = 0, j = 0, k = l;
+    while (i < n1 && j < n2) {
+        if (L[i] <= R[j]) arr[k++] = L[i++];
+        else arr[k++] = R[j++];
+    }
+    while (i < n1) arr[k++] = L[i++];
+    while (j < n2) arr[k++] = R[j++];
+}
+void mergeSort(int arr[], int l, int r) {
+    if (l < r) {
+        int m = l + (r - l) / 2;
+        mergeSort(arr, l, m);
+        mergeSort(arr, m + 1, r);
+        merge(arr, l, m, r);
+    }
+}
+// 3. Quick Sort Helper
+int partition(int arr[], int low, int high) {
+    int pivot = arr[high];
+    int i = (low - 1);
+    for (int j = low; j <= high - 1; j++) {
+        if (arr[j] < pivot) {
+            i++;
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+    }
+    int temp = arr[i + 1];
+    arr[i + 1] = arr[high];
+    arr[high] = temp;
+    return (i + 1);
+}
+void quickSort(int arr[], int low, int high) {
+    if (low < high) {
+        int pi = partition(arr, low, high);
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
+    }
+}
+int main() {
+    printf("=== PRACTICAL 10: SORTING ALGORITHMS ===\n\n");
+    int a1[] = {64, 34, 25, 12, 22, 11, 90};
+    int n1 = sizeof(a1) / sizeof(a1[0]);
+    printf("1. Bubble Sort:\nOriginal: ");
+    printArray(a1, n1);
+
+===== PAGE 21 =====
+DATA STRUCTURES LABORATORY | PRACTICAL MANUAL (1-11)
+Data Structures C Implementation Manual — Page 
+    bubbleSort(a1, n1);
+    printf("Sorted  : ");
+    printArray(a1, n1);
+    int a2[] = {38, 27, 43, 3, 9, 82, 10};
+    int n2 = sizeof(a2) / sizeof(a2[0]);
+    printf("\n2. Merge Sort:\nOriginal: ");
+    printArray(a2, n2);
+    mergeSort(a2, 0, n2 - 1);
+    printf("Sorted  : ");
+    printArray(a2, n2);
+    int a3[] = {10, 80, 30, 90, 40, 50, 70};
+    int n3 = sizeof(a3) / sizeof(a3[0]);
+    printf("\n3. Quick Sort:\nOriginal: ");
+    printArray(a3, n3);
+    quickSort(a3, 0, n3 - 1);
+    printf("Sorted  : ");
+    printArray(a3, n3);
+    return 0;
+}
+SAMPLE CONSOLE OUTPUT:
+=== PRACTICAL 10: SORTING ALGORITHMS ===
+1. Bubble Sort:
+Original: 64 34 25 12 22 11 90 
+Sorted  : 11 12 22 25 34 64 90 
+2. Merge Sort:
+Original: 38 27 43 3 9 82 10 
+Sorted  : 3 9 10 27 38 43 82 
+3. Quick Sort:
+Original: 10 80 30 90 40 50 70 
+Sorted  : 10 30 40 50 70 80 90
+Practical 11: Binary Search Algorithm
+#include <stdio.h>
+// Function to perform Binary Search on a sorted array
+int binarySearch(int arr[], int n, int target) {
+    int low = 0;
+    int high = n - 1;
+    while (low <= high) {
+        int mid = low + (high - low) / 2;
+        if (arr[mid] == target) {
+            return mid; // Target found, return 0-based index
+        }
+
+===== PAGE 22 =====
+DATA STRUCTURES LABORATORY | PRACTICAL MANUAL (1-11)
+Data Structures C Implementation Manual — Page 
+        if (arr[mid] < target) {
+            low = mid + 1; // Search right half
+        } else {
+            high = mid - 1; // Search left half
+        }
+    }
+    return -1; // Target not found
+}
+int main() {
+    int arr[] = {12, 24, 32, 45, 58, 67, 73, 89, 95};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    printf("=== PRACTICAL 11: BINARY SEARCH ALGORITHM ===\n\n");
+    printf("Sorted Array: ");
+    for (int i = 0; i < n; i++) printf("%d ", arr[i]);
+    printf("\n\n");
+    // Test Case 1: Searching for an existing element
+    int target1 = 58;
+    printf("Searching for target: %d\n", target1);
+    int result1 = binarySearch(arr, n, target1);
+    if (result1 != -1) {
+        printf("Result: Element %d found at Index %d (Position %d)\n\n", target1, result1, 
+result1 + 1);
+    } else {
+        printf("Result: Element %d not found.\n\n", target1);
+    }
+    // Test Case 2: Searching for a non-existing element
+    int target2 = 50;
+    printf("Searching for target: %d\n", target2);
+    int result2 = binarySearch(arr, n, target2);
+    if (result2 != -1) {
+        printf("Result: Element %d found at Index %d (Position %d)\n", target2, result2, result2 
++ 1);
+    } else {
+        printf("Result: Element %d not found in the array.\n", target2);
+    }
+    return 0;
+}
+SAMPLE CONSOLE OUTPUT:
+=== PRACTICAL 11: BINARY SEARCH ALGORITHM ===
+Sorted Array: 12 24 32 45 58 67 73 89 95 
+Searching for target: 58
+Result: Element 58 found at Index 4 (Position 5)
+Searching for target: 50
+Result: Element 50 not found in the array.

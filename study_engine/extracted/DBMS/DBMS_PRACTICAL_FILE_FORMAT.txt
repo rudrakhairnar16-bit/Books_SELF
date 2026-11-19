@@ -1,0 +1,72 @@
+SOURCE: SEM3/DBMS/DBMS PRACTICAL FILE FORMAT.pdf
+
+===== PAGE 1 =====
+Database Management System 
+(Semester - III)
+Student Name
+:
+Enrollment No. : 
+Branch
+:
+Academic Year :
+Division : 
+
+===== PAGE 2 =====
+Krishna School of Emerging Technology 
+& Applied Research
+satisfactorily completed his/her work in DBMS Lab for the term
+
+===== PAGE 3 =====
+INDEX
+List of Practicals
+Sr. No.
+Date
+Title
+Page No.
+Grade
+Signature
+1
+To study SQL and Features of SQL. 
+2
+To study SQL Components. 
+3
+Study of DDL and DML command. 
+Create table and insert sample data in 
+tables. 
+4
+Perform queries to retrieve data 
+from 
+tables 
+with 
+different 
+predicates 
+(LIKE,BETWEEN,IN ) etc. 
+5
+To study aggregate functions with 
+query. 
+6
+To study Single-row functions. 
+7
+Study of different data manipulation 
+commands. 
+8
+Displaying data from Multiple 
+Tables (join) 
+9
+To apply the concept of Aggregating 
+Data using Group functions. 
+10
+To study and apply the concept of 
+subquery. 
+11
+To study and apply the concept of 
+security and privileges
+12
+Study and apply PL/SQL. 
+13
+To study stored procedure and stored 
+function. 
+14
+Study and execute a Cursor. 
+15
+Study and execute a Trigger.

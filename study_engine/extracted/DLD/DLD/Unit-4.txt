@@ -1,0 +1,856 @@
+SOURCE: SEM3/DLD/DLD!/Unit-4.pdf
+
+===== PAGE 1 =====
+Mocdute 
+4 
+3equutfa Legic 
+Page No. 
+YoUVA 
+Date: 
+IntaDdU cHiem to sCquOattaul encuits 
+In equL ntial ciucuihs 
+he pres eni output 
+olepemds on the uesent inpu 0 weLL as P 
+Ocutpu 
+/oukputs 
+unclamentalsolepemdsOm lip slop5, Agistes 
+COunt eND 
+O UT 
+tettp 
+ext 
+feod bael 
+momo 
+CPcut OP 
+CO untee inaomem by 
+O fo q 
+deainal Csuuutey 
+0e 9q unodtO Aton 
+0qlnLd 
+munmat Ot 
+1t 
+2+ 
+stou 
+Pa 
+t 
+we qHe havi ng 3ips d pAutiuput 
+then ue ovto hawim 
+the OP cin clsO oe 
+havimu 
+e 
+memoHy elemim hch hcus culNLo d 
+6tefto he o/p o 
+Poy rou ies So thu ohl 
+be come owrpou 
+tLput 
+his 
+ptst oP 9i) g.010 he 22e Ckeedbece 
+e 
+peajeni o1p oill depend npon 1he pust 
+
+===== PAGE 2 =====
+Page No. 
+YouvA 
+Date 
+Go thio i6 the wocltuing 
+O 
+sequentio 
+clhtuu 
+what 15 memosiy 9 Ho w to5tone b Hs 
+memoiY isfup flep 
+coS 
+COKCIclec 
+Oot gatt CUngemomitha 
+Usec 
+to stotu 
+ngl bi 
+O ue Cun A 
+Hat 1 
+Qtod 
+6 
+R Pup fuwp 
+S-R NAND LAeL 
+TT 
+D 
+Not us 
+memo 
+o3t Covey -R Ladch 
+doon is closd 
+NAND thing jt iude 
+NOR 6-RLccteh 
+The busic Stohage elemut ceLlect Ceuteh 
+As the numeLuga asa t 
+Ladchslo ok y 
+R vR 
+
+===== PAGE 3 =====
+Page No. 
+ecaA 
+YouvA 
+NOR TT. 
+Date 
+B 
+RCReset& 
+s Se) 
+AA 
+O 
+OIP-0 
+O 
+O 
+6 
+1 
+we use thie TI on di bt.amalya is 
+CoLS e-
+6 
+O ,R E 1 
+Q = 0 
+=1. 
+S=0b R= OD 
+MemosLy 
+Cwe've +he PLLU OVPP 
+case-
+-1R=O 
+1 
+C-O 
+6 
+0 
+R O 
+1 
+MemoSy 
+Case-
+6=1, R:1, 0= O 
+This is not daue 
+30,6-1,R= 
+is no USed; Coig 
+Oaon 
+5-
+R O 
+CO 
+O, =1( 
+o 
+gcec 
+thim 
+Oserjutien 1his case S not U5edin 6-R Lctch 
+6 
+R 1 
+C 
+O 
+memo4 
+Cas bebcuue) 
+O 
+1 
+0 
+O+ Useol 
+
+===== PAGE 4 =====
+NOR 
+RS 
+Page O 
+YouVA 
+Date: 
+NANDS SR. 
+NAND -R LCtch 
+COup uh au 
+Obsewautious 
+SeKa NOR lateh 
+-
+R 
+NOL Useo 
+Ayersel 
+NOR lote 
+1 
+1 
+1 
+Nemau 
+I 
+6 
+1 R1 hem ue cam etene doln 
+R: 
+R:0 not usea 
+tal 
+6-R f.PCO 
+Nut 
+cocK is contao) fp. 
+demo 
+C6.cK)=3+K 
+demo 
+h m 
+R 
+R.CIk) 
+RtC 
+R 
+TM 
+Eatge 
+Faiggee 
+X 
+memJU 
+0 
+mem0y. 
+o 
+1 
+1 
+NO4 Useo 
+
+===== PAGE 5 =====
+Page No. 
+YouvA 
+Date: 
+when 
+C114 
+O 
+che ck i 
+NAND S-P-Latch T 
+RE 
+s 
+memuy 
+& 
+amc 
+R 
+Coill be domt 
+CaU 
+3-
+R :O 
+P 
+R 
+1L 
+2 
+S 
+R 
+Chact 
+eiS+ics 
+able 
+Exctation tablefpi e-R ff * 
+13dh Table 
+ext tCul 
+C k 
+R 
+nt 
+l 
+nPALient sltG 
+Cp 
+LhmemoH 
+X 
+O 
+1 
+O 
+1 
+tWhen 
+CLR 1 
+0RO O6 
+caLed memouu 
+-PAem_luS 
+by mempL 
+De meoLmi 
+next *eua JA 20uo 
+to PAAeut8tec 
+
+===== PAGE 6 =====
+Page No. 
+YOUVA 
+Date: 
+Tab le 
+Cwef ye o 
+know i 
+this 
+Chanacteeistic 
+CIKF 
+On 
+S 
+n 
+R 
+fon a 
+openatieuu 
+1 
+X 
+when,S:0+R 0, H'S m 
+by memay 
+thus next Sta 
+pcs 
+emt Saua & 
+P.9 
+On-
+fo uh Lp o:L S 0R: 0, 1s memosuu 
+S 
+P.S 
+P.5 
+m 
+n1 
+Encitationlcuble t twe've o wailu $hom Chanadels 
+tabie 
+Qn 
+pt 
+R 
+X 
+X 
+6 
+find Qnt 1 
+Cha 4oble) 
+3R 
+O0 
+CI 
+D 
+O 
+ntI6 0nRR 
+0 
+
+===== PAGE 7 =====
+Page No 
+YouvA 
+Dale 
+DFip flop | 
+T.T fob 3R Ep Plopi-
+5 
+R2 
+Qnt 
+CIk 
+X 
+N Gmamo 
+CIk 
+@n 
+O 
+O 
+tnvatid 
+T 
+we cwamt fhis data can be 5Hohe ouly 
+useo D PfCDatcff 
+UOe 
+'s Commomly Usec 
+E.P 
+beccLe oe fu'st 
+Qie 
+he inpui SHone the dcte & hemoe 
+the 
+the dKok 
+data will be the 
+fROm 5-R 
+D 
+R 
+TT fon D Ff 
+CiK 
+D 
+nt 
+K 
+n 
+1 
+aL, 9.LR 0, Ontl 1 
+
+===== PAGE 8 =====
+Pege Noa 
+OuVk 
+Date 
+chuhacteristi 
+labl fon D E.f 
+EXcHction tabt 
+uth able 
+Chus ToLbie 
+Ontl 
+D nt 
+CIK 
+DD 
+O 
+1 
+1 
+L 
+@nti-D 
+This u0e eveluade o 
+cas
+On 
+fAOm_cubove TL 
+To ove1Lome the dis adyamteugeo SR e D Pf 
+CDe cue ulim9 J-k F.E. 
+cisadvCundage o 
+5. R fup flop is we cam neT 
+UseS 
+R 
+1SHade So im1k Ff we 
+Hhu to COver this 61ute (6+1 R 1)_ 
+This is why e 8tudyk £Lip-Flop. 
+on 
+6REf 
+R R 
+nt 
+CIK 
+On Cmomon) 
+O 
+Cmnemoun) 
+NO Aeo 
+
+===== PAGE 9 =====
+Page No 
+YouvA 
+Date: 
+-ctoc 
+O1 
+se-1CIR -o 
+Mimo 
+dnl 
+OP 1S Same C 
+S R 
+rase CK = O1 j-1, K = 0 
+, 
+6 
+CIK 1 
+0Ke1 
+0 
+1 
+COve 
+ist ucae 
+fmP 
+Clk 1 
+1 
+K 
+1 
+CLSSumne 
+20 
+0 
+00, 1 
+O, 
+focing 
+Co ndt H 
+@nt 2 
+ehtunet 
+hoO) 
+COuptuwurut o Ptuiouus 
+30 this n 
+is Las) siou 
+s Called 
+ogalim 
+thene 5 
+dibtexam.co be" dogglimg leLcima 
+
+===== PAGE 10 =====
+* C.T & e.T 
+is vesy much Usetut ok 
+design im 
+O cOuntes & F.f. (on els j om 
+Page No 
+youvA 
+Date 
+chcocuehesel 9tic taL. 
+TL foh Jk Ff 
+memg 
+s1Ut 
+CIK 
+k 
+nt 
+n 
+memo 
+X 
+o 
+nJ 
+depercew 
+On Heggle) 
+0 
+6-(6 
+ExcPhadion able 
+Ont 
+K 
+0 
+CK change o to 1 
+X+ (K Chun s 
+0 ol) 
+1 
+Cchamye o o 
+0 
+O 
+choumea 
+Fon 
+T 
+on 
+Qnfl 
+QntEL 
+fon Ont kmoP 
+4 
+00 
+OL 
+10 
+@ntl- Cnt @n 
+D 
+T2) 
+
+===== PAGE 11 =====
+Pags No 
+Date: 
+Race Asound O Racing Concd iHi on inJ-K F.F 
+Dhen J-1, K 1theouput si 
+huting, this 
+i 
+CCLLled 
+Tcclnq Cond i tien 
+he e:p_StevttJk EA I 
+we've touse 
+we 
+have40 Oveicome ths rucimq Conditien 
+we wil Sec diffesemi me thoc toleliminati 
+fcacing CondiHon. 
+Clocs 
+Ont 
+Ont 
+X 
+On 
+O 
+O 
+On 
+On 
+O 
+1 
+O 
+Thus Cond itienIs CauLe d 
+conct 
+ce cUOund 
+i 
+LDggleis CordAolMed 
+Race oround ond isnoContAo lled 
+twe 
+a 
+dayimq to mak 
+togqle 
+cute chound 
+Conditiom oill be convenle olt0 togq le Conditio 
+USe 
+in_o u 
+diPf cinuu15. 
+ad 
+CK 
+3-1 
+rating Ord 
+
+===== PAGE 12 =====
+Page No. 
+Date: 
+YouyA 
+is 
+possPble Only when CLK 
+1 
+K1 
+Conditions o OveComerucing2 
+not Use 
+Tla PAOPog.ahion dalay os 
+n0 Used 
+)instead oguging evel thiggcain 
+Use 
+3 
+edge iggeun 
+mLatt-slaune Cendiiom 9game as etqg 
+T-Ftp flop 
+VToggle) 
+loggli 
+Hat 
+Changing oLP homo to 1 
+1too 
+what coCnt 
+to Use Ony touauing aciem 
+1ha's 
+why we e 
+T-fup flop 
+&Kis saume 
+TT fos T F.f 
+Tnt 
+Onmema 
+n Cmama 
+C1k 
+clotk 
+n-
+nOmem.an 
+whe 
+T ,3 1, K 
+e 1 Hogalng' Cond n 
+
+===== PAGE 13 =====
+Page No. 
+YouvA 
+Date: 
+Ex. 
+Taoe 
+ch Tabl 
+CP.5) 
+Ciyp) 
+n.s) 
+n 
+T Ont 
+TT Fon T: 
+CIK T 
+nt 
+n 
+On+1 
+T 
+On memo 
+1 
+T0ggle 
+1 
+odd ts 
+deteot 
+ex-O) 
+On tl= OnT 
+IVastey-Slave Cpetatien Ob J-K Fltp £lop 
+2 PoPut 
+toe have 
+to Memembey hinq pa 
+heed bac 
+Coe 
+have 0 gie Complememtec 
+clmch 
+do the 
+cond atHachedJ-k £up LLop ctsucuit 
+Naste 
+5Tave 
+Wlhy the tixst cicuH i 
+cCLLLed masde 9 dmd amathae 
+One Is CaLed 
+slave 9 
+s 
+aut depencU en clock. ohem clotk i hfoh 
+masla 
+OpeaHonul Whem 
+clock 
+Complem èntea 
+em 
+o fhe Slavetoft no 
+be opeatonal s 
+o 
+Keep he mermau 
+
+===== PAGE 14 =====
+Page No. 
+YouvA 
+Date: 
+Lohemclock 
+Loco & hiqh bo he stae 
+mau 
+wiLL hot be unctional 
+heMe Cs 
+lave si 
+un cHonal. ond the ouput chaungS 
+iLl be 
+when he Output chcums we coie hcwmgedbaa 
+but the 
+cLck u pto theuehore the mus tu 
+is Dol 
+Opeatlonil so theue Ps(no ebhect of i ead backl. 
+weveetlminuted etccE o 
+cdbaCk amd hemu 
+the r.cinq 
+Whaut happems im the chcuf 1 
+Insde cld 
+o 
+ouuput ehamgCOfnuousu 
+em 1 to o 
+the Outpul Chunq 
+n 
+clock yde 
+his is the cdVcunta.oo 0 
+chut H'S Cauec 
+TOn L clock yd 
+44-
+Clock 
+(mast po 
+OrP 
+(s lane 
+OP 
+LwelyeoVA Come the fudnq l6 not Coninouy 
+Chung mq o to 1 
+bu 
+chumgulonce n c 
+ht's CLLed og 
+u-
+cycl 
+CLOckd N 
+K 
+nt 
+1 
+1 
+On 
+te gung 
+
+===== PAGE 15 =====
+This is rebetence bo SHUdenis noln ead to tell 
+oBhes ip Plops 
+Page Nat 
+yoUVA 
+Date 
+Anutys fs o docked 9ecuent ff al Cenut 
+oithD fUp fop] 
+Cloal 
+b nd Siate dfaqkam ot fhis sequwn tiat CPacut 
+rlhee e 
+3 S1eps to qettimq Staute da. 
+(oP 
+OA 
+clocK 
+Tnput 
+Output 
+Luwo flfp fiops 
+D eue wed 
+CuLes 
+Cue ue cLi Comhimatonal lo qic 
+Op combimet 
+Lugic 
+JlP combinaHonal 
+ffnd ouu 
+dhe Input Dutptut equcutious 
+DA 1 OA +O 
+Pe-OAC 
+TIp equcutton 
+4 
+OA t7B oLp equ 
+mak 
+the Stcde etb le 
+
+===== PAGE 16 =====
+DA 
+XO 
+t B 
+DB 
+OA OB 
+Pago Ho 
+Youvk 
+Date 
+n Df Valu of next 1al 
+D nt 
+CDe 
+o/ 
+PeAeut 
+NexE 
+Decimal 
+SHcult 
+SA Cute 
+O 
+O 
+Arseaidy 
+ADA XAt B 
+OgT D B = OAODA 
+0+0 
+10 0. 
+Po 1peiaumuu the caue ust cu ahoe 
+Slep 3 
+Siar faqnam 
+hou aue 
+fup flops So possible 
+leule 
+So 
+0A 08 
+6 
+S2 
+O 
+S3 
+SI 
+O 
+
+===== PAGE 17 =====
+Page No 
+YoUVA 
+Date: 
+Stat dia.dopendeut 
+Ou taubl 
+/0. 
+1/0 
+T70-
+oN 
+ofo 
+Sial SHedutHim 
+Assiqnment clesiqn 
+P30cecl 
+e 
+tutr 
+Ass 1anment 
+Ass ienmen ot |bimao 
+COcles to 
+O u 
+31ctu te 
+oP 
+use tim statt table 
+od e 
+OO 
+b 
+O 
+010D 
+d l1 
+51cutn heclucion 
+dh ue huve no. o 
+Sicutes uith s 
+CLmd 
+eclont knocu thut ny of tbe sdcit e 
+cu 1edundant 
+De have to check 
+by uing pe.ciat technigue 
+emo eletmiiely uwe dont wamt exta cLact 
+SCxaA lal 
+we houudhave. minimcu 3ele. 
+dtaqtamm 
+
+===== PAGE 18 =====
+Page No.: 
+Date 
+S1ate Lab le: 
+Imp1 
+next 51de Clnd outpur os c0o pJiCAemt 31g 
+CUhe (ame ) them we Cam elfminatefhe tat. 
+P.5 
+utp 
+NS 
+b 
+O 
+b 
+9Ivem 
+e-sf 
+O 
+ol 
+-4 
+o lO 
+tto 
+TT 
+
+===== PAGE 19 =====
+Page No 
+YouvA 
+Date 
+Tn this Stati dicqRam00e ccLo heduce the 
+tati by checkmq 
+the 
+2tcauti tuble. 
+pase-
+en ke-L 
+e81al hcu 
+next 3fcut amd Outpuut ase 2ame 
+Atc8 
+o we wflL eliminatrg)sfali 
+mue2 
+o1 d stak in next t ot |e=g 30 
+nextMai uoill bee Onne 
+q Cumnd 
+now 
+pueslnt stede 
+d& 4ae 3ceme nex 
+LHtl 
+cse laml 
+and oUTput Uo alb Xaue 
+o 
+weuoil eliminauti 
+3toll 
+we' ve got the minimal 
+3iat table. &we cocnnot 
+peuaum 
+ednciam uOthes mohi 
+Jo beloco 
+is thefinat gtcat Ecb le 
+P.S 
+NS 
+utpul 
+b 
+C 
+Gd 
+Moco we ccn modiby lcle dicgncum depends O 
+mvctsiecl 
+gicta V fctbl 
+
+===== PAGE 20 =====
+Page No. 
+Date 
+o 
+ofo 
+olo 
+oo 
+b 
+lo 
+Tniaodoctiom 
+o 
+CowndeNS. 

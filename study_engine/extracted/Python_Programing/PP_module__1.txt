@@ -1,0 +1,328 @@
+SOURCE: SEM3/Python_Programing/PP_module _1.pdf
+
+===== PAGE 1 =====
+Unit-01 
+Introduction to Python
+
+===== PAGE 2 =====
+✓
+Looping
+Outline
+History and features of Python, installation, Python environment, basic syntax, variables, 
+identifiers, data types, input/output functions, operators and expressions. 
+
+===== PAGE 3 =====
+Introduction to Python & History
+🞂Python is an open source, interpreted, high-level, general-purpose programming
+language.
+🞂Python's design philosophy emphasizes code readability with its notable use of
+significant whitespace.
+🞂Python is dynamically typed and garbage-collected language.
+🞂Python was conceived in the late 1980s as a successor to the ABC language.
+🞂Python was Created by Guido van Rossum and first released in 1991.
+🞂Python 2.0, released in 2000,
+•
+introduced features like list comprehensions and a garbage collection system with reference
+counting.
+🞂Python 3.0 released in 2008 and current version of python is 3.14.2 (as of Dec-2025).
+•
+The Python 2 language was officially discontinued in 2020
+
+===== PAGE 4 =====
+
+===== PAGE 5 =====
+
+===== PAGE 6 =====
+
+===== PAGE 7 =====
+Why Python?
+🞂Python has many advantages
+•
+Easy to learn
+•
+Less code
+•
+Syntax is easier to read
+•
+Open source
+•
+Huge amount of additional open-source libraries
+Some libraries listed below.
+• matplotib for plotting charts and graphs
+• BeautifulSoup for HTML parsing and XML
+• NumPy for scientific computing
+• pandas for performing data analysis
+• SciPy for engineering applications, science, and mathematics
+• Scikit for machine learning
+• Django for server-side web development
+• And many more..
+
+===== PAGE 8 =====
+Installing Python
+🞂For Windows & Mac:
+•
+To
+install
+python
+in
+windows
+you
+need
+to
+download
+installable
+file
+from
+https://www.python.org/downloads/
+•
+After downloading the installable file you need to execute the file.
+🞂For Linux :
+•
+For ubuntu 16.10 or newer
+• sudo apt-get update
+• sudo apt-get install python3.8
+🞂To verify the installation
+•
+Windows:
+• python --version
+•
+Linux :
+• python3 --version (linux might have python2 already installed, you can check python 2 using python --version)
+🞂Alternatively we can use anaconda distribution for the python installation
+•
+http://anaconda.com/downloads
+•
+Anaconda comes with many useful inbuilt libraries.
+
+===== PAGE 9 =====
+We can run code of Python in:
+IDEs
+(Integrated
+Development
+Environments):
+IDLE
+(comes
+with
+Python),PyCharm ,Thonny,Spyder,PyDev (Eclipse plugin),Wing IDE
+Code Editors (need Python installed): Visual Studio Code, Sublime Text 3,Atom
+(now discontinued, but still works if already installed),
+Notebook / Online Platforms: Jupyter Notebook, Google Colab (online, no
+installation needed)
+Distributions (include multiple tools): Anaconda (includes Python, Jupyter,
+Spyder, etc.)
+
+===== PAGE 10 =====
+Hello World using Python
+🞂To write python programs, we can use any text editors or IDE (Integrated Development
+Environment), Initially we are going to use Visual Studio Code.
+🞂Create new file in editor, save it as first.py (Extensions for python programs will be .py)
+🞂To run the python file open command prompt and change directory to where your python file is
+🞂Next, run python command (python filename.py)
+print("Hello World from python")
+1
+first.py
+Python line does not end with ;
+
+===== PAGE 11 =====
+Declaring Variables in Python
+🞂A Python variable is a reserved memory location to store values.
+🞂Unlike other programming languages, Python has no command for declaring a variable.
+🞂A variable is created the moment you first assign a value to it.
+🞂Python uses Dynamic Typing so,
+•
+We need not to specify the data types to the variable as it will internally assign the data type to the
+variable according to the value assigned.
+•
+we can also reassign the different data type to the same variable, variable data type will change to
+new data type automatically.
+•
+We can check the current data type of the variable with type(variablename) in-built function.
+🞂Rules for variable name
+•
+Name can not start with digit
+•
+Space not allowed
+•
+Can not contain special character
+•
+Python keywords not allowed
+•
+Should be in lower case
+
+===== PAGE 12 =====
+Data types in Python
+Name
+Type
+Description
+Data Types
+Integer
+int
+Whole number such as 0,1,5, -5 etc..
+Float
+float
+Numbers with decimal points such as 1.5, 7.9, -8.2 etc..
+String
+str
+Sequence of character (Ordered) such as “darshan”, ‘college’, “રાજકોટ” etc..
+Boolean
+bool
+Logical values indicating Ture or False (T and F here are capital in python)
+Data Structures
+List
+list
+Ordered Sequence of objects, will be represented with square brackets [ ]
+Example : [ 18, “darshan”,  True, 102.3 ]
+Tuple
+tup
+Ordered immutable sequence of objects, will be represented with round brackets ( )
+Example : ( 18, “darshan”,  True, 102.3 )
+Set
+set
+Unordered collection of unique objects, will be represented with the curly brackets { }
+Example : { 18, “darshan”,  True, 102.3 }
+Dictionary
+dict
+Unordered key : value pair of objects , will be represented with curly brackets { }
+Example : { “college”: “darshan”,  “code”: “054” }
+
+===== PAGE 13 =====
+Example of Python variable
+🞂Example :
+x = 10
+print(x)
+print(type(x))
+y = 123.456
+print(y)
+x = "hi..MD"
+print(x)
+print(type(x))
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+demo.py
+python demo.py
+1
+Run in terminal
+10
+int
+123.456
+Hi..MD
+str
+1
+2
+3
+4
+5
+Output
+Reassign same variable to hold different data type
+
+===== PAGE 14 =====
+
+===== PAGE 15 =====
+
+===== PAGE 16 =====
+
+===== PAGE 17 =====
+
+===== PAGE 18 =====
+
+===== PAGE 19 =====
+Arithmetic Operators
+🞂Note : consider A = 10 and B = 3
+Operator
+Description
+Example
+Output
++
+Addition
+A + B
+13
+-
+Subtraction
+A - B
+7
+/
+Division
+A / B
+3.3333333333333335
+*
+Multiplication
+A * B
+30
+%
+Modulus return the remainder
+A % B
+1
+//
+Floor division returns the quotient
+A // B
+3
+**
+Exponentiation 
+A ** B
+10 * 10 * 10 = 1000
+
+===== PAGE 20 =====
+Logical Operators
+🞂Note : consider A = 10 and B = 3
+Operator
+Description
+Example
+Output
+and
+Returns True if both statements are true
+A > 5 and B < 5
+True
+or
+Returns True if one of the statements is true
+A > 5 or B > 5
+True
+not
+Negate the result, returns True if the result is 
+False
+not ( A > 5 )
+False
+
+===== PAGE 21 =====
+Identity & Member Operators
+🞂Identity Operator
+🞂Note : consider A = [1,2], B = [1,2] and C=A
+🞂Member Operator
+🞂Note : consider A = 2 and B = [1,2,3]
+Operator
+Description
+Example
+Output
+is
+Returns True if both variables are the same 
+object
+A is B
+A is C
+FALSE
+TRUE
+is not
+Returns True if both variables are different
+object
+A is not B
+TRUE
+Operator
+Description
+Example
+Output
+in
+Returns True if a sequence with the 
+specified value is present in the object
+A in B
+TRUE
+not in
+Returns True if a sequence with the 
+specified value is not present in the object
+A not in B
+FALSE

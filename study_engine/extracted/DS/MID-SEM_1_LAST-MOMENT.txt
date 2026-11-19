@@ -1,0 +1,420 @@
+SOURCE: SEM3/DS/MID-SEM 1 LAST-MOMENT.pdf
+
+===== PAGE 1 =====
+Drs. Kiran & Pallavi Patel Global University (KPGU)
+Confidential Student Study Guide
+DS (25B1PC303) — MID-SEM 1 LAST-MOMENT
+REVISION GUIDE
+Drs. Kiran & Pallavi Patel Global University (KPGU) — Winter 2026
+EXAM COACH ALERT: This revision guide was custom compiled to cover every major syllabus point and assignment
+requirement for your Mid-Sem 1 exam tomorrow. Read each topic carefully, trace the mathematical problems on scratch
+paper, and memorize the complexities table to secure your AA grade.
+
+===== PAGE 2 =====
+Drs. Kiran & Pallavi Patel Global University (KPGU)
+Confidential Student Study Guide
+TOPIC 1: CLASSIFICATION AND TERMINOLOGY OF DATA STRUCTURES
+A computer's physical memory is organized as a linear sequence of addressable bytes. A Data Structure is a logical,
+systematic arrangement designed to represent, store, and organize data elements inside this memory, making them
+accessible to the processor for fast calculations.
+The Data Structure Taxonomy (Syllabus Standard):
+Category
+Subtypes
+Description / Memory Layout
+Primitive
+Integer, Float, Character,
+Pointer
+Directly manipulated by machine instructions. Basic building blocks.
+Non-Primitive
+Arrays, Lists, Files
+Derived from primitive types. Groupings of elements with logical relationships.
+Linear (Non-Prim)
+Stacks, Queues, Linked
+Lists
+Elements form a logical sequential sequence. Traversed sequentially.
+Non-Linear
+(Non-Prim)
+Trees, Graphs
+Elements form hierarchical or networked associations. Non-sequential
+structure.
+Real-World Applications & Examples:
+• Google Maps (Non-Linear/Graph): Road intersections are stored as Vertices (nodes), and the physical roads
+connecting them are stored as weighted, directed Edges representing distances or real-time traffic speeds.
+• Hospital Reception (Linear/Queue): Patients are managed sequentially on a First-In, First-Out (FIFO) basis. The
+patient arriving first is diagnosed and processed first.
+PROFESSOR'S WARNING: Many students mistakenly classify Linked Lists as non-linear because nodes are scattered
+physically across the memory heap. However, a Linked List is logically linear because elements are connected
+sequentially using pointers. Always write Linear Non-Primitive for Linked Lists!
+TOPIC 2: ALGORITHM PERFORMANCE & ASYMPTOTIC NOTATIONS
+Algorithm analysis evaluates the efficiency of programs as the input size n approaches infinity. To ensure
+independent analysis across various physical systems, hardware specs, and compilers, we measure the number of
+essential computational execution steps (Time Complexity) rather than wall-clock execution time.
+The Three Asymptotic Bounds:
+1. Worst Case (Big-O Notation / O): The maximum number of operations an algorithm can take. Represents the
+absolute upper bound.
+2. Best Case (Omega Notation / Ω): The minimum number of operations required for execution. Represents the
+absolute lower bound.
+3. Average Case (Theta Notation / Θ): The mathematical expected number of operations averaged over random
+input states.
+
+===== PAGE 3 =====
+Drs. Kiran & Pallavi Patel Global University (KPGU)
+Confidential Student Study Guide
+Mathematical Loop Complexity Analysis:
+A. Single Loop: runs exactly n times:
+for (i = 1; i <= n; i++) print(i);
+Time Complexity is O(n).
+B. Nested Quadratic Loop: runs n * n times:
+for (i = 1; i <= n; i++) {
+    for (j = 1; j <= n; j++) print(i, j);
+}
+Time Complexity is O(n2).
+Linear Search Complexity Breakdown:
+• Best Case: Target element is located at the very first index (index 1). Requires exactly 1 comparison. Asymptotic
+complexity: Ω(1).
+• Worst Case: Target is at the final index (index n) or completely absent from the array, requiring a sequential scan of
+all elements. Asymptotic complexity: O(n).
+• Space Complexity: Requires no dynamic allocation proportional to the input size; uses only a constant pointer
+tracker i. Asymptotic complexity: O(1).
+
+===== PAGE 4 =====
+Drs. Kiran & Pallavi Patel Global University (KPGU)
+Confidential Student Study Guide
+TOPIC 3: 2D ARRAY MEMORY ADDRESS CALCULATION
+Physical computer memory is a 1-dimensional array of addresses. To store a 2D array (grid of rows and columns) in
+memory, we must flatten it using either Row-Major Order (RMO) or Column-Major Order (CMO).
+Address Calculation Formulas (0-Based Indexing):
+Let BA be the Base Address, W be the byte size of each data element, Rows be the total number of rows, and Cols
+be the total number of columns in array A.
+• Row-Major Order (RMO): Elements are stored sequentially row-by-row.
+    Address(A[i][j]) = BA + (i * Cols + j) * W
+• Column-Major Order (CMO): Elements are stored sequentially column-by-column.
+    Address(A[i][j]) = BA + (j * Rows + i) * W
+Step-by-Step Address Trace:
+Given an array X[4][5], with Base Address BA = 2000 and integer size W = 4 bytes. We calculate the physical
+memory address of element X[2][3]:
+Layout Scheme
+Formula Substitution
+Step-by-Step Calculation
+Final Physical
+Address
+Row-Major (RMO)
+2000 + (2 * 5 + 3) * 4
+2000 + (10 + 3) * 4 = 2000 + 13 * 4
+2052
+Column-Major (CMO)
+2000 + (3 * 4 + 2) * 4
+2000 + (12 + 2) * 4 = 2000 + 14 * 4
+2056
+COMMON MISTAKE: In Column-Major order, we bypass complete columns, each containing Rows elements. Therefore,
+we multiply the column index j by Rows, not Cols. Double check this multiplication on the exam!
+TOPIC 4: STACKS (LIFO OPERATIONS & BOUNDARY CONDITIONS)
+A Stack is a linear, non-primitive data structure governed by the Last-In, First-Out (LIFO) principle. All insertions
+(PUSH) and deletions (POP) occur at a single designated end called the TOP.
+Standard PUSH & POP Pseudocodes (Syllabus Standard):
+PUSH Operation Pseudocode
+POP Operation Pseudocode
+Algorithm: PUSH(S, TOP, VAL, N)
+// Inserts VAL into a Stack S of maximum size 
+N
+1. [Check Overflow]
+   If (TOP >= N) then:
+       Write ('STACK OVERFLOW')
+       Return
+2. [Increment Pointer]
+   TOP = TOP + 1
+3. [Insert Element]
+   S[TOP] = VAL
+4. [Exit]
+   Return
+Algorithm: POP(S, TOP)
+// Removes top element from Stack S and return
+s it
+1. [Check Underflow]
+   If (TOP = 0) then:
+       Write ('STACK UNDERFLOW')
+       Exit
+2. [Decrement Pointer]
+   TOP = TOP - 1
+3. [Return Former Top Item]
+   Return S[TOP + 1]
+
+===== PAGE 5 =====
+Drs. Kiran & Pallavi Patel Global University (KPGU)
+Confidential Student Study Guide
+Dry-Run Trace Challenge (Assignment 2, Q11):
+Trace stack sequence with initial variables X=30, Y=15, Z=20 and empty Stack S:
+Step
+Operation
+Stack State (Bottom -> Top)
+Variable Values
+Rationale
+0
+Initial
+[]
+X=30, Y=15, Z=20
+Stack is empty.
+1
+PUSH(S, X)
+[30]
+X=30, Y=15, Z=20
+Pushes X (30)
+2
+PUSH(S, 40)
+[30, 40]
+X=30, Y=15, Z=20
+Pushes 40
+3
+POP(S, Z)
+[30]
+X=30, Y=15, Z=40
+Pops top element (40) and assigns
+to Z
+4
+PUSH(S, Y)
+[30, 15]
+X=30, Y=15, Z=40
+Pushes Y (15)
+5
+PUSH(S, 30)
+[30, 15, 30]
+X=30, Y=15, Z=40
+Pushes 30
+6
+PUSH(S, Z)
+[30, 15, 30, 40]
+X=30, Y=15, Z=40
+Pushes Z (40)
+7
+POP(S, X)
+[30, 15, 30]
+X=40, Y=15, Z=40
+Pops top (40) and assigns to X
+8
+PUSH(S, 20)
+[30, 15, 30, 20]
+X=40, Y=15, Z=40
+Pushes 20
+9
+PUSH(S, X)
+[30, 15, 30, 20, 40]
+X=40, Y=15, Z=40
+Pushes X (40)
+The Printing Loop:
+while not EMPTYSTACK(S) do POP(S, X); PRINT(X); end
+Pops and prints sequentially from the TOP downwards: 40 20 30 15 30.
+
+===== PAGE 6 =====
+Drs. Kiran & Pallavi Patel Global University (KPGU)
+Confidential Student Study Guide
+TOPIC 5: INFIX TO POSTFIX TABULAR CONVERSION
+Mathematical expressions are written in Infix (operators between operands). For faster machine execution without
+parentheses parsing, compilers convert them to Postfix (operators follow operands).
+Trace of Conversion: (A + B) * (C - D) / E + F
+Scanned
+Operator Stack (Top at right)
+Postfix String Output
+Rationale
+(
+(
+Push left parenthesis
+A
+(
+A
+Write operand A directly to output
++
+( +
+A
+Push operator + onto stack
+B
+( +
+A B
+Write operand B directly to output
+)
+A B +
+Pop stack elements to output until
+matching '('
+*
+*
+A B +
+Push operator * onto stack
+(
+* (
+A B +
+Push left parenthesis
+C
+* (
+A B + C
+Write operand C directly to output
+-
+* ( -
+A B + C
+Push operator - onto stack
+D
+* ( -
+A B + C D
+Write operand D directly to output
+)
+*
+A B + C D -
+Pop stack elements to output until
+matching '('
+/
+/
+A B + C D - *
+/ has equal precedence to *. Pop * to
+output, push /
+E
+/
+A B + C D - * E
+Write operand E directly to output
++
++
+A B + C D - * E /
++ has lower precedence than /. Pop / to
+output, push +
+F
++
+A B + C D - * E / F
+Write operand F directly to output
+End
+A B + C D - * E / F +
+Pop all remaining operators in stack to
+output
+TOPIC 6: QUEUES & CIRCULAR QUEUES
+A standard Queue is a linear list governed by the First-In, First-Out (FIFO) principle. Insertions occur at the REAR
+end, while deletions occur at the FRONT end.
+The Memory Wastage Limitation of Simple Queues:
+In a simple queue represented by an array of size MAX, when elements are deleted, the FRONT pointer moves
+forward. Once the REAR pointer reaches the final index (MAX - 1), no new elements can be inserted, even if the
+beginning of the array is empty (e.g., indices 0, 1, 2 are empty due to deletions). The queue falsely reports
+OVERFLOW.
+
+===== PAGE 7 =====
+Drs. Kiran & Pallavi Patel Global University (KPGU)
+Confidential Student Study Guide
+The Circular Queue Solution:
+A Circular Queue avoids this memory wastage by connecting the last position back to the first. If the rear pointer
+reaches MAX - 1 and space is available at index 0, the rear pointer loops back to 0. The formulas use modular
+arithmetic to wrap pointers.
+Boundary Checks in Circular Queues:
+• Circular Queue Overflow (Full):
+    (FRONT == 0 && REAR == MAX-1) || (FRONT == REAR + 1)
+• Circular Queue Underflow (Empty):
+    FRONT == -1
+Double-Ended Queue (Deque):
+A Deque is a specialized linear queue where insertion and deletion operations can be performed at both ends (front
+and rear). It has two variations:
+1. Input-Restricted Deque: Insertion occurs only at one end (rear), while deletion is allowed at both ends.
+2. Output-Restricted Deque: Deletion occurs only at one end (front), while insertion is allowed at both ends.
+
+===== PAGE 8 =====
+Drs. Kiran & Pallavi Patel Global University (KPGU)
+Confidential Student Study Guide
+TOPIC 7: RECURSION
+Recursion is a programming design strategy where a function calls itself either directly or indirectly to solve a
+problem. It represents a large problem as smaller, identical sub-problems.
+Syllabus Standard Core Functions:
+Every recursive function requires a Base Case to stop recursive calls and prevent infinite execution stack overhead.
+Factorial Recursive Function
+Fibonacci Recursive Function
+int Factorial(int n) {
+    if (n == 0) 
+        return 1; // Base Case
+    else
+        return n * Factorial(n-1);
+}
+int Fibonacci(int n) {
+    if (n == 0) return 0; // Base Case
+    if (n == 1) return 1; // Base Case
+    return Fibonacci(n-1) + Fibonacci(n-2);
+}
+TOPIC 8: SORTING ALGORITHMS & DIVIDE-AND-CONQUER TRACES
+Sorting arranges elements of a dataset into ascending or descending orders. The standard complexities defined by
+your syllabus are highly tested on the exam.
+Sorting Algorithm
+Best Case
+Worst Case
+Average Case
+Auxiliary Space
+Bubble Sort
+O(n) - Optimized
+O(n²)
+O(n²)
+O(1) - In-place
+Selection Sort
+O(n²)
+O(n²)
+O(n²)
+O(1) - In-place
+Insertion Sort
+O(n)
+O(n²)
+O(n²)
+O(1) - In-place
+Merge Sort
+O(n log n)
+O(n log n)
+O(n log n)
+O(n) - Aux Array
+Quick Sort
+O(n log n)
+O(n²)
+O(n log n)
+O(log n) - Call Stack
+Divide and Conquer: Sorting Array [94, 20, 13, 54, 11, 32, 3]
+A. Merge Sort Trace:
+1. Divide: Split array in halves recursively:
+    [94, 20, 13, 54, 11, 32, 3] → Left: [94, 20, 13, 54], Right: [11, 32, 3]
+    Split Left: [94, 20] and [13, 54] → [94], [20], [13], [54]
+    Split Right: [11, 32] and [3] → [11], [32], [3]
+2. Merge and Sort: Merges sorted single items:
+    Merge [94] and [20] → [20, 94]
+    Merge [13] and [54] → [13, 54]
+    Merge [20, 94] and [13, 54] → [13, 20, 54, 94]
+    Merge [11, 32] and [3] → [3, 11, 32]
+    Merge Left [13, 20, 54, 94] and Right [3, 11, 32] → [3, 11, 13, 20, 32, 54, 94]
+
+===== PAGE 9 =====
+Drs. Kiran & Pallavi Patel Global University (KPGU)
+Confidential Student Study Guide
+B. Quick Sort (First Element Pivot) Trace:
+Initial Array: [94, 20, 13, 54, 11, 32, 3]. Set Pivot = 94. i starts at index 1 (20), j starts at index 6 (3).
+• Left index scanner i moves right looking for an element > 94 (goes out of bounds at index 7).
+• Right index scanner j moves left looking for an element ≤ 94 (stops at index 6, value 3).
+• Pointers crossed (i > j). Swap Pivot (94) with A[j] (3).
+• State after Partition 1: [3, 20, 13, 54, 11, 32, 94]. Pivot 94 is now in its permanent sorted position.
+• Left subarray partition [3, 20, 13, 54, 11, 32] is recursively sorted to complete the sequence: [3, 11, 13, 20, 32, 54,
+94].
+
+===== PAGE 10 =====
+Drs. Kiran & Pallavi Patel Global University (KPGU)
+Confidential Student Study Guide
+EXAM DAY HIGH-YIELD REVISION PLANS
+Use these tailored, time-boxed schedule blocks to optimize your final night-before study session.
+Time Allocated
+Focus Areas & Study Plan Checklist
+Goals & High Priority
+Deliverables
+30-Minute Fast Tracker
+• Read Topic 8 Complexities Table.
+• Review Topic 6 Circular Queue Overflow conditions.
+• Read Infix to Postfix transition logic.
+Fast recall of formulaic parameters
+and sorting complexities.
+1-Hour Core Tracker
+• Complete the 30-Min tracker.
+• Trace the step-by-step 2D Address calculation (Topic 3).
+• Memorize Stack PUSH and POP pseudocodes (Topic 4).
+Locks in standard scoring algorithmic
+questions.
+3-Hour Comprehensive
+Track
+• Complete the 1-Hour tracker.
+• Complete paper tracing for Merge Sort and Quick Sort.
+• Trace recursion trees for Fibonacci and Factorial.
+• Attempt standard mock paper questions.
+Deep analytical trace practice to
+guarantee full credit marks.
+PROFESSOR'S FINAL WORDS: Relax, trust your preparation, and sleep well tonight. You have traced all the complex
+mathematical models and algorithms. Good luck on your examination tomorrow!

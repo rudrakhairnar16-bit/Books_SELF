@@ -1,0 +1,47 @@
+SOURCE: SEM3/DBMS/DBMS_file Foramtting (1).pdf
+
+===== PAGE 1 =====
+Computer Science and Engineering 
+KSET, KPGU 
+Enrolment Number: 
+DBMS(21CS2301)/Sem:3/CSE/KSET/KPGU                                                            Page No.: 
+Practical: 01  
+(Times New roman, 16, Bold) 
+AIM: (Times New roman, 14, Bold) 
+Content have to be written here, have to maintain margin. Content should be in 12, 
+Times new roman, Justify, 1.15 space b/w lines). 
+This orange line should be maintaining for margin. For that use Ruler.  
+ 
+ 
+ 
+Footer: 12, bold, times new roman. Page number have to write with pen.  
+Header: Logo should be in left and in right side, 12, bold, times new roman 
+ 
+ 
+ 
+ 
+After Practical:2 , Queries will write in file page and output have to follow this 
+formatting.  
+ 
+Screen Sort of output have to put in this format.  
+Figure: 01 , 10, bold, times new roman, center after Screen sort have to give figure 
+name.  
+ 
+ 
+ 
+Youtube 
+link 
+for 
+Oracle 
+Installation 
+Guide: 
+https://youtu.be/2RtnEcsUjrg?feature=shared 
+ 
+
+===== PAGE 2 =====
+Computer Science and Engineering 
+KSET, KPGU 
+Enrolment Number: 
+DBMS(21CS2301)/Sem:3/CSE/KSET/KPGU                                                            Page No.: 
+ 
+ 

@@ -1,0 +1,532 @@
+SOURCE: SEM3/DLD/Unit 2.pdf
+
+===== PAGE 1 =====
+Boolean Function 
+Simplification 
+
+===== PAGE 2 =====
+Contents
+• Boolean Algebra
+• Laws of Boolean Algebra
+• SOP and POS 
+• 2,3,4,5 Variable K-map Representation 
+• Simplification of Logic Functions using K-map
+• Minimization of Logical Functions
+• Don’t Care Conditions
+• VEM K-map 
+• NAND or NOR Implementation
+
+===== PAGE 3 =====
+Boolean Algebra
+• Boolean algebra is a branch of mathematics that provides a set of operations
+and rules to manipulate and process binary variables.
+• It is considered the foundation of digital electronics and computer science.
+• Boolean algebra is a mathematics that provides various operators and rules
+to perform arithmetic and algebraic operations on binary variables and
+numbers.
+• The Boolean algebra is based on the binary number system and logical
+arithmetic. Thus, it is also referred to as logical algebra.
+• Boolean algebra was developed by a mathematician and logician George
+Boole in the year of 1847.
+
+===== PAGE 4 =====
+Laws of Boolean Algebra
+• Null Law
+a) 0 + A = A
+b) 0 .A = 0
+• Identity Law
+a) 1 + A = 1
+b) 1 .A = A
+c) A + A = A
+d) A. A = A
+e) A + A’= 1
+f)
+A. A’= 0
+• Commutative Law
+a) A + B = B + A
+b) A .B = B. A
+• Associate Law
+a) (A + B) + C = A + (B + C)
+b) (A .B) C = A (B .C)
+• Distributive Law
+a) A .(B + C) = A .B + A. C
+b) A + (B .C) = (A + B) (A + C)
+
+===== PAGE 5 =====
+Continues…..
+• Absorption Law
+(a)A + A .B = A
+(b) A .(A + B) = A
+• Complementary Law
+(a) X+X’=1
+(b) X.X’=0
+(c) ((X)’)’=X
+• Redundant Law
+(a) A + A ‘.B = A+B
+(b) A .(A ‘+ B) = AB
+• De Morgan's Theorem 
+(a) (X+Y)’=X’.Y’
+(b) (X.Y)’=X’+Y’
+
+===== PAGE 6 =====
+De Morgan's Theorem First Law
+A
+B
+A+B
+(A+B)’
+A’
+B’
+A’.B’
+0
+0
+0
+1
+1
+1
+1
+0
+1
+1
+0
+1
+0
+0
+1
+0
+1
+0
+0
+1
+0
+1
+1
+1
+0
+0
+0
+0
+
+===== PAGE 7 =====
+De Morgan's Theorem First Law
+• Prove (A+B)’= A’.B’
+
+===== PAGE 8 =====
+De Morgan's Theorem Second Law
+A
+B
+A.B
+(A.B)’
+A’
+B’
+A’+B’
+0
+0
+0
+1
+1
+1
+1
+0
+1
+0
+1
+1
+0
+1
+1
+0
+0
+1
+0
+1
+1
+1
+1
+1
+0
+0
+0
+0
+
+===== PAGE 9 =====
+De Morgan's Theorem Second Law
+• Prove: (A.B)’= A’ +B’
+
+===== PAGE 10 =====
+Boolean Function
+• A Boolean function is a mathematical expression consists of binary
+variables and logical operators.
+• It defines a logical relationship between the binary variables and
+binary output.
+• The Boolean functions are defined using the rules of Boolean algebra
+and binary number system.
+• These functions build the foundation of design and development of
+digital circuits and systems.
+• A Boolean function consists of two major components– Binary
+Variable (0, 1) and Logical Operator (., +, ~)
+
+===== PAGE 11 =====
+Example
+• The Boolean Expression is represented as a mathematical expression
+consisting of binary variables and logical operators in their symbol form. It
+is also known as Algebraic Form. (Y=AB+AC)
+• The logic circuit diagram of a Boolean Function Y=AB+AC is shown in the
+figure below:
+
+===== PAGE 12 =====
+Algebraic Manipulation
+• Simplify F= x’yz+ x’yz’+ xz
+• F= x’yz+ x’yz’+ xz
+• =x’y (z + z’)+ xz
+• =x’y (1)+ xz
+• =x’y + xz
+• Prove: x’y’z’ + x’yz’ + xyz’ = x’z’ + yz’
+• Proof: x’y’z’ + x’yz’ + xyz’
+• = x’y’z’ + x’yz’ + x’yz’ + xyz’
+• =x’z’ (y’ + y) + yz’ (x’ + x)
+• =x’z’ (1) + yz’ (1)
+• =x’z’ + yz’
+
+===== PAGE 13 =====
+SOP and POS
+• All Boolean expressions, regardless of their form, can be converted
+into either of the two standard forms:
+i.
+The Sum-of-Products form (SOP) or ANDed variables are ORed
+together.
+ii.
+The Product-of Sums form (POS) or ORed variables are ANDed
+together.
+• Standardization
+makes
+the
+evaluation,
+simplification,
+and
+the
+implementation of Boolean expressions much more systematic and
+easier.
+
+===== PAGE 14 =====
+SOP
+• When two or more product terms
+are
+summed
+by
+Boolean
+addition, the resulting expression
+is a sum-of-products (SOP).
+• Some examples are:
+• AB + ABC
+• ABC + CDE + BCD
+• A + BCD + AC
+POS
+• When two or more sum terms are
+multiplied,
+the
+resulting
+expression is a product-of-sums
+(POS).
+• Some examples are
+• (A + B)(A + B + C)
+• (A + B + C)( C + D + E)(B + C +
+D)
+• A (A + B + C)(A + C)
+
+===== PAGE 15 =====
+SSOP
+• f(A,B,C)=AB‘+BC‘
+• This is a logical expression in three variables,
+but it is expressed in SOP form. We can
+convert this expression into SSOP form using
+Boolean algebra as follows.
+• f(A,B,C)=AB’(C+C’)+BC’(A+A’)
+• f(A,B,C)=AB’C+AB’C’+ABC’+A’BC’
+• This is the Standard Sum of Products form of
+the given logical expression.
+• One can notice that in the SSOP form, each
+product term contains all the variables of the
+logic function either in complemented or un-
+complemented form.
+• Each of these product terms (in which all the
+variables
+appear
+exactly
+once
+either
+complemented or uncomplemented) is called
+a minterm.
+SPOS
+• f(A,B,C)=AB+A’C
+• This is a logical expression in three variables,
+but it is expressed in POS form. We can
+convert this expression into SPOS form using
+Boolean algebra as follows.
+• =(AB+A’)(AB+C)
+• =(A+A’)(B+A’)(A+C)(B+C)
+• =(A’+B)(A+C)(B+C)
+• (A’+B)=A’+B+CC’=(A’+B+C)(A’+B+C’)
+• (A+C)=A+C+BB’=(A+B+C)(A+B’+C)
+• (B+C)=B+C+AA’=(A+B+C)(A’+B+C)
+• Hence, f(A,B,C)= (A’+B+C)(A’+B+C’) 
+(A+B+C)(A+B’+C)
+• Each of these sum terms is called a maxterm.
+
+===== PAGE 16 =====
+SSOP- Example
+• F=A+B’C
+• The term A is missing two variables because F is (A, B, C)
+• A= A(B+B)= AB + AB
+• AB= AB(C+C’)= ABC + ABC’
+• The term B’C is missing one variable A
+• B’C= B’C(A+A’)= AB’C + A’B’C
+• The final answer is
+• F= ABC + ABC’ + ABC + ABC’ + AB’C + A’B’C
+
+===== PAGE 17 =====
+SPOS- Example
+• F= (X+Y)(X+Z)
+• The first term (X+Y) is missing one variable Z
+• (X+Y)= (X+Y+ZZ’)= (X+Y+Z) (X+Y+Z’)
+• The second term (X+Z) is missing one variable Y
+• (X+Z)= (X+Z+YY’)= (X+Z+Y) (X+Z+Y’)
+• The final answer is
+• F= (X+Y+Z) (X+Y+Z’) (X+Y+Z) (X+Y’+Z)
+
+===== PAGE 18 =====
+KARNAUGH MAP MINIMIZATION
+• A Karnaugh map provides a systematic method for simplifying
+Boolean expressions and, if properly used, will produce the simplest
+SOP or POS expression possible, known as the minimum expression.
+• A Karnaugh map is similar to a truth table because it presents all of the
+possible values of input variables and the resulting output for each
+value.
+• Instead of being organized into columns and rows like a truth table,
+the Karnaugh map is an array of cells in which each cell represents a
+binary value of the input variables.
+• The cells are arranged in a way so that simplification of a given
+expression is simply a matter of properly grouping the cells.
+
+===== PAGE 19 =====
+Continues…..
+• It may be regarded as a pictorial form of a truth table.
+• Karnaugh maps can be used for expressions with two, three, four and
+five variables.
+• Another method, called the Quine-McClusky method can be used for
+higher numbers of variables.
+• The number of cells in a Karnaugh map is equal to the total number of
+possible input variable combinations as is the number of rows in a
+truth table.
+• For three variables, the number of cells is 23= 8.
+• For four variables, the number of cells is 24 = 16.
+
+===== PAGE 20 =====
+STEPS
+• The following steps are used to solve the expressions using K-map:
+1.First, we find the K-map as per the number of variables.
+2.Find the maxterm and minterm in the given expression.
+3.Fill cells of K-map for SOP with 1 respective to the minterm.
+4.Fill cells of the block for POS with 0 respective to the maxterm.
+5.Next, we create rectangular groups that contain total terms in the power of
+two like 2, 4, 8, … and try to cover as many elements as we can in one
+group.
+6.With the help of these groups, we find the product terms and sum them up
+for the SOP form.
+
+===== PAGE 21 =====
+2 Variable K-Map
+• There is a total of 4 variables in a 2-variable K-map. There are two variables in the 
+2-variable K-map. 
+• The following figure shows the structure of the 2-variable K-map:
+• In the above figure, there is only one possibility of grouping four adjacent
+minterm.
+• The possible combinations of grouping 2 adjacent minterm are {(m0, m1), (m2,
+m3), (m0, m2) and (m1, m3)}.
+
+===== PAGE 22 =====
+2 Variable K-Map
+A
+B
+Minterm
+0
+0
+A’B’
+m0
+0
+1
+A’B
+m1
+1
+0
+AB’
+m2
+1
+1
+AB
+m3
+
+===== PAGE 23 =====
+3 Variable K-Map
+• The 3-variable K-map is represented as an array of eight cells.
+• In this case, we use A, B, and C for the variables.
+• The binary values of variables A and B are along the left side, and the
+values of C are across the top.
+• The value of the given cell is the binary values of A and B at left side in the
+same row combined with the value of C at the top in the same column.
+• Note: The cells are arranged in such a way that; between each pair of
+adjacent cells, only one bit is changed at a time.
+• For example, the cell in the upper left corner has a binary value of 000, and
+the cell in the lower right corner has a binary value of 101.
+
+===== PAGE 24 =====
+3 Variable K-Map
+
+===== PAGE 25 =====
+3 Variable K-Map
+A
+B
+C
+Minterm
+0
+0
+0
+A’B’C’
+m0
+0
+0
+1
+A’B’C
+m1
+0
+1
+0
+A’BC’
+m2
+0
+1
+1
+A’BC
+m3
+1
+0
+0
+AB’C’
+m4
+1
+0
+1
+AB’C
+m5
+1
+1
+0
+ABC’
+m6
+1
+1
+1
+ABC
+m7
+
+===== PAGE 26 =====
+4 Variable K-Map
+• The 4 variable K-map is represented as an array of 16 cells.
+• Binary values of A and B are along the left side, and the values of C
+and D are across the top.
+• The value of the given cell is the binary values of A and B at left side
+in the same row combined with the binary values of C and D at the top
+in the same column.
+• For example, the cell in the upper right corner has a binary value of
+0010, and the cell in the lower right corner has a binary value of 1010.
+
+===== PAGE 27 =====
+4 Variable K-Map
+
+===== PAGE 28 =====
+Simplification of Logic Functions using K-map
+• As known, K-map takes both SOP and POS forms.
+• So, there are two possible solutions for K-map, i.e., minterm solution
+and maxterm solution.
+• Create the K-map by entering 1 to each product-term into the K-map
+cell and fill the remaining cells with zeros.
+• Next, form the groups by considering each 1 in the K-map. Note that
+each group should have the largest number of ‘1’s. A group cannot
+contain an empty cell or a cell that contains 0. (First, try to make the
+group of eight, then for four, after that two and lastly for 1.)
+• In the next step, find the Boolean expression for each group.
+
+===== PAGE 29 =====
+Don’t Care Conditions
+• The "Don't care" condition says that we can use the blank cells of a K-
+map to make a group of the variables.
+• To make a group of cells, we can use the "don't care" cells as either 0
+or 1, and if required, we can also ignore that cell.
+• We mainly use the "don't care" cell to make a large group of cells.
+• The cross(×) symbol is used to represent the "don't care" cell in K-
+map.
+• This cross symbol represents an invalid combination.
+
+===== PAGE 30 =====
+Example
+• Minimize
+the
+4-variable
+Boolean
+expression in SOP form using K-map:
+• f⟮A,B,C,D⟯=∑m⟮1,5,6,11,12,13,14⟯
++ d⟮4⟯
+• Therefore, minimal SOP is:
+• BC’ (from Brown)
+• BD’ (from Green)
+• A’C’D (from Red)
+• AB’CD (from Maroon)
+• Hence, f= BC’ + BD’ + A’C’D +
+AB’CD
+
+===== PAGE 31 =====
+VEM K-map
+• K-map is the best manual technique to solve Boolean equations, but it
+becomes difficult to manage when number of variables exceed 5 or 6.
+• So, a technique called Variable Entrant Map (VEM) is used to increase
+the effective size of k-map.
+• It allows a smaller map to handle large number of variables.
+• This is done by writing output in terms of input.
+• Example – A 3-variable function can be defined as a function of 2-
+variables if the output is written in terms of third variable.
+• Consider a function F(A,B,C) = (0,1,2,5) as shown in Fig (a).
+• If we define F in terms of ‘C’, then this function can be written as
+shown in Fig (b) and the VEM for this is shown in Fig (c).
+
+===== PAGE 32 =====
+Example
+
+===== PAGE 33 =====
+NAND or NOR Implementation
+• The NAND gate is a universal gate because it can be used to produce the NOT, the
+AND, the OR, and the NOR functions.
+• An inverter can be made from a NAND gate by connecting all of the inputs
+together and creating, in effect, a single input, as shown in Fig. (a) for a 2-input
+gate.
+• An AND function can be generated by the use of NAND gates alone, as shown in
+Fig (b).
+• An OR function can be produced with only NAND gates, as illustrated in Fig (c).
+• Finally, a NOR function is produced as shown in Fig (d).
+
+===== PAGE 34 =====
+The NAND Gate as a Universal Logic Element
+
+===== PAGE 35 =====
+NOR GATE
+• Like the NAND gate, the NOR gate can be used to produce the NOT, AND. OR
+and NAND functions.
+• A NOT circuit, or inverter, can be made from a NOR gate by connecting all of the
+inputs together to effectively create a single input, as shown in Fig (a) with a 2-
+input example.
+• Also, an OR gate can be produced from NOR gates, as illustrated in Fig (b).
+• An AND gate can be constructed by the use of NOR gates, as shown in Fig (c). In
+this case the NOR gates G 1 and G 2 are used as inverters, and the final output is
+derived by the use of DeMorgan’s Theorem.
+• Finally, Fig (d) shows how NOR gates are used to form a NAND Function.
+
+===== PAGE 36 =====
+The NOR Gate as a Universal Logic Element
