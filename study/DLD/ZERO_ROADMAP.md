@@ -1,17 +1,18 @@
 # DLD from zero: chat micro-lesson roadmap (tick as done)
-## ⚠ CRASH MODE: written exam ≈ 2026-11-23 (student: "finish DLD in the next 3 days")
+## ⚠ CRASH MODE: written exam 2026-11-25 (confirmed by the student)
 | Day | Cover |
 |---|---|
-| D1 20-Nov | Unit 1 (Z2–Z13) + Unit 2 K-map |
-| D2 21-Nov | Unit 3 combinational + Unit 4 flip-flops |
-| D3 22-Nov | Unit 5 registers/counters + Unit 6 ADC/DAC + ⭐ questions + mock |
-| Night before | cheat-sheets + handwritten pages + mistake book |
+| D1 20-Nov | Unit 1 (Z2–Z13) |
+| D2 21-Nov | Unit 2 K-map + Unit 3 combinational |
+| D3 22-Nov | Unit 3 finish + Unit 4 flip-flops |
+| D4 23-Nov | Unit 5 registers/counters + Unit 6 ADC/DAC |
+| D5 24-Nov | ⭐ questions + full mock + handwritten/cheat-sheet revision + mistake book |
 Bigger chunks per message (2–3 Z-topics), but still from zero.
 ## Unit 1: Number systems, codes, gates
 - [x] Z1 (4.5/5) What is "digital"? Bit, place value, base (decimal as the example)
-- [ ] Z2 Binary: counting 0–15, bit / nibble / byte
-- [ ] Z3 Binary → decimal (place values 1, 2, 4, 8 …), with fractions
-- [ ] Z4 Decimal → binary (÷2 for the integer part, ×2 for the fraction)
+- [x] Z2 Binary: counting 0–15, bit / nibble / byte
+- [~] Z3 (re-teach with more examples) Binary → decimal (place values 1, 2, 4, 8 …), with fractions
+- [~] Z4 (re-teach with more examples) Decimal → binary (÷2 for the integer part, ×2 for the fraction)
 - [ ] Z5 Octal & hexadecimal (groups of 3 and 4 bits), all conversions
 - [ ] Z6 Binary arithmetic (+, −, ×, ÷)
 - [ ] Z7 Complements (1's, 2's, 9's, 10's) & subtraction using them
