@@ -3,3 +3,4 @@ pillow
 matplotlib
 fonttools
 brotli
+schemdraw

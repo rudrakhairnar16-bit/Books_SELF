@@ -74,14 +74,21 @@ Subject level: `study/<SUBJECT>/00_SUBJECT_PLAN.md` (units, weightage, schedule,
 5. At the end: log scores, update weak areas, commit work.
 
 ## 7. Student profile & preferences (update as I learn)
-- Level: starting from scratch (self-declared). Exams: **very near** — dates: _ask & record in progress.json_.
+- Level: **attended classes but weak** → teach basics fast (from scratch, but compact), then heavy exam practice.
+- Exams: **End-semester theory (70 m, full syllabus) + practical/viva** — very near. Dates: _not given yet → ask again when planning; record via `tracker.py exam`_.
+- Study time: **4–5 hours/day** → 2 blocks of ~2 h + 30 min revision.
+- Subject order: **DLD first** (chosen 2026-11-19), then ask.
+- Viva is included → every unit package MUST have `07_practicals_viva.md` (viva Qs even for theory-only units).
 - Wants: class notes, handwritten-note images, flashcards, MCQs, marks-wise questions, revision tests, weak-area focus.
 - Subjects provided so far (Sem 3): DBMS, DLD, DS, Maths-III, Python Programming. More will come.
 
 ## 8. Error log of college material (found while teaching)
 | Source | Issue | Correct |
 |--------|-------|---------|
+| DLD HW notes p9 | (81.21)₁₆ = 129.1328 | 129.12890625 |
+| DLD HW notes (19.11 → octal) | 0.4×8 | 0.04×8 |
 | DLD/MCQ_Unit_4 Q2 | “Which flip-flop has no invalid state? → JK” | JK, D and T all have no invalid state; the expected answer is JK (versus SR). Mention this in the exam if it's asked as a descriptive question. |
 
 ## 9. Change log of rules
 - 2026-11-19: Brain created. Rules R1–R10 from the student’s first instruction.
+- 2026-11-20: R11 – after every unit, rebuild `study/<SUBJ>/practice.html` (build_practice.py); the student pastes the quiz report line → log it with tracker. Each subject gets `00_SUBJECT_PLAN.md` + `MISTAKE_BOOK.md`. Handwritten markup: 2+ spaces = visual gap; use `^` for powers (font lacks superscript n/k/p).

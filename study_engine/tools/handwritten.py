@@ -121,6 +121,9 @@ class Renderer:
         d = self.p.d
         base = self.p.y - 8
         for word, style in words:
+            if style == "gap":
+                x += 36
+                continue
             font = F_BOLD if style in ("b", "u") else F_BODY
             col = INK["red"] if style == "b" else INK["blue"] if style == "u" else color_default
             jitter = self.rnd.uniform(-1.5, 1.5)
@@ -145,16 +148,20 @@ class Renderer:
                 st, part = "u", part[2:-2]
             else:
                 st = "n"
-            for w in part.split(" "):
-                if w:
-                    out.append((w, st))
+            for chunk in re.split(r"( {2,})", part):      # 2+ spaces = visible gap
+                if chunk.startswith("  "):
+                    out.append(("\u2003\u2003", "gap"))
+                    continue
+                for w in chunk.split(" "):
+                    if w:
+                        out.append((w, st))
         return out
 
     def wrap(self, words, width):
         lines, cur, cw = [], [], 0
         sp = F_BODY.getlength(" ")
         for w, st in words:
-            ww = text_w(w, F_BOLD if st != "n" else F_BODY, SYM)
+            ww = 36 if st == "gap" else text_w(w, F_BOLD if st != "n" else F_BODY, SYM)
             if cur and cw + ww > width:
                 lines.append(cur); cur, cw = [], 0
             cur.append((w, st)); cw += ww + sp

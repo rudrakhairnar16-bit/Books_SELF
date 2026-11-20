@@ -16,6 +16,7 @@
 - `extract.py` – extract text from all non-book PDFs → `study_engine/extracted/`
 - `render_pages.py <pdf> [3-7]` – render scanned pages to PNG for reading
 - `handwritten.py notes.hw out/prefix` – make notebook-style handwritten note images
+- `build_practice.py SUBJ` – build `study/SUBJ/practice.html` (offline flashcards + MCQ quiz with weak-topic report)
 - `tracker.py dashboard | due | next | log | status | exam | addsubject | addunit` – progress, weak areas, spaced revision
 
 ## Per-unit study package

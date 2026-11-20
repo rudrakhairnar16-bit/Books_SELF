@@ -1,0 +1,79 @@
+front;back;tags
+What is a digital system?;A system that takes discrete inputs + internal state and produces discrete outputs;DLD::U1::digital
+Combinational vs sequential?;Combinational: no memory, output = f(inputs). Sequential: memory/state, output = f(inputs, state);DLD::U1::digital
+Synchronous vs asynchronous sequential?;Synchronous: state changes at clock edges. Asynchronous: state can change any time;DLD::U1::digital
+Analog vs digital signal?;Analog: continuous in value & time. Digital: discrete (0/1);DLD::U1::digital
+Positive logic?;1 = HIGH (positive voltage), 0 = LOW (0 V);DLD::U1::digital
+AND gate rule & IC;Output 1 only if ALL inputs are 1. Y = AB. IC 7408;DLD::U1::gates
+OR gate rule & IC;Output 1 if ANY input is 1. Y = A+B. IC 7432;DLD::U1::gates
+NOT gate IC;7404 (hex inverter). Y = A';DLD::U1::gates
+NAND rule & IC;Output 0 only when ALL inputs are 1. Y = (AB)'. IC 7400;DLD::U1::gates
+NOR rule & IC;Output 1 only when ALL inputs are 0. Y = (A+B)'. IC 7402;DLD::U1::gates
+XOR rule & IC;1 when inputs DIFFER. Y = A'B + AB'. IC 7486;DLD::U1::gates
+XNOR rule;1 when inputs are SAME (equality detector). Y = AB + A'B';DLD::U1::gates
+Why are NAND/NOR universal?;NOT, AND, OR (hence any function) can be built using only NAND (or only NOR);DLD::U1::universal
+NOT from NAND?;1 NAND with both inputs tied: (AA)' = A';DLD::U1::universal
+AND from NAND?;2 NANDs: NAND then NAND-inverter;DLD::U1::universal
+OR from NAND?;3 NANDs: invert A, invert B, NAND them: (A'B')' = A+B;DLD::U1::universal
+AND from NOR?;3 NORs: invert A, invert B, NOR them: (A'+B')' = AB;DLD::U1::universal
+OR from NOR?;2 NORs: NOR then NOR-inverter;DLD::U1::universal
+XOR from NAND?;4 NANDs: P=(AB)', Y=((AP)'(BP)')';DLD::U1::universal
+Rows in a truth table for n variables?;2^n;DLD::U1::boolean
+Tautology / Fallacy?;Tautology: always 1. Fallacy: always 0;DLD::U1::boolean
+De Morgan theorem 1;(AB)' = A' + B'  (NAND = bubbled OR);DLD::U1::boolean
+De Morgan theorem 2;(A+B)' = A'B'  (NOR = bubbled AND);DLD::U1::boolean
+Absorption law;A + AB = A ; A(A+B) = A;DLD::U1::boolean
+Distributive law (b form);A + BC = (A+B)(A+C);DLD::U1::boolean
+Idempotence law;A + A = A ; AA = A;DLD::U1::boolean
+Complement law;A + A' = 1 ; AA' = 0;DLD::U1::boolean
+Involution;(A')' = A;DLD::U1::boolean
+A + A'B = ?;A + B;DLD::U1::boolean
+Duality principle;Swap + with · and 0 with 1 → another valid identity;DLD::U1::boolean
+Who developed Boolean algebra?;George Boole (1815–1864);DLD::U1::boolean
+Radix of binary/octal/decimal/hex;2 / 8 / 10 / 16;DLD::U1::number
+Hex digits A–F values;A=10 B=11 C=12 D=13 E=14 F=15;DLD::U1::number
+Decimal → base r (integer);Divide by r repeatedly; read remainders BOTTOM to TOP;DLD::U1::conversion
+Decimal → base r (fraction);Multiply by r repeatedly; read integer carries TOP to BOTTOM;DLD::U1::conversion
+Base r → decimal;Sum of digit × r^position (negative powers after the point);DLD::U1::conversion
+Binary ↔ Octal;Group 3 bits from the binary point;DLD::U1::conversion
+Binary ↔ Hex;Group 4 bits from the binary point;DLD::U1::conversion
+Octal ↔ Hex;Go through binary;DLD::U1::conversion
+(43)10 in binary;101011;DLD::U1::conversion
+(37.31)10 in binary;100101.01001…;DLD::U1::conversion
+(1032.6875)10 in octal;2010.54;DLD::U1::conversion
+(7CA3)16 in decimal;31907;DLD::U1::conversion
+(81.21)16 in decimal;129.12890625 (notes' 129.1328 is wrong);DLD::U1::conversion
+1+1 in binary;0 carry 1 (10);DLD::U1::arithmetic
+1+1+1 in binary;1 carry 1 (11);DLD::U1::arithmetic
+0−1 in binary;1 with borrow 1 (10−1);DLD::U1::arithmetic
+1's complement;Flip every bit;DLD::U1::complements
+2's complement;1's complement + 1 (or copy up to first 1 from the right, flip the rest);DLD::U1::complements
+r's complement formula;r^n − N;DLD::U1::complements
+(r−1)'s complement formula;(r^n − 1) − N (subtract each digit from r−1);DLD::U1::complements
+9's and 10's complement of 2468;7531 and 7532;DLD::U1::complements
+1's comp subtraction: carry present?;Add end-around carry to LSB → result positive;DLD::U1::complements
+1's comp subtraction: no carry?;Result negative → take 1's complement of sum, put minus sign;DLD::U1::complements
+2's comp subtraction: carry present?;Discard carry → result positive;DLD::U1::complements
+2's comp subtraction: no carry?;Result negative → take 2's complement of sum, put minus sign;DLD::U1::complements
+5 − 12 using 2's complement;0101 + 0100 = 1001, no carry → −0111 = −7;DLD::U1::complements
+Range of n-bit 2's complement;−2^(n−1) to +(2^(n−1) − 1);DLD::U1::signed
+Range of 8-bit 2's complement;−128 to +127;DLD::U1::signed
+−25 in 8-bit sign-mag / 1's / 2's;10011001 / 11100110 / 11100111;DLD::U1::signed
+When does overflow occur?;Adding two same-sign numbers gives opposite-sign result (carry-in to MSB ≠ carry-out);DLD::U1::signed
+Why 2's complement preferred?;Single zero, no end-around carry, same adder for + and −;DLD::U1::signed
+BCD (8421) code;Each decimal digit as 4-bit binary; valid 0000–1001;DLD::U1::codes
+Forbidden BCD codes;1010, 1011, 1100, 1101, 1110, 1111;DLD::U1::codes
+BCD addition correction;If digit sum > 9 or carry → add 0110;DLD::U1::codes
+Excess-3 code;BCD + 0011; self-complementing, unweighted;DLD::U1::codes
+Binary → Gray;MSB same; each next bit = XOR of adjacent binary bits;DLD::U1::codes
+Gray → Binary;MSB same; next B = previous B XOR current G;DLD::U1::codes
+Gray code property;Only one bit changes between successive numbers (unit distance);DLD::U1::codes
+ASCII / EBCDIC bits;ASCII 7-bit; EBCDIC 8-bit;DLD::U1::codes
+ASCII of 'A', 'a', '0';65, 97, 48;DLD::U1::codes
+Parity bit;Extra bit making total 1s even/odd; detects single-bit errors, cannot correct;DLD::U1::error
+Checksum (sender);Add words, take 1's complement of sum = checksum;DLD::U1::error
+Checksum (receiver);Add all words + checksum; complement = 0000 → no error;DLD::U1::error
+Hamming parity-bit formula;2^p ≥ m + p + 1;DLD::U1::error
+Hamming parity positions & coverage;P1:1,3,5,7  P2:2,3,6,7  P4:4,5,6,7;DLD::U1::error
+Hamming code of data 1011 (even);0110011;DLD::U1::error
+Hamming capability;Detects 2-bit, corrects 1-bit errors;DLD::U1::error

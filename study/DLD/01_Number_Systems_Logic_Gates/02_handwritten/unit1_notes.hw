@@ -1,0 +1,81 @@
+TITLE: DLD Unit 1 — Number Systems & Logic Gates (Mentor handwritten notes)
+# 1. Digital System
+> Discrete inputs + internal STATE → processing → discrete outputs
+- **Combinational**: no memory, Y = f(inputs)  e.g. adder, MUX
+- **Sequential**: memory, Y = f(inputs, state)
+  - Synchronous = state changes at clock  |  Asynchronous = any time
+- Analog = continuous value & time ; Digital = discrete 0/1 (noise immune)
+
+# 2. Logic Gates (+ IC numbers)
+- AND → 1 only if ALL 1 ...... Y = AB ........ **7408**
+- OR → 1 if ANY 1 ............ Y = A+B ....... **7432**
+- NOT → invert ............... Y = A' ........ **7404**
+- NAND → 0 only at 11 ........ Y = (AB)' ..... **7400**
+- NOR → 1 only at 00 ......... Y = (A+B)' .... **7402**
+- XOR → 1 if DIFFERENT ....... A'B + AB' ..... **7486**
+- XNOR → 1 if SAME ........... AB + A'B' ..... equality detector
+! NAND & NOR = UNIVERSAL gates (make NOT, AND, OR → anything)
+> NAND: NOT = 1, AND = 2, OR = 3 gates  |  NOR: NOT = 1, OR = 2, AND = 3  |  XOR = 4 NAND
+![900](../03_diagrams/universal_nand.png)
+MEM: "NAND loves AND (2), NOR loves OR (2)" — the other one needs 3.
+
+---
+# 3. Boolean Algebra (George Boole)
+> A + 0 = A   A·1 = A   A + 1 = 1   A·0 = 0
+> A + A = A   A·A = A   A + A' = 1   A·A' = 0   (A')' = A
+> Absorption: A + AB = A ,  A(A + B) = A
+> Distributive: A(B + C) = AB + AC ,  A + BC = (A + B)(A + C)
+> Extra: A + A'B = A + B
+## De Morgan (State & Prove — always asked!)
+> (A·B)' = A' + B'        (A + B)' = A'·B'
+MEM: "Break the bar, change the sign"
+- Prove with a 4-row truth table — columns must match.
+- Duality: swap + ↔ ·  and  0 ↔ 1
+- Tautology = always 1 (P + (PQ)' = 1) ; Fallacy = always 0
+- Truth table rows = 2ⁿ
+
+# 4. Number Conversions
+- Dec → base r : integer ÷ r, remainders read **UP** ; fraction × r, carries read **DOWN**
+- Base r → Dec : Σ digit × r^k
+- Bin ↔ Oct : groups of **3** bits from the point ; Bin ↔ Hex : groups of **4**
+> (43)₁₀ = 101011    (37.31)₁₀ = 100101.01001    (172.878)₁₀ = (254.7014)₈
+> (7CA3)₁₆ = 31907    (2479.859)₁₀ = (9AF.DBE76)₁₆
+! (81.21)₁₆ = 129.12890625  — class notes wrote 129.1328 (wrong!)
+
+---
+# 5. Binary Arithmetic
+> 1 + 1 = 10    1 + 1 + 1 = 11    0 − 1 = 1 (borrow 1)
+- 1010 + 1101 = 10111   (10 + 13 = 23)
+- 1011 × 110 = 1000010   (11 × 6 = 66)
+- 1100 ÷ 11 = 100   (12 ÷ 3 = 4)
+TIP: Always write the decimal check in brackets.
+
+# 6. Complements
+> 1's = flip all bits      2's = 1's + 1
+> r's = r^n − N      (r−1)'s = (r^n − 1) − N      9's of 2468 = 7531, 10's = 7532
+## Subtraction A − B
+1. 1's method: A + 1's(B). Carry? → add it back (end-around) → **positive** ;  no carry → **−(1's of sum)**
+2. 2's method: A + 2's(B). Carry? → **discard** → positive. No carry → **−(2's of sum)**
+> 10 − 8 : 1010 + 1000 = 1|0010 → +0010        5 − 12 : 0101 + 0100 = 1001 → −0111
+
+# 7. Signed numbers (8-bit, −25)
+> Sign-mag 10011001 | 1's 11100110 | 2's 11100111
+- 2's range: −128 … +127  (only ONE zero)
+! Overflow: (+) + (+) gives (−)  or  (−) + (−) gives (+)
+
+---
+# 8. Codes
+- BCD 8421: 0000–1001 valid ; 1010–1111 forbidden
+> BCD add: sum > 9 OR carry → add 0110   (8 + 7 → 1111 + 0110 = 0001 0101)
+- Excess-3 = BCD + 0011 (self-complementing)  59 → 1000 1100
+- Gray: MSB same, then XOR neighbours  1011 → 1110 (one bit change only)
+- ASCII = 7 bit (A = 65) ; EBCDIC = 8 bit
+
+# 9. Error Detection & Correction
+- **Parity** (even/odd): detects 1-bit error, cannot correct
+- **Checksum**: sender sends 1's comp of sum ; receiver sum → complement = 0000 → OK
+> 0111 + 0011 = 1010 → checksum 0101 ; receiver 1111 → 0000 no error
+- **Hamming**: 2^p ≥ m + p + 1 ; parity at 1, 2, 4
+> P1: 1,3,5,7    P2: 2,3,6,7    P4: 4,5,6,7
+> Data 1011 → codeword 0110011 ; error at bit 6 → syndrome 110 = 6 → flip it
+! Parity = detect only ; Hamming = detect 2-bit + CORRECT 1-bit
