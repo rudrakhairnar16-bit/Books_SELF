@@ -1,0 +1,35 @@
+TITLE: DLD · Lesson 1 — Digital Systems & Logic Gates (Mentor notes)
+# 1. Analog vs Digital
+- **Analog** = continuous, any value (temperature, sound)
+- **Digital** = only 2 levels : 0 = LOW (0 V) , 1 = HIGH (5 V)
+> Digital system = processes DISCRETE (binary) inputs → gives discrete outputs
+- e.g. computer, calculator, digital watch
+## Advantages of digital (2 marks)
+1. Noise immune
+2. Easy storage (memory)
+3. Accurate & reproducible
+4. Easy IC design
+5. Programmable
+> INPUT  →  LOGIC CIRCUIT (+ memory)  →  OUTPUT
+
+# 2. Basic Gates
+- **AND** : Y = A·B    → 1 only when ALL inputs = 1    __IC 7408__
+- **OR** : Y = A + B    → 1 when ANY input = 1    __IC 7432__
+- **NOT** : Y = A'    → inverts    __IC 7404__
+MEM: AND = multiply (0 kills),  OR = add (1 wins),  bubble ○ = NOT
+TIP: AND = switches in series ; OR = switches in parallel
+
+# 3. Derived Gates
+- **NAND** = (A·B)'   → 0 only at 1 1    __7400__
+- **NOR** = (A + B)'   → 1 only at 0 0    __7402__
+- **XOR** = A'B + AB'   → 1 when inputs DIFFERENT    __7486__
+- **XNOR** = AB + A'B'   → 1 when inputs SAME (equality detector)    __74266__
+## Master truth table (1 = yellow)
+![900](master_truth_table.png)
+MEM: NAND = AND flipped , NOR = OR flipped , XOR = "odd 1s → 1"
+
+# 4. Exam & Viva
+! "Explain logic gates" (5–7 m) : for each gate → Definition + Symbol + Expression + Truth table (+ IC)
+- n inputs → 2^n rows in the truth table
+- IC pins : 14 = Vcc , 7 = GND
+- Inverter = NOT ; Equality detector = XNOR ; Universal = NAND, NOR

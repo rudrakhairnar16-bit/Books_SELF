@@ -92,3 +92,4 @@ Subject level: `study/<SUBJECT>/00_SUBJECT_PLAN.md` (units, weightage, schedule,
 ## 9. Change log of rules
 - 2026-11-19: Brain created. Rules R1–R10 from the student’s first instruction.
 - 2026-11-20: R11 – after every unit, rebuild `study/<SUBJ>/practice.html` (build_practice.py); the student pastes the quiz report line → log it with tracker. Each subject gets `00_SUBJECT_PLAN.md` + `MISTAKE_BOOK.md`. Handwritten markup: 2+ spaces = visual gap; use `^` for powers (font lacks superscript n/k/p).
+- 2026-11-20: R12 – TEACH IN CHAT, topic by topic, VISUALLY. Each lesson = `study/<SUBJ>/lessons/LNN/` with diagrams (make_lNN.py), handwritten page(s) (.hw → png) and `LNN_lesson.md` → `build_lesson.py` → self-contained `LNN_lesson.html`, presented to the student. Hinglish explanation + English exam answers. End every lesson with check questions; move on only after the student replies.
