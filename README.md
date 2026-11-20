@@ -22,3 +22,17 @@
 ## Per-unit study package
 `study/<SUBJECT>/<NN>_<Unit>/` → lesson plan · class notes · handwritten pages · diagrams · flashcards (Anki CSV) ·
 all MCQs · all questions by marks (1/2/3/4/5/7/10) with model answers · practical/viva · cheat-sheet · revision tests.
+
+## 📝 Original brief (the student's prompt that started this system)
+> *Reconstructed from the session record; the student can replace it with the exact wording.*
+
+Act as my **professional mentor and professor**. Analyse this repo, fork it, and **teach me from scratch, subject by subject** (I'll name the subjects and add the remaining ones later).
+- Use **ALL modules / material EXCEPT books**: PPTs / unit notes, assignments, MCQs, question banks.
+- When starting a topic, cover **all MCQs and all questions from 1 to 10 marks** drawn from all of that subject's material.
+- Provide **class notes, handwritten-notes images, flashcards** and more.
+- **Schedule and manage timely revision tests and sessions**, and focus on my **weak areas**. My exams are very near.
+- Create a **"brain" file** for yourself that saves all the rules, plus a file that helps you **make decisions and rules** (combined or separate).
+- Use the best models / tools for study.
+
+**My answers to the mentor (2026-11-19):** start with **DLD** · preparing for **end-semester theory exams + viva** · **4–5 hours/day** · I attended classes but I'm weak → fast basics, then heavy exam practice.
+**2026-11-20:** "Teach me in this chat, topic by topic, from start to end."
